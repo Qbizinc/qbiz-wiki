@@ -2,7 +2,7 @@
 title: Additivity
 description: 
 published: true
-date: 2021-07-29T19:47:51.148Z
+date: 2021-07-29T19:52:43.570Z
 tags: aggregation, horizontal-scalability
 editor: markdown
 dateCreated: 2021-07-29T19:47:51.148Z
@@ -32,11 +32,11 @@ Aggregation operations that are commutative and associative are also additive, b
 
 ## Examples
 
-* Sum (arithmetic)
-* Average (arithmetic mean)
-* Population variance and standard deviation
-* Approximation of distinct count
-* Approximation of percentile
+* [Sum (arithmetic)](/en/training/qram/sum)
+* [Average (arithmetic mean)](/en/training/qram/average)
+* [Population variance and standard deviation](/en/training/qram/population-variance)
+* [Approximation of distinct count](/en/training/qram/approximate-distinct-count)
+* [Approximation of percentile](/en/training/qram/approximate-percentile)
 
 ## Why?
 
@@ -56,6 +56,6 @@ The machine doing the last step aggregation must be capable of evaluating the sc
 
 ## Related
 
-Partial evaluation
+[Partial evaluation](/en/training/qram/partial-evaluation)
 
-[Logarithmic additivity for slicing of ordered collections](/e/en/training/qram/logarithmic-additivity)
+[Logarithmic additivity for slicing of ordered collections](/en/training/qram/logorithmic-additivity)
