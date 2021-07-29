@@ -2,7 +2,7 @@
 title: Optimal Splits for Gradient Boosted Trees
 description: 
 published: true
-date: 2021-07-29T23:49:54.002Z
+date: 2021-07-29T23:51:18.849Z
 tags: machine-learning, decision-trees, gradient-boosting
 editor: markdown
 dateCreated: 2021-07-29T23:49:54.002Z
@@ -10,7 +10,7 @@ dateCreated: 2021-07-29T23:49:54.002Z
 
 > TO BE COMPLETED
 
-This piece of content aims to detail the algorithms popular gradient boosting frameworks find the most optimal splits of data when forming decision trees. This is in contrast to splitting criteria, which tends to take the shape of either gini impurity or information gain/entropy. 
+This piece of content aims to detail the algorithms popular gradient boosting frameworks find the most optimal splits of data when forming decision trees. This is in contrast to splitting criteria, which tends to take the shape of either [gini impurity](https://en.wikipedia.org/wiki/Decision_tree_learning#Gini_impurity) or [information gain/entropy](https://en.wikipedia.org/wiki/Decision_tree_learning#Information_gain). 
 
 Gradient Boosting Decision Tree
 * Considers every possible split
