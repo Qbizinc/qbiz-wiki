@@ -2,7 +2,7 @@
 title: K-Nearest Neighbors
 description: 
 published: true
-date: 2021-07-29T19:12:58.453Z
+date: 2021-07-29T19:14:13.761Z
 tags: qram, machine-learning, unsupervised-learning
 editor: markdown
 dateCreated: 2021-07-29T19:12:58.453Z
@@ -15,7 +15,7 @@ dateCreated: 2021-07-29T19:12:58.453Z
 
 **Regression**: Output of new data point is based on average of k closest points.
 
-### Algorithm:
+## Algorithm:
 *inputs*: vector of points, new unclassified point, number of neighbors (k)
 
 *for* each point in vector of points:
@@ -24,7 +24,7 @@ dateCreated: 2021-07-29T19:12:58.453Z
    
 *return*: vote or average based on k points with lowest distances
 
-### Python Example:
+## Python Example:
 
 ```
 import math
