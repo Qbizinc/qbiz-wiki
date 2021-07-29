@@ -2,7 +2,7 @@
 title: Optimal Splits for Gradient Boosted Trees
 description: 
 published: true
-date: 2021-07-29T23:52:16.444Z
+date: 2021-07-29T23:53:13.810Z
 tags: machine-learning, decision-trees, gradient-boosting
 editor: markdown
 dateCreated: 2021-07-29T23:49:54.002Z
