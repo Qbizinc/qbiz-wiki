@@ -2,7 +2,7 @@
 title: Additive of Population Variance and Standard Deviation
 description: 
 published: true
-date: 2021-07-29T20:58:34.117Z
+date: 2021-07-29T20:59:46.943Z
 tags: aggregation, horizontal-scalability
 editor: markdown
 dateCreated: 2021-07-29T20:58:34.117Z
