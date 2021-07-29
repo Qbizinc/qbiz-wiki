@@ -2,7 +2,7 @@
 title: Logarithmic Additivity for Ordered Collection Slices
 description: 
 published: true
-date: 2021-07-29T19:24:32.370Z
+date: 2021-07-29T19:24:54.146Z
 tags: aggregation, partitioning
 editor: markdown
 dateCreated: 2021-07-29T19:23:32.700Z
