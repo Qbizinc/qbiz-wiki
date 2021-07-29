@@ -1,14 +1,14 @@
 ---
-title: K-Nearest Neighbors
+title: K-Nearest Neighbors Algorithm
 description: 
 published: true
-date: 2021-07-29T19:14:28.335Z
+date: 2021-07-29T19:27:27.112Z
 tags: qram, machine-learning, unsupervised-learning
 editor: markdown
 dateCreated: 2021-07-29T19:12:58.453Z
 ---
 
-# K-Nearest Neighbors Algorithm
+
 ﻿[K-Nearest Neighbors](https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm) (KNN) is an unsupervised machine learning algorithm that makes predictions on a new data point based on the values of the k closest points in space. 
 
 **Classification**: New data point is classified based on vote of k closest points.
