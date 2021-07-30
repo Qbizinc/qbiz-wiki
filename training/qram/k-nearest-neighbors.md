@@ -2,7 +2,7 @@
 title: K-Nearest Neighbors Algorithm
 description: 
 published: true
-date: 2021-07-29T19:27:27.112Z
+date: 2021-07-30T01:10:37.121Z
 tags: qram, machine-learning, unsupervised-learning
 editor: markdown
 dateCreated: 2021-07-29T19:12:58.453Z
@@ -26,7 +26,7 @@ dateCreated: 2021-07-29T19:12:58.453Z
 
 ## Python Example:
 
-```
+```python
 import math
 
 # columns = ['x1', 'x2', 'label']
