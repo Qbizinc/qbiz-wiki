@@ -2,7 +2,7 @@
 title: Don't Aggregate Your Dashboard Extract
 description: 
 published: true
-date: 2021-07-30T00:27:32.648Z
+date: 2021-07-30T01:09:41.376Z
 tags: aggregation, business-intelligence
 editor: markdown
 dateCreated: 2021-07-30T00:27:32.648Z
@@ -13,7 +13,7 @@ When working with SQL we often like to perform many calculations and aggregation
 ![dashboard_aggregation_table1.png](/dashboard_aggregation_table1.png)
 
 Perhaps we've been asked to keep track of the mean amount paid per user by country, so you write in SQL:
-```
+```sql
 SELECT country
      , MEAN(amount_paid) AS mean_amount_paid
 FROM table1
