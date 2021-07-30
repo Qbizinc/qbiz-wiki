@@ -2,7 +2,7 @@
 title: Additive of Population Variance and Standard Deviation
 description: 
 published: true
-date: 2021-07-29T20:59:46.943Z
+date: 2021-07-30T15:49:10.322Z
 tags: aggregation, horizontal-scalability
 editor: markdown
 dateCreated: 2021-07-29T20:58:34.117Z
@@ -43,7 +43,7 @@ variance = (partial_sum_squared - (partial_sum * partial sum) / n) / n
 
 ![standard_deviation.png](/standard_deviation.png)
 
-## Additive Formal
+## Additive Formula
 
 variance = (sum(v^2) - sum(v)^2/count(v)) / count(v)
 stddev = sqrt(variance) [an extra scalar operation]
