@@ -2,7 +2,7 @@
 title: Optimal Splits for Gradient Boosted Trees
 description: 
 published: true
-date: 2021-07-29T23:53:13.810Z
+date: 2021-07-30T15:50:31.346Z
 tags: machine-learning, decision-trees, gradient-boosting
 editor: markdown
 dateCreated: 2021-07-29T23:49:54.002Z
@@ -21,7 +21,8 @@ XGBoost
 * Pre-sorted Algorithm
 -- iteration over sorted enumerated splits for all feature values
 * Histogram-based Algorithm
--- segments feature values into bins 
+-- segments feature values into bins
+
 LightGBM
 * Gradient Based One Side Sampling (GOSS)
 -- downsamples observations with small gradients
