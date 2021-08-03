@@ -2,7 +2,7 @@
 title: Data Management
 description: Dish of Data Management Nibbles 
 published: true
-date: 2021-08-03T18:51:45.997Z
+date: 2021-08-03T18:55:19.275Z
 tags: data management
 editor: markdown
 dateCreated: 2021-08-03T18:51:45.997Z
@@ -11,7 +11,7 @@ dateCreated: 2021-08-03T18:51:45.997Z
 ## What
 **Data Management:** Metadata management is a cross-organizational agreement on how to define informational assets for converting data into an enterprise asset. As data volumes and diversity grow, metadata management is even more critical to derive business value from the gigantic amounts of data. 
 ### Nibbles:
-[Data Management Tool - Core Application Functionality](https://qbiz-wiki.com/e/en/training/qram/nibbles/data-management-core-capabilities)
+[Data Management Tool - Core Application Functionality](https://qbiz-wiki.com/en/training/qram/nibbles/data-management-core-capabilities)
 
 ### Description:
 Metadata management is a core aspect of an organization’s ability to manage its data and information assets. The term “metadata” describes the various facets of an information asset that can improve its usability throughout its life cycle.
