@@ -2,7 +2,7 @@
 title: Data Management Core Capabilities
 description: Review the core functionality of Data Management applications
 published: true
-date: 2021-08-03T17:34:14.051Z
+date: 2021-08-03T18:05:26.039Z
 tags: data management
 editor: markdown
 dateCreated: 2021-08-03T14:53:06.955Z
@@ -13,18 +13,18 @@ See [data-management](/training/qram/data-management)
 ## What
 
 Data Management Core Application Functionality - Evaluation Criteria
-- Data Catalog/Dictionary: Capture data definitions, business glossaries, data dictionaries, and other metadata required to support the business activities
-- Automated Data Lineage: Ability to track a particular data element or set of data elements across various systems of record
+- **Data Catalog/Dictionary:** Capture data definitions, business glossaries, data dictionaries, and other metadata required to support the business activities
+- A**utomated Data Lineage:** Ability to track a particular data element or set of data elements across various systems of record
 - Data Modeling:
-- Data Quality: Implement proactive management of data quality for business critical data across the information supply chain
-- Data Classification: Data classification is broadly defined as the process of organizing data by relevant categories so that it may be used and protected more efficiently
-- Data Profiling: Implement data forensics (profiling), issue management and root-cause analysis capability for data quality issues
-- Master Data Management(MDM): Develop single versions of the truth for key business entities such as customers, accounts, products, suppliers, etc.
+- **Data Quality:** Implement proactive management of data quality for business critical data across the information supply chain
+- **Data Classification:** Data classification is broadly defined as the process of organizing data by relevant categories so that it may be used and protected more efficiently
+- **Data Profiling:** Implement data forensics (profiling), issue management and root-cause analysis capability for data quality issues
+- **Master Data Management(MDM):** Develop single versions of the truth for key business entities such as customers, accounts, products, suppliers, etc.
 - Reference Data Management:
-- Data Controls: Deploy a data quality framework for consistently defining data quality requirements
-- Governance Workflow: Implement processes, policies, procedures and standards to govern business critical data.  Data Governance is a centralized control mechanism to manage data availability, security, usability, and integrity.
+- **Data Controls:** Deploy a data quality framework for consistently defining data quality requirements
+- **Governance Workflow:** Implement processes, policies, procedures and standards to govern business critical data.  Data Governance is a centralized control mechanism to manage data availability, security, usability, and integrity.
 - Data Collaboration: 
-- Certification/Scoring: Develop data certification processes and associated business solutions to certify the quality of internally generated and externally sourced data with associated evidence (transaction logs, workflow process, audit trail etc.)
+- **Certification/Scoring:** Develop data certification processes and associated business solutions to certify the quality of internally generated and externally sourced data with associated evidence (transaction logs, workflow process, audit trail etc.)
 
 
 Notable Technologies
@@ -36,28 +36,29 @@ Enterprise Players
 - Hitachi Vantara - [Lumadata](https://www.hitachivantara.com/en-us/products/data-management-analytics/lumada-data-catalog.html):
 - Alation -  [Data Inteligence](https://www.alation.com/):
 - Zaloni - [Catalog](https://www.zaloni.com/):
-- Alex Solutions - [Platform]():
-- Data Advantage - [MetaCenter]():
-- data.world - [Platform]():
-- Smartlogic - [Platform]():
-- ASG - [Platform]():
-- Atlan - [Platform]():
-- Io-Tahoe - [Platform]():
-- Ataccama - [Platform]():
-- OvalEdge - [Platform]():
+- Alex Solutions - [Platform](https://alexsolutions.com.au/):
+- Data Advantage - [MetaCenter](https://www.dag.com/):
+- data.world - [Platform](https://data.world/):
+- Smartlogic - [Platform](https://www.smartlogic.com/):
+- ASG - [Platform](https://www.asg.com/):
+- Atlan - [Platform](https://atlan.com/):
+- Io-Tahoe - [Platform](https://www.iotahoe.com/):
+- Ataccama - [Platform](https://www.ataccama.com/):
+- OvalEdge - [Platform](https://www.ovaledge.com/):
+- Secoda - [Data Catlog](https://www.secoda.co/):
 - Octopai - [Platform](https://www.octopai.com/platform/):
 - IBM - [Watson](https://www.ibm.com/cloud/watson-knowledge-catalog):
-- Oracle - [Enterprise Metadata Management] (https://www.oracle.com/performance-management/enterprise-data-management/):
+- Oracle - [Enterprise Metadata Management](https://www.oracle.com/performance-management/enterprise-data-management/):
 - SAP - [Data Intelligence](https://www.sap.com/products/data-intelligence.html):
 
 Open Source
-- Apache - Atlas:Bank of the West,
-- Amundsen - Data Catalog:Lyft
-- Secoda - Data Catlog:
-- Metacat - Data Catalog:Netflix
-- Datahub - Data Catalog:LinkedIn
-- Truedat - Data Catlog:
-- CKAN - Data Catalog:
+- Apache - [Atlas](https://atlas.apache.org/#/):Bank of the West,
+- Amundsen - [Data Catalog](https://www.amundsen.io/):Lyft
+- Metacat - [Data Catalog](https://knb.ecoinformatics.org/knb/docs/intro.html):Netflix
+- Datahub - [Data Catalog](https://datahubproject.io/):LinkedIn
+- Marquez - [Data Lineage](https://marquezproject.github.io/marquez/): 
+- Truedat - [Data Catlog](https://www.truedat.io/):
+- CKAN - [Data Catalog](https://ckan.org/):
 
 ## Note
 Reference Material
