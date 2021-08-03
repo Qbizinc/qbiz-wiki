@@ -2,7 +2,7 @@
 title: Data Management Core Capabilities
 description: Review the core functionality of Data Management applications
 published: true
-date: 2021-08-03T19:04:45.628Z
+date: 2021-08-03T19:07:37.247Z
 tags: data management
 editor: markdown
 dateCreated: 2021-08-03T14:53:06.955Z
