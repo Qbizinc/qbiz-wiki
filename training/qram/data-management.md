@@ -2,7 +2,7 @@
 title: Data Management
 description: Dish of Data Management Nibbles 
 published: true
-date: 2021-08-03T19:07:21.297Z
+date: 2021-08-03T19:16:36.076Z
 tags: data management
 editor: markdown
 dateCreated: 2021-08-03T18:51:45.997Z
