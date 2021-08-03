@@ -2,7 +2,7 @@
 title: Data Management Core Capabilities
 description: Review the core functionality of Data Management applications
 published: true
-date: 2021-08-03T18:05:26.039Z
+date: 2021-08-03T19:04:45.628Z
 tags: data management
 editor: markdown
 dateCreated: 2021-08-03T14:53:06.955Z
@@ -15,7 +15,7 @@ See [data-management](/training/qram/data-management)
 Data Management Core Application Functionality - Evaluation Criteria
 - **Data Catalog/Dictionary:** Capture data definitions, business glossaries, data dictionaries, and other metadata required to support the business activities
 - A**utomated Data Lineage:** Ability to track a particular data element or set of data elements across various systems of record
-- Data Modeling:
+- **Data Models:** Connect physical metadata to specific data models, business terms, definitions and reusable design standards.
 - **Data Quality:** Implement proactive management of data quality for business critical data across the information supply chain
 - **Data Classification:** Data classification is broadly defined as the process of organizing data by relevant categories so that it may be used and protected more efficiently
 - **Data Profiling:** Implement data forensics (profiling), issue management and root-cause analysis capability for data quality issues
@@ -23,7 +23,7 @@ Data Management Core Application Functionality - Evaluation Criteria
 - Reference Data Management:
 - **Data Controls:** Deploy a data quality framework for consistently defining data quality requirements
 - **Governance Workflow:** Implement processes, policies, procedures and standards to govern business critical data.  Data Governance is a centralized control mechanism to manage data availability, security, usability, and integrity.
-- Data Collaboration: 
+- **Data Collaboration:** Empower stakeholders to see data in one place and in the context of their roles.
 - **Certification/Scoring:** Develop data certification processes and associated business solutions to certify the quality of internally generated and externally sourced data with associated evidence (transaction logs, workflow process, audit trail etc.)
 
 
