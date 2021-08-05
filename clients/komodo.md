@@ -2,7 +2,7 @@
 title: Komodo Health
 description: Komodo Health Client Page
 published: true
-date: 2021-08-05T23:28:41.610Z
+date: 2021-08-05T23:35:33.231Z
 tags: 
 editor: markdown
 dateCreated: 2021-07-16T14:34:48.058Z
@@ -21,14 +21,34 @@ Shared Drive folder: https://drive.google.com/drive/folders/1URSgQ4amViUMHYqDlqA
 
 ---
 
-### Pulse Project
-
-### Sentinel Project
-
-### Who we know over there
+### Contacts
 * Doug
 * Marcio
-* Tom 
-* Nicolas
-* Paco
 * Scott
+* Tom (former Qbiz)
+* Nicolas (former Qbiz)
+* Paco (former Qbiz)
+
+---
+
+### Tech Stack
+* Airflow
+  * Custom **A**irflow **A**s **A S**ervice (a3s)
+* Snowflake
+* Spark
+* Pyspark
+* Python
+
+---
+
+
+### Current Projects
+
+#### Pulse (Core) Project
+
+#### Pulse (SaaS) Project
+
+#### Sentinel Project
+
+
+---
