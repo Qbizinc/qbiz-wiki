@@ -2,7 +2,7 @@
 title: Komodo Health
 description: Komodo Health Client Page
 published: true
-date: 2021-08-05T23:35:33.231Z
+date: 2021-08-05T23:37:03.048Z
 tags: 
 editor: markdown
 dateCreated: 2021-07-16T14:34:48.058Z
@@ -45,8 +45,12 @@ Shared Drive folder: https://drive.google.com/drive/folders/1URSgQ4amViUMHYqDlqA
 ### Current Projects
 
 #### Pulse (Core) Project
+Building alerts 
 
 #### Pulse (SaaS) Project
+Helping advance their future platform
+
+### Other Potential Projects
 
 #### Sentinel Project
 
