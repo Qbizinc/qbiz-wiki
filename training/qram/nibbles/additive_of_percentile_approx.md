@@ -2,15 +2,13 @@
 title: Additive of Percentile (Approx)
 description: 
 published: true
-date: 2021-07-29T23:37:14.032Z
+date: 2021-08-09T21:31:26.464Z
 tags: aggregation, horizontal-scalability
 editor: markdown
 dateCreated: 2021-07-29T23:37:14.032Z
 ---
 
-See [additivity](/training/qram/additivity)
-
-## What
+# What
 
 Percentile, quartile, and median are not additive.
 
@@ -22,13 +20,13 @@ A really complex scalar operator is required at the end to extract from the fina
 
 In both cases, the final scalar operator may specify the desired accuracy, so long as the aggregate operator preserves that accuracy, at the cost of aggregator compute and serialization size.
 
-## Note
+# Note
 
 t-digest uses 1-dimensional k-means clustering under the hood.
 
-In [Presto](https://prestodb.io/docs/current/functions/qdigest.html):
-* qdigest_agg(v) -> qdigest type blob
-* merge(blob) = aggregation of qdigest type blobs
-* value_at_quantile(blob, v) = final percentile of v
+> In [Presto](https://prestodb.io/docs/current/functions/qdigest.html):
+> 1. qdigest_agg(v) -> qdigest type blob
+> 2. merge(blob) = aggregation of qdigest type blobs
+> 3. value_at_quantile(blob, v) = final percentile of v
 
 [This approach is not widely known](https://stackoverflow.com/questions/2571358/calculate-the-median-of-a-billion-numbers)
