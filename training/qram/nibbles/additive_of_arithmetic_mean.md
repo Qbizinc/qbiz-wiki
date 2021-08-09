@@ -2,7 +2,7 @@
 title: Additive of Average (Arithmetic Mean)
 description: 
 published: true
-date: 2021-08-09T21:25:01.508Z
+date: 2021-08-09T21:29:05.034Z
 tags: aggregation, horizontal-scalability
 editor: markdown
 dateCreated: 2021-07-29T20:45:06.425Z
