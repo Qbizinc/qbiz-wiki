@@ -2,7 +2,7 @@
 title: Additive of Distinct Count (Approx)
 description: 
 published: true
-date: 2021-08-09T21:30:17.936Z
+date: 2021-08-09T21:32:38.152Z
 tags: aggregation, horizontal-scalability
 editor: markdown
 dateCreated: 2021-07-29T21:05:55.532Z
@@ -18,14 +18,13 @@ The digest is a data structure which is a serialization of an aggregate operator
 
 A really complex scalar operator is required at the end to extract from the final aggregate data structure. The final scalar operator may specify the desired accuracy, so long as the aggregate operator preserves that accuracy, at the cost of aggregator compute and serialization size.
 
-# Notes
+# Note
 
 HLL uses random sampling to form a crappy estimator, then combining with harmonic mean.
 
-In Presto:
+> In Presto:
 > 1. approx_set(v) -> HLL sketch
 > 2. merge(sketch) = aggregation of HLL sketches
 >    This is the aggregation operator.
 > 3. cardinality(sketch) = final distinct count
 >    This is the scalar operator.
-{.is-info}
