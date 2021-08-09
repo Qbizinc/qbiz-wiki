@@ -2,7 +2,7 @@
 title: David Erickson's page
 description: 
 published: true
-date: 2021-08-09T22:09:22.790Z
+date: 2021-08-09T22:09:27.115Z
 tags: people
 editor: markdown
 dateCreated: 2021-08-09T21:31:58.234Z
