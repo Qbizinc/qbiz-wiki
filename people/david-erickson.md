@@ -2,7 +2,7 @@
 title: David Erickson's page
 description: 
 published: true
-date: 2021-08-09T22:09:27.115Z
+date: 2021-08-09T22:12:41.331Z
 tags: people
 editor: markdown
 dateCreated: 2021-08-09T21:31:58.234Z
@@ -33,6 +33,8 @@ David is a Data Consultant (Data Science specialty) for Qbiz.
   * Other books in the MIT Press Essential Knowledge Series
 * [Pattern Recognition and Machine Learning by Bishop](https://www.microsoft.com/en-us/research/publication/pattern-recognition-machine-learning/)
 * [Problem Solving with Algorithms and Data Structures using Python](https://runestone.academy/runestone/books/published/pythonds/index.html)
+* [Machine Learning Yearning by Andrew Ng](https://github.com/ajaymache/machine-learning-yearning)
+* [Machine Learning for Humans](https://medium.com/machine-learning-for-humans/why-machine-learning-matters-6164faf1df12). Great intro book.
 
 ### Software I like
 * [Unpaywall](https://unpaywall.org/). A database of free scholarly articles. Free & legal access to many papers that are behind paywalls on journal webpages.
