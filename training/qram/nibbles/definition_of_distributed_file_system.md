@@ -2,7 +2,7 @@
 title: Definition of Distributed File System
 description: 
 published: true
-date: 2021-08-10T19:19:08.235Z
+date: 2021-08-10T19:19:28.211Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-10T19:19:08.235Z
@@ -24,12 +24,6 @@ In peer-to-peer architectures, everything is distributed and protocols for elast
 Protecting against data loss usually requires saving multiple copies of the same data. In distributed file systems, this means multiple copies of the same blocks saved on different storage nodes.
 
 The number of copies is typically known as the ***replication factor***.
-
-In Hadoop Distributed File System (HDFS), the default block size is 128 MB. This implies that files with a byte-size that is not an integer multiple of 128 MB have empty space at the end.
-- In distributed file systems like HDFS, blocks are saved multiple times across different nodes, based on a replication factor
-  - This guards against data loss.
-  - This may also avoid node hotspots (though in practice few applications take advantage)
-  - In HDFS, these nodes are called DataNodes. The NameNode holds the **table of contents** that points file names to the specific blocks on their DataNodes.
 
 # References
 - [Wikipedia](https://en.wikipedia.org/wiki/Clustered_file_system#Distributed_file_systems)
