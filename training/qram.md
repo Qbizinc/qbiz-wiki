@@ -2,7 +2,7 @@
 title: Qram
 description: 
 published: true
-date: 2021-08-09T23:50:25.399Z
+date: 2021-08-09T23:59:59.347Z
 tags: qram, training
 editor: markdown
 dateCreated: 2021-07-30T00:55:49.975Z
@@ -16,7 +16,7 @@ Qram is currently scoped to:
 - Technical topics
 - Delivery
 
-# Structure
+## Structure
 
 Qram is a collection of ***nibbles***, which are discrete pieces of content which may be consumed in 15 to 20 minutes.
 
@@ -34,7 +34,7 @@ Higher level structures may reuse lower level structures.
 
 Therefore, Qram content is non-hierarchical. Instead, it forms a knowledge graph.
 
-# Production
+## Production
 
 The production workflow for Qram content is under development. For now, please place all new content under the [`/raw/` subdirectory](/training/qram/raw/).
 
