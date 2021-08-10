@@ -2,13 +2,18 @@
 title: Definition of Data Management
 description: Review the core functionality of Data Management applications
 published: true
-date: 2021-08-09T21:20:13.490Z
+date: 2021-08-10T18:27:50.396Z
 tags: data management
 editor: markdown
 dateCreated: 2021-08-03T14:53:06.955Z
 ---
 
-# Components
+# What
+Data Management is a core aspect of an organization’s ability to manage its data and information assets. The term “metadata” describes the various facets of an information asset that can improve its usability throughout its life cycle.
+
+Metadata and its uses go far beyond technical matters. Metadata is used as a reference for business-oriented and technical projects, and lays the foundations for describing, inventorying and understanding data for multiple use cases. Use-case examples include data governance, security and risk, data analysis and data value.
+
+## Components
 - **Data Catalog/Dictionary:** Capture data definitions, business glossaries, data dictionaries, and other metadata required to support the business activities
 - **Automated Data Lineage:** Ability to track a particular data element or set of data elements across various systems of record
 - **Data Models:** Connect physical metadata to specific data models, business terms, definitions and reusable design standards.
@@ -38,4 +43,4 @@ dateCreated: 2021-08-03T14:53:06.955Z
 - [dbmstools business glossary tools](https://dbmstools.com/categories/business-glossary-tools)
 - [dataflog metadata management](https://datafloq.com/read/metadata-management-platforms-efficient-data/6560)
 - [medvel open source](https://medevel.com/15-data-portals-opensource/)
-- [redit open source catalog](https://www.reddit.com/r/BusinessIntelligence/comments/lgezix/opensource_metadata_catalog_amundsen_vs_metacat/)
+- [reddit open source catalog](https://www.reddit.com/r/BusinessIntelligence/comments/lgezix/opensource_metadata_catalog_amundsen_vs_metacat/)
