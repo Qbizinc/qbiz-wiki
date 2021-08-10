@@ -1,8 +1,8 @@
 ---
-title: Overview of Data Management
+title: Data Management
 description: 
 published: true
-date: 2021-08-09T21:23:35.039Z
+date: 2021-08-10T18:22:24.654Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-09T21:23:35.039Z
