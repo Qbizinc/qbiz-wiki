@@ -1,8 +1,8 @@
 ---
-title: Additive of Percentile (Approx)
+title: Additive of N-Tile (Approx)
 description: 
 published: true
-date: 2021-08-09T21:31:26.464Z
+date: 2021-08-10T18:20:21.179Z
 tags: aggregation, horizontal-scalability
 editor: markdown
 dateCreated: 2021-07-29T23:37:14.032Z
