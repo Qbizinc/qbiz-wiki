@@ -1,8 +1,8 @@
 ---
-title: Additivity
+title: Definition of Additivity
 description: 
 published: true
-date: 2021-08-10T18:09:05.299Z
+date: 2021-08-10T18:09:38.030Z
 tags: aggregation, horizontal-scalability
 editor: markdown
 dateCreated: 2021-07-29T19:47:51.148Z
