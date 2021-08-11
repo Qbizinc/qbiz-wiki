@@ -2,7 +2,7 @@
 title: Qram
 description: 
 published: true
-date: 2021-08-11T06:53:22.760Z
+date: 2021-08-11T07:00:11.344Z
 tags: qram, training
 editor: markdown
 dateCreated: 2021-07-30T00:55:49.975Z
@@ -36,7 +36,8 @@ Higher level structures may reuse lower level structures.
 Qram content is non-hierarchical. Instead, it forms a knowledge graph.
 
 ## Production
-
 The production workflow for Qram content is under development. For now, please place all new content under the [`/raw/` subdirectory](/training/qram/raw/).
 
-An editor will review to create the appropriate published Qram content.
+Writing unfinished, crappy stuff down is more important than jumping directly to publication-worthy artifacts!
+
+[Notes on the publishing process may be found here.](/training/qram/raw)
