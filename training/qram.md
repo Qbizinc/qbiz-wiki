@@ -2,7 +2,7 @@
 title: Qram
 description: 
 published: true
-date: 2021-08-11T07:01:34.627Z
+date: 2021-08-11T07:03:05.323Z
 tags: qram, training
 editor: markdown
 dateCreated: 2021-07-30T00:55:49.975Z
@@ -17,8 +17,7 @@ Currently:
 - Technical topics
 - Delivery
 
-## Structure
-
+# When
 Qram is a collection of ***nibbles***, which are discrete pieces of content which may be consumed in 15 to 20 minutes.
 
 ***Nibbles*** are organized into larger structures taking greater amounts of time and focus. These larger structures form a layer of opinionated, curated, sequencing of ***nibbles*** to cover larger topics. These larger structures are named using an analogy of dining:
@@ -34,6 +33,8 @@ Higher level structures may reuse lower level structures.
 ***Nibbles*** are intended to be reusable. For example, a ***nibble*** for performance optimization may be used in a data science ***dish*** as well as a data engineering ***dish***.
 
 Qram content is non-hierarchical. Instead, it forms a knowledge graph.
+
+# How
 
 ## Production
 The production workflow for Qram content is under development. For now, please place all new content under the [`/raw/` subdirectory](/training/qram/raw/).
