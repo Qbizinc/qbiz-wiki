@@ -2,7 +2,7 @@
 title: Qram
 description: 
 published: true
-date: 2021-08-09T23:59:59.347Z
+date: 2021-08-11T06:53:22.760Z
 tags: qram, training
 editor: markdown
 dateCreated: 2021-07-30T00:55:49.975Z
@@ -12,7 +12,8 @@ dateCreated: 2021-07-30T00:55:49.975Z
 
 Qram is a repository for learning for Qbiz.
 
-Qram is currently scoped to:
+## Scope
+Currently:
 - Technical topics
 - Delivery
 
@@ -32,7 +33,7 @@ Higher level structures may reuse lower level structures.
 
 ***Nibbles*** are intended to be reusable. For example, a ***nibble*** for performance optimization may be used in a data science ***dish*** as well as a data engineering ***dish***.
 
-Therefore, Qram content is non-hierarchical. Instead, it forms a knowledge graph.
+Qram content is non-hierarchical. Instead, it forms a knowledge graph.
 
 ## Production
 
