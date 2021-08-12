@@ -2,7 +2,7 @@
 title: Definition of Hive Metastore
 description: 
 published: true
-date: 2021-08-12T23:23:28.317Z
+date: 2021-08-12T23:24:51.903Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-11T02:52:21.513Z
@@ -44,13 +44,15 @@ Therefore:
 - Both the HMS and the HDFS NameNode are single-instance by design.
 
 ### Impala
-[In Impala, since v2.10, the HDFS NameNode may be cached.](https://impala.apache.org/docs/build3x/html/topics/impala_scalability.html) This seeks to avoid the HDFS NameNode side of this stability issue.
+[In Impala, since v2.10, the HDFS NameNode may be cached.](https://impala.apache.org/docs/build3x/html/topics/impala_scalability.html) This seeks to avoid the HDFS NameNode side of this stability issue, as well as dramatically improve performance by avoiding reading from the HDFS NameNode.
 
 This cache exists on every Impala node. It is enabled by default at runtime for a given Impala node once that node sees >= 20,000 HDFS file names. Caching may be turned on completely. The 20,000 file name threshhold may be adjusted as well. There is no way to completely disable caching.
 
 (This caching is not "HDFS caching", which is caching file contents from HDFS DataNodes.)
 
 In large installations, HDFS NameNode caching has been known to bring down clusters, or at least make startup times so long that DevOps is impractical.
+
+Also, the cache may lead to weird inconsistency errors, as Impala nodes must communicate changes to schema/table/partition/location to each other on a peer-to-peer basis.
 
 # References
 - [Hive Design](https://cwiki.apache.org/confluence/display/hive/design)
