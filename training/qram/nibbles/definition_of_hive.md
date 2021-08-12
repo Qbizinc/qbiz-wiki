@@ -2,7 +2,7 @@
 title: Definition of Hive
 description: 
 published: true
-date: 2021-08-12T21:39:15.669Z
+date: 2021-08-12T21:41:30.367Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-11T03:03:28.282Z
@@ -25,7 +25,7 @@ The HMS contains no file-level metadata.
 
 Because of the architectural decision to not include file metadata in the HMS, HDFS does much more work. The benefit is avoiding the file metadata outside of files to become out-of-sync with the files themselves.
 
-[HDFS supports reading by slice, without which self-describing files would be impractical.](/training/qram/nibbles/definition_of_slice_oriented_file_format)
+[HDFS supports reading by slice, without which self-describing files would be impractical.](/training/qram/dishes/definition_of_slice_oriented_file_format)
 
 # References
 - [Wikipedia](https://en.wikipedia.org/wiki/Apache_Hive)
