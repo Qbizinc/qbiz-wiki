@@ -2,7 +2,7 @@
 title: Definition of Hive Metastore
 description: 
 published: true
-date: 2021-08-12T22:07:10.037Z
+date: 2021-08-12T23:12:50.510Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-11T02:52:21.513Z
@@ -30,11 +30,10 @@ That each partition may only have a single location is a major limitation to Hiv
   - Time travel
 
 ## Stability and Performance
-HMS stores locations at the partition-level.
+HMS stores locations at the partition-level. Query engines must then read the list of files for each partition location from the HDFS NameNode.
 
-For tables with "too many" partitions, HMS (usually PostgreSQL) falls down. ([This annoying article by Cloudera simply says, "don't do that!"](https://blog.cloudera.com/partition-management-in-hadoop/))
-
-For tables with too many files belonging to the location of any given partition, the HDFS NameNode falls down.
+- For tables with "too many" partitions, HMS (usually PostgreSQL) falls down. ([This annoying article by Cloudera simply says, "don't do that!"](https://blog.cloudera.com/partition-management-in-hadoop/))
+- For tables with too many files belonging to the location of any given partition, the HDFS NameNode falls down.
 
 Therefore:
 - `# of files in a table = # of partitions in a table * # of files per partition`
@@ -43,13 +42,6 @@ Therefore:
   - Moving partitions on HMS to adjust `# of partitions in a table`
   - Relocating the files on the HDFS NameNode to make partition locations work (every file in a partition must be in a subdirectory tree of the partition location)
 - Both the HMS and the HDFS NameNode are single-instance by design.
-
-Because the Hive Metastore is the only metadata store for query engines which use it, querying it to get the HDFS paths to use for a query always has to be at the partition level. For tables with many partitions (FAANG-scale may be hundreds of thousands of partitions per table), PostgreSQL falls down. The real issue is that any query engine that uses **WHERE-clause-predicate-pushdown-into-FROM-clause** cannot send the Hive Metastore a query that filters on those **FROM-clause-predicates** because the query engine cannot know ahead of time what the location property may contain or even the order of the predicates for the directory structure. Therefore, a SQL query that the query engine knows ahead of time will hit only one partition still has to get all of the partitions for the corresponding table from HMS.
-
-## Other Query Engines
-- Presto
-- Impala
-- Spark (though Databricks now encourages Delta Lake)
 
 # References
 - [Hive Design](https://cwiki.apache.org/confluence/display/hive/design)
