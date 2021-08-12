@@ -2,7 +2,7 @@
 title: Definition of Hive Metastore
 description: 
 published: true
-date: 2021-08-12T23:25:04.791Z
+date: 2021-08-12T23:26:09.120Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-11T02:52:21.513Z
@@ -50,9 +50,8 @@ This cache exists on every Impala node. It is enabled by default at runtime for 
 
 (This caching is not "HDFS caching", which is caching file contents from HDFS DataNodes.)
 
-In large installations, HDFS NameNode caching has been known to bring down clusters, or at least make startup times so long that DevOps is impractical.
-
-Also, the cache may lead to weird inconsistency errors, as Impala nodes must communicate changes (writes) to schema/table/partition/location to each other on a peer-to-peer basis.
+- In large installations, HDFS NameNode caching has been known to bring down clusters, or at least make startup times so long that DevOps is impractical.
+- The cache may lead to weird inconsistency errors, as Impala nodes must communicate changes (writes) to schema/table/partition/location to each other on a peer-to-peer basis. The probability of this increases with the number of partitions in an installation.
 
 # References
 - [Hive Design](https://cwiki.apache.org/confluence/display/hive/design)
