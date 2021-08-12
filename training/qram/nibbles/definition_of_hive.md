@@ -2,7 +2,7 @@
 title: Definition of Hive
 description: 
 published: true
-date: 2021-08-11T03:11:00.056Z
+date: 2021-08-12T21:39:15.669Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-11T03:03:28.282Z
@@ -14,7 +14,18 @@ Hive was created to allow users to write SQL queries instead of Java in Hadoop M
 Originally, Hive compiled SQL to Hadoop MapReduce. Hive has since moved onto [Tez](https://tez.apache.org/), which works around a key architectural limitation of Hadoop MapReduce.
 
 ## Hive Metastore
-In order to compile SQL to Hadoop MR or Tez, Hive maintains the relational table definitions. HDFS is file-aware; it does not have tables. Therefore, Hive keeps metadata of the Hive relational database (list of tables, etc.) as well as which HDFS files they are actually stored as. This is the [Hive Metastore](https://docs.cloudera.com/runtime/7.2.10/hive-hms-overview/topics/hive-hms-introduction.html)
+In order to compile SQL to Hadoop MR or Tez, Hive maintains the relational table definitions. HDFS and Hadoop MR / Tez are file-aware; they do not have tables. Therefore, Hive keeps metadata of the Hive relational database (list of tables, etc.) as well as which HDFS paths they are actually stored as. This is the [Hive Metastore (HMS)](https://docs.cloudera.com/runtime/7.2.10/hive-hms-overview/topics/hive-hms-introduction.html).
+
+## Self-Describing Files
+The HMS contains no file-level metadata.
+1. Hive reads the HMS to determine which partitions to read for a given query.
+2. Those partitions each have an HDFS path.
+3. Hive must read from the HDFS NameNode the list of files that belong to that HDFS path.
+4. Hive then examines each file to see if they should be processed further.
+
+Because of the architectural decision to not include file metadata in the HMS, HDFS does much more work. The benefit is avoiding the file metadata outside of files to become out-of-sync with the files themselves.
+
+[HDFS supports reading by slice, without which self-describing files would be impractical.](/training/qram/nibbles/definition_of_slice_oriented_file_format)
 
 # References
 - [Wikipedia](https://en.wikipedia.org/wiki/Apache_Hive)
