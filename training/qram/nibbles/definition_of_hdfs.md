@@ -2,7 +2,7 @@
 title: Definition of HDFS
 description: 
 published: true
-date: 2021-08-12T21:45:40.759Z
+date: 2021-08-12T21:48:05.054Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-10T19:35:56.434Z
@@ -22,6 +22,8 @@ Hadoop Distributed File System (HDFS) is a distributed file system implemented i
 
 ## API
 [Perhaps the most important feature is the ability to read only slices of files.](/training/qram/dishes/slice_oriented_file_format)
+
+[Hive-type query engines depend on this feature.](training/qram/nibbles/definition_of_hive_type)
 
 For example:
 > 1. A file is 200 MB.
