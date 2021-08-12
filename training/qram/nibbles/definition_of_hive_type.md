@@ -2,7 +2,7 @@
 title: Definition of Hive Type
 description: 
 published: true
-date: 2021-08-11T21:01:11.881Z
+date: 2021-08-12T21:48:57.427Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-11T21:01:11.881Z
@@ -15,7 +15,7 @@ Hive was developed later under the Hadoop umbrella to provide a SQL read query i
 
 Because of the open-source, standards-based nature of Hive, newer SQL-based query engines are designed to be compatible with this architecture.
 
-Qbiz categorizes this type of architecture as "Hive-type". (Hive-type is not in common usage.)
+Qbiz categorizes this type of architecture as "Hive-type". (The term "Hive-type" is not in common usage.)
 
 ## Components
 - Storage layer in the style of HDFS
