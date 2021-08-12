@@ -2,7 +2,7 @@
 title: Definition of Hive Metastore
 description: 
 published: true
-date: 2021-08-12T21:53:10.604Z
+date: 2021-08-12T21:56:02.544Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-11T02:52:21.513Z
@@ -17,7 +17,7 @@ The Hive Metastore (HMS) stores the relational database metadata for Hive:
 Each single-partition table and partition (in multi-partition tables) has a location property, that contains a file system path. This path may be a file or a directory. The Hive Metastore simply stores this as a string; it's up to Hive (or whichever query engine) to decipher the path.
 
 ### Location Property Limitations
-That each partition may only have a single location is a major limitation to Hive architecture. In contrast, Snowflake and Delta Lake internally allow multiple paths, which sets the foundation for:
+That each partition may only have a single location is a major limitation to Hive architecture. In contrast, Snowflake and Delta Lake internally allow multiple locations, which sets the foundation for:
 - Persistent data structures (PDS)
   - Avoids full-copy-on-write
 - Serializable isolation-level version control
