@@ -2,7 +2,7 @@
 title: Definition of Hive
 description: 
 published: true
-date: 2021-08-12T21:41:44.120Z
+date: 2021-08-17T22:22:37.780Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-11T03:03:28.282Z
