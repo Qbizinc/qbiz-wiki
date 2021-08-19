@@ -2,7 +2,7 @@
 title: The Data Science Feature Store
 description: 
 published: true
-date: 2021-08-19T18:33:02.397Z
+date: 2021-08-19T19:10:56.294Z
 tags: sales-support, pre-sales, data-science-enablement
 editor: markdown
 dateCreated: 2021-08-19T18:32:29.337Z
@@ -11,7 +11,7 @@ dateCreated: 2021-08-19T18:32:29.337Z
 See [Operationalizing Data Science](/sales-enablement/nibbles/operationalizing-data-science)
 
 # What
-* A feature store is a curated collection of data intended for model training. Each level of event granularity may imply a unique data model, with its own set of dimensional data
+A feature store is a curated collection of data intended for model training. Each level of event granularity may imply a unique data model, with its own set of dimensional data
 
 # Why
 * Data Warehouses are intended for reporting, not model training. The data may be too aggregated, dimensionalized, and at an inappropriate/rigid event granularity
