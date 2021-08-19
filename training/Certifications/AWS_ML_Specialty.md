@@ -2,7 +2,7 @@
 title: AWS ML Specialty
 description: AWS has a certification for Machine Learning specialty. 
 published: true
-date: 2021-08-19T17:44:49.090Z
+date: 2021-08-19T17:54:58.566Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-16T16:47:39.772Z
@@ -89,19 +89,41 @@ The bottom layer, ML Frameworks + Infrastructure, contains the “closest to the
 
 ### AI Services
 #### [Amazon Augmented AI](https://aws.amazon.com/augmented-ai/)
+- machine learning service which makes it easy to build the workflows required for human review
 #### [Amazon CodeGuru](https://aws.amazon.com/codeguru/)
 #### [Amazon Comprehend](https://aws.amazon.com/comprehend/)
+- natural language processing (NLP) service
+- uses machine learning to find insights and relationships in text
+- learn the sentiment hidden inside language (identifying negative reviews, or positive customer interactions with customer service agents), at almost limitless scale
+
 #### [Amazon Comprehend Medical](https://aws.amazon.com/comprehend/medical/)
 #### [Amazon Forecast](https://aws.amazon.com/forecast/)
+- fully managed service that uses machine learning to deliver highly accurate forecasts
+- combine time series data with additional variables to build forecasts
+- no servers to provision and no machine learning models to build, train, or deploy
+
 #### [Amazon Fraud Detector](https://aws.amazon.com/fraud-detector/)
 #### [Amazon HealthLake](https://aws.amazon.com/healthlake/)
 #### [Amazon Kendra](https://aws.amazon.com/kendra/)
 #### [Amazon Lex](https://aws.amazon.com/lex/)
+- service for building conversational interfaces into any application using voice and text
+- advanced deep learning functionalities of automatic speech recognition (ASR) for converting speech to text, and natural language understanding (NLU) to recognize the intent of the text
+- build applications with highly engaging user experiences and lifelike conversational interactions
+
 #### [Amazon Lookout for Equipment](https://aws.amazon.com/lookout-for-equipment/)
 #### [Amazon Lookout for Vision](https://aws.amazon.com/lookout-for-vision/)
 #### [Amazon Monitron](https://aws.amazon.com/monitron/)
 #### [Amazon Personalize](https://aws.amazon.com/personalize/)
+- real-time personalized product and content recommendations, and targeted marketing promotions
+- simple APIs to easily integrate sophisticated personalization capabilities into your systems and platform
+- automates build, train, tune, and deploy a machine learning recommendation model so you can deliver personalized user experiences faster
+- data is encrypted to be private and secure
+
 #### [Amazon Polly](https://aws.amazon.com/polly/)
+- Text-to-Speech (TTS) service uses advanced deep learning technologies to synthesize natural sounding human speech
+- turns text into lifelike speech
+- create applications that talk, and build entirely new categories of speech-enabled products
+- dozens of lifelike voices across a broad set of languages
 
 #### [Amazon Rekognition](https://aws.amazon.com/rekognition/)
 - add image and video analysis to your applications using proven, highly scalable, deep learning technology
@@ -123,6 +145,11 @@ goes beyond simple optical character recognition (OCR)
 - Amazon Transcribe Medical to add medical speech to text capabilities to clinical documentation applications
 
 #### [Amazon Translate](https://aws.amazon.com/translate/)
+- delivers fast, high-quality, and affordable language translation
+- uses deep learning models to deliver more accurate and more natural sounding translation than traditional statistical and rule-based translation algorithms
+- localize content - such as websites and applications - for international users
+- translate large volumes of text efficiently and easily
+
 #### [AWS Panorama](https://aws.amazon.com/panorama/)
 
 ### ML Services
