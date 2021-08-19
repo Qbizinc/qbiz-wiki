@@ -2,13 +2,13 @@
 title: AWS ML Specialty
 description: AWS has a certification for Machine Learning specialty. 
 published: true
-date: 2021-08-19T17:19:40.962Z
+date: 2021-08-19T17:26:03.617Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-16T16:47:39.772Z
 ---
 
-# AWS ML Specialty
+# Exam Information
 
 ## Background
 The AWS Certified Machine Learning - Specialty certification is intended for individuals who perform a development or data science role. It validates a candidate's ability to design, implement, deploy, and maintain machine learning (ML) solutions for given business problems.
@@ -21,27 +21,27 @@ There are two question types on the exam, multiple choice, and multiple response
 The exam is organized into four key topics, with several objectives under each topic, as outlined below.  
 
 **Domain 1: Data Engineering (20%)**
-1.1 Create data repositories for machine learning.
-1.2 Identify and implement a data-ingestion solution.
-1.3 Identify and implement a data-transformation solution.
+- **1.1** Create data repositories for machine learning.
+- **1.2** Identify and implement a data-ingestion solution.
+- **1.3** Identify and implement a data-transformation solution.
 
 **Domain 2: Exploratory Data Analysis (24%)**
-2.1 Sanitize and prepare data for modeling.
-2.2 Perform feature engineering.
-2.3 Analyze and visualize data for machine learning.
+- **2.1** Sanitize and prepare data for modeling.
+- **2.2** Perform feature engineering.
+- **2.3** Analyze and visualize data for machine learning.
 
 **Domain 3: Modeling (36%)**
-3.1 Frame business problems as machine learning problems.
-3.2 Select the appropriate model(s) for a given machine learning problem.
-3.3 Train machine learning models.
-3.4 Perform hyperparameter optimization.
-3.5 Evaluate machine learning models.
+- **3.1** Frame business problems as machine learning problems.
+- **3.2** Select the appropriate model(s) for a given machine learning problem.
+- **3.3** Train machine learning models.
+- **3.4** Perform hyperparameter optimization.
+- **3.5** Evaluate machine learning models.
 
 **Domain 4: Machine Learning Implementation and Operations (20%)**
-4.1 Build machine learning solutions for performance, availability, scalability, resiliency, and fault tolerance.
-4.2 Recommend and implement the appropriate machine learning services and features for a given problem.
-4.3 Apply basic AWS security practices to machine learning solutions.
-4.4 Deploy and operationalize machine learning solutions.
+- **4.1** Build machine learning solutions for performance, availability, scalability, resiliency, and fault tolerance.
+- **4.2** Recommend and implement the appropriate machine learning services and features for a given problem.
+- **4.3** Apply basic AWS security practices to machine learning solutions.
+- **4.4** Deploy and operationalize machine learning solutions.
 
 More details on the structure of the exam are available via [AWS's provided Exam Guide](https://d1.awsstatic.com/training-and-certification/docs-ml/AWS-Certified-Machine-Learning-Specialty_Exam-Guide.pdf).
 
@@ -74,12 +74,14 @@ More details on the structure of the exam are available via [AWS's provided Exam
 [Math for Machine Learning](https://www.aws.training/Details/eLearning?id=26597) - (8 hours)
 [Linear and Logistic Regression](https://www.aws.training/Details/eLearning?id=26599) - (8.5 hours) 
   
-## Exam Material 
+# Exam Material 
+## Data Engineering
+## Exploratory Data Analysis
+## Modeling
+## ML Implementation and Operations
 
-## Appendix
-### More
-
-### Links
+# Appendix
+## Links
 **Vetted Practice Tests**
 [Udemy Practice Test](https://www.udemy.com/course/aws-machine-learning-practice-exam/ "65 questions")
 [Braincert Practice Test](https://www.braincert.com/course/22419-AWS-Certified-Machine-Learning-%E2%80%93-Specialty-Practice-Exams "3 tests with 50 questions each and 1 test with 37 questions")
