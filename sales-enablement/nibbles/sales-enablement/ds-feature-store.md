@@ -2,13 +2,13 @@
 title: The Data Science Feature Store
 description: 
 published: true
-date: 2021-08-19T18:32:29.337Z
+date: 2021-08-19T18:33:02.397Z
 tags: sales-support, pre-sales, data-science-enablement
 editor: markdown
 dateCreated: 2021-08-19T18:32:29.337Z
 ---
 
-See [operationalizing-data-science](/sales-enablement/nibbles/operationalizing-data-science)
+See [Operationalizing Data Science](/sales-enablement/nibbles/operationalizing-data-science)
 
 # What
 * A feature store is a curated collection of data intended for model training. Each level of event granularity may imply a unique data model, with its own set of dimensional data
