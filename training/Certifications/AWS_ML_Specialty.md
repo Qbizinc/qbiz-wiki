@@ -2,7 +2,7 @@
 title: AWS ML Specialty
 description: AWS has a certification for Machine Learning specialty. 
 published: true
-date: 2021-08-19T22:05:02.142Z
+date: 2021-08-19T22:09:25.876Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-16T16:47:39.772Z
@@ -162,7 +162,6 @@ SageMaker is a fully managed service, empowering developers and data scientists 
 
 ![sagemaker_workflow.png](/images/aws_ml_certification/sagemaker_workflow.png)
 
-#### ML Services: SageMaker Workflow
 **Prepare**
 [Data Wrangler](https://aws.amazon.com/sagemaker/data-wrangler/)
 [Feature Store](https://aws.amazon.com/sagemaker/feature-store/)
@@ -212,8 +211,15 @@ SageMaker is a fully managed service, empowering developers and data scientists 
 > [Autopilot](https://aws.amazon.com/sagemaker/autopilot/)
 > [Distributed Training](https://aws.amazon.com/sagemaker/distributed-training/)
 > [Neo](https://aws.amazon.com/sagemaker/neo/)
+<p></br>
 
 ### Frameworks
+[**AWS DL AMIs**](https://aws.amazon.com/machine-learning/amis/)
+[**AWS DL Containers**](https://aws.amazon.com/machine-learning/containers/)
+[TensorFlow on AWS](https://aws.amazon.com/tensorflow/)
+[PyTorch on AWS]()
+[Apache MXNet on AWS]()
+[Hugging Face on Amazon SageMaker]()
 
 ### Infrastructure
 ## Data Engineering
