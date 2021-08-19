@@ -2,7 +2,7 @@
 title: AWS ML Specialty
 description: AWS has a certification for Machine Learning specialty. 
 published: true
-date: 2021-08-19T17:54:58.566Z
+date: 2021-08-19T18:34:01.041Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-16T16:47:39.772Z
@@ -76,6 +76,7 @@ More details on the structure of the exam are available via [AWS's provided Exam
   
 # Exam Material 
 ## AWS ML Stack
+![aws_ml_stack.png](/images/aws_ml_certification/aws_ml_stack.png)
 The AWS ML stack is made up of three key layers of abstraction.  When building a machine learning solution, key priorities to balance may consist of:
 - speed to market
 - level of customization
@@ -106,7 +107,7 @@ The bottom layer, ML Frameworks + Infrastructure, contains the “closest to the
 #### [Amazon HealthLake](https://aws.amazon.com/healthlake/)
 #### [Amazon Kendra](https://aws.amazon.com/kendra/)
 #### [Amazon Lex](https://aws.amazon.com/lex/)
-- service for building conversational interfaces into any application using voice and text
+- service for building conversational interfaces into any application using voice and text (chatbots)
 - advanced deep learning functionalities of automatic speech recognition (ASR) for converting speech to text, and natural language understanding (NLU) to recognize the intent of the text
 - build applications with highly engaging user experiences and lifelike conversational interactions
 
@@ -153,6 +154,7 @@ goes beyond simple optical character recognition (OCR)
 #### [AWS Panorama](https://aws.amazon.com/panorama/)
 
 ### ML Services
+
 ### Frameworks
 ### Infrastructure
 ## Data Engineering
