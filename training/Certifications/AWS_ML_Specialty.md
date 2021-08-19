@@ -2,7 +2,7 @@
 title: AWS ML Specialty
 description: AWS has a certification for Machine Learning specialty. 
 published: true
-date: 2021-08-19T18:34:01.041Z
+date: 2021-08-19T22:05:02.142Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-16T16:47:39.772Z
@@ -86,7 +86,8 @@ At the top layer, you have AI Services, which are “fully managed services for 
 
 The middle layer, ML Services, is primarily made up of SageMaker related tools.  SageMaker spans the machine learning pipeline by offering solutions for labeling data as well as building, training and deploying machine learning models while largely abstracting away infrastructure maintenance requirements.  
 
-The bottom layer, ML Frameworks + Infrastructure, contains the “closest to the metal” solutions, allowing machine learning practitioners to build machine learning solutions from the ground up.  With deep learning containers and images, AWS supports many common machine learning frameworks such as TensorFlow, PyTorch and Apache MXNet.  
+The bottom layer, ML Frameworks + Infrastructure, contains the “closest to the metal” solutions, allowing machine learning practitioners to build machine learning solutions from the ground up.  With deep learning containers and images, AWS supports many common machine learning frameworks such as TensorFlow, PyTorch and Apache MXNet.
+<p></br>
 
 ### AI Services
 #### [Amazon Augmented AI](https://aws.amazon.com/augmented-ai/)
@@ -152,10 +153,68 @@ goes beyond simple optical character recognition (OCR)
 - translate large volumes of text efficiently and easily
 
 #### [AWS Panorama](https://aws.amazon.com/panorama/)
+- allows organizations to bring computer vision (CV) to on-premises cameras to make predictions locally with high accuracy and low latency
+<p></br>
 
 ### ML Services
+[SageMaker](https://aws.amazon.com/sagemaker/)
+SageMaker is a fully managed service, empowering developers and data scientists to process, build, train and deploy machine models quickly and efficiently.  All components required for machine learning are included in a single toolset so models get to production faster, with less effort, and at lower cost.  
+
+![sagemaker_workflow.png](/images/aws_ml_certification/sagemaker_workflow.png)
+
+#### ML Services: SageMaker Workflow
+**Prepare**
+[Data Wrangler](https://aws.amazon.com/sagemaker/data-wrangler/)
+[Feature Store](https://aws.amazon.com/sagemaker/feature-store/)
+[**Ground Truth**](https://aws.amazon.com/sagemaker/groundtruth/)
+- fully managed data labeling service
+- workflows support a variety of use cases including 3D point clouds, video, images, and text
+- labelers have access to assistive labeling features such as automatic 3D cuboid snapping, removal of distortion in 2D images, and auto-segment tools to reduce the time required to label datasets
+- offers automatic data labeling which uses a machine learning model to label your data
+
+[Clarify](https://aws.amazon.com/sagemaker/clarify/)
+
+**Build**
+[**Studio**](https://aws.amazon.com/sagemaker/studio/)
+- first fully integrated development environment (IDE) for machine learning (ML)
+- unifies at last all the tools needed for ML development
+- developers can write code, track experiments, visualize data, and perform debugging and monitoring all within a single, integrated visual interface, significantly boosting developer productivity
+- quickly move back and forth between steps, and also clone, tweak, and replay them.
+- gives developers the ability to make changes quickly, observe outcomes, and iterate faster, reducing the time to market for high quality ML solutions
+
+[**Autopilot**](https://aws.amazon.com/sagemaker/autopilot/)
+- based on your data, automatically trains and tunes the best machine learning models for classification or regression 
+- maintain full control and visibility
+- provide a tabular dataset and select the target column to predict, which can be a number (such as a house price, called regression), or a category (such as spam/not spam, called classification)
+- Autopilot will automatically explore different solutions to find the best model
+- directly deploy the model to production with just one click, or iterate on the recommended solutions within Studio to further improve the model quality
+
+[JumpStart](https://aws.amazon.com/sagemaker/getting-started/)
+
+**Train & Tune**
+[Debugger](https://aws.amazon.com/sagemaker/debugger/)
+[Distributed Training](https://aws.amazon.com/sagemaker/distributed-training/)
+
+**Deploy & Manage**
+[Pipelines](https://aws.amazon.com/sagemaker/pipelines/)
+[Model Monitor](https://aws.amazon.com/sagemaker/model-monitor/)
+[Kubernetes Integration](https://aws.amazon.com/sagemaker/kubernetes/)
+[Edge Manager](https://aws.amazon.com/sagemaker/edge-manager/)
+[**Neo**](https://aws.amazon.com/sagemaker/neo/)
+- enables developers to train machine learning models once and run them anywhere in the cloud and at the edge
+- optimizes models to run up to twice as fast, with less than a tenth of the memory footprint, with no loss in accuracy
+- automatically optimizes machine learning models to perform at up to twice the speed with no loss in accuracy
+
+
+> The most commonly covered services on the exam are linked below, but others may be worthwhile to skim. However, the most important documentation to study regarding SageMaker is the [developer guide](https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html). 
+>
+> [Ground Truth](https://aws.amazon.com/sagemaker/groundtruth/) 
+> [Autopilot](https://aws.amazon.com/sagemaker/autopilot/)
+> [Distributed Training](https://aws.amazon.com/sagemaker/distributed-training/)
+> [Neo](https://aws.amazon.com/sagemaker/neo/)
 
 ### Frameworks
+
 ### Infrastructure
 ## Data Engineering
 ### 1.1 Create data repositories for machine learning
@@ -168,6 +227,22 @@ goes beyond simple optical character recognition (OCR)
 ## Modeling
 ### 3.1 Frame business problems as machine learning problems
 ### 3.2 Select the appropriate model(s) for a given machine learning problem
+**Classification Models**
+KNN
+
+**Regression/Classification Models**
+Linear Learner
+XGBoost
+
+**Natural Language Processing**
+BlazingText
+Sequence2Sequence
+Object2Vec
+
+**Computer Vision**
+Semantic Segmentation
+<p></br>
+
 ### 3.3 Train machine learning models
 ### 3.4 Perform hyperparameter optimization
 ### 3.5 Evaluate machine learning models
@@ -181,7 +256,7 @@ goes beyond simple optical character recognition (OCR)
 **Vetted Practice Tests**
 [Udemy Practice Test](https://www.udemy.com/course/aws-machine-learning-practice-exam/ "65 questions")
 [Braincert Practice Test](https://www.braincert.com/course/22419-AWS-Certified-Machine-Learning-%E2%80%93-Specialty-Practice-Exams "3 tests with 50 questions each and 1 test with 37 questions")
-[Official AWS Certified Machine Learning - Specialty Practice (MLS-P01)](https://www.certmetrics.com/amazon/)
+[Official AWS Certified Machine Learning - Specialty Practice Test (MLS-P01)](https://www.certmetrics.com/amazon/)
 
 **Important Nibbles of Info**
 [Firehose Data Formats](https://docs.aws.amazon.com/firehose/latest/dev/record-format-conversion.html)
