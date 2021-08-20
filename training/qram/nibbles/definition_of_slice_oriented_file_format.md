@@ -2,7 +2,7 @@
 title: Definition of Slice Oriented File Format
 description: 
 published: true
-date: 2021-08-12T16:57:39.680Z
+date: 2021-08-20T16:26:26.954Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-11T22:26:45.011Z
@@ -32,6 +32,10 @@ These denote the file format, but also denote that the file is actually complete
 Typically, these are the first and last 4-bytes in utf-8. The slice feature of HDFS allows readers to ask for these first to confirm:
 - the file is well-formed
 - the file format itself
+
+For example, Parquet has `PAR1` in utf-8 (same as ascii) as the first and last 4-bytes.
+
+The exception is Hadoop Sequence Files, which only has a header of `SEQ<#>`, where `<#>` is the format version number. The latest version is `6`.
 
 ### Block-Level Compression
 In the above example, gzip was shown not to be compatible with arbitrary slicing. (Mathematically, compression is identical to encryption, so blobs are only readable if the decompression algorithm has the whole blob.)
