@@ -2,7 +2,7 @@
 title: AWS ML Specialty
 description: AWS has a certification for Machine Learning specialty. 
 published: true
-date: 2021-08-20T21:03:42.655Z
+date: 2021-08-20T21:18:55.694Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-16T16:47:39.772Z
@@ -507,26 +507,29 @@ Machine learning in the hands of developers, literally, with a fully programmabl
 # Exam Material
 ## Data Engineering
 ### 1.1 Create data repositories for machine learning
-Dataset generation
+> **For the exam you need to understand...**
+>
+> how to generate data with SageMaker Ground Truth, Mechanical Turk, Kinesis Data Analytics, and Kinesis Video Streams
+> know tradeoffs between AWS storage solutions
+{.is-info}
 
-Key AWS Services
-Ground Truth
-Mechanical Turk
-Kinesis Data Analytics
-Kinesis Video Streams
-
+<br></br>
 ### 1.2 Identify and implement a data-ingestion solution
 ### 1.3 Identify and implement a data-transformation solution
 ## Exploratory Data Analysis
 ### 2.1 Sanitize and prepare data for modeling
-> **Question Specific**
-> Understand what to do when you have imbalanced data
-> Understand what to do with variable that are highly correlated
-> Understand why and how to augment data in both tabular and image form
-> Understand how to handle missing values and outliers
+> **For the exam you need to understand...**
+>
+> what to do when you have imbalanced data
+> what to do with variable that are highly correlated
+> why and how to augment data in both tabular, image, and text form
+> how to handle missing values and outliers
+> how to clean text data
+> how to handle scaling and normalizing tabular and image
+> SageMaker specific practices (formats, labels, pipe vs file, local mode, etc.)
 {.is-info}
 
-fgf
+<br></br>
 ### 2.2 Perform feature engineering
 
 ### 2.3 Analyze and visualize data for machine learning
@@ -588,6 +591,7 @@ Semantic Segmentation
 [Firehose Data Formats](https://docs.aws.amazon.com/firehose/latest/dev/record-format-conversion.html)
 [SageMaker Endpoint Scaling](https://docs.aws.amazon.com/firehose/latest/dev/record-format-conversion.html)
 [SageMaker and VPCs](https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-notebook-and-internet-access.html)
+[Scaling and Normalization of Data](https://towardsai.net/p/data-science/how-when-and-why-should-you-normalize-standardize-rescale-your-data-3f083def38ff)
 
 
 **Additional study guides**
