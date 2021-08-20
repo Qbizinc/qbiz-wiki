@@ -2,7 +2,7 @@
 title: AWS ML Specialty
 description: AWS has a certification for Machine Learning specialty. 
 published: true
-date: 2021-08-20T18:14:45.638Z
+date: 2021-08-20T18:24:53.976Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-16T16:47:39.772Z
@@ -330,9 +330,34 @@ Kinesis facilitates the streaming of data, making it easy to collect, process, a
 
 ### Storage
 ### ETL
+[AWS Glue](https://aws.amazon.com/glue/)
+- fully managed extract, transform, and load (ETL) service that makes it easy for customers to prepare and load their data for analytics
+- point AWS Glue to your data stored on AWS, and AWS Glue discovers your data and stores the associated metadata (e.g. table definition and schema) in the AWS Glue Data Catalog
+- Once cataloged, your data is immediately searchable, queryable, and available for ETL
+
 ### Distributed Computing
+
 ### Containers
 ### Orchestration
+[AWS Step Functions](https://aws.amazon.com/sqs/)
+- serverless function orchestrator that makes it easy to sequence AWS Lambda functions and multiple AWS services into business-critical applications
+- create and run a series of checkpointed and event-driven workflows that maintain the application state
+- output of one step acts as input into the next
+- Each step in your application executes in order and as expected based on your defined business logic
+- automatically manages error handling, retry logic, and state; with built-in operational controls, Step Functions manages sequencing
+
+[AWS Lambda](https://aws.amazon.com/lambda/)
+- run code without provisioning or managing servers; pay only for the compute time you consume
+- upload your code and Lambda takes care of everything required to run and scale your code with high availability
+- set up your code to automatically trigger from other AWS services or call it directly from any web or mobile app
+
+[AWS Batch](https://aws.amazon.com/batch/)
+- easily and efficiently run hundreds of thousands of batch computing jobs on AWS
+- dynamically provisions the optimal quantity and type of compute resources (e.g., CPU or memory optimized instances) based on the volume and specific resource requirements of the batch jobs submitted
+- no need to install and manage batch computing software or server clusters that you use to run your jobs, allowing you to focus on analyzing results and solving problems
+- plans, schedules, and executes your batch computing workloads across the full range of AWS compute services and features, such as Amazon EC2 and Spot Instances
+
+
 ### Search
 [ElasticSearch](https://aws.amazon.com/elasticsearch-service/)
 
