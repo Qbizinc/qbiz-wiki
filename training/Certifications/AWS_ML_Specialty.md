@@ -2,7 +2,7 @@
 title: AWS ML Specialty
 description: AWS has a certification for Machine Learning specialty. 
 published: true
-date: 2021-08-20T21:18:55.694Z
+date: 2021-08-20T21:41:13.953Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-16T16:47:39.772Z
@@ -534,23 +534,23 @@ Machine learning in the hands of developers, literally, with a fully programmabl
 
 ### 2.3 Analyze and visualize data for machine learning
 **Scatter Plots**
-![scatter_plots.png](/images/aws_ml_certification/scatter_plots.png)
+![scatter_plots.png](/images/aws_ml_certification/scatter_plots.png =650x)
 <br></br>
 
 **Histograms**
-![histogram.png](/images/aws_ml_certification/histogram.png)
+![histogram.png](/images/aws_ml_certification/histogram.png =650x)
 <br></br>
 
 **Scatter Matrix**
-![scatter_matrix.png](/images/aws_ml_certification/scatter_matrix.png)
+![scatter_matrix.png](/images/aws_ml_certification/scatter_matrix.png =750x)
 <br></br>
 
 **Correlation Matrix**
-![correlation_matrix.png](/images/aws_ml_certification/correlation_matrix.png)
+![correlation_matrix.png](/images/aws_ml_certification/correlation_matrix.png =650x)
 <br></br>
 
 **Confusion Matrix**
-![confusion_matrix.png](/images/aws_ml_certification/confusion_matrix.png)
+![confusion_matrix.png](/images/aws_ml_certification/confusion_matrix.png =450x)
 <br></br>
 
 ## Modeling
