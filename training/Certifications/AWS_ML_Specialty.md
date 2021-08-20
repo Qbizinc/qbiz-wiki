@@ -2,7 +2,7 @@
 title: AWS ML Specialty
 description: AWS has a certification for Machine Learning specialty. 
 published: true
-date: 2021-08-20T18:24:53.976Z
+date: 2021-08-20T18:49:36.686Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-16T16:47:39.772Z
@@ -329,6 +329,41 @@ Kinesis facilitates the streaming of data, making it easy to collect, process, a
 - build and run production applications on Apache Kafka without needing Apache Kafka infrastructure management expertise; spend less time managing infrastructure and more time building applications
 
 ### Storage
+[AWS Lake Formation](https://aws.amazon.com/lake-formation/)
+- data lake is a centralized, curated, and secured repository that stores all your data, both in its original form and prepared for analysis
+- creating a data lake with Lake Formation is as simple as defining data sources and what data access and security policies you want to apply
+
+[**Amazon S3**](https://aws.amazon.com/s3/)
+Storage for a data lake
+![s3_bucket_access.png](/images/aws_ml_certification/s3_bucket_access.png)
+| [Storage Class](https://aws.amazon.com/s3/storage-classes/) | Description |
+| --------- | ----------- |
+| Standard | frequent access of data |
+| Intelligent-Tiering | automatically optimizes storage costs for data with changing access patterns |
+| Standard-Infrequent Access | standard with less access needed |
+| One Zone-Infrequent Access | lower cost with less access and stores in one-zone |
+| Glacier | cheap for slow reada |
+| Glacier Deep Archive | slowest method |
+| Outpost | on prem |
+
+[Amazon FSx for Lustre](https://aws.amazon.com/s3/)
+- open-source highly scalable, highly distributed, and highly parallel file system for compute workloads like deep learning
+- When your training data is already in Amazon S3 and you plan to run training jobs several times using different algorithms and parameters, consider using Amazon FSx for Lustre, a file system service
+- speeds up your training jobs by serving your Amazon S3 data to Amazon SageMaker at high speeds
+- first time you run a training job, FSx for Lustre automatically copies data from Amazon S3 and makes it available to Amazon SageMaker
+- use the same Amazon FSx file system for subsequent iterations of training jobs, preventing repeated downloads of common Amazon S3 objects
+
+[Amazon EFS](https://aws.amazon.com/efs/)
+- serverless data storage without provisioning or managing storage
+- useful when running batch processing on central locations
+- directly launch your training jobs from the service without the need for data movement, resulting in faster training start times
+
+[Amazon EBS](https://aws.amazon.com/ebs/)
+- persistent storage linked to a EC2 instance
+- easy to use, high performance block storage service
+- designed for use with Amazon Elastic Compute Cloud (EC2) for both throughput and transaction intensive workloads at any scale
+- A broad range of workloads, such as relational and non-relational databases, enterprise applications, containerized applications, big data analytics engines, file systems, and media workflows are widely deployed on Amazon EBS
+
 ### ETL
 [AWS Glue](https://aws.amazon.com/glue/)
 - fully managed extract, transform, and load (ETL) service that makes it easy for customers to prepare and load their data for analytics
