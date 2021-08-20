@@ -2,7 +2,7 @@
 title: AWS ML Specialty
 description: AWS has a certification for Machine Learning specialty. 
 published: true
-date: 2021-08-20T20:22:50.309Z
+date: 2021-08-20T21:03:42.655Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-16T16:47:39.772Z
@@ -224,14 +224,14 @@ SageMaker is a fully managed service, empowering developers and data scientists 
 - optimizes models to run up to twice as fast, with less than a tenth of the memory footprint, with no loss in accuracy
 - automatically optimizes machine learning models to perform at up to twice the speed with no loss in accuracy
 
-
+<br></br>
 > The most commonly covered services on the exam are linked below, but others may be worthwhile to skim. However, the most important documentation to study regarding SageMaker is the [developer guide](https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html). 
 >
 > [Ground Truth](https://aws.amazon.com/sagemaker/groundtruth/) 
 > [Autopilot](https://aws.amazon.com/sagemaker/autopilot/)
 > [Distributed Training](https://aws.amazon.com/sagemaker/distributed-training/)
 > [Neo](https://aws.amazon.com/sagemaker/neo/)
-<p></br>
+{.is-info}
 
 ### Frameworks
 [TensorFlow on AWS](https://aws.amazon.com/tensorflow/)
@@ -502,18 +502,54 @@ Machine learning in the hands of developers, literally, with a fully programmabl
   - provide a target in your VPC route tables for internet-routable traffic; and
   - perform network address translation (NAT) for instances that have been assigned public IPv4 addresses
   - supports IPv4 and IPv6 traffic; does not cause availability risks or bandwidth constraints on your network traffic
-
+<p></br>
 
 # Exam Material
 ## Data Engineering
 ### 1.1 Create data repositories for machine learning
+Dataset generation
+
+Key AWS Services
+Ground Truth
+Mechanical Turk
+Kinesis Data Analytics
+Kinesis Video Streams
 
 ### 1.2 Identify and implement a data-ingestion solution
 ### 1.3 Identify and implement a data-transformation solution
 ## Exploratory Data Analysis
 ### 2.1 Sanitize and prepare data for modeling
+> **Question Specific**
+> Understand what to do when you have imbalanced data
+> Understand what to do with variable that are highly correlated
+> Understand why and how to augment data in both tabular and image form
+> Understand how to handle missing values and outliers
+{.is-info}
+
+fgf
 ### 2.2 Perform feature engineering
+
 ### 2.3 Analyze and visualize data for machine learning
+**Scatter Plots**
+![scatter_plots.png](/images/aws_ml_certification/scatter_plots.png)
+<br></br>
+
+**Histograms**
+![histogram.png](/images/aws_ml_certification/histogram.png)
+<br></br>
+
+**Scatter Matrix**
+![scatter_matrix.png](/images/aws_ml_certification/scatter_matrix.png)
+<br></br>
+
+**Correlation Matrix**
+![correlation_matrix.png](/images/aws_ml_certification/correlation_matrix.png)
+<br></br>
+
+**Confusion Matrix**
+![confusion_matrix.png](/images/aws_ml_certification/confusion_matrix.png)
+<br></br>
+
 ## Modeling
 ### 3.1 Frame business problems as machine learning problems
 ### 3.2 Select the appropriate model(s) for a given machine learning problem
@@ -531,7 +567,7 @@ Object2Vec
 
 **Computer Vision**
 Semantic Segmentation
-<p></br>
+<br></br>
 
 ### 3.3 Train machine learning models
 ### 3.4 Perform hyperparameter optimization
