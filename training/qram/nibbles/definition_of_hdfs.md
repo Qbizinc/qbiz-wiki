@@ -2,7 +2,7 @@
 title: Definition of HDFS
 description: 
 published: true
-date: 2021-08-20T16:23:15.455Z
+date: 2021-08-20T16:28:29.880Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-10T19:35:56.434Z
@@ -21,20 +21,10 @@ Hadoop Distributed File System (HDFS) is a distributed file system implemented i
   - If the Name Node doesn't receive a heartbeat (either the Data Node is down or there is a network interruption), the Name Node assums the DataNode is dead and orders the remaining Data Nodes to start copying blocks amongst themselves to ensure the replication factor.
 
 ## API
+
+### Slices
 - [Perhaps the most important feature is the ability to read only slices of files.](/training/qram/dishes/slice_oriented_file_format)
 - [Hive-type query engines depend on this feature.](/training/qram/nibbles/definition_of_hive_type)
-
-For example:
-> 1. A file is 200 MB.
-> 2. The file has a format with sections of defined lengths:
->    1. Parquet files, the first and last 4 bytes say "PAR1" in utf-8.
->    2. At the very end of the file, before the final "PAR1", are 4 bytes in little endian for the number of bytes for the length of file metadata.
-> 3. The file metadata is right before the 4 bytes for length.
-> 4. A reader would read:
->    1. First 4 bytes (confirm this is "PAR1")
->    2. Last 8 bytes (confirm this is "PAR1" and get the length of the file metadata
->    3. Length of file metadata before last 8 bytes
-> 5. A query engine could then parse the file metadata to determine how to get specific columns
 
 ### Java
 Processes in the Hadoop ecosystem use the corresponding Java libraries to the HDFS version.
@@ -42,7 +32,11 @@ Processes in the Hadoop ecosystem use the corresponding Java libraries to the HD
 A command-line utility implemented in Java using those same libraries is available if installed on a user environment. This command-line utility provides a somewhat-Unix-like CLI to the file system. Because it is implemented in Java, startup is slow; it is launching and shutting down a Java VM with every command.
 
 ## Blocks
-Default block size is 128 MB.
+Default file system block size is 128 MB.
+
+This can be configured in `core-site.xml`.
+
+**NB:** Changes to this setting do not rewrite existing files!
 
 # References
 - [Wikipedia](https://en.wikipedia.org/wiki/Apache_Hadoop#HDFS)
