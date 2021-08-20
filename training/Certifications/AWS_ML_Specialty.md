@@ -2,7 +2,7 @@
 title: AWS ML Specialty
 description: AWS has a certification for Machine Learning specialty. 
 published: true
-date: 2021-08-20T22:14:51.852Z
+date: 2021-08-20T22:15:42.342Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-16T16:47:39.772Z
@@ -555,7 +555,6 @@ In the case of streaming data, Kinesis Firehose can transform data before storag
 >
 > what to do when you have imbalanced data
 > what to do with variable that are highly correlated
-
 > how to handle missing values and outliers
 > how to clean text data
 > how to handle scaling and normalizing tabular and image
