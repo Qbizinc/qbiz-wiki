@@ -2,7 +2,7 @@
 title: AWS ML Specialty
 description: AWS has a certification for Machine Learning specialty. 
 published: true
-date: 2021-08-20T19:05:11.928Z
+date: 2021-08-20T20:22:50.309Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-16T16:47:39.772Z
@@ -475,6 +475,34 @@ Machine learning in the hands of developers, literally, with a fully programmabl
 - A2P messaging functionality enables you to send messages to users at scale using either a pub/sub pattern or direct-publish messages using a single API
 
 ### Security
+[Identity Access and Management (IAM)](https://aws.amazon.com/iam/)
+- manage access to AWS services and resources securely
+- create and manage AWS users and groups, and use permissions to allow and deny their access to AWS resources
+
+[Key Management Service (KMS)](https://aws.amazon.com/kms/)
+- create and manage cryptographic keys and control their use across a wide range of AWS services and in your applications
+- integrated with AWS CloudTrail to provide you with logs of all key usage to help meet your regulatory and compliance needs
+
+[Virtual Private Cloud (VPC)](https://aws.amazon.com/vpc/)
+- provision a logically isolated section of the AWS Cloud where you can launch AWS resources in a virtual network that you define
+- You have complete control over your virtual networking environment, including selection of your own IP address range, creation of subnets, and configuration of route tables and network gateways
+- use both IPv4 and IPv6 in your VPC for secure and easy access to resources and applications
+
+- [Security Groups:](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html)
+	- acts as a virtual firewall for your instance to control inbound and outbound traffic
+	- When you launch an instance in a VPC, you can assign up to five security groups to the instance
+	- Security groups act at the instance level, not the subnet level; each instance in a subnet in your VPC can be assigned to a different set of security groups
+
+- [Network Address Translation (NAT) gateways:](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html)
+	- enable instances in a private subnet to connect to the internet or other AWS services, but prevent the internet from initiating a connection with those instances
+  
+- [Internet Gateways:](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html)
+  - horizontally scaled, redundant, and highly available VPC component that allows communication between your VPC and the internet
+  - serves two purposes: 
+  - provide a target in your VPC route tables for internet-routable traffic; and
+  - perform network address translation (NAT) for instances that have been assigned public IPv4 addresses
+  - supports IPv4 and IPv6 traffic; does not cause availability risks or bandwidth constraints on your network traffic
+
 
 # Exam Material
 ## Data Engineering
