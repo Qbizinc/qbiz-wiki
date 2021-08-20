@@ -2,7 +2,7 @@
 title: AWS ML Specialty
 description: AWS has a certification for Machine Learning specialty. 
 published: true
-date: 2021-08-20T21:41:13.953Z
+date: 2021-08-20T21:58:34.566Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-16T16:47:39.772Z
@@ -513,8 +513,33 @@ Machine learning in the hands of developers, literally, with a fully programmabl
 > know tradeoffs between AWS storage solutions
 {.is-info}
 
+![storage_tradeoff.png](/images/aws_ml_certification/storage_tradeoff.png)
 <br></br>
 ### 1.2 Identify and implement a data-ingestion solution
+> **For the exam you need to understand...**
+>
+> the tradeoffs/capabilities between different ingestion solutions
+>
+> **Note:** DMS is specific to migration and legacy systems. Glue is generally best when you don't want to do much work, while step functions are good for flexibility and queing. For streaming, data Kafka is more work, but offers porting code. Kinesis is easy.
+>
+> *Tip: Much of this exam is finding the optimal solution and not just the right one for the specific business problem (simplest to implement, offer flexibility to port codebase, etc.)*
+{.is-info}
+
+**Batch Processing**
+With batch processing, the ingestion layer periodically collects and groups source data and sends it to a destination like Amazon S3. You can process groups based on any logical ordering, the activation of certain conditions, or a simple schedule. Batch processing is typically used when there is no real need for real-time or near-real-time data, because it is generally easier and more affordably implemented than other ingestion options.
+
+- AWS Glue 
+- AWS DMS  
+- AWS Step Functions
+
+
+**Stream Processing**
+Stream processing, which includes real-time processing, involves no grouping at all. Data is sourced, manipulated, and loaded as soon as it is created or recognized by the data ingestion layer. This kind of ingestion is less cost-effective, since it requires systems to constantly monitor sources and accept new information. But you might want to use it for real-time predictions using an Amazon SageMaker endpoint that you want to show your customers on your website or some real-time analytics that require continually refreshed data, like real-time dashboards 
+
+- Kinesis
+- Kafka
+
+
 ### 1.3 Identify and implement a data-transformation solution
 ## Exploratory Data Analysis
 ### 2.1 Sanitize and prepare data for modeling
