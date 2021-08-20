@@ -2,7 +2,7 @@
 title: AWS ML Specialty
 description: AWS has a certification for Machine Learning specialty. 
 published: true
-date: 2021-08-20T21:58:34.566Z
+date: 2021-08-20T22:14:51.852Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-16T16:47:39.772Z
@@ -541,13 +541,21 @@ Stream processing, which includes real-time processing, involves no grouping at 
 
 
 ### 1.3 Identify and implement a data-transformation solution
+The raw data ingested into a service like Amazon S3 is usually not ML ready as is. The data needs to be transformed and cleaned, which includes deduplication, incomplete data management, and attribute standardization. Data transformation can also involve changing the data structures, if necessary, usually into an OLAP model to facilitate easy querying of data.
+
+Data transformation is often necessary to deal with huge amounts of data. Distributed computation frameworks like MapReduce and Apache Spark provide a protocol of data processing and node task distribution and management. They also use algorithms to split datasets into subsets and distribute them across nodes in a compute cluster.
+
+Using Apache Spark on Amazon EMR provides a managed framework that can process massive quantities of data. Amazon EMR supports many instance types that have proportionally high CPU with increased network performance, which is well suited for HPC (high-performance computing) applications.
+
+In the case of streaming data, Kinesis Firehose can transform data before storage using AWS Lambda. 
+
 ## Exploratory Data Analysis
 ### 2.1 Sanitize and prepare data for modeling
 > **For the exam you need to understand...**
 >
 > what to do when you have imbalanced data
 > what to do with variable that are highly correlated
-> why and how to augment data in both tabular, image, and text form
+
 > how to handle missing values and outliers
 > how to clean text data
 > how to handle scaling and normalizing tabular and image
@@ -556,6 +564,13 @@ Stream processing, which includes real-time processing, involves no grouping at 
 
 <br></br>
 ### 2.2 Perform feature engineering
+> **For the exam you need to understand...**
+>
+> why and how to augment data in both tabular, image, and text form
+> how to handle scaling and normalizing tabular and image
+> how to treat categorical features (one-hot encoding vs ordinality)
+> techniques for dimensionality reduction (PCA and LDA)
+{.is-info}
 
 ### 2.3 Analyze and visualize data for machine learning
 **Scatter Plots**
@@ -580,7 +595,28 @@ Stream processing, which includes real-time processing, involves no grouping at 
 
 ## Modeling
 ### 3.1 Frame business problems as machine learning problems
+> **For the exam you need to understand...**
+>
+> understand all the built in SageMaker models
+>
+> [**Read:** Built-in SageMaker Models](https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html)
+{.is-info}
+
+| Problem Type | Definition |
+| ------------ | -------- | ---------- |
+| Supervised learning | making predictions on a labeled set | 
+| Unsupervised learning | making predictions on an unlabeled set| 
+| Regression | predicting a continous target  | 
+| Classification | predicting a discrete target  | 
+| Clustering | Grouping points together to make predictions |  
+| Anomaly detection | Detection outliers to make predictions| 
+
+
+
 ### 3.2 Select the appropriate model(s) for a given machine learning problem
+**Anomaly Detection**
+Random Cut Forest
+
 **Classification Models**
 KNN
 
