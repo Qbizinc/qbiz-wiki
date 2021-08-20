@@ -2,7 +2,7 @@
 title: AWS ML Specialty
 description: AWS has a certification for Machine Learning specialty. 
 published: true
-date: 2021-08-20T17:57:33.852Z
+date: 2021-08-20T18:14:45.638Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-16T16:47:39.772Z
@@ -309,15 +309,24 @@ It monitors your applications and automatically adjusts capacity to maintain ste
 ### Streaming
 [**Amazon Kinesis**](https://aws.amazon.com/kinesis/)
 Kinesis facilitates the streaming of data, making it easy to collect, process, and analyze data real-time for timely insights, speeding reaction time.  Video, audio, application logs, clickstreams, and IoT data can be ingested real-time.  
+![kinesis_data_streams.png](/images/aws_ml_certification/kinesis_data_streams.png)
+<p></br>
 
 | Kinesis Capability   | Description | 
 | -----------  | ----------- | 
-| [Amazon Kinesis Data Streams](https://aws.amazon.com/kinesis/data-streams/) |  <ul><li>massively scalable and durable real-time data streaming service</li><li>continuously capture gigabytes of data per second from hundreds of thousands of sources such as website clickstreams, database event streams, financial transactions, social media feeds, IT logs, and location-tracking events</li> <li>data collected is available in milliseconds to enable real-time analytics use cases such as real-time dashboards, real-time anomaly detection, dynamic pricing, and more</li></ul>  <table>  <thead>  <tr>  <th>Component</th>  <th>Description</th>  </tr>  </thead>  <tbody>  <tr>  <td>[Kinesis Producer Library (KPL)](https://docs.aws.amazon.com/streams/latest/dev/developing-producers-with-kpl.html)</td> <td>intermediary between producer application code and KDS API data, to write to a Kinesis data stream</td> </tr>  <tr>  <td>[Kinesis Client Library (KCL)](https://docs.aws.amazon.com/streams/latest/dev/shared-throughput-kcl-consumers.html)</td>  <td>build own application to preprocess the streaming data as it arrives and emit data for generating incremental views and downstream analysis</td> </tr> </table> | 
-  [Amazon Kinesis Video Streams](https://aws.amazon.com/kinesis/data-streams/) | securely stream video from connected devices to AWS for analytics, machine learning, playback, and other processing | 
-| [Amazon Kinesis Data Firehose](https://aws.amazon.com/kinesis/data-streams/) | asdasd | 
-| [Amazon Kinesis Data Analytics](https://aws.amazon.com/kinesis/data-streams/) | asdasd | 
+| [**Amazon Kinesis Data Streams**](https://aws.amazon.com/kinesis/data-streams/) |  <ul><li>massively scalable and durable real-time data streaming service</li><li>continuously capture gigabytes of data per second from hundreds of thousands of sources such as website clickstreams, database event streams, financial transactions, social media feeds, IT logs, and location-tracking events</li> <li>data collected is available in milliseconds to enable real-time analytics use cases such as real-time dashboards, real-time anomaly detection, dynamic pricing, and more</li></ul>  <table>  <thead>  <tr>  <th>Component</th>  <th>Description</th>  </tr>  </thead>  <tbody>  <tr>  <td>[Kinesis Producer Library (KPL)](https://docs.aws.amazon.com/streams/latest/dev/developing-producers-with-kpl.html)</td> <td>intermediary between producer application code and KDS API data, to write to a Kinesis data stream</td> </tr>  <tr>  <td>[Kinesis Client Library (KCL)](https://docs.aws.amazon.com/streams/latest/dev/shared-throughput-kcl-consumers.html)</td>  <td>build own application to preprocess the streaming data as it arrives and emit data for generating incremental views and downstream analysis</td> </tr> </table> | 
+  [**Amazon Kinesis Video Streams**](https://aws.amazon.com/kinesis/data-streams/) | <ul><li>securely stream video from connected devices to AWS for analytics, machine learning, playback, and other processing</li> <li>automatically provisions and elastically scales all the infrastructure needed to ingest streaming video data from millions of devices</li> <li>durably stores, encrypts, and indexes video data in your streams, and allows you to access your data through easy-to-use APIs</li></ul> | 
+| [**Amazon Kinesis Data Firehose**](https://aws.amazon.com/kinesis/data-streams/) | <ul><li>reliably load streaming data into data lakes, data stores, and analytics services</li> <li>capture, transform ([lambda](https://aws.amazon.com/lambda/)) , and deliver streaming data to Amazon S3, Amazon Redshift, Amazon Elasticsearch Service, generic HTTP endpoints, and service providers like Datadog, New Relic, MongoDB, and Splunk</li> <li>fully managed service that automatically scales to match the throughput of your data and requires no ongoing administration</li> <li>batch, compress, transform, and encrypt your data streams before loading, minimizing the amount of storage used and increasing security</li> <li>cannot ingest csv</li></ul> | 
+| [**Amazon Kinesis Data Analytics**](https://aws.amazon.com/kinesis/data-streams/) | <ul><li>transform and analyze streaming data in real time with Apache Flink (SQL), an open source framework and engine for processing data streams</li> <li>reduces the complexity of building, managing, and integrating Apache Flink applications with other AWS services</li> <li>takes care of everything required to run streaming applications continuously, and scales automatically to match the volume and throughput of your incoming data; no servers to manage, no minimum fee or setup cost, and you only pay for the resources your streaming applications consume</li></ul> | 
 
+[Apache Kafka](https://aws.amazon.com/kinesis/data-streams/)
+- open-source platform for building real-time streaming data pipelines and applications
+- used by thousands of companies for high-performance data pipelines, streaming analytics, data integration, and mission-critical applications
 
+[Apache Kafka (MSK)](https://aws.amazon.com/msk/)
+- fully managed service that makes it easy for you to build and run applications that use Apache Kafka to process streaming data
+- use native Apache Kafka APIs to populate data lakes, stream changes to and from databases, and power machine learning and analytics applications
+- build and run production applications on Apache Kafka without needing Apache Kafka infrastructure management expertise; spend less time managing infrastructure and more time building applications
 
 ### Storage
 ### ETL
