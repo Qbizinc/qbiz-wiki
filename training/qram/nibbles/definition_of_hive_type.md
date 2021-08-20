@@ -2,7 +2,7 @@
 title: Definition of Hive Type
 description: 
 published: true
-date: 2021-08-20T17:30:05.803Z
+date: 2021-08-20T17:42:20.105Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-11T21:01:11.881Z
@@ -38,7 +38,7 @@ Only Presto compute nodes must be deployed:
      - Files are self-describing with no metadata to sync elsewhere
 
 This adoption story is incredibly attractive for new open-source projects.
-- Data has gravity. Copies and migrations are incredibly expensive in machine terms.
+- [Data has gravity.](/training/qram/raw/definition_of_data_gravity) Copies and migrations are incredibly expensive in machine terms.
 
 Unfortunately, it prevents innovation:
 - "One location per partition" prevents append-only data structures, a key performance optimization in Snowflake.
