@@ -2,7 +2,7 @@
 title: AWS ML Specialty
 description: AWS has a certification for Machine Learning specialty. 
 published: true
-date: 2021-08-20T17:19:40.926Z
+date: 2021-08-20T17:50:10.845Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-16T16:47:39.772Z
@@ -307,6 +307,24 @@ It monitors your applications and automatically adjusts capacity to maintain ste
 - enables companies to harness the collective intelligence, skills, and insights from a global workforce to streamline business processes, augment data collection and analysis, and accelerate machine learning development
 
 ### Streaming
+[**Amazon Kinesis**](https://aws.amazon.com/kinesis/)
+Kinesis facilitates the streaming of data, making it easy to collect, process, and analyze data real-time for timely insights, speeding reaction time.  Video, audio, application logs, clickstreams, and IoT data can be ingested real-time.  
+
+| Kinesis Capability   | Description | 
+| -----------  | ----------- | 
+| [Amazon Kinesis Data Streams](https://aws.amazon.com/kinesis/data-streams/) |  massively scalable and durable real-time data streaming service which can continuously capture gigabytes of data per second from hundreds of thousands of sources such as website clickstreams, database event streams, financial transactions, social media feeds, IT logs, and location-tracking events <table>  <thead>  <tr>  <th>Component</th>  <th>Description</th>  </tr>  </thead>  <tbody>  <tr>    <td>[Kinesis Producer Library (KPL)](https://docs.aws.amazon.com/streams/latest/dev/developing-producers-with-kpl.html)</td> <td>intermediary between producer application code and KDS API data, to write to a Kinesis data stream</td> </tr>  <tr>  <td>[Kinesis Client Library (KCL)](https://docs.aws.amazon.com/streams/latest/dev/shared-throughput-kcl-consumers.html)</td>  <td>build own application to preprocess the streaming data as it arrives and emit data for generating incremental views and downstream analysis</td>  </table>
+ | 
+| [Amazon Kinesis Video Streams](https://aws.amazon.com/kinesis/data-streams/) | securely stream video from connected devices to AWS for analytics, machine learning, playback, and other processing | 
+| [Amazon Kinesis Data Firehose](https://aws.amazon.com/kinesis/data-streams/) | asdasd | 
+| [Amazon Kinesis Data Analytics](https://aws.amazon.com/kinesis/data-streams/) | asdasd | 
+
+
+|                |ASCII                          |HTML                         |
+|----------------|-------------------------------|-----------------------------|
+|Single backticks|`'Isn't this fun?'`            |'Isn't this fun?'            |
+|Quotes          |`"Isn't this fun?"`            |'Isn't this fun?' <table>  <thead>  <tr>  <th>Component</th>  <th>Description</th>  </tr>  </thead>  <tbody>  <tr>    <td>[Kinesis Producer Library (KPL)](https://docs.aws.amazon.com/streams/latest/dev/developing-producers-with-kpl.html)</td> <td>intermediary between producer application code and KDS API data, to write to a Kinesis data stream</td> </tr>  <tr>  <td>[Kinesis Client Library (KCL)](https://docs.aws.amazon.com/streams/latest/dev/shared-throughput-kcl-consumers.html)</td>  <td>build own application to preprocess the streaming data as it arrives and emit data for generating incremental views and downstream analysis</td>  </table>   |
+|Dashes          |`-- is en-dash, --- is em-dash`|-- is en-dash, --- is em-dash|
+
 ### Storage
 ### ETL
 ### Distributed Computing
@@ -314,6 +332,7 @@ It monitors your applications and automatically adjusts capacity to maintain ste
 ### Orchestration
 ### Search
 [ElasticSearch](https://aws.amazon.com/elasticsearch-service/)
+
 - fully managed service that makes it easy for you to deploy, secure, and run Elasticsearch cost effectively at scale
 - build, monitor, and troubleshoot your applications using the tools you love, at the scale you need
 - service provides support for open source Elasticsearch APIs, managed Kibana, integration with Logstash and other AWS services, and built-in alerting and SQL querying
@@ -335,6 +354,7 @@ Machine learning in the hands of developers, literally, with a fully programmabl
 - point to your data in Amazon S3, define the schema, and start querying using standard SQL
 - no need for complex ETL jobs to prepare your data for analysis
 - out-of-the-box integrated with AWS Glue Data Catalog, allowing you to create a unified metadata repository across various services, crawl data sources to discover schemas and populate your Catalog with new and modified table and partition definitions, and maintain schema versioning
+
 
 [Amazon QuickSight](https://aws.amazon.com/quicksight/)
 - fast, cloud-powered business intelligence service that makes it easy to deliver insights to everyone in your organization.
