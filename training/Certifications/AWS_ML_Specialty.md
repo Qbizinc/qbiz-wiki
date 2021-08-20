@@ -2,7 +2,7 @@
 title: AWS ML Specialty
 description: AWS has a certification for Machine Learning specialty. 
 published: true
-date: 2021-08-20T17:50:10.845Z
+date: 2021-08-20T17:57:33.852Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-16T16:47:39.772Z
@@ -312,18 +312,12 @@ Kinesis facilitates the streaming of data, making it easy to collect, process, a
 
 | Kinesis Capability   | Description | 
 | -----------  | ----------- | 
-| [Amazon Kinesis Data Streams](https://aws.amazon.com/kinesis/data-streams/) |  massively scalable and durable real-time data streaming service which can continuously capture gigabytes of data per second from hundreds of thousands of sources such as website clickstreams, database event streams, financial transactions, social media feeds, IT logs, and location-tracking events <table>  <thead>  <tr>  <th>Component</th>  <th>Description</th>  </tr>  </thead>  <tbody>  <tr>    <td>[Kinesis Producer Library (KPL)](https://docs.aws.amazon.com/streams/latest/dev/developing-producers-with-kpl.html)</td> <td>intermediary between producer application code and KDS API data, to write to a Kinesis data stream</td> </tr>  <tr>  <td>[Kinesis Client Library (KCL)](https://docs.aws.amazon.com/streams/latest/dev/shared-throughput-kcl-consumers.html)</td>  <td>build own application to preprocess the streaming data as it arrives and emit data for generating incremental views and downstream analysis</td>  </table>
- | 
-| [Amazon Kinesis Video Streams](https://aws.amazon.com/kinesis/data-streams/) | securely stream video from connected devices to AWS for analytics, machine learning, playback, and other processing | 
+| [Amazon Kinesis Data Streams](https://aws.amazon.com/kinesis/data-streams/) |  <ul><li>massively scalable and durable real-time data streaming service</li><li>continuously capture gigabytes of data per second from hundreds of thousands of sources such as website clickstreams, database event streams, financial transactions, social media feeds, IT logs, and location-tracking events</li> <li>data collected is available in milliseconds to enable real-time analytics use cases such as real-time dashboards, real-time anomaly detection, dynamic pricing, and more</li></ul>  <table>  <thead>  <tr>  <th>Component</th>  <th>Description</th>  </tr>  </thead>  <tbody>  <tr>  <td>[Kinesis Producer Library (KPL)](https://docs.aws.amazon.com/streams/latest/dev/developing-producers-with-kpl.html)</td> <td>intermediary between producer application code and KDS API data, to write to a Kinesis data stream</td> </tr>  <tr>  <td>[Kinesis Client Library (KCL)](https://docs.aws.amazon.com/streams/latest/dev/shared-throughput-kcl-consumers.html)</td>  <td>build own application to preprocess the streaming data as it arrives and emit data for generating incremental views and downstream analysis</td> </tr> </table> | 
+  [Amazon Kinesis Video Streams](https://aws.amazon.com/kinesis/data-streams/) | securely stream video from connected devices to AWS for analytics, machine learning, playback, and other processing | 
 | [Amazon Kinesis Data Firehose](https://aws.amazon.com/kinesis/data-streams/) | asdasd | 
 | [Amazon Kinesis Data Analytics](https://aws.amazon.com/kinesis/data-streams/) | asdasd | 
 
 
-|                |ASCII                          |HTML                         |
-|----------------|-------------------------------|-----------------------------|
-|Single backticks|`'Isn't this fun?'`            |'Isn't this fun?'            |
-|Quotes          |`"Isn't this fun?"`            |'Isn't this fun?' <table>  <thead>  <tr>  <th>Component</th>  <th>Description</th>  </tr>  </thead>  <tbody>  <tr>    <td>[Kinesis Producer Library (KPL)](https://docs.aws.amazon.com/streams/latest/dev/developing-producers-with-kpl.html)</td> <td>intermediary between producer application code and KDS API data, to write to a Kinesis data stream</td> </tr>  <tr>  <td>[Kinesis Client Library (KCL)](https://docs.aws.amazon.com/streams/latest/dev/shared-throughput-kcl-consumers.html)</td>  <td>build own application to preprocess the streaming data as it arrives and emit data for generating incremental views and downstream analysis</td>  </table>   |
-|Dashes          |`-- is en-dash, --- is em-dash`|-- is en-dash, --- is em-dash|
 
 ### Storage
 ### ETL
