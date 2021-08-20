@@ -2,7 +2,7 @@
 title: AWS ML Specialty
 description: AWS has a certification for Machine Learning specialty. 
 published: true
-date: 2021-08-19T22:40:05.275Z
+date: 2021-08-20T00:12:13.195Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-16T16:47:39.772Z
@@ -95,6 +95,7 @@ The bottom layer, ML Frameworks + Infrastructure, contains the “closest to the
 <p></br>
 
 [Amazon CodeGuru](https://aws.amazon.com/codeguru/)
+
 [Amazon Comprehend](https://aws.amazon.com/comprehend/)
 - natural language processing (NLP) service
 - uses machine learning to find insights and relationships in text
