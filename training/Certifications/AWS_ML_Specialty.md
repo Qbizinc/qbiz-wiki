@@ -2,7 +2,7 @@
 title: AWS ML Specialty
 description: AWS has a certification for Machine Learning specialty. 
 published: true
-date: 2021-08-20T00:12:13.195Z
+date: 2021-08-20T17:18:47.367Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-16T16:47:39.772Z
@@ -74,8 +74,8 @@ More details on the structure of the exam are available via [AWS's provided Exam
 [Math for Machine Learning](https://www.aws.training/Details/eLearning?id=26597) - (8 hours)
 [Linear and Logistic Regression](https://www.aws.training/Details/eLearning?id=26599) - (8.5 hours) 
   
-# Exam Material 
-## AWS ML Stack
+# AWS Services 
+## AWS Machine Learning Stack
 ![aws_ml_stack.png](/images/aws_ml_certification/aws_ml_stack.png)
 The AWS ML stack is made up of three key layers of abstraction.  When building a machine learning solution, key priorities to balance may consist of:
 - speed to market
@@ -289,8 +289,75 @@ It monitors your applications and automatically adjusts capacity to maintain ste
 - **P:** GPU optimized - accelerated computing instances use hardware accelerators, or co-processors, to perform 		functions, such as floating point number calculations, graphics processing, or data pattern matching, more efficiently than is possible in software running on CPUs
 <p></br>
 
+## AWS Data Engineering Stack
+
+| Concepts          | Description | 
+| -----------       | ----------- | 
+| **High Availability** | System will continue to function even when any component of the architecture stops working | 
+
+| **Fault Tolerance** | Ensures that applications will continue to function without degradation in performance, despite complete failure of any component of the architecture | 
+
+| **Loose Coupling** | In a distributed system, failure of one component can be managed in between application tiers so that the faults do not spread beyond that single point achieved by making sure application components are independent of each other. Read up on queues: [Amazon SQS](https://aws.amazon.com/sqs/) and [AWS Step Functions](https://aws.amazon.com/sqs/). | 
+
+| **CI/CD** |  Bridges the gaps between development and operation activities and teams by enforcing automation in building, testing and deployment of applications. Modern day DevOps practices involve continuous development, continuous testing, continuous integration, continuous deployment and continuous monitoring of software applications throughout its development life cycle.  | 
+
+| **Canary Deployment Methodology** | Pattern for rolling out releases to a subset of users or servers. The idea is to first deploy the change to a small subset of servers, test it, and then roll the change out to the rest of the servers. The canary deployment serves as an early warning indicator with less impact on downtime: if the canary deployment fails, the rest of the servers aren't impacted.| 
+
+
+### Compiling
+[Amazon Mechanical Turk](https://www.mturk.com/)
+- crowdsourcing marketplace that makes it easier for individuals and businesses to outsource their processes and jobs to a distributed workforce who can perform these tasks virtually
+- anything from conducting simple data validation and research to more subjective tasks like survey participation, content moderation, and more
+- enables companies to harness the collective intelligence, skills, and insights from a global workforce to streamline business processes, augment data collection and analysis, and accelerate machine learning development
+
+### Streaming
+### Storage
+### ETL
+### Distributed Computing
+### Containers
+### Orchestration
+### Search
+[ElasticSearch](https://aws.amazon.com/elasticsearch-service/)
+- fully managed service that makes it easy for you to deploy, secure, and run Elasticsearch cost effectively at scale
+- build, monitor, and troubleshoot your applications using the tools you love, at the scale you need
+- service provides support for open source Elasticsearch APIs, managed Kibana, integration with Logstash and other AWS services, and built-in alerting and SQL querying
+
+### Deployment
+[SageMaker Model Deployment](https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works-deployment.html)
+
+
+[Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk/)
+AWS Elastic Beanstalk is an easy-to-use service for deploying and scaling web applications and services developed with Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker on familiar servers such as Apache, Nginx, Passenger, and IIS.
+
+[AWS DeepLens](https://aws.amazon.com/deeplens/)
+Machine learning in the hands of developers, literally, with a fully programmable video camera, tutorials, code, and pre-trained models designed to expand deep learning skills
+
+### Analytics
+[Amazon Athena](https://aws.amazon.com/athena/)
+- interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL
+- serverless, no infrastructure to manage, and you pay only for the queries that you run
+- point to your data in Amazon S3, define the schema, and start querying using standard SQL
+- no need for complex ETL jobs to prepare your data for analysis
+- out-of-the-box integrated with AWS Glue Data Catalog, allowing you to create a unified metadata repository across various services, crawl data sources to discover schemas and populate your Catalog with new and modified table and partition definitions, and maintain schema versioning
+
+[Amazon QuickSight](https://aws.amazon.com/quicksight/)
+- fast, cloud-powered business intelligence service that makes it easy to deliver insights to everyone in your organization.
+- As a fully managed service, QuickSight lets you easily create and publish interactive dashboards that include ML Insights. Dashboards can then be accessed from any device, and embedded into your applications, portals, and websites.
+- With the Pay-per-Session pricing, QuickSight allows you to give everyone access to the data they need, while only paying for what you use.
+
+[Kibana](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-kibana.html)
+- open-source data visualization and exploration tool used for log and time-series analytics, application monitoring, and operational intelligence use cases
+- offers powerful and easy-to-use features such as histograms, line graphs, pie charts, heat maps, and built-in geospatial support
+- provides tight integration with Elasticsearch, a popular analytics and search engine, which makes Kibana the default choice for visualizing data stored in Elasticsearch
+
+
+### Monitoring
+### Security
+
+# Exam Material
 ## Data Engineering
 ### 1.1 Create data repositories for machine learning
+
 ### 1.2 Identify and implement a data-ingestion solution
 ### 1.3 Identify and implement a data-transformation solution
 ## Exploratory Data Analysis
