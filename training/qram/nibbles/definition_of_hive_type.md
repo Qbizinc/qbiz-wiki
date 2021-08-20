@@ -2,7 +2,7 @@
 title: Definition of Hive Type
 description: 
 published: true
-date: 2021-08-20T21:47:16.824Z
+date: 2021-08-20T21:50:29.817Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-11T21:01:11.881Z
@@ -16,6 +16,13 @@ Hadoop MapReduce was the first open-source Big Data query engine. It spawned a n
 Multiple newer SQL-based query engines are designed to be compatible with this architecture to ease adoption into existing Hadoop environments.
 
 Qbiz categorizes this type of architecture as "Hive-type". (The term "Hive-type" is not in common usage.)
+
+## Query Engines
+- Hive (on Hadoop MapReduce)
+- Hive (on Tez)
+- Presto
+- Impala
+- Spark (on Hive Metastore)
 
 ## Components
 - Storage layer in a [file system allowing for reading byte-offset slices of files](/training/qram/nibbles/definition_of_hdfs)
