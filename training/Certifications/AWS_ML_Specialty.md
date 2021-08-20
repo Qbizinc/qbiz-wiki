@@ -2,7 +2,7 @@
 title: AWS ML Specialty
 description: AWS has a certification for Machine Learning specialty. 
 published: true
-date: 2021-08-20T18:49:36.686Z
+date: 2021-08-20T18:55:17.479Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-16T16:47:39.772Z
@@ -333,7 +333,7 @@ Kinesis facilitates the streaming of data, making it easy to collect, process, a
 - data lake is a centralized, curated, and secured repository that stores all your data, both in its original form and prepared for analysis
 - creating a data lake with Lake Formation is as simple as defining data sources and what data access and security policies you want to apply
 
-[**Amazon S3**](https://aws.amazon.com/s3/)
+[**Amazon Simple Storage Solution (S3)**](https://aws.amazon.com/s3/)
 Storage for a data lake
 ![s3_bucket_access.png](/images/aws_ml_certification/s3_bucket_access.png)
 | [Storage Class](https://aws.amazon.com/s3/storage-classes/) | Description |
@@ -353,12 +353,12 @@ Storage for a data lake
 - first time you run a training job, FSx for Lustre automatically copies data from Amazon S3 and makes it available to Amazon SageMaker
 - use the same Amazon FSx file system for subsequent iterations of training jobs, preventing repeated downloads of common Amazon S3 objects
 
-[Amazon EFS](https://aws.amazon.com/efs/)
+[Amazon Elastic File System (EFS)](https://aws.amazon.com/efs/)
 - serverless data storage without provisioning or managing storage
 - useful when running batch processing on central locations
 - directly launch your training jobs from the service without the need for data movement, resulting in faster training start times
 
-[Amazon EBS](https://aws.amazon.com/ebs/)
+[Amazon Elastic Block Storage (EBS)](https://aws.amazon.com/ebs/)
 - persistent storage linked to a EC2 instance
 - easy to use, high performance block storage service
 - designed for use with Amazon Elastic Compute Cloud (EC2) for both throughput and transaction intensive workloads at any scale
@@ -371,8 +371,22 @@ Storage for a data lake
 - Once cataloged, your data is immediately searchable, queryable, and available for ETL
 
 ### Distributed Computing
+[Amazon Elastic Map Reduce (EMR)](https://aws.amazon.com/emr/)
+- industry-leading cloud big data platform for processing vast amounts of data using open source tools such as Apache Spark, Apache Hive, Apache HBase, Apache Flink, Apache Hudi, and Presto
+- run Petabyte-scale analysis at less than half of the cost of traditional on-premises solutions and over 3x faster than standard Apache Spark
+
+[Apache Spark](https://spark.apache.org/)
+- distributed processing framework and programming model that helps you do machine learning, stream processing, or graph analytics using Amazon EMR clusters
+- open-source, distributed processing system commonly used for big data workloads 
+- optimized directed acyclic graph (DAG) execution engine and actively caches data in-memory, which can boost performance, especially for certain algorithms and interactive queries (in contrast to Hadoop)
 
 ### Containers
+[Amazon Elastic Container Service (ECS)](https://aws.amazon.com/ecs/)
+- fully managed container orchestration service
+- Duolingo, Samsung, GE, and Cookpad use ECS to run their most sensitive and mission critical applications because of its security, reliability, and scalability
+- choose to run your ECS clusters using AWS Fargate, which is serverless compute for containers
+- used to power services such as Amazon SageMaker, AWS Batch, Amazon Lex, and Amazon.com’s recommendation engine, ensuring ECS is tested extensively for security, reliability, and availability
+
 ### Orchestration
 [AWS Step Functions](https://aws.amazon.com/sqs/)
 - serverless function orchestrator that makes it easy to sequence AWS Lambda functions and multiple AWS services into business-critical applications
