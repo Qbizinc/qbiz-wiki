@@ -2,18 +2,27 @@
 title: Operationalizing Data Science
 description: 
 published: true
-date: 2021-08-19T20:48:30.793Z
+date: 2021-08-20T22:50:31.588Z
 tags: sales, sales-support, pre-sales, data-science, data-engineering
 editor: markdown
 dateCreated: 2021-08-19T18:27:03.419Z
 ---
 
 # Operationalizing Data Science
+> Work in progress
+{.is-warning}
+
 
 ## The Data Science Assembly Line
 Roadblocks to operationalizing Data Science are typically experienced by business stakeholders as lack of throughput. Data Scientists may have been hired and are doing good work, but the results are non-existent or take a very long time to materialize.
 
 Depending on the maturity and culture of a business's organization, bottlenecks can occur at one or more of the following stages in the Data Science assembly line.
+
+##### Jenny
+- Sales process: repeat and reframe
+  - "Data Science throughput is your problem"
+  - "You cannot fix or improve your throughput without an assembly line"
+  - assembly line is cross-functional
 
 ## 1. Enabling Data Access (EDA)
 
@@ -34,12 +43,19 @@ At this stage, Data Scientists have access to the data features they need and ar
 
 **How Qbiz can help**: We can introduce tools and coding best practices (including reusable libraries, unit tests, and scalability tests) to streamline collaboration and make the path to production smoother
 
-## 3. Delivering models to production systems
+
+#### missing?
+* what is to sell data science tooling? what's required?
+
+## 3. Delivering models outputs to decision actors (machine actor, human actor)
 > Are production systems consuming the output of your models? If so, are you able to iterate on changes to your models quickly enough to satisfy business stakeholders?
 
 **Problem**: Data Science often faces roadblocks from IT and operations because Data Science's needs are poorly understood, systems and processes are optimized for stability, and Data Scientists lack the vocabulary to articulate their needs to IT
 
 **How Qbiz can help**: Qbiz Data Engineers are fluent in the languages and cultures of both Data Science and IT/Operations and can therefore bridge that gap. We are able translate Data Science needs into the language, processes, and infrastructure that IT requires.
+
+
+
 
 ## 4. Closing the model feedback loop
 
@@ -48,6 +64,8 @@ At this stage, Data Scientists have access to the data features they need and ar
 **Problem**: Once models are deployed, it can be difficult to adjust them in production quickly enough to ensure continued performance
 
 **How Qbiz can help**: We will work with IT stakeholders to develop safe and reliable mechanisms that enable quick iteration and performance tuning
+
+> continuous training and deploy of models
 
 ## 5. Realtime model feedback
 
