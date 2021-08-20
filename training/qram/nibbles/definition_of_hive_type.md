@@ -2,7 +2,7 @@
 title: Definition of Hive Type
 description: 
 published: true
-date: 2021-08-20T17:42:20.105Z
+date: 2021-08-20T21:47:16.824Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-11T21:01:11.881Z
@@ -25,7 +25,7 @@ Qbiz categorizes this type of architecture as "Hive-type". (The term "Hive-type"
   - "One location per partition"
 - Compute layer using the above
 
-## Adoption
+# Adoption
 For example, an organization would like to deploy Presto alongside an existing Hive environment:
 
 Only Presto compute nodes must be deployed:
@@ -37,23 +37,12 @@ Only Presto compute nodes must be deployed:
    - No file format changes are required:
      - Files are self-describing with no metadata to sync elsewhere
 
-This adoption story is incredibly attractive for new open-source projects.
-- [Data has gravity.](/training/qram/raw/definition_of_data_gravity) Copies and migrations are incredibly expensive in machine terms.
+This ease-of-adoption is incredibly attractive for new open-source projects.
+- [Data has gravity.](/training/qram/raw/definition_of_data_gravity) Copies and migrations are incredibly expensive in machine terms, and no physical migration of data is necessary.
+- Zero-risk of semantic and syntactic drift (schema). The database schema stays in lock-step across all query engines.
 
-Unfortunately, it prevents innovation:
+# Prevents Innovation
+Snowflake envy:
 - "One location per partition" prevents append-only data structures, a key performance optimization in Snowflake.
 - HMS generally prevents data warehouse cloning and time travel, also in Snowflake.
 - Self-describing files avoiding metadata cache incoherence issues leads to massive stability, scalability, and performance issues. (Also solved in Snowflake.)
-
-## Pros and Cons
-
-### Pros
-- Can merely add the new query engine compute layer without disturbing existing storage.
-  - Data copying/moving is expensive (i.e. data gravity).
-  - No need to host separate copies of data for each query engine
-  - Quick adoption because lower DevOps resistance
-- If sharing Hive Metastore, no work to port schema/table/partition definitions for new query engine
-  - Also, changes to HMS by one query engine are immediately synced to other query engines
-
-### Cons
-- Can 
