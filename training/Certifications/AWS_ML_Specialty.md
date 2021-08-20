@@ -2,7 +2,7 @@
 title: AWS ML Specialty
 description: AWS has a certification for Machine Learning specialty. 
 published: true
-date: 2021-08-20T17:18:47.367Z
+date: 2021-08-20T17:19:40.926Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-16T16:47:39.772Z
@@ -294,13 +294,9 @@ It monitors your applications and automatically adjusts capacity to maintain ste
 | Concepts          | Description | 
 | -----------       | ----------- | 
 | **High Availability** | System will continue to function even when any component of the architecture stops working | 
-
 | **Fault Tolerance** | Ensures that applications will continue to function without degradation in performance, despite complete failure of any component of the architecture | 
-
 | **Loose Coupling** | In a distributed system, failure of one component can be managed in between application tiers so that the faults do not spread beyond that single point achieved by making sure application components are independent of each other. Read up on queues: [Amazon SQS](https://aws.amazon.com/sqs/) and [AWS Step Functions](https://aws.amazon.com/sqs/). | 
-
 | **CI/CD** |  Bridges the gaps between development and operation activities and teams by enforcing automation in building, testing and deployment of applications. Modern day DevOps practices involve continuous development, continuous testing, continuous integration, continuous deployment and continuous monitoring of software applications throughout its development life cycle.  | 
-
 | **Canary Deployment Methodology** | Pattern for rolling out releases to a subset of users or servers. The idea is to first deploy the change to a small subset of servers, test it, and then roll the change out to the rest of the servers. The canary deployment serves as an early warning indicator with less impact on downtime: if the canary deployment fails, the rest of the servers aren't impacted.| 
 
 
