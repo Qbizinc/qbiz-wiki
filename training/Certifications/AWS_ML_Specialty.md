@@ -2,7 +2,7 @@
 title: AWS ML Specialty
 description: AWS has a certification for Machine Learning specialty. 
 published: true
-date: 2021-08-20T22:15:42.342Z
+date: 2021-08-20T22:19:54.993Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-16T16:47:39.772Z
@@ -627,8 +627,12 @@ XGBoost
 BlazingText
 Sequence2Sequence
 Object2Vec
+LSTM
+BERT
+RNN
 
 **Computer Vision**
+CNN
 Semantic Segmentation
 <br></br>
 
