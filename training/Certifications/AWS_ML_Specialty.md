@@ -2,7 +2,7 @@
 title: AWS ML Specialty
 description: AWS has a certification for Machine Learning specialty. 
 published: true
-date: 2021-08-20T18:55:17.479Z
+date: 2021-08-20T19:05:11.928Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-16T16:47:39.772Z
@@ -387,6 +387,21 @@ Storage for a data lake
 - choose to run your ECS clusters using AWS Fargate, which is serverless compute for containers
 - used to power services such as Amazon SageMaker, AWS Batch, Amazon Lex, and Amazon.com’s recommendation engine, ensuring ECS is tested extensively for security, reliability, and availability
 
+[Amazon Elastic Kubernetes Service (EKS)](https://aws.amazon.com/eks/)
+Amazon Elastic Kubernetes Service (Amazon EKS) is a fully managed Kubernetes service. Customers such as Intel, Snap, Intuit, GoDaddy, and Autodesk trust EKS to run their most sensitive and mission critical applications because of its security, reliability, and scalability.
+
+[Amazon Elastic Container Registry (ECR)](https://aws.amazon.com/ecr/)
+- fully-managed Docker container registry that makes it easy for developers to store, manage, and deploy Docker container images
+- integrated with Amazon Elastic Container Service (ECS), simplifying your development to production workflow
+- eliminates the need to operate your own container repositories or worry about scaling the underlying infrastructure
+- hosts your images in a highly available and scalable architecture, allowing you to reliably deploy containers for your applications
+
+[AWS Fargate](https://aws.amazon.com/fargate/)
+- serverless compute engine for containers that works with both Amazon Elastic Container Service (ECS) and Amazon Elastic Kubernetes Service (EKS)
+- removes the need to provision and manage servers, lets you specify and pay for resources per application, and improves security through application isolation by design
+- allocates the right amount of compute, eliminating the need to choose instances and scale cluster capacity
+- runs each task or pod in its own kernel providing the tasks and pods their own isolated compute environment, enabling application to have workload isolation and improved security by design
+
 ### Orchestration
 [AWS Step Functions](https://aws.amazon.com/sqs/)
 - serverless function orchestrator that makes it easy to sequence AWS Lambda functions and multiple AWS services into business-critical applications
@@ -445,6 +460,20 @@ Machine learning in the hands of developers, literally, with a fully programmabl
 
 
 ### Monitoring
+[Amazon Cloudwatch](https://aws.amazon.com/cloudwatch/)
+- Monitor applications, including SageMaker
+- collects monitoring and operational data in the form of logs, metrics, and events, providing you with a unified view of AWS resources, applications, and services that run on AWS and on-premises servers.
+- detect anomalous behavior in your environments, set alarms, visualize logs and metrics side by side, take automated actions, troubleshoot issues, and discover insights to keep your applications running smoothly
+
+[AWS CloudTrail](https://aws.amazon.com/cloudtrail/)
+- captures API calls and related events
+- enables governance, compliance, operational auditing, and risk auditing of your AWS account
+
+[Amazon Simple Notification Service (SNS)](https://aws.amazon.com/sns/)
+- fully managed messaging service for both system-to-system and app-to-person (A2P) communication
+- enables communication between systems through publish/subscribe (pub/sub) patterns that enable messaging between decoupled microservice applications or to communicate directly to users via SMS, mobile push and email
+- A2P messaging functionality enables you to send messages to users at scale using either a pub/sub pattern or direct-publish messages using a single API
+
 ### Security
 
 # Exam Material
