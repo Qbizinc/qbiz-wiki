@@ -2,7 +2,7 @@
 title: Fundamentals of Hive Type
 description: 
 published: true
-date: 2021-08-23T16:17:29.458Z
+date: 2021-08-23T16:17:57.815Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-23T14:17:11.210Z
@@ -14,7 +14,7 @@ Hive-Type architecture does not only apply to Hive. Other query engines have ado
 - Impala
 - Spark
 
-This [meal](/training/qram/meals) introduces the fundamentals of the Hive-Type architecture and set the stage for query performance tuning, DevOps, and service architecture.
+This [meal](/training/qram/meals) introduces the fundamentals of the Hive-Type architecture and set the stage for query performance tuning, service architecture, and DevOps.
 
 # Path
 1. Hive-Type is defined by HDFS-style storage and Hive Metastore (HMS) type relational schema storage.
