@@ -2,7 +2,7 @@
 title: Definition of HDFS
 description: 
 published: true
-date: 2021-08-23T14:15:20.657Z
+date: 2021-08-23T14:16:17.199Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-10T19:35:56.434Z
@@ -52,6 +52,9 @@ Without HA, the NameNode is a single-point-of-failure (SPOF).
   - These come together in a quorum which can vote in simple majority; there should be an odd number for this reason.
 
 The list of NameNodes is hard-coded in the `hdfs-site.xml` for ***all Hadoop components, not just servers!!!*** This means that all HDFS users need the setting too! This architecture is not elastic at the NameNode level!
+
+# Versioning
+HDFS does not support versioning.
 
 # References
 - [Wikipedia](https://en.wikipedia.org/wiki/Apache_Hadoop#HDFS)
