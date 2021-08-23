@@ -2,7 +2,7 @@
 title: Qram
 description: 
 published: true
-date: 2021-08-23T15:31:43.304Z
+date: 2021-08-23T16:37:19.691Z
 tags: qram, training
 editor: markdown
 dateCreated: 2021-07-30T00:55:49.975Z
@@ -24,7 +24,7 @@ Qram is a collection of ***nibbles***, which are discrete pieces of content whic
 
 1. ***[Nibbles](/training/qram/nibbles)***: 15 to 20 minutes
 2. ***[Dishes](/training/qram/dishes)***: 1 hour
-3. ***[Meals](/training/qram/meals)***: 2 to 3 hours
+3. ***[Meals](/training/qram/meals) ***: 2 to 3 hours
 4. ***Menu***: 8 to 10 hours
 5. ***Meal Plan***: 30 to 40 hours
 
