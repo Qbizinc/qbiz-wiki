@@ -2,7 +2,7 @@
 title: Fundamentals of Hive Type
 description: 
 published: true
-date: 2021-08-23T14:38:18.846Z
+date: 2021-08-23T16:17:29.458Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-23T14:17:11.210Z
@@ -21,6 +21,4 @@ This [meal](/training/qram/meals) introduces the fundamentals of the Hive-Type a
 2. First, learn about HDFS:
    1. [Overview of Hadoop Distributed File System](/training/qram/dishes/overview_of_hdfs)
    2. Note the lack of versioning in HDFS.
-      - HMS and query engines cannot use HDFS versioning.
-   3. Note also that journaling is optional.
-      - HMS and query engines cannot use journaling.
+   3. Note also that journaling is optional and is inaccessible to users.
