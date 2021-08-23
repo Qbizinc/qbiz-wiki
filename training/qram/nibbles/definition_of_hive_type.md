@@ -2,7 +2,7 @@
 title: Definition of Hive Type
 description: 
 published: true
-date: 2021-08-20T21:50:29.817Z
+date: 2021-08-23T18:25:45.173Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-11T21:01:11.881Z
@@ -26,7 +26,7 @@ Qbiz categorizes this type of architecture as "Hive-type". (The term "Hive-type"
 
 ## Components
 - Storage layer in a [file system allowing for reading byte-offset slices of files](/training/qram/nibbles/definition_of_hdfs)
-- Files in [self-describing slice-oriented file format](/training/qram/dishes/slice_oriented_file_formats)
+- Files in [self-describing slice-oriented file format](/training/qram/dishes/slice_oriented_file_format)
 - Use of Hive Metastore:
   - Schema/table/partition object types
   - "One location per partition"
