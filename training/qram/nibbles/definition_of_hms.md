@@ -2,7 +2,7 @@
 title: Definition of Hive Metastore
 description: 
 published: true
-date: 2021-08-12T23:26:09.120Z
+date: 2021-08-23T20:22:48.319Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-11T02:52:21.513Z
@@ -16,8 +16,17 @@ The Hive Metastore (HMS) stores the relational database metadata for Hive:
 ## Location Property
 Each single-partition table and partition (in multi-partition tables) has a location property, that contains a file system path. This path may be a file or a directory. The Hive Metastore simply stores this as a string; it's up to Hive (or whichever query engine) to decipher the path.
 
-## Implementation
-Usually, HMS is hosted on a single-node PostgreSQL database. This has fault tolerance implications.
+## Architecture
+HMS is a single-instance Java process using the DataNucleus ORM to read and write from a relational database, usually PostgreSQL.
+
+# High Availability
+It is possible to deploy the Hive Metastore in High Availability mode (HA).
+
+However, this is not in the Apache distributions. Each vendor has their own implementation of HMS HA.
+
+In general, HA for HMS means a single active HMS node with multiple standby nodes. Failure of the active leads to a standby being chosen to become the active.
+
+Usually, all of the HMS nodes read and write from the same relational database network address and port.
 
 # Implications
 
