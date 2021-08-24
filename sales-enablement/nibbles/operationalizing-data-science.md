@@ -2,7 +2,7 @@
 title: Operationalizing Data Science
 description: 
 published: true
-date: 2021-08-24T20:30:42.600Z
+date: 2021-08-24T20:34:04.147Z
 tags: sales, sales-support, pre-sales, data-science, data-engineering
 editor: markdown
 dateCreated: 2021-08-19T18:27:03.419Z
@@ -116,7 +116,20 @@ At this stage, Data Scientists have access to the data features they need and ar
 ##### Jay
 - We can work with the appopriate stakeholders to deliver data that the production application can consume easily and with minimal risk -- via S3, via messaging services such as SNS/SQS, RESTful API endpoints, database tables that are consumed by Tableau/etc. We know the technologies involved, understand the stakes, and can work with DS and IT stakeholders to find the optimal balance between timely data availibilty and securyt/safety.
 
-
+##### Jenny
+- Talking points:
+  - Decision actors typically fall into:
+    - Strategic
+    - Tactical
+    - Operational
+  - Strategic is normally a presentation.
+  - Tactical is normally a dashboard.
+    - Requires integration back to data warehouse and BI/dashboarding.
+  - Operational can be human or machine.
+    - Requires delivery to human point-of-operation.
+      - Sales, marketing, call center...
+    - Or requires actual integration with operational system where system calls on model for a decision.
+      - Complicated and requires interacting with software engineers not-in-data.
 
 
 ## 4. Closing the model feedback loop
@@ -128,6 +141,8 @@ At this stage, Data Scientists have access to the data features they need and ar
 **How Qbiz can help**: We will work with IT stakeholders to develop safe and reliable mechanisms that enable quick iteration and performance tuning
 
 > continuous training and deploy of models
+
+##### Jenny
 
 ## 5. Realtime model feedback
 
