@@ -2,7 +2,7 @@
 title: Operationalizing Data Science
 description: 
 published: true
-date: 2021-08-24T20:01:18.917Z
+date: 2021-08-24T20:02:50.974Z
 tags: sales, sales-support, pre-sales, data-science, data-engineering
 editor: markdown
 dateCreated: 2021-08-19T18:27:03.419Z
@@ -68,7 +68,10 @@ Depending on the maturity and culture of a business's organization, bottlenecks 
     - "Qbiz recommends a feature-store as machinery to put together these datasets."
   - "The most mature vision of the feature-store allows a data scientist to click a few buttons and receive the correct, customized dataset for the desired model type and parameters."
     - A general-purpose product for this does not exist.
-    - 
+    - Qbiz can help companies with the machinery for customized datasets on demand with the right manual/automated tradeoff for the maturity level of the company.
+    - This is NOT a data warehouse.
+      - Data warehouses are for dashboards and are relatively stable.
+      - The feature store is for on-demand requests that are complex.
 
 ## 2. Doing Data Science
 
