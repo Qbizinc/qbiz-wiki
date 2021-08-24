@@ -2,7 +2,7 @@
 title: AWS ML Specialty
 description: AWS has a certification for Machine Learning specialty. 
 published: true
-date: 2021-08-24T19:44:03.684Z
+date: 2021-08-24T19:57:45.425Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-16T16:47:39.772Z
@@ -662,7 +662,15 @@ Semantic Segmentation
 <br></br>
 ## ML Implementation and Operations
 ### 4.1 Build machine learning solutions for performance, availability, scalability, resiliency, and fault tolerance
+**Key AWS Infrastructure**
+[Deep Learning Containers](https://aws.amazon.com/machine-learning/containers/)
+[Deep Learning AMI](https://aws.amazon.com/machine-learning/amis/)
 
+**AWS Monitoring Services**
+[CloudWatch](https://aws.amazon.com/cloudwatch/)
+[CloudTrail](https://aws.amazon.com/cloudtrail/)
+
+<br></br>
 ### 4.2 Recommend and implement the appropriate machine learning services and features for a given problem
 > **For the exam you need to understand...**
 >
@@ -680,6 +688,12 @@ Semantic Segmentation
 [S3 VPC Endpoints](https://tomgregory.com/when-to-use-an-aws-s3-vpc-endpoint/)
 <br></br>
 ### 4.4 Deploy and operationalize machine learning solutions
+> **For the exam you need to understand...**
+>
+> VPCs and NAT/Internet gatewaya  in depth (this has increasing become more tested like almost 10% of the test)
+> security practices involving KMS and IAM
+{.is-info}
+
 # Appendix
 ## Links
 **Vetted Practice Tests**
