@@ -2,7 +2,7 @@
 title: David Erickson's page
 description: 
 published: true
-date: 2021-08-09T22:12:41.331Z
+date: 2021-08-24T17:21:58.279Z
 tags: people
 editor: markdown
 dateCreated: 2021-08-09T21:31:58.234Z
@@ -38,3 +38,6 @@ David is a Data Consultant (Data Science specialty) for Qbiz.
 
 ### Software I like
 * [Unpaywall](https://unpaywall.org/). A database of free scholarly articles. Free & legal access to many papers that are behind paywalls on journal webpages.
+* [Rectangle](https://rectangleapp.com/). A free open-source window manager for MacOS.
+
+
