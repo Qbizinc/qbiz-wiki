@@ -2,7 +2,7 @@
 title: AWS ML Specialty
 description: AWS has a certification for Machine Learning specialty. 
 published: true
-date: 2021-08-24T19:58:14.333Z
+date: 2021-08-24T20:17:05.864Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-16T16:47:39.772Z
@@ -690,8 +690,9 @@ Semantic Segmentation
 ### 4.4 Deploy and operationalize machine learning solutions
 > **For the exam you need to understand...**
 >
-> VPCs and NAT/Internet gatewaya  in depth (this has increasing become more tested like almost 10% of the test)
+> VPCs and NAT/Internet gatewaya  in-depth (this has increasing become more tested like almost 10% of the test)
 > security practices involving KMS and IAM
+> how to deploy models on a SageMaker endpoint (multi-model endpoints, specific names of SDK functions, etc.)
 {.is-info}
 
 # Appendix
