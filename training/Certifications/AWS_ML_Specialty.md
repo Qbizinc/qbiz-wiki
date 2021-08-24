@@ -2,7 +2,7 @@
 title: AWS ML Specialty
 description: AWS has a certification for Machine Learning specialty. 
 published: true
-date: 2021-08-24T19:57:45.425Z
+date: 2021-08-24T19:58:14.333Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-16T16:47:39.772Z
@@ -697,8 +697,8 @@ Semantic Segmentation
 # Appendix
 ## Links
 **Vetted Practice Tests**
-[Udemy Practice Test](https://www.udemy.com/course/aws-machine-learning-practice-exam/ "65 questions")
 [Braincert Practice Test](https://www.braincert.com/course/22419-AWS-Certified-Machine-Learning-%E2%80%93-Specialty-Practice-Exams "3 tests with 50 questions each and 1 test with 37 questions")
+[Udemy Practice Test](https://www.udemy.com/course/aws-machine-learning-practice-exam/ "65 questions")
 [Official AWS Certified Machine Learning - Specialty Practice Test (MLS-P01)](https://www.certmetrics.com/amazon/)
 
 **Important Nibbles of Info**
