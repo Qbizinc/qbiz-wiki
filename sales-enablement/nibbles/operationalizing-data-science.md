@@ -2,7 +2,7 @@
 title: Operationalizing Data Science
 description: 
 published: true
-date: 2021-08-24T20:34:04.147Z
+date: 2021-08-24T20:44:10.242Z
 tags: sales, sales-support, pre-sales, data-science, data-engineering
 editor: markdown
 dateCreated: 2021-08-19T18:27:03.419Z
@@ -143,6 +143,19 @@ At this stage, Data Scientists have access to the data features they need and ar
 > continuous training and deploy of models
 
 ##### Jenny
+- Talking points:
+  - This step is "Feedback on model performance."
+  - Feedback depends on audience.
+  - Strategic: manual.
+  - Tactical: capture human-expert-feedback-or-decisions (i.e. overrides) back to data scientists.
+  - Operational:
+    - Human: same as tactical.
+    - Machine:
+      - At a minimum, capture the full outcomes to deliver back for supervised-learning (building/training).
+        - Lots of software-engineer-not-in-data plus data engineer work.
+      - Better, enable proper statistically-valid, A/B testing.
+        - Very, much, lots of software-engineer-not-in-data work.
+        - Requires data scientist expertise translated to those software-engineers-not-in-data.
 
 ## 5. Realtime model feedback
 
@@ -152,3 +165,15 @@ At this stage, Data Scientists have access to the data features they need and ar
 
 **How Qbiz can help**: We can work with Data Science and IT to establish processes to provide continuous monitoring of model performance, appropraite alerting, and visualizations.
 
+##### Jenny
+- Talking points:
+  - This step is "Real-time building/training of models."
+  - Very rarely needed.
+  - For these use cases, most data science model types cannot be used. (None of Qbiz's business; data scientists know this.)
+  - If needed and possible, then massive infrastructure implications.
+  - Blended real-time and batch ETL is immensely difficult.
+  - Feature-store in blended real-time and batch ETL is immensely difficult.
+  - Very few engineers of any kind have experience with the products in this space.
+    - Kappa architecture: Druid is an open source instance.
+    - Pure streaming: Nifi, etc., very difficult to get the data right, because testing is extremely difficult.
+  - Qbiz has expertise.
