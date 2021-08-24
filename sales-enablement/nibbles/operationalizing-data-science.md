@@ -2,7 +2,7 @@
 title: Operationalizing Data Science
 description: 
 published: true
-date: 2021-08-24T20:02:50.974Z
+date: 2021-08-24T20:30:42.600Z
 tags: sales, sales-support, pre-sales, data-science, data-engineering
 editor: markdown
 dateCreated: 2021-08-19T18:27:03.419Z
@@ -25,24 +25,25 @@ Depending on the maturity and culture of a business's organization, bottlenecks 
 ##### Jenny
 - Initial discovery
   - Talking points:
-    - "Data scientists not delivering"
-      - "Qbiz defines this as inadequate data science throughput"
-    - "You cannot measure or manage your data science throughput without a data science assembly line."
-    - "Data scientists' core function is building and validating models."
-      - "Building and validating models is in the middle of the assembly line."
-    - "Data scientists say they're spending all of their time not doing data science, instead doing EDA, munging, wrangling"
-      - "Qbiz names this as data scientists are spending all of their time getting their data to be 'manufacturing-ready'."
-      - "This is not their core function; that's why they're less effective at it."
+    - Data scientists are not delivering.
+      - Qbiz defines this as "inadequate data science throughput".
+    - A company cannot measure or manage its data science throughput without a data science assembly line.
+    - Data scientists' core function is "building and validating models".
+      - Building and validating models is in the middle of the assembly line.
+    - Data scientists say they're spending all of their time not doing data science, instead doing EDA, munging, wrangling.
+      - Qbiz names this as "data scientists are spending all of their time getting their data to be 'manufacturing-ready'".
+      - This is not their core function; that's why they're less effective at it.
+      - Data engineers are best at this.
     - Data science assembly lines:
-      1. Produce "manufacturing-ready" data.
+      1. Produce "manufacturing-ready" data
       2. Build and validate models
-      3. Decision actors using models
+      3. Deliver model outputs to decision actors
       4. Feedback on model performance
       5. Making sure models are predictably up-to-date
-      6. Real-time models
+      6. Real-time building/training of models
       7. &lt;Need to rethink 4,5,6 as maturity, not as separate steps.&gt;
-    - "The data science assembly line is inherently cross-functional, including IT, data engineers and architects, and even software engineers not in data."
-      - "Qbiz understands all of these perspectives and how to translate between them."
+    - The data science assembly line is inherently cross-functional, including IT, data engineers and architects, and even software engineers not in data.
+      - Qbiz understands all of these perspectives and how to translate between them.
   - Leading questions:
     - What has your ROI on data science been?
     - If your data scientists aren't delivering, what reasons do they give?
@@ -63,15 +64,19 @@ Depending on the maturity and culture of a business's organization, bottlenecks 
 ##### Jenny
 - Talking points:
   - This step is "Produce manufacturing-ready data."
-  - "Building models requires as input, individual datasets that are shaped a certain way."
-    - "Data engineers are best suited to put these datasets together."
-    - "Qbiz recommends a feature-store as machinery to put together these datasets."
-  - "The most mature vision of the feature-store allows a data scientist to click a few buttons and receive the correct, customized dataset for the desired model type and parameters."
-    - A general-purpose product for this does not exist.
-    - Qbiz can help companies with the machinery for customized datasets on demand with the right manual/automated tradeoff for the maturity level of the company.
-    - This is NOT a data warehouse.
+  - Building models requires as input, individual datasets that are shaped a certain way.
+    - Data engineers are best suited to put these datasets together.
+    - Qbiz recommends a feature-store as machinery to put together these datasets.
+  - The most mature vision of the feature-store allows a data scientist to click a few buttons and receive the correct, customized dataset for the desired model type and parameters.
+    - A general-purpose product for this does not exist from any product vendor.
+    - Qbiz can help companies deliver the machinery for "customized datasets on demand" with the right balance of manual/automated for the maturity level of the company.
+    - This is NOT a data lake or a data warehouse.
+      - Data lakes capture raw data not in the shape required for building models.
+        - Models require a "granularity of action"; raw data is usually not at that granularity.
+        - At the specific granularity of action, computing specific features is complex.
       - Data warehouses are for dashboards and are relatively stable.
-      - The feature store is for on-demand requests that are complex.
+        - The feature store is for on-demand requests that are complex.
+          - The feature store is not stable.
 
 ## 2. Doing Data Science
 
@@ -89,6 +94,17 @@ At this stage, Data Scientists have access to the data features they need and ar
 
 ##### Jay
 - We can help spin up Sagemaker instances, iPython notebooks, make them reliable and reusable. We can recommend tools such as VSCode and Pycharm and educate on how to best use them. We can migrate existing code to github and educate on collaborative coding. Tools such as black, pylint, and pytest can introduce discipline and stylistic conformity that make collaboration smoother
+
+##### Jenny
+- Talking points:
+  - This step is "Building and validating models."
+  - Building is time consuming without the right tools.
+    - Infrastructure, which requires DevOps.
+    - Code standards and libraries, which requires software engineering expertise and curation.
+  - Validating in data science culture is academic peer review.
+    - The process must be repeatable, which requires tools and coding standards.
+    - The process must be replicable by another data scientist on a different environment (another machine).
+    - Much of academic peer review is presentation and defense, and tools exist to support this process.
 
 ## 3. Delivering models outputs to decision actors (machine actor, human actor)
 > Are production systems consuming the output of your models? If so, are you able to iterate on changes to your models quickly enough to satisfy business stakeholders?
