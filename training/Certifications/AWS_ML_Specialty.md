@@ -2,7 +2,7 @@
 title: AWS ML Specialty
 description: AWS has a certification for Machine Learning specialty. 
 published: true
-date: 2021-08-20T22:19:54.993Z
+date: 2021-08-24T19:44:03.684Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-16T16:47:39.772Z
@@ -299,7 +299,7 @@ It monitors your applications and automatically adjusts capacity to maintain ste
 | **CI/CD** |  Bridges the gaps between development and operation activities and teams by enforcing automation in building, testing and deployment of applications. Modern day DevOps practices involve continuous development, continuous testing, continuous integration, continuous deployment and continuous monitoring of software applications throughout its development life cycle.  | 
 | **Canary Deployment Methodology** | Pattern for rolling out releases to a subset of users or servers. The idea is to first deploy the change to a small subset of servers, test it, and then roll the change out to the rest of the servers. The canary deployment serves as an early warning indicator with less impact on downtime: if the canary deployment fails, the rest of the servers aren't impacted.| 
 
-
+<br></br>
 ### Compiling
 [Amazon Mechanical Turk](https://www.mturk.com/)
 - crowdsourcing marketplace that makes it easier for individuals and businesses to outsource their processes and jobs to a distributed workforce who can perform these tasks virtually
@@ -571,6 +571,7 @@ In the case of streaming data, Kinesis Firehose can transform data before storag
 > techniques for dimensionality reduction (PCA and LDA)
 {.is-info}
 
+<br></br>
 ### 2.3 Analyze and visualize data for machine learning
 **Scatter Plots**
 ![scatter_plots.png](/images/aws_ml_certification/scatter_plots.png =650x)
@@ -596,7 +597,7 @@ In the case of streaming data, Kinesis Firehose can transform data before storag
 ### 3.1 Frame business problems as machine learning problems
 > **For the exam you need to understand...**
 >
-> understand all the built in SageMaker models
+> all the built in SageMaker models
 >
 > [**Read:** Built-in SageMaker Models](https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html)
 {.is-info}
@@ -607,11 +608,10 @@ In the case of streaming data, Kinesis Firehose can transform data before storag
 | Unsupervised learning | making predictions on an unlabeled set| 
 | Regression | predicting a continous target  | 
 | Classification | predicting a discrete target  | 
-| Clustering | Grouping points together to make predictions |  
-| Anomaly detection | Detection outliers to make predictions| 
+| Clustering | grouping points together to make predictions |  
+| Anomaly detection | detecting outliers to make predictions| 
 
-
-
+<br></br>
 ### 3.2 Select the appropriate model(s) for a given machine learning problem
 **Anomaly Detection**
 Random Cut Forest
@@ -637,12 +637,48 @@ Semantic Segmentation
 <br></br>
 
 ### 3.3 Train machine learning models
+> **For the exam you need to understand...**
+>
+> how to train models with SageMaker
+{.is-info}
+
+<br></br>
 ### 3.4 Perform hyperparameter optimization
+> **For the exam you need to understand...**
+>
+> how to optimize hyperparameters for neural networks and tree-based models
+> what to do when the model isn't working (local minima, not coverging, etc)
+{.is-info}
+
+<br></br>
 ### 3.5 Evaluate machine learning models
+> **For the exam you need to understand...**
+>
+> all evaluation metrics for classification and regressions (RSME, precision, accuracy, confusion matricies, etc.)
+> all visualizations for evaluation (AUC ROC, AUPR, residual plots, etc)
+> which metrics to use when you have an imbalanced dataset
+{.is-info}
+
+<br></br>
 ## ML Implementation and Operations
 ### 4.1 Build machine learning solutions for performance, availability, scalability, resiliency, and fault tolerance
+
 ### 4.2 Recommend and implement the appropriate machine learning services and features for a given problem
+> **For the exam you need to understand...**
+>
+> and memorize all the entire AWS AI and ML stack (not joking)
+{.is-info}
+
+<br></br>
 ### 4.3 Apply basic AWS security practices to machine learning solutions
+> **For the exam you need to understand...**
+>
+> VPCs and NAT/Internet gatewaya  in depth (this has increasing become more tested like almost 10% of the test)
+> security practices involving KMS and IAM
+{.is-info}
+
+[S3 VPC Endpoints](https://tomgregory.com/when-to-use-an-aws-s3-vpc-endpoint/)
+<br></br>
 ### 4.4 Deploy and operationalize machine learning solutions
 # Appendix
 ## Links
