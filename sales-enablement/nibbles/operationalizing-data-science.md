@@ -2,7 +2,7 @@
 title: Operationalizing Data Science
 description: 
 published: true
-date: 2021-08-24T17:15:20.655Z
+date: 2021-08-24T19:30:53.903Z
 tags: sales, sales-support, pre-sales, data-science, data-engineering
 editor: markdown
 dateCreated: 2021-08-19T18:27:03.419Z
@@ -66,7 +66,7 @@ Depending on the maturity and culture of a business's organization, bottlenecks 
   - "Building models requires as input, individual datasets that are shaped a certain way."
     - "Data engineers are best suited to put these datasets together."
     - "Qbiz recommends a feature-store as machinery to put together these datasets."
-  - "The most mature vision of the feature-store allows a data scientist to click a few buttons and receive the correct, customized dataset for the model type in question.
+  - "The most mature vision of the feature-store allows a data scientist to click a few buttons and receive the correct, customized dataset for the desired model type and parameters."
 
 ## 2. Doing Data Science
 
