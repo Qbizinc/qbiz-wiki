@@ -1,9 +1,9 @@
 ---
 title: AWS ML Specialty
-description: AWS has a certification for Machine Learning specialty.
+description: Study guide for the AWS Certification ML - Specialty exam
 published: true
-date: 2021-08-24T20:33:21.298Z
-tags: 
+date: 2021-08-24T20:34:56.015Z
+tags: machine-learning, certification, aws
 editor: markdown
 dateCreated: 2021-08-16T16:47:39.772Z
 ---
