@@ -2,7 +2,7 @@
 title: Operationalizing Data Science
 description: 
 published: true
-date: 2021-08-24T00:18:55.682Z
+date: 2021-08-24T17:15:20.655Z
 tags: sales, sales-support, pre-sales, data-science, data-engineering
 editor: markdown
 dateCreated: 2021-08-19T18:27:03.419Z
@@ -17,16 +17,36 @@ dateCreated: 2021-08-19T18:27:03.419Z
 Roadblocks to operationalizing Data Science are typically experienced by business stakeholders as lack of throughput. Data Scientists may have been hired and are doing good work, but the results are non-existent or take a very long time to materialize.
 
 Depending on the maturity and culture of a business's organization, bottlenecks can occur at one or more of the following stages in the Data Science assembly line.
-
-##### Jenny
-- Sales process: repeat and reframe
-  - "Data Science throughput is your problem"
-  - "You cannot fix or improve your throughput without an assembly line"
-  - **assembly line is cross-functional**
   
 ##### Jay
 - need to flesh out the cross-functional aspect of the assembly line -- qbiz uniquely positioned to make the assembly line run smoothly because we can wear many different hats
 - technologies: not a lot to say here. We could mention introducing tools like JIRA and Confluence to enable cross-functionality. We are not project managers but we can wear the shoes for a time as the organization ramps up, and we can lay the groundwork for effective project management
+
+##### Jenny
+- Initial discovery
+  - Talking points:
+    - "Data scientists not delivering"
+      - "Qbiz defines this as inadequate data science throughput"
+    - "You cannot measure or manage your data science throughput without a data science assembly line."
+    - "Data scientists' core function is building and validating models."
+      - "Building and validating models is in the middle of the assembly line."
+    - "Data scientists say they're spending all of their time not doing data science, instead doing EDA, munging, wrangling"
+      - "Qbiz names this as data scientists are spending all of their time getting their data to be 'manufacturing-ready'."
+      - "This is not their core function; that's why they're less effective at it."
+    - Data science assembly lines:
+      1. Produce "manufacturing-ready" data.
+      2. Build and validate models
+      3. Decision actors using models
+      4. Feedback on model performance
+      5. Making sure models are predictably up-to-date
+      6. Real-time models
+      7. &lt;Need to rethink 4,5,6 as maturity, not as separate steps.&gt;
+    - "The data science assembly line is inherently cross-functional, including IT, data engineers and architects, and even software engineers not in data."
+      - "Qbiz understands all of these perspectives and how to translate between them."
+  - Leading questions:
+    - What has your ROI on data science been?
+    - If your data scientists aren't delivering, what reasons do they give?
+    - Do your data scientists name any specific functions or teams as roadblocks?
 
 ## 1. Enabling Data Access (EDA)
 
@@ -39,6 +59,15 @@ Depending on the maturity and culture of a business's organization, bottlenecks 
 
 ##### Jay
 - Data is most likely being pulled from a database such as a Redshift or Snowflake. It could also be pulled from a data lake (e.g., S3). We can analyze data models, query performance, discover strategies for optimizations. We can deliver a curated set of data that's optimized for DS model building by working with IT to set up appropriate cloud infrastucture (e.g. AWS Glue, Step Functions, Batch, ECS -- also orchestration tools like Apache Airflow)
+
+##### Jenny
+- Talking points:
+  - This step is "Produce manufacturing-ready data."
+  - "Building models requires as input, individual datasets that are shaped a certain way."
+    - "Data engineers are best suited to put these datasets together."
+    - "Qbiz recommends a feature-store as machinery to put together these datasets."
+  - "The most mature vision of the feature-store allows a data scientist to click a few buttons and receive the correct, customized dataset for the model type in question.
+
 ## 2. Doing Data Science
 
 At this stage, Data Scientists have access to the data features they need and are building and batch training models
