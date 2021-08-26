@@ -2,7 +2,7 @@
 title: Operationalizing Data Science
 description: 
 published: true
-date: 2021-08-26T19:47:31.160Z
+date: 2021-08-26T20:06:48.547Z
 tags: sales, sales-support, pre-sales, data-science, data-engineering
 editor: markdown
 dateCreated: 2021-08-19T18:27:03.419Z
@@ -170,6 +170,10 @@ At this stage, Data Scientists have access to the data features they need and ar
       - Better, enable proper statistically-valid, A/B testing.
         - Very, much, lots of software-engineer-not-in-data work.
         - Requires data scientist expertise translated to those software-engineers-not-in-data.
+
+##### David E
+- Model performance should be captured over time. (Accurarcy / whatever metric(s) of interest, availability, # errors, ...)
+- Can models be adjusted / retrained quickly and easily? Can this be automated? 
 
 ## 5. Realtime model feedback
 
