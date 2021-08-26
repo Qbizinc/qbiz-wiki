@@ -2,7 +2,7 @@
 title: Operationalizing Data Science
 description: 
 published: true
-date: 2021-08-24T20:44:10.242Z
+date: 2021-08-26T19:37:53.831Z
 tags: sales, sales-support, pre-sales, data-science, data-engineering
 editor: markdown
 dateCreated: 2021-08-19T18:27:03.419Z
@@ -77,6 +77,14 @@ Depending on the maturity and culture of a business's organization, bottlenecks 
       - Data warehouses are for dashboards and are relatively stable.
         - The feature store is for on-demand requests that are complex.
           - The feature store is not stable.
+          
+##### David E
+- Development
+  - For exploratory analyses, DSs like to be able to quickly get access to all data. Wide, easily-joinable tables make this easy and fast. 
+  - Aggregate tables for commong aggregations speed up analyses and optimize resources. 
+  - Feature stores (curated datasets) can fast-track work. But "quality" data may depend on the specific business objective, target metric, model choice, etc. 
+- Production 
+  - Data for models in production has a different set of requirements (speed etc). 
 
 ## 2. Doing Data Science
 
