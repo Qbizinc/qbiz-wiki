@@ -2,7 +2,7 @@
 title: Operationalizing Data Science
 description: 
 published: true
-date: 2021-08-26T19:37:53.831Z
+date: 2021-08-26T19:47:31.160Z
 tags: sales, sales-support, pre-sales, data-science, data-engineering
 editor: markdown
 dateCreated: 2021-08-19T18:27:03.419Z
@@ -113,6 +113,12 @@ At this stage, Data Scientists have access to the data features they need and ar
     - The process must be repeatable, which requires tools and coding standards.
     - The process must be replicable by another data scientist on a different environment (another machine).
     - Much of academic peer review is presentation and defense, and tools exist to support this process.
+
+##### David E
+- Educating DSs sounds difficult; like herding cats. Especially if individual DS does not want to be educated. 
+- Putting standards and best practices into place and supporting their use with documentation is helpful. 
+- Developing models in a way that makes them easily deployable (if they will be deployed), and captures data on various model runs, performance, etc. 
+
 
 ## 3. Delivering models outputs to decision actors (machine actor, human actor)
 > Are production systems consuming the output of your models? If so, are you able to iterate on changes to your models quickly enough to satisfy business stakeholders?
