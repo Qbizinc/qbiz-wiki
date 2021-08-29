@@ -2,7 +2,7 @@
 title: Fundamentals of Hive Type
 description: 
 published: true
-date: 2021-08-23T16:17:57.815Z
+date: 2021-08-29T21:59:37.539Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-23T14:17:11.210Z
@@ -22,3 +22,8 @@ This [meal](/training/qram/meals) introduces the fundamentals of the Hive-Type a
    1. [Overview of Hadoop Distributed File System](/training/qram/dishes/overview_of_hdfs)
    2. Note the lack of versioning in HDFS.
    3. Note also that journaling is optional and is inaccessible to users.
+3. Next, learn about Hive Metastore (HMS):
+   1. [Overview of Hive Metastore](/training/qram/dishes/overview_of_hms)
+   2. Note the single-location-per-partition property.
+   3. Note also the need to query both HDFS NameNode and DataNode to get file metadata.
+4. 
