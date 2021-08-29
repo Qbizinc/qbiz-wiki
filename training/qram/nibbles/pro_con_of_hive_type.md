@@ -2,7 +2,7 @@
 title: Pros and Cons of Hive Type
 description: 
 published: true
-date: 2021-08-29T21:52:39.037Z
+date: 2021-08-29T22:23:32.062Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-23T19:58:25.278Z
@@ -36,4 +36,13 @@ This ease-of-adoption is incredibly attractive for new open-source projects.
 - Lack of referential transparency prevents warehouse cloning and time travel.
 - Self-describing files avoiding metadata cache incoherence issues leads to massive stability, scalability, and performance issues.
   - Needing to hit a file system to get file metadata is a major drag.
+  - [This article by Cloudera simply says, "don't do that!"](https://blog.cloudera.com/partition-management-in-hadoop/)
   - Impala chose to cache metadata on every node. This over-correction then leads to massive instability at large scale.
+    - [In Impala, since v2.10, the HDFS NameNode may be cached.](https://impala.apache.org/docs/build3x/html/topics/impala_scalability.html)
+    - This cache exists on every Impala node. It is enabled by default at runtime for a given Impala node once that node sees >= 20,000 HDFS file names. Caching may be turned on completely. The 20,000 file name threshhold may be adjusted as well. There is no way to completely disable caching.
+
+(This caching is not "HDFS caching", which is caching file contents from HDFS DataNodes.)
+
+# References
+- [Partition Management in Hadoop (by Cloudera)](https://blog.cloudera.com/partition-management-in-hadoop/)
+- [Impala HDFS NameNode Cache](https://impala.apache.org/docs/build3x/html/topics/impala_scalability.html)
