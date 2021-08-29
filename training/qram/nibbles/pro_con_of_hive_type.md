@@ -2,7 +2,7 @@
 title: Pros and Cons of Hive Type
 description: 
 published: true
-date: 2021-08-23T20:01:13.433Z
+date: 2021-08-29T21:52:39.037Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-23T19:58:25.278Z
@@ -31,10 +31,9 @@ This ease-of-adoption is incredibly attractive for new open-source projects.
 
 # Cons
 
-## Slows Innovation
-Snowflake envy:
-- "One location per partition" prevents append-only data structures, a key performance optimization in Snowflake.
-- HMS generally prevents data warehouse cloning and time travel, also in Snowflake.
-- Self-describing files avoiding metadata cache incoherence issues leads to massive stability, scalability, and performance issues. (Also solved in Snowflake.)
+## Hive Metastore
+- "One location per partition" prevents append-only data structures, a key performance optimization.
+- Lack of referential transparency prevents warehouse cloning and time travel.
+- Self-describing files avoiding metadata cache incoherence issues leads to massive stability, scalability, and performance issues.
   - Needing to hit a file system to get file metadata is a major drag.
-  - It's so bad that Impala created an HDFS NameNode cache on each Impala node. This cache then leads to massive instability at large scale.
+  - Impala chose to cache metadata on every node. This over-correction then leads to massive instability at large scale.
