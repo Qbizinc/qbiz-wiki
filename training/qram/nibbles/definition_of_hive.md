@@ -2,7 +2,7 @@
 title: Definition of Hive
 description: 
 published: true
-date: 2021-08-17T22:22:37.780Z
+date: 2021-08-29T22:15:22.306Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-11T03:03:28.282Z
@@ -13,10 +13,20 @@ Hive was created to allow users to write SQL queries instead of Java in Hadoop M
 
 Originally, Hive compiled SQL to Hadoop MapReduce. Hive has since moved onto [Tez](https://tez.apache.org/), which works around a key architectural limitation of Hadoop MapReduce.
 
+Hive SQL is not ANSI-compatible with any year-standard. Most of the limitations are based on the file-oriented nature of Hadoop.
+
 ## Hive Metastore
 In order to compile SQL to Hadoop MR or Tez, Hive maintains the relational table definitions. HDFS and Hadoop MR / Tez are file-aware; they do not have tables. Therefore, Hive keeps metadata of the Hive relational database (list of tables, etc.) as well as which HDFS paths they are actually stored as. This is the [Hive Metastore (HMS)](https://docs.cloudera.com/runtime/7.2.10/hive-hms-overview/topics/hive-hms-introduction.html).
 
-## Self-Describing Files
+# File Oriented Nature
+1. Hive uses Hadoop MapReduce or Tez, both of which use HDFS.
+2. HDFS hosts files with a default block size of 128 MB.
+
+Therefore, transaction processing (OLTP) operations such as single record INSERTs, UPDATEs, or DELETEs are not possible.
+
+(They are technically possible with some unrelated extensions to the architecture.)
+
+# Self-Describing Files
 The HMS contains no file-level metadata.
 1. Hive reads the HMS to determine which partitions to read for a given query.
 2. Those partitions each have an HDFS path.
