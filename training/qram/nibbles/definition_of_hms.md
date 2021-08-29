@@ -2,7 +2,7 @@
 title: Definition of Hive Metastore
 description: 
 published: true
-date: 2021-08-23T20:22:48.319Z
+date: 2021-08-29T21:57:18.407Z
 tags: 
 editor: markdown
 dateCreated: 2021-08-11T02:52:21.513Z
@@ -28,20 +28,7 @@ In general, HA for HMS means a single active HMS node with multiple standby node
 
 Usually, all of the HMS nodes read and write from the same relational database network address and port.
 
-# Implications
-
-## Location Property
-That each partition may only have a single location is a major limitation to Hive architecture. In contrast, Snowflake and Delta Lake internally allow multiple locations, which sets the foundation for:
-- Persistent data structures (PDS)
-  - Avoids full-copy-on-write
-- Serializable isolation-level version control
-  - Clean history preservation for auditing and data lineage
-  - Time travel
-
-## Stability and Performance
-HMS stores locations at the partition-level. Query engines must then read the list of files for each partition location from the HDFS NameNode.
-
-- For tables with "too many" partitions, HMS (usually PostgreSQL) falls down. ([This annoying article by Cloudera simply says, "don't do that!"](https://blog.cloudera.com/partition-management-in-hadoop/))
+- For tables with "too many" partitions, HMS (usually PostgreSQL) falls down. ()
 - For tables with too many files belonging to the location of any given partition, the HDFS NameNode falls down.
 
 Therefore:
@@ -51,18 +38,3 @@ Therefore:
   - Moving partitions on HMS to adjust `[# of partitions / table]`
   - Relocating the files on the HDFS NameNode to make partition locations work (every file in a partition must be in a subdirectory tree of the partition location)
 - Both the HMS and the HDFS NameNode are single-instance by design.
-
-### Impala
-[In Impala, since v2.10, the HDFS NameNode may be cached.](https://impala.apache.org/docs/build3x/html/topics/impala_scalability.html) This seeks to avoid the HDFS NameNode side of this stability issue, as well as dramatically improve performance by avoiding reading from the HDFS NameNode.
-
-This cache exists on every Impala node. It is enabled by default at runtime for a given Impala node once that node sees >= 20,000 HDFS file names. Caching may be turned on completely. The 20,000 file name threshhold may be adjusted as well. There is no way to completely disable caching.
-
-(This caching is not "HDFS caching", which is caching file contents from HDFS DataNodes.)
-
-- In large installations, HDFS NameNode caching has been known to bring down clusters, or at least make startup times so long that DevOps is impractical.
-- The cache may lead to weird inconsistency errors, as Impala nodes must communicate changes (writes) to schema/table/partition/location to each other on a peer-to-peer basis. The probability of this increases with the number of partitions in an installation.
-
-# References
-- [Hive Design](https://cwiki.apache.org/confluence/display/hive/design)
-- [Partition Management in Hadoop (by Cloudera)](https://blog.cloudera.com/partition-management-in-hadoop/)
-- [Impala HDFS NameNode Cache](https://impala.apache.org/docs/build3x/html/topics/impala_scalability.html)
