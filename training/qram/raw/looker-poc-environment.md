@@ -2,7 +2,7 @@
 title: Qbiz Looker POC Environment
 description: Overview of Qbiz Internal Looker Partner Portal available for POCs
 published: true
-date: 2021-08-30T20:24:25.384Z
+date: 2021-08-30T21:09:59.900Z
 tags: looker, poc, lookml
 editor: markdown
 dateCreated: 2021-08-30T15:57:17.235Z
@@ -37,12 +37,6 @@ https://docs.looker.com/setup-and-management/database-config/mysql
 
 ![create-prj-3.png](/images/looker-screenshots/create-prj-3.png)
 
-- Import Views
-![import-view-1.png](/images/looker-screenshots/import-view-1.png)
-
-![import-view-2.png](/images/looker-screenshots/import-view-2.png)
-
-
 - Setting up GIT
 create new GIT repository
 ![git-config-1.png](/images/looker-screenshots/git-config-1.png)
@@ -62,7 +56,100 @@ paste key in git
 authenticate to git
 ![git-config-9.png](/images/looker-screenshots/git-config-9.png)
 
+#### Dimension Setup
+- Import Views
+![import-view-1.png](/images/looker-screenshots/import-view-1.png)
+view import creates simple dimension(attribute) for each field in imported table
+![import-view-2.png](/images/looker-screenshots/import-view-2.png)
+
+- Create additional dimensions
+best practices for referencing dimensions
+![dim-setup-1.png](/images/looker-screenshots/dim-setup-1.png)
+
+![dim-setup-2.png](/images/looker-screenshots/dim-setup-2.png)
+reference dimension in metrics
+![dim-setup-3.png](/images/looker-screenshots/dim-setup-3.png)
+>   measure: sum_qty_sold {
+>     type:  sum
+>     sql:  ${qty_sold} ;;
+>   }
+{.is-info}
+
+![dim-setup-4.png](/images/looker-screenshots/dim-setup-4.png)
+
+![dim-setup-5.png](/images/looker-screenshots/dim-setup-5.png)
+dimension type example string
+>   dimension: fullname {
+>     type: string
+>     sql:  ${cust_first_name}||''||${cust_last_name};;
+>   }
+{.is-info}
 
 
 
+![dim-setup-6.png](/images/looker-screenshots/dim-setup-6.png)
+dimension type example number
+>   dimension: days_since_order_date {
+>     type: number
+>     sql:  DATE_DIFF(current_date(),${order_date},day) ;;
+>   }
+{.is-info}
 
+
+
+![dim-setup-7.png](/images/looker-screenshots/dim-setup-7.png)
+
+![dim-setup-8.png](/images/looker-screenshots/dim-setup-8.png)
+dimension type example yesno and tier 
+>   dimension: is_new_order {
+>     type: yesno
+>     sql: ${days_since_order_date}<=30 ;;
+>   }
+>   
+>   dimension: order_date_tier {
+>     type:  tier
+>     sql:  ${days_since_order_date} ;;
+>     tiers: [0,10,20,30,60,90,180,360,720]
+>     style: integer
+>   }
+{.is-info}
+
+![dim-setup-9.png](/images/looker-screenshots/dim-setup-9.png)
+
+![dim-setup-10.png](/images/looker-screenshots/dim-setup-10.png)
+
+![dim-setup-11.png](/images/looker-screenshots/dim-setup-11.png)
+dimension type example dimension group type time
+>   dimension_group: order {
+>     type: time
+>     timeframes: [
+>       raw,
+>       date,
+>       week,
+>       month,
+>       quarter,
+>       year
+>     ]
+>     convert_tz: no
+>     datatype: date
+>     sql: ${TABLE}.ORDER_DATE ;;
+>   }
+{.is-info}
+
+![dim-setup-12.png](/images/looker-screenshots/dim-setup-12.png)
+
+![dim-setup-14.png](/images/looker-screenshots/dim-setup-14.png)
+
+![dim-setup-13.png](/images/looker-screenshots/dim-setup-13.png)
+dimension type example dimension group type duration
+>   dimension_group: durations_order_to_ship {
+>     type:  duration
+>     intervals: [second,minute,hour,day,week,month,quarter,year]
+>     sql_start: ${order_date};;
+>     sql_end: ${ship_date};;
+>   }
+{.is-info}
+
+![dim-setup-15.png](/images/looker-screenshots/dim-setup-15.png)
+
+![dim-setup-16.png](/images/looker-screenshots/dim-setup-16.png)
