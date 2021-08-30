@@ -2,7 +2,7 @@
 title: Qbiz Looker POC Environment
 description: Overview of Qbiz Internal Looker Partner Portal available for POCs
 published: true
-date: 2021-08-30T16:20:46.352Z
+date: 2021-08-30T20:24:25.384Z
 tags: looker, poc, lookml
 editor: markdown
 dateCreated: 2021-08-30T15:57:17.235Z
@@ -38,6 +38,31 @@ https://docs.looker.com/setup-and-management/database-config/mysql
 ![create-prj-3.png](/images/looker-screenshots/create-prj-3.png)
 
 - Import Views
+![import-view-1.png](/images/looker-screenshots/import-view-1.png)
+
+![import-view-2.png](/images/looker-screenshots/import-view-2.png)
+
 
 - Setting up GIT
+create new GIT repository
+![git-config-1.png](/images/looker-screenshots/git-config-1.png)
+![git-config-2.png](/images/looker-screenshots/git-config-2.png)
+copy the ssh url
+![git-config-3.png](/images/looker-screenshots/git-config-3.png)
+in looker click configure git from the model page
+![git-config-4.png](/images/looker-screenshots/git-config-4.png)
+paste in the ssh url
+![git-config-5.png](/images/looker-screenshots/git-config-5.png)
+copy the key
+![git-config-6.png](/images/looker-screenshots/git-config-6.png)
+in git settings select deploy keys
+![git-config-7.png](/images/looker-screenshots/git-config-7.png)
+paste key in git
+![git-config-8.png](/images/looker-screenshots/git-config-8.png)
+authenticate to git
+![git-config-9.png](/images/looker-screenshots/git-config-9.png)
+
+
+
+
 
