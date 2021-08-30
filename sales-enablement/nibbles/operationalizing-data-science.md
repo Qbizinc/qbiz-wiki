@@ -2,7 +2,7 @@
 title: Operationalizing Data Science
 description: 
 published: true
-date: 2021-08-30T17:44:36.782Z
+date: 2021-08-30T17:45:48.515Z
 tags: sales, sales-support, pre-sales, data-science, data-engineering
 editor: markdown
 dateCreated: 2021-08-19T18:27:03.419Z
@@ -201,3 +201,4 @@ At this stage, Data Scientists have access to the data features they need and ar
 - Job title variance
 - MDM
 - Strategic models not for prediction - looking for strong correlation
+- Model ops
