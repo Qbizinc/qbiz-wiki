@@ -2,7 +2,7 @@
 title: Operationalizing Data Science
 description: 
 published: true
-date: 2021-08-26T20:06:48.547Z
+date: 2021-08-30T17:44:36.782Z
 tags: sales, sales-support, pre-sales, data-science, data-engineering
 editor: markdown
 dateCreated: 2021-08-19T18:27:03.419Z
@@ -195,3 +195,9 @@ At this stage, Data Scientists have access to the data features they need and ar
     - Kappa architecture: Druid is an open source instance.
     - Pure streaming: Nifi, etc., very difficult to get the data right, because testing is extremely difficult.
   - Qbiz has expertise.
+
+## Notes 2021-08-30
+- "Rework tax"
+- Job title variance
+- MDM
+- Strategic models not for prediction - looking for strong correlation
