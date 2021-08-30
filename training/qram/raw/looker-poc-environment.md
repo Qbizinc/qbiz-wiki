@@ -2,7 +2,7 @@
 title: Qbiz Looker POC Environment
 description: Overview of Qbiz Internal Looker Partner Portal available for POCs
 published: true
-date: 2021-08-30T21:09:59.900Z
+date: 2021-08-30T21:11:42.712Z
 tags: looker, poc, lookml
 editor: markdown
 dateCreated: 2021-08-30T15:57:17.235Z
@@ -153,3 +153,8 @@ dimension type example dimension group type duration
 ![dim-setup-15.png](/images/looker-screenshots/dim-setup-15.png)
 
 ![dim-setup-16.png](/images/looker-screenshots/dim-setup-16.png)
+
+#### Measure Setup
+
+
+
