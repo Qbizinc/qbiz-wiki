@@ -2,7 +2,7 @@
 title: Jinja
 description: 
 published: true
-date: 2021-09-01T19:23:43.440Z
+date: 2021-09-01T19:24:49.036Z
 tags: 
 editor: markdown
 dateCreated: 2021-09-01T19:18:02.443Z
@@ -14,8 +14,9 @@ Jinja is a fast, expressive, extensible templating engine. Special placeholders 
 * [Official documentation.](https://jinja.palletsprojects.com/en/3.0.x/)
 
 #### Used with
-* html / javascript / xml
-* flask / django
-* Airflow
 * Python
 * SQL
+* Airflow
+* Ansible, Salt
+* html / javascript / xml
+* flask 
