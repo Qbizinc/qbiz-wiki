@@ -2,7 +2,7 @@
 title: Jinja
 description: 
 published: true
-date: 2021-09-01T19:24:49.036Z
+date: 2021-09-01T23:05:33.304Z
 tags: 
 editor: markdown
 dateCreated: 2021-09-01T19:18:02.443Z
