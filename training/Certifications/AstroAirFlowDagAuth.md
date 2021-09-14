@@ -2,7 +2,7 @@
 title: Astronomer DAG Authoring for Apache Airflow
 description: 
 published: true
-date: 2021-09-14T06:28:21.257Z
+date: 2021-09-14T19:29:02.386Z
 tags: 
 editor: markdown
 dateCreated: 2021-09-13T16:48:50.416Z
@@ -122,9 +122,91 @@ Just remember that you can group tasks and create dependencies between two diffe
 
 You can instantiate a Task Group using a with statement and the TaskGroup function (providing allways a group_id). Inside the TaskGroup, you can define the tasks and their respective dependencies.
 
-To simplify your code, you can allways put your grouped task in another folder inside the dag directory. You can also create nested TaskGroups (Groups inside another Group)
+To simplify your code, you can allways put your grouped task in another folder inside the dag directory. You can also create nested TaskGroups (Groups inside another Group).
 
 ## Advanced Concepts
+### Dynamic Tasks
+You can create Dynamic tasks storing the values in a dictionary in your dag. You can only do this if the values are already known, airflow need to know in advance the strucutre of your dag.
+
+### Branching Operator
+With Branching you can execute tasks according to a condition; if your condition is True, then you have to return the task_id or multple task_id's that you want to execute in that condition. 
+
+Remember that you have to allways return something, if you don't do that the dag will throw an error. You can solve this modifying your scheduing_interval or adding a Dummy/Stop task to the conditions that you need to fill
+
+Examples of Branch Operators:
+
+- BranchSQLOperator
+- BranchPythonOperator
+
+### Trigger Rules
+
+A trigger rule defines why your task is going to be triggered. Examples of trigger rules:
+
+- trigger_rule='all_success': (Default Value) The task gets triggered if all of his parents have succeeded
+- trigger_rule='all_failed': The task gets triggered if all of his parents have failed
+- trigger_rule='all_done': The task gets triggered if all of his parents have been triggered and completed. It doesn't care about the status of the parent tasks
+- trigger_rule='one_success': The task gets triggered as soon as one of the parents succeeded
+- trigger_rule='one_failed'
+- trigger_rule='none_failed': The task gets triggered if all of the parents have succeeded or have been skipped
+- trigger_rule='none_skipped': The task gets triggered if none of the parents have been skipped
+- trigger_rule='none_failed_or_skipped': The task gets triggered if at least one the parents have succeeded and all of the parents have been completed
+- trigger_rule='dummy': Your task gets triggered
+
+### Dependencies and Helpers
+
+If t1, t2, t3, t4, t5 and t6 are tasks, you can create dependencies in the following way:
+
+- t2.set_upstream(t1)
+- t2.set_downstream(t1)
+- t1 >> t2
+- [ t1, t2, t3 ] >> t4
+- cross_downstream([t1, t2, t3], [t4, t5, t6]) (cross dependency)
+- chain(t1, [t2, t3], [t4, t5], t6) (lenght of the lists have to be the same when chaining tasks)
+
+### Concurrency
+
+In the configuration file you can change the following variables to change the concurrency of airflow
+
+- parallelism: Number of tasks that can be executed at the same time in your airflow instance, default value 32
+- dag_concurrency: Number of tasks that can be executed at the same time for a given dag, default value 16
+- max_active_run_per_dag: Number of dag runs that can be executed at the same time for a given dag, default value 16
+
+At that dag level, you can add two parameters to your dag operator to modify the concurrency
+
+- concurrency: The Airflow scheduler will run no more than this number of task instances for your DAG at any given time
+- max_active_runs: Number of dags runs at the same time
+
+At the task level
+
+- task_concurrency:  This parameter controls the number of concurrent running task instances across dag_runs per task.
+
+### Pools
+
+Pools allow you to limit parallelism for an arbitrary set of tasks, giving you fine grained control over when your tasks are run. When creating a pool, you have set the number of worker slots that get taken by running tasks to limit execution parallelism
+
+By default, all tasks in Airflow get assigned to the default_pool which has 128 slots. You can modify this value, but you can't remove the default pool. Tasks can be assigned to any other pool by updating the pool parameter. This parameter is part of the BaseOperator, so it can be used with any operator
+
+Example:
+
+Limit the concurrency of "process" tasks by creating a pool with 1 slot, so that they are executed sequentially while other task are executed simultaneously
+
+When working with pools, there are a couple of limitations to keep in mind:
+
+- Each task can only be assigned to a single pool.
+- If you are using SubDAGs, pools must be applied directly on tasks inside the SubDAG. Pools set within the SubDAGOperator will not be honored.
+- Pools are meant to control parallelism for Task Instances. If instead you are looking to place limits on the number of concurrent DagRuns for a single DAG or all DAGs, check out the max_active_runs and core.max_active_runs_per_dag parameters respectively.
+
+### Task Priority
+
+If there is a task that is critical in your pipeline and you want to run it first before the other tasks you can use the paramater priority_weight. 
+
+When tasks are assigned to a pool, they will be scheduled as normal until all of the pool's slots are filled. As slots open up, the remaining queued tasks will start running. You can control which tasks within the pool are run first by assigning priority weights which define priorities for the executor queue. These are assigned at the pool level with the priority_weights parameter. The values can be any arbitrary integer (default is 1), and higher values get higher priority.
+
+### Depends on past and wait for downstream
+
+If you have set depends_on_past=True, if the task extract didn't succeed in the previous DAG Run, then it doesn't get triggered in the current DAG Run (except if it is the first run for that task). Also, if wait_for_downstream=True, all tasks immediately downstream of the previous task instance must have succeeded
+
+### 
 
 ## DAG Dependencies
 
