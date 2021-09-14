@@ -2,7 +2,7 @@
 title: Astronomer DAG Authoring for Apache Airflow
 description: 
 published: true
-date: 2021-09-14T21:21:46.480Z
+date: 2021-09-14T21:28:00.123Z
 tags: 
 editor: markdown
 dateCreated: 2021-09-13T16:48:50.416Z
@@ -44,7 +44,7 @@ next_dag_start_date = execution_date + schedule_interval
 schedule_interval parameter accepts cron or timedelta values. This initiates the next dag run by utilizing the formula
 next_dag_start_date = max(start_date, last_run_date) + schedule_interval
 
-Eg - if your start_date = datetime(2019, 10, 13, 15, 50), schedule_interval = 0 * * * * or (@hourly)
+Example: - if your start_date = datetime(2019, 10, 13, 15, 50), schedule_interval = 0 * * * * or (@hourly)
 
 Case a) current_time is before start_date - 2019-10-13 00:00, then your dags will schedule at
 2019-10-13 16:50, and subsequently every hour.
@@ -53,7 +53,7 @@ Please note that it will not start at start_date(2019-10-13 15:50), but rather a
 Case b) current_time is after start_date - 2019-10-14 00:00, then your dags will schedule at
 2019-10-13 16:50, 2019-10-13 17:50, 2019-10-13 18:50 … and subsequently catchup till it reaches 2019-10-13 23:50
 Then it will wait for the strike of 2019-10-14 00:50 for the next run.
-Please not that the catchup can be avoided by setting catchup=False in dag properties
+Please not that the catchup can be avoided by setting catchup=False in dag object properties
 
 ### Cron vs Timedelta
 
@@ -84,7 +84,7 @@ If you need to retrieve different variables for the same dags; to avoid connecti
 - {{var.json.key_of_variable.key_of_json}} (Jinja Template)
 
 ### Environment Variables
-If you need to completely hide a variable from your users, you can fetch an Envorimental Variable using the same methods as before, the name of the variables has to have the sructure AIRFLOW_VAR_NAME='variable'. 
+If you need to completely hide a variable from your users, you can fetch an Envorimental Variable using the same methods as before, the name of the variables needs to have the sructure AIRFLOW_VAR_NAME='variable'. 
 
 This process also removes the need of connecting to the metadata database
 
@@ -144,7 +144,7 @@ Just remember that you can group tasks and create dependencies between two diffe
 
 You can instantiate a Task Group using a with statement and the TaskGroup function (providing allways a group_id). Inside the TaskGroup, you can define the tasks and their respective dependencies.
 
-To simplify your code, you can allways put your grouped task in another folder inside the dag directory. You can also create nested TaskGroups (Groups inside another Group).
+To simplify your code, you can allways put your grouped task in another folder inside the dag directory and import the tasks in your dag. You can also create nested TaskGroups (Groups inside another Group).
 
 ## Advanced Concepts
 ### Dynamic Tasks
@@ -264,12 +264,12 @@ Whenever a task fails you can modify how airflow is going to retry your task. To
 
 - retries: Number of retries before your task fails (Default 0). You can set the retries parameter at the task level, on the default arguments or at the airflow instance level. The retries task level is going to overwrite any other retries argument
 - retry_delay: Defines the time that you want to wait between each retry
-- retry_exponential_backoff: It will wait a little bit longer for each retry. Good for waiting for API's or SQL connections
+- retry_exponential_backoff: It will wait a little bit longer for each retry. Good for waiting for API's or waiting for databases
 - max_retry_delay: Max time that is going to wait between each retry. Good with exponential_backoff
 
 ### SLA
 
-The goal of an SLA is to verify that your task gets completed in period of time. Similar to callbacks, if the task is not completed in the expected time you can trigger a Python function to get notified about this
+The goal of an SLA is to verify that your task gets completed in period of time. Similar to callbacks, if the task is not completed in the expected time, you can trigger a Python function to get notified about this
 
 An SLA is relative to the DAG execution date. At the dag level, if you want to trigger an sla, you can use the folling parameter:
 
