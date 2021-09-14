@@ -2,7 +2,7 @@
 title: Astronomer DAG Authoring for Apache Airflow
 description: 
 published: true
-date: 2021-09-14T21:28:00.123Z
+date: 2021-09-14T22:18:05.740Z
 tags: 
 editor: markdown
 dateCreated: 2021-09-13T16:48:50.416Z
@@ -17,9 +17,9 @@ This article will help you as a study guide for the certification exam. However,
 
 ### Dag Operator
 
-The scheduler is only going to Parse a python file in the dag directory if the file has the word DAG or the word airflow, you can change this in the configuration file. To create a dag you have to use the DAG operator. 
+The scheduler is only going to Parse a python file in the dag directory if the file has the word DAG or the word airflow, you can change this in the configuration file. 
 
-Parameters of the DAG operator:
+Parameters of the DAG Constructor:
 
 - Dag_id: Name of your dag ( if two DAGs have the same dag id no errors will show, one of the DAGs will appear randomly at every dag_dir_list_interval on the UI)
 - Description
