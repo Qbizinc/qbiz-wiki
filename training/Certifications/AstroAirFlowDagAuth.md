@@ -2,7 +2,7 @@
 title: Astronomer DAG Authoring for Apache Airflow
 description: 
 published: true
-date: 2021-09-14T19:29:15.134Z
+date: 2021-09-14T20:43:14.965Z
 tags: 
 editor: markdown
 dateCreated: 2021-09-13T16:48:50.416Z
@@ -206,7 +206,75 @@ When tasks are assigned to a pool, they will be scheduled as normal until all of
 
 If you have set depends_on_past=True, if the task extract didn't succeed in the previous DAG Run, then it doesn't get triggered in the current DAG Run (except if it is the first run for that task). Also, if wait_for_downstream=True, all tasks immediately downstream of the previous task instance must have succeeded
 
-### 
+### Sensors
+
+Sensors are a special kind of operator. When they run, they will check to see if a certain criteria is met before they complete and let their downstream tasks execute. This is a great way to have portions of your DAG wait on some external system
+
+- soft_fail: Set to true to mark the task as SKIPPED on failure
+- poke_interval: Time in seconds that the job should wait in between each try. The poke interval should be more than one minute to prevent too much load on the scheduler.
+- timeout: Time, in seconds before the task times out and fails. If you don't set a timeout, it will timeout after 7 days
+- mode: How the sensor operates. Options are: { poke | reschedule }, default is poke. When set to poke the sensor will take up a worker slot for its whole execution time (even between pokes). Use this mode if the expected runtime of the sensor is short or if a short poke interval is required. When set to reschedule the sensor task frees the worker slot when the criteria is not met and it's rescheduled at a later time.
+- execute_timeout: With timeout and soft_fail set to True, the Sensor will be marked as SKIPPED, whereas with execution_timeout it will be marked as FAILED
+
+### Timeouts
+
+You can define a timeout in the DAG object:
+
+- dagrun_timeout: The time that you dag is going to run before timingout
+
+At the operator level:
+
+- execution_timeout: The time that you task is going to run before timingout
+
+### Callback
+
+A callback is nothing more than triggering a function according to an event, for example, if your task fails then you can trigger a callback function. The callback function can be a notification or print a message. You can define a callback at dag level or at task level
+
+Example of callbacks:
+
+- on_success_callback: Expects a python function
+- on_failure_callback: Expects a python function
+- on_retry_callback: Expects a python function
+
+### Retries
+
+Whenever a task fails you can modify how airflow is going to retry your task. To change this you can use the following parameters:
+
+- retries: Number of retries before your task fails (Default 0). You can set the retries parameter at the task level, on the default arguments or at the airflow instance level. The retries task level is going to overwrite any other retries argument
+- retry_delay: Defines the time that you want to wait between each retry
+- retry_exponential_backoff: It will wait a little bit longer for each retry. Good for waiting for API's or SQL connections
+- max_retry_delay: Max time that is going to wait between each retry. Good with exponential_backoff
+
+### SLA
+
+The goal of an SLA is to verify that your task gets completed in period of time. Similar to callbacks, if the task is not completed in the expected time you can trigger a Python function to get notified about this
+
+At the dag level, if you want to trigger an sla, you can use the folling parameter:
+
+- sla_miss_callback: _sla_miss_callback
+
+Where _sla_miss_callback is a python function. This python function has the following parameters:
+
+- dag
+- task_list
+- blocking_task_list
+- slas
+- blocking_tis
+
+### DAG Versioning
+
+The best practice is to manage the versioning of the dag in the dag_id. For example, you can name your dag "process_dag_1_0_1"
+
+If you have a DAG running (version 1) with three tasks:
+
+Task A is completed
+Task B and C are queued
+
+In the meantime, you deploy a new version of the DAG (version 2) with a code change to tasks B and C. The version that the queued tasks be based on is the second
+
+### Dynamic DAGS
+
+[More:] https://academy.astronomer.io/astronomer-certification-apache-airflow-dag-authoring-preparation/899677
 
 ## DAG Dependencies
 
