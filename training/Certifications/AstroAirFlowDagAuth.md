@@ -2,7 +2,7 @@
 title: Astronomer DAG Authoring for Apache Airflow
 description: 
 published: true
-date: 2021-09-14T20:43:14.965Z
+date: 2021-09-14T21:19:43.836Z
 tags: 
 editor: markdown
 dateCreated: 2021-09-13T16:48:50.416Z
@@ -17,23 +17,43 @@ This article will help you as a study guide for the certification exam. However,
 
 ### Dag Operator
 
-The scheduler is only going to Parse a python file in the dag directory if the file starts with the word DAG or the word airflow, you can change this in the configuration file. To create a dag you have to use the DAG operator. 
+The scheduler is only going to Parse a python file in the dag directory if the file has the word DAG or the word airflow, you can change this in the configuration file. To create a dag you have to use the DAG operator. 
 
 Parameters of the DAG operator:
 
-- Dag_id: Name of your dag (if you have a two dags with same dag_id it will not throw an error)
+- Dag_id: Name of your dag ( if two DAGs have the same dag id no errors will show, one of the DAGs will appear randomly at every dag_dir_list_interval on the UI)
 - Description
 - start_date:  The date when your dag starts being scheduled
-- schedule_interval: Defines the frequency the dag is triggered
+- schedule_interval: Defines the frequency the dag is triggered (None means the DAG must be triggered manually)
 - dagrun_timeout: The time that you dag is going to run before timingout
 - tags
 - catchup: Prevents backfilling your dag runs
 
 ### Dag Scheduling
 
-Remember, the dag starts being scheduled from the start_date and will be **triggered** after every schedule_inteval. This means that if you start_date is 10:00 AM and your schedule_interval is 10 minutes, your first dag run is at 10:10 AM
+Remember, the dag starts being scheduled from the start_date and will be triggered after every schedule_inteval. This means that if you start_date is 10:00 AM and your schedule_interval is 10 minutes, your first dag run is at 10:10 AM
 
 Execution_date: Is the logical date and time at which the dag and its task instances run. This also acts as a unique identifier for each DAG Run.
+
+**EXTRA INFO:**
+start_date = The first dag start time. keep it STATIC
+execution_date = max(start_date, last_run_date)
+schedule_interval parameter accepts cron or timedelta values
+next_dag_start_date = execution_date + schedule_interval
+
+schedule_interval parameter accepts cron or timedelta values. This initiates the next dag run by utilizing the formula
+next_dag_start_date = max(start_date, last_run_date) + schedule_interval
+
+Eg - if your start_date = datetime(2019, 10, 13, 15, 50), schedule_interval = 0 * * * * or (@hourly)
+
+Case a) current_time is before start_date - 2019-10-13 00:00, then your dags will schedule at
+2019-10-13 16:50, and subsequently every hour.
+Please note that it will not start at start_date(2019-10-13 15:50), but rather at execution_date + schedule_interval
+
+Case b) current_time is after start_date - 2019-10-14 00:00, then your dags will schedule at
+2019-10-13 16:50, 2019-10-13 17:50, 2019-10-13 18:50 … and subsequently catchup till it reaches 2019-10-13 23:50
+Then it will wait for the strike of 2019-10-14 00:50 for the next run.
+Please not that the catchup can be avoided by setting catchup=False in dag properties
 
 ### Cron vs Timedelta
 
@@ -64,7 +84,9 @@ If you need to retrieve different variables for the same dags; to avoid connecti
 - {{var.json.key_of_variable.key_of_json}} (Jinja Template)
 
 ### Environment Variables
-If you need to completely hide a variable from your users, you can fetch an Envorimental Variable using the same methods as before. This also removes the need of connecting to the metadata database
+If you need to completely hide a variable from your users, you can fetch an Envorimental Variable using the same methods as before, the name of the variables has to have the sructure AIRFLOW_VAR_NAME='variable'. 
+
+This process also removes the need of connecting to the metadata database
 
 [More:] https://academy.astronomer.io/astronomer-certification-apache-airflow-dag-authoring-preparation/891132
 
@@ -160,12 +182,12 @@ If t1, t2, t3, t4, t5 and t6 are tasks, you can create dependencies in the follo
 - t2.set_downstream(t1)
 - t1 >> t2
 - [ t1, t2, t3 ] >> t4
-- cross_downstream([t1, t2, t3], [t4, t5, t6]) (cross dependency)
+- cross_downstream([t1, t2, t3], [t4, t5, t6]) (cross dependency, this doesn't work [t1, t2, t3] >> [t4, t5, t6])
 - chain(t1, [t2, t3], [t4, t5], t6) (lenght of the lists have to be the same when chaining tasks)
 
 ### Concurrency
 
-In the configuration file you can change the following variables to change the concurrency of airflow
+In the configuration file you can change the following variables to change the concurrency at the airflow level
 
 - parallelism: Number of tasks that can be executed at the same time in your airflow instance, default value 32
 - dag_concurrency: Number of tasks that can be executed at the same time for a given dag, default value 16
@@ -249,7 +271,7 @@ Whenever a task fails you can modify how airflow is going to retry your task. To
 
 The goal of an SLA is to verify that your task gets completed in period of time. Similar to callbacks, if the task is not completed in the expected time you can trigger a Python function to get notified about this
 
-At the dag level, if you want to trigger an sla, you can use the folling parameter:
+An SLA is relative to the DAG execution date. At the dag level, if you want to trigger an sla, you can use the folling parameter:
 
 - sla_miss_callback: _sla_miss_callback
 
@@ -272,6 +294,8 @@ Task B and C are queued
 
 In the meantime, you deploy a new version of the DAG (version 2) with a code change to tasks B and C. The version that the queued tasks be based on is the second
 
+Also, remember when you change the scheduling_interval of a DAG, previously TaskInstances won't align with the new schedule interval
+
 ### Dynamic DAGS
 
 [More:] https://academy.astronomer.io/astronomer-certification-apache-airflow-dag-authoring-preparation/899677
@@ -284,4 +308,4 @@ A sensor that waits for an execution of a task in a different dag (external dag)
 
 ### TriggerDagRunOperator
 
-Helpful if you want to trigger DAG A from DAG B.
+Helpful if you want to trigger DAG A from DAG B. You can wait for the DAG triggered by the TriggerDagRunOperator to complete before executing the next task using "wait_for_completion"
