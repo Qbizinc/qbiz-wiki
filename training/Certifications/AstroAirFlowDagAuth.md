@@ -2,7 +2,7 @@
 title: Astronomer DAG Authoring for Apache Airflow
 description: 
 published: true
-date: 2021-09-14T06:22:50.913Z
+date: 2021-09-14T06:28:21.257Z
 tags: 
 editor: markdown
 dateCreated: 2021-09-13T16:48:50.416Z
@@ -73,10 +73,10 @@ If you need to completely hide a variable from your users, you can fetch an Envo
 
 ### Templating Jinja Engine
 
-Templating is a powerful concept in Airflow to pass dynamic information into task instances at runtime. For example, say you want to print the day of the week every time you run a task:
+Templating is a powerful concept in Airflow to pass dynamic information into task instances at runtime. For example, say you want to print the day every time you run a task:
 
 BashOperator(
-    task_id="print_day_of_week",
+    task_id="print_day",
     bash_command="echo Today is {{ ds }}",
 )
 
