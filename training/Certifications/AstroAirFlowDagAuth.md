@@ -2,7 +2,7 @@
 title: Astronomer DAG Authoring for Apache Airflow
 description: 
 published: true
-date: 2021-09-14T22:18:05.740Z
+date: 2021-09-14T22:18:17.418Z
 tags: 
 editor: markdown
 dateCreated: 2021-09-13T16:48:50.416Z
