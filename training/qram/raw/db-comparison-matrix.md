@@ -2,7 +2,7 @@
 title: DB Comparison Matrix
 description: Comparison of DB Strengths and Weaknesses 
 published: true
-date: 2021-09-14T22:28:21.585Z
+date: 2021-09-14T22:43:59.236Z
 tags: snowflake, redshift, db
 editor: markdown
 dateCreated: 2021-09-14T22:21:56.935Z
@@ -43,6 +43,9 @@ https://community.snowflake.com/s/article/How-To-Streaming-From-Kafka-to-Snowfla
 https://offers.phdata.io/hubfs/Oracle%20to%20Snowflake%20Migration%20Whitepaper%20-%20Updated.pdf
 https://www.phdata.io/blog/migrate-data-from-oracle-to-snowflake/
 https://community.snowflake.com/s/question/0D50Z00009Z0Ym5SAF/how-to-migrate-data-from-rdsonprem-to-snowflake-without-using-any-third-part-tools-how-can-i-perform-accurate-migration-
+
+- Modeling
+https://www.lucidchart.com/pages/database-diagram/database-models
 
 
 
