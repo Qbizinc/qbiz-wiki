@@ -2,7 +2,7 @@
 title: Astronomer DAG Authoring for Apache Airflow
 description: 
 published: true
-date: 2021-09-14T21:19:43.836Z
+date: 2021-09-14T21:21:46.480Z
 tags: 
 editor: markdown
 dateCreated: 2021-09-13T16:48:50.416Z
@@ -68,7 +68,7 @@ Every Dag should be Idempotent and Deteministic
 ### Backfilling
 You can use the CLI (with the "airflow" command) or the UI to backfill your dags if necessary, indicating the start_date and end_date that you want to backfill. You can also clear the states of the dag runs in case you ran the dag before
 
-- max_active_run (DAG operator parameter): Allows you to select how many dag runs can be executed concurrently  (usefull for backfilling)
+- max_active_run (DAG object parameter): Allows you to select how many dag runs can be executed concurrently  (usefull for backfilling)
 
 ## Variables
 Variables are a key-value object that is stored in the metadeta database in airflow. Dags can access this variables using the function Variable.get(*key_of_variable*). Variables are usefull when different dags interact with the same API endipoint or the same entry bucket. 
