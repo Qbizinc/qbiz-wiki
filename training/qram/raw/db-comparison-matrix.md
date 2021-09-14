@@ -2,7 +2,7 @@
 title: DB Comparison Matrix
 description: Comparison of DB Strengths and Weaknesses 
 published: true
-date: 2021-09-14T22:21:56.935Z
+date: 2021-09-14T22:26:52.611Z
 tags: snowflake, redshift, db
 editor: markdown
 dateCreated: 2021-09-14T22:21:56.935Z
@@ -32,9 +32,11 @@ https://www.stitchdata.com/resources/snowflake-vs-redshift/
 https://supermetrics.com/blog/redshift-vs-snowflake-vs-bigquery?utm_source=google&utm_medium=cpc&utm_campaign=enterprise-snowflake-usca&utm_adgroup=snowflake-dsa&utm_category=search-nonbrand&utm_term=&location=&gclid=Cj0KCQjwpreJBhDvARIsAF1_BU3bmC81KAKRoAcvuyK78kFyzVsfRv2Eb8sQMfUfHCGe0yedbeu3HS4aAnLGEALw_wcB
 
 
-- CDC Technology
+- Pipeline CDC Technology
 https://www.datameer.com/blog/top-5-fivetran-competitors-and-alternatives/
 https://cdn.hevodata.com/whitepapers/The%20Advantages%20of%20Hevo%20over%20Fivetran.pdf
+https://www.astronomer.io/blog/airflow-dbt-1
+https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html
 
 - Steaming
 https://community.snowflake.com/s/article/How-To-Streaming-From-Kafka-to-Snowflake-Part-1-Kafka-to-S3
