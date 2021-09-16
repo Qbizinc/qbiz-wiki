@@ -2,7 +2,7 @@
 title: Operationalizing Data Science
 description: 
 published: true
-date: 2021-09-16T22:32:18.504Z
+date: 2021-09-16T22:36:17.290Z
 tags: sales, sales-support, pre-sales, data-science, data-engineering
 editor: markdown
 dateCreated: 2021-08-19T18:27:03.419Z
@@ -223,7 +223,7 @@ Each level has its own set of frustrations with the practicalities of making Dat
 
 > I'm being asked to find the root cause but the data just isn't there
 
-> This problem needs months of experimentation and study but I'm not given the resources (time and/or infrastructure)
+> This problem needs months of experimentation and study but I've not been given the resources (time and/or infrastructure)
 
 ## Notes 2021-08-30
 - "Rework tax"
