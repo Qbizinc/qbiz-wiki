@@ -2,7 +2,7 @@
 title: Operationalizing Data Science
 description: 
 published: true
-date: 2021-09-16T22:28:19.797Z
+date: 2021-09-16T22:32:18.504Z
 tags: sales, sales-support, pre-sales, data-science, data-engineering
 editor: markdown
 dateCreated: 2021-08-19T18:27:03.419Z
@@ -213,9 +213,17 @@ It may be worth keeping in mind that "Data Science" and scientists may be employ
 1. **Descriptive**. "Getting numbers in front of stakeholders". This is the typical Analyst role, but Data Scientists might also doing this kind of work (e.g., at Facebook, some Data Scientists are "Analysts who can communicate meanignfully with business stakeholders and be self-directed")
 2. **Correlative**. Analytics or light machine learning might be used to reveal correlations that can lead to decision-making insights. Recent DS bootcamp graduates may be employed at this level
 3. **Causative**. Utilizing advanced statistical techniques to identify causation vs mere correlation. Academics from social sciences may be employed in this role
-4. **Mechanism of action**. Determing and articulating the underlying mechanics of causation. Academics from chemistry or physicals may be employed in this role.
+4. **Mechanism of action**. Determing and articulating the underlying mechanics of causation. Academics from chemistry or physicals may be employed in this role
 
-Each level has its own set of frustrations with the practicalities of making Data Science happen. The phrase "I'm spending most of my time not doing Data Science" can have different meanings at each level.
+Each level has its own set of frustrations with the practicalities of making Data Science happen. The phrase "I'm spending most of my time not doing Data Science" can have different meanings at each level. E.g.:
+
+> I'm just getting numbers in front of people, not doing any modelling
+
+> I'm just looking for correlations that satisfy the narratives my business stakeholders want to tell
+
+> I'm being asked to find the root cause but the data just isn't there
+
+> This problem needs months of experimentation and study but I'm not given the resources (time and/or infrastructure)
 
 ## Notes 2021-08-30
 - "Rework tax"
