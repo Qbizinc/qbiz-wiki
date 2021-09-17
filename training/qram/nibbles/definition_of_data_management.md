@@ -2,7 +2,7 @@
 title: Definition of Data Management
 description: Review the core functionality of Data Management applications
 published: true
-date: 2021-08-10T18:28:33.760Z
+date: 2021-09-17T01:30:07.181Z
 tags: data management
 editor: markdown
 dateCreated: 2021-08-03T14:53:06.955Z
@@ -26,7 +26,7 @@ Additionally, the prevalence of chief data officers (CDOs) continues to grow to 
 - **Data Classification:** Data classification is broadly defined as the process of organizing data by relevant categories so that it may be used and protected more efficiently
 - **Data Profiling:** Implement data forensics (profiling), issue management and root-cause analysis capability for data quality issues
 - **Master Data Management(MDM):** Develop single versions of the truth for key business entities such as customers, accounts, products, suppliers, etc.
-- Reference Data Management:
+- **Reference Data Management:** Data used to classify or categorize other data. Typically, they are static or slowly changing over time. Examples of reference data include: Units of measurement. Country codes.
 - **Data Controls:** Deploy a data quality framework for consistently defining data quality requirements
 - **Governance Workflow:** Implement processes, policies, procedures and standards to govern business critical data.  Data Governance is a centralized control mechanism to manage data availability, security, usability, and integrity.
 - **Data Collaboration:** Empower stakeholders to see data in one place and in the context of their roles.
