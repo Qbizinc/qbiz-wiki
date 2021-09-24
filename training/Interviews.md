@@ -2,7 +2,7 @@
 title: List of Interviews
 description: 
 published: true
-date: 2021-09-24T00:03:08.756Z
+date: 2021-09-24T00:03:42.522Z
 tags: 
 editor: markdown
 dateCreated: 2021-09-23T22:15:25.719Z
@@ -76,5 +76,3 @@ dateCreated: 2021-09-23T22:15:25.719Z
 [NW, Jun 5th 2020] https://docs.google.com/document/d/18HH3K5OA8WNakgsf5G8w3kVR3FZMj2WDmtLNA0mCvZg/edit?usp=sharing
 
 [NW, Sep 20th 2021] https://docs.google.com/document/d/1ZbJZm9XQCjOJzkafaIgeElN_7RlDx-H3NYdF33Hz7bc/edit?usp=sharing
-
-[]
