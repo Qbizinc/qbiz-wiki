@@ -2,7 +2,7 @@
 title: Data Talking Points
 description: 
 published: true
-date: 2021-10-01T20:36:47.063Z
+date: 2021-10-01T20:43:43.325Z
 tags: 
 editor: markdown
 dateCreated: 2021-09-28T23:02:42.705Z
@@ -91,11 +91,24 @@ Product vendors sort into the two based on what they sell:
 
 Industry analysts are inconsistent. (It doesn't help that many of the articles are paid for by product vendors, and competitors go to the same analyst firms.)
 
-A challenge for Qbiz is a coherent set of talking points that helps clients integrate the conflicting press.
+A challenge for Qbiz is a coherent set of talking points that help clients integrate the conflicting press, and help stakeholders help other stakeholders that Qbiz doesn't have direct access to do the same.
+
+One minefield to navigate is the tension between **pioneers** and **guardians** in this space. In blog space:
+- DS professionals uniformly promote that AI/ML is now.
+- Compliance and risk management folks, and to a lesser extent, IT, promote that AI/ML is prepare.
+- This sorts by vertical too. Regulated verticals...
+
+> I did not do a roundup saving blog articles. The points are consistent, though.
+> -- Jenny Kwan
+
+> The IT/CIO bias I've seen doesn't seem to have an easy answer... I don't see press touting, "hey, CIO, invest to get ahead of DS cowboys!" Perhaps b/c in most non-tech-centric verticals, IT is a cost control center.
+> -- Jenny Kwan
 
 ### AI/ML is now!
 
 ### Prepare for AI/ML!
+
+Gartner offers a 5-segment "Foundation
 
 # Roles
 
