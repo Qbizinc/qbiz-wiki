@@ -2,7 +2,7 @@
 title: Data Talking Points
 description: 
 published: true
-date: 2021-10-01T19:00:28.891Z
+date: 2021-10-01T20:36:47.063Z
 tags: 
 editor: markdown
 dateCreated: 2021-09-28T23:02:42.705Z
@@ -79,8 +79,23 @@ Helping clients see that centralizing their data into a single operational platf
 - Later, even if they want to switch out their non-data operational workflows (redefine roles, teams, processes), the fact of data gravity means they're extra locked in.
 
 ## AI/ML
-Talking points center around
+Two distinct sets of talking points emerge in press, often from the same people a few months apart (weird):
+- AI/ML is now!
+  > Impulse buy!
+  > -- Jenny Kwan
+- AI/ML isn't ready but prepare for it now b/c when the pistol fires...
 
+Product vendors sort into the two based on what they sell:
+- DS platforms and other tools: now!
+- Centralized data management, especially governance: prepare!
+
+Industry analysts are inconsistent. (It doesn't help that many of the articles are paid for by product vendors, and competitors go to the same analyst firms.)
+
+A challenge for Qbiz is a coherent set of talking points that helps clients integrate the conflicting press.
+
+### AI/ML is now!
+
+### Prepare for AI/ML!
 
 # Roles
 
