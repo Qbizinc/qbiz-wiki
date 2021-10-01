@@ -2,7 +2,7 @@
 title: Data Talking Points
 description: 
 published: true
-date: 2021-10-01T22:25:08.594Z
+date: 2021-10-01T22:25:45.943Z
 tags: 
 editor: markdown
 dateCreated: 2021-09-28T23:02:42.705Z
@@ -203,5 +203,5 @@ This is scattershot and needs to be by vendor.
 
 One new, hot area is data lineage.
 
-> The mathematician in me appreciates Delta Lake by Databricks. It's actually done right. Don't know if this correct math is actually usable by normal people in practice, though.
+> The mathematician in me appreciates Delta Lake by Databricks. It's data lineage actually done right. (Well, 80% of the way; they stopped short because it would be impossible to adopt the final 20%.) Don't know if this correct math is actually usable by normal people in practice, though.
 > -- Jenny Kwan
