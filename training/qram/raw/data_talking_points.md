@@ -2,7 +2,7 @@
 title: Data Talking Points
 description: 
 published: true
-date: 2021-10-01T20:43:43.325Z
+date: 2021-10-01T20:45:35.641Z
 tags: 
 editor: markdown
 dateCreated: 2021-09-28T23:02:42.705Z
@@ -108,7 +108,15 @@ One minefield to navigate is the tension between **pioneers** and **guardians** 
 
 ### Prepare for AI/ML!
 
-Gartner offers a 5-segment "Foundation
+Gartner offers a 5-segment "Foundational Components of AI and ML":
+- Business Process Management
+- Data Management
+- Applied Use Cases
+- Supporting Technologies
+- Software / Systems Engineering
+
+> The architect in me finds these 5 incoherent. Looking deeper, these are not "Foundational Components" but are simply stakeholder roles abstracted to make non-political.
+> -- Jenny Kwan
 
 # Roles
 
