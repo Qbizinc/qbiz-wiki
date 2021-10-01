@@ -2,7 +2,7 @@
 title: Data Talking Points
 description: 
 published: true
-date: 2021-10-01T21:41:20.592Z
+date: 2021-10-01T22:25:08.594Z
 tags: 
 editor: markdown
 dateCreated: 2021-09-28T23:02:42.705Z
@@ -198,7 +198,7 @@ Data governance.
 ## Established BI vendors with add-ons
 This is scattershot and needs to be by vendor.
 
-> Much more work needed by vendor to have opinions on when to recommend the add-on and when to recommend a standalone.
+> Much more work needed on a per-product level to have opinions on when to recommend the add-on and when to recommend a standalone.
 > -- Jenny Kwan
 
 One new, hot area is data lineage.
