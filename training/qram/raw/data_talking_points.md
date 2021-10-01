@@ -2,7 +2,7 @@
 title: Data Talking Points
 description: 
 published: true
-date: 2021-10-01T21:35:11.594Z
+date: 2021-10-01T21:41:20.592Z
 tags: 
 editor: markdown
 dateCreated: 2021-09-28T23:02:42.705Z
@@ -105,6 +105,9 @@ One minefield to navigate is the tension between **pioneers** and **guardians** 
 > -- Jenny Kwan
 
 ### AI/ML is now!
+Still rounding up.
+> Obligatory joke about the 10th year in a row everyone claims "this is the year for AI/ML!"
+> -- Jenny Kwan
 
 ### Prepare for AI/ML!
 
@@ -131,6 +134,10 @@ Gartner again:
 
 > Gartner's model doesn't translate to concrete initiatives / projects.
 > -- Jenny Kwan
+
+#### IDC
+
+#### Forrester
 
 # Admin/DataOps
 Three sets of talking points entirely based on role in ecosystem:
@@ -178,4 +185,23 @@ Efforts by these product vendors to brand to more than one target stakeholder pe
 In reality, there's a lot of product function overlap between these separate product families.
 
 > Need to think more about this in context of Qbiz.
+> -- Jenny Kwan
+
+## IT/CIO/Cost Center w/o Revenue
+Data governance.
+> Passive-aggressively bury innovation in paperwork.
+>
+> In all seriousness, this perspective is valid, but Qbiz navigating the conflicting motivations of pioneers vs. guardians is the key.
+>
+> -- Jenny Kwan
+
+## Established BI vendors with add-ons
+This is scattershot and needs to be by vendor.
+
+> Much more work needed by vendor to have opinions on when to recommend the add-on and when to recommend a standalone.
+> -- Jenny Kwan
+
+One new, hot area is data lineage.
+
+> The mathematician in me appreciates Delta Lake by Databricks. It's actually done right. Don't know if this correct math is actually usable by normal people in practice, though.
 > -- Jenny Kwan
