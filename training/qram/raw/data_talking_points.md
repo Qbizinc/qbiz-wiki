@@ -2,7 +2,7 @@
 title: Data Talking Points
 description: 
 published: true
-date: 2021-10-01T20:45:35.641Z
+date: 2021-10-01T21:35:11.594Z
 tags: 
 editor: markdown
 dateCreated: 2021-09-28T23:02:42.705Z
@@ -108,6 +108,8 @@ One minefield to navigate is the tension between **pioneers** and **guardians** 
 
 ### Prepare for AI/ML!
 
+#### Gartner
+
 Gartner offers a 5-segment "Foundational Components of AI and ML":
 - Business Process Management
 - Data Management
@@ -118,5 +120,62 @@ Gartner offers a 5-segment "Foundational Components of AI and ML":
 > The architect in me finds these 5 incoherent. Looking deeper, these are not "Foundational Components" but are simply stakeholder roles abstracted to make non-political.
 > -- Jenny Kwan
 
-# Roles
+Gartner again:
+- Business Process Management: function heads, i.e. Sales, Marketing
+- Supporting Technologies: things you buy from product vendors, may be in anyone's GL, so goes into the Miscellaneous bucket
+- Software / Systems Engineering: IT/CIO
+- Data Management:
+  - Data excluding DS, typically means only DEs, whether in IT or not
+  - Data governance / compliance / risk
+- Applied Use Cases: DS
 
+> Gartner's model doesn't translate to concrete initiatives / projects.
+> -- Jenny Kwan
+
+# Admin/DataOps
+Three sets of talking points entirely based on role in ecosystem:
+- Data admin vendors, such as governance, lineage, security / access control, auditing
+- IT/CIO/those who bear the cost center but not the revenue generating center
+- Established data / BI vendors incrementally adding to their product portfolios
+
+## NB: Master Data Management
+**Master data** is coming up with a single version of truth for:
+- Which entities (nouns) exist:
+  - How many customers, prospects, products, transactions?
+- For each entity (noun), what information about them (adjectives, history of verbs)?
+  - This customer had exactly these transactions at these locations, etc.
+  
+This is closely related to "single-version of the truth" in BI. However, MDM is operationally focused, whereas BI is analytically focused. In practical terms:
+- BI just cares about integrating across and keeping it in the warehouse/lake/analytical store
+- MDM cares about integrating and pushing back out to operational systems like CRM, ERP, call center, POS; MDM may or may not store it in an analytical store
+
+Obviously, the two go together. The talking points:
+- BI product vendors talk about a freeform toolkit to bespoke integrate, with no talking points at all about Reverse ETL.
+  - This is changing with the advent of Reverse ETL, which specializes in pushing back out
+  - Auditing correctness of integration / ETL is also bespoke
+- MDM biases toward tight integration with a subset of operational vendors, i.e. if you use both Salesforce and Oracle ERP, plug our product vendor offering in and sync is set up
+  - Avoids talking about bespoke b/c bad at it
+  - Very much about convenience
+  - Touts audit trails to prove sync quality
+  
+One talking point is helping clients distinguish clearly between BI and MDM.
+> Profisee (product vendor) has some excellent press on this:
+> - https://drive.google.com/file/d/1dmXlF8OEtFf6cPRugMzQerm11x6lkkuv/view?usp=sharing
+>
+> Look at Collibra trying to persuade people to do data governance as part of MDM:
+> - https://www.collibra.com/blog/mdm-needs-data-governance-heres
+> - MDM has urgency because it helps clients reduce operational risk (getting a consumer's address wrong).
+> -- Jenny Kwan
+
+## Data admin vendors
+Product vendors have carved up their feature space by purchaser stakeholder roles.
+- Data governance: CIO, CCO, CRO
+- Data lineage: BI / DE
+- Data security / access control and data auditing: CISO, sometimes CRO
+
+Efforts by these product vendors to brand to more than one target stakeholder persona seem to not work.
+
+In reality, there's a lot of product function overlap between these separate product families.
+
+> Need to think more about this in context of Qbiz.
+> -- Jenny Kwan
