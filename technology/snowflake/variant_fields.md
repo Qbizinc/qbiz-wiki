@@ -2,7 +2,7 @@
 title: Variant Fields
 description: A writeup on my findings about using VARIANT type fields within Snowflake
 published: true
-date: 2021-10-14T23:17:22.852Z
+date: 2021-10-14T23:18:00.699Z
 tags: snowflake
 editor: markdown
 dateCreated: 2021-10-14T23:17:22.852Z
@@ -37,7 +37,7 @@ INSERT INTO table_with_variant( ID, PAYLOAD )
       FROM table_with_varchar
 ```
 
-### Differences
+## Differences
 A couple of things jump out when the data is examined in the VARIANT field.
 ```
 SELECT ID, 
