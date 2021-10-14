@@ -2,7 +2,7 @@
 title: Definition of SELECT
 description: 
 published: true
-date: 2021-10-14T18:39:54.868Z
+date: 2021-10-14T20:58:05.343Z
 tags: 
 editor: markdown
 dateCreated: 2021-10-14T17:54:09.154Z
@@ -36,11 +36,15 @@ In most SQL engines, statements are separated by semicolons. If you see a semico
 
 Certain SQL engines don't accept batches at all. No semicolons. It's up to the user to submit statements one at a time. The user may be code in another engine, such as a Python interpreter connecting to the SQL interpreter over TCP/IP.
 
+> @TODO: move this into sync/async article
+
 Certain SQL engines only allow one connection at a time, such as SQLite locally. Most are multi-session: each connection is over separate TCP/IP forms a session, where statements and batches are submitted sequentially. If statements must be executed in parallel, the user must do this over a different session, which requires a different network connection. **Sessions are always sequential, one statement at a time.**
+
+Sequential means synchronous, serial, and blocking. (Each word means a slightly different thing in CS, but here they're the same.) The session/connection is completely occupied until the batch is complete. Within a batch, each statement waits for the previous statement.
 
 Some newer SQL engines are HTTP-over-TCP/IP. These typically take one statement at a time in the form of a single HTTP request, i.e. no sessions with batches. This varies by product vendor.
 
-For example, AWS Athena has a very stateful REST-ful API where you `prepare` statements and can `store` them prior to executing. AWS Athena is completely asynchronous and non-blocking: it takes `start` and `stop` requests for statements. The UI in the AWS Console wraps sequential execution around this.
+For an asynchronous example, AWS Athena has a very stateful REST-ful API where you `prepare` statements and can `store` them prior to executing. AWS Athena is completely asynchronous and non-blocking: it takes `start` and `stop` requests for statements. The UI in the AWS Console wraps sequential execution around this.
 
 ## Read-Only
 `SELECT` statements are read-only commands that have to be executed whole. They're atomic; i.e. there's no way to break them into smaller pieces without changing their meaning.
@@ -235,6 +239,14 @@ Usually, the `SELECT` clause is everything up to the very next `FROM` clause.
   ```sql
   SELECT  o.product_id
   ,       (SELECT SUM(i.expense) FROM inventory AS i) AS total_expense
+  ```
+  The `SELECT` expression:
+  ```sql
+  SELECT SUM(i.expense) FROM inventory as i
+  ```
+  has its own `SELECT` clause of:
+  ```sql
+  SELECT SUM(i.expense)
   ```
 
 `SELECT` clauses may or may not be full `SELECT` expressions. If it is a `SELECT` expression, then it is executable as a `SELECT` statement, whether or not it is actually contained in a statement of a different kind, i.e. `INSERT` statement.
