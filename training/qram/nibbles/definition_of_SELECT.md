@@ -2,7 +2,7 @@
 title: Definition of SELECT
 description: 
 published: true
-date: 2021-10-14T20:58:05.343Z
+date: 2021-10-19T17:29:32.922Z
 tags: 
 editor: markdown
 dateCreated: 2021-10-14T17:54:09.154Z
@@ -56,16 +56,16 @@ WITH    product_revenue AS (
     FROM    order AS o
     GROUP BY    o.product_id
 )
-SELECT  o.product_id
+SELECT  pr.product_id
 ,       sp.product_nm
-,       o.product_revenue
-FROM    o
+,       pr.product_revenue
+FROM    product_revenue AS pr
  JOIN   (   SELECT  sp.product_id
             ,       MAX(sp.product_nm) AS product_nm
             FROM    subproduct AS sp
             GROUP BY    sp.product_id
         )   AS p
-  ON    o.product_id = p.product_id
+  ON    pr.product_id = p.product_id
 ```
 
 The `SELECT` keyword appears three times. But this is exactly **one `SELECT` statement**.
