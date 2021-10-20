@@ -2,7 +2,7 @@
 title: DB Comparison Matrix
 description: Comparison of DB Strengths and Weaknesses 
 published: true
-date: 2021-09-14T22:43:59.236Z
+date: 2021-10-20T17:10:51.820Z
 tags: snowflake, redshift, db
 editor: markdown
 dateCreated: 2021-09-14T22:21:56.935Z
@@ -10,7 +10,7 @@ dateCreated: 2021-09-14T22:21:56.935Z
 
 # Cloud DB Comparison Matrix
 ### Overview
-- Qbiz has regularly finds its clients using certain cloud databases and this page is meant to provide an overview of their strengths and weaknesses.
+- Qbiz regularly finds its clients using certain cloud databases and this page is meant to provide an overview of their strengths and weaknesses.
 
 ### Comparison Matrix 
 - Below is a comparison matrix of Pros and Cons associated with specific cloud databases 
