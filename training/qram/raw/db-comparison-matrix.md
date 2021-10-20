@@ -2,7 +2,7 @@
 title: DB Comparison Matrix
 description: Comparison of DB Strengths and Weaknesses 
 published: true
-date: 2021-10-20T17:10:51.820Z
+date: 2021-10-20T17:12:45.197Z
 tags: snowflake, redshift, db
 editor: markdown
 dateCreated: 2021-09-14T22:21:56.935Z
@@ -14,6 +14,7 @@ dateCreated: 2021-09-14T22:21:56.935Z
 
 ### Comparison Matrix 
 - Below is a comparison matrix of Pros and Cons associated with specific cloud databases 
+https://docs.google.com/spreadsheets/d/1LWmD-Nree-dJbvA12cGVuIPxOg4bVqyvQ3WQ1Ywscxg/edit?usp=sharing
 
 ### Reference Links
 - Cloud DBs
