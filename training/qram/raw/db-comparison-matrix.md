@@ -2,7 +2,7 @@
 title: DB Comparison Matrix
 description: Comparison of DB Strengths and Weaknesses 
 published: true
-date: 2021-11-04T12:07:05.196Z
+date: 2021-11-04T12:14:01.920Z
 tags: snowflake, redshift, db
 editor: markdown
 dateCreated: 2021-09-14T22:21:56.935Z
@@ -30,6 +30,7 @@ https://www.xplenty.com/blog/redshift-vs-snowflake/
 https://www.xplenty.com/blog/redshift-vs-bigquery-comprehensive-guide/
 https://www.stitchdata.com/resources/snowflake-vs-redshift/
 https://supermetrics.com/blog/redshift-vs-snowflake-vs-bigquery
+https://cloud.google.com/bigquery/quotas
 
 - Pipeline CDC Technology
 https://www.datameer.com/blog/top-5-fivetran-competitors-and-alternatives/
