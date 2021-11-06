@@ -2,7 +2,7 @@
 title: The Case For Paying For Slack
 description: 
 published: true
-date: 2021-10-22T21:22:26.610Z
+date: 2021-11-06T00:10:24.938Z
 tags: 
 editor: markdown
 dateCreated: 2021-10-22T20:33:15.163Z
@@ -43,6 +43,9 @@ This section lists some of the apps which we think might be useful.
   
 ##### Standup.ly
   - As an alternative to long status updates in the Wednesday meetings, we could have asynchronous standups with something like Standup.ly.  See https://qbizinc.slack.com/apps/A355V71K7-standuply
+  
+##### Reclaim.ai
+  - The calendar sync app integrates well with Slack.
 
 
 ### Apps We Might Want To Be Familiar With
