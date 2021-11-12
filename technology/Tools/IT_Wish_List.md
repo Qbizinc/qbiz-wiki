@@ -2,7 +2,7 @@
 title: IT Wish List
 description: This page lists tools that we think we should have and the reasoning behind the requests
 published: true
-date: 2021-11-06T00:15:39.367Z
+date: 2021-11-12T16:40:23.092Z
 tags: 
 editor: markdown
 dateCreated: 2021-11-01T19:59:19.575Z
@@ -19,3 +19,4 @@ There are a number of tools that we should consider having licensed versions of 
 | Pycharm | We do a lot of python development |
 | Reclaim.ai | Currently free (thru Mar 2022) as they are a startup; will cost money then |
 | Lucidchart | Database diagrams - set a standard of excellence for our clients (Qbiz templates) |
+| JIRA | As we transition to more project based work, it may be necessary to have our own internal project tracking for when our customers don't have their own |
