@@ -2,7 +2,7 @@
 title: Airflow Resources Index
 description: Index Page for all Internal + External Airflow resources Qbiz has access to
 published: true
-date: 2021-11-17T18:18:04.154Z
+date: 2021-11-17T18:26:50.475Z
 tags: 
 editor: markdown
 dateCreated: 2021-11-17T17:46:17.325Z
@@ -20,7 +20,7 @@ dateCreated: 2021-11-17T17:46:17.325Z
 
 Astronomer (Commercial company which sells support for Apache Airflow)
 - [CLI Quick Start](https://www.astronomer.io/docs/cloud/stable/develop/cli-quickstart)
-- Intro Guides (from [Internal Airflow Wiki](https://qbiz-wiki.com/en/technology/airflow))
+- Intro Guides (from [Internal Airflow Wiki](https://qbiz-wiki.com/en/technology/airflow); also stored in this [Google Drive folder](https://drive.google.com/drive/folders/19gaKwGI_ht-fC8WxICoArGRE7pelcQJj))
 	- [Getting Started with Airflow](https://drive.google.com/file/d/1BRMbMIq03gOPUranAFPa4M8r6UJ7Zhb5/view?usp=sharing)
   - [DAGS Deep Dive](https://drive.google.com/file/d/1IWhpRpv9BKiFDDaH-13TFChryf9hNfpq/view?usp=sharing)
 - [Directory of all Airflow Guides](https://www.astronomer.io/guides/?utm_campaign=Marketing&utm_source=EbookDAGs&utm_term=Guides)
