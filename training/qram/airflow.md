@@ -2,7 +2,7 @@
 title: Airflow Resources Index
 description: Index Page for all Internal + External Airflow resources Qbiz has access to
 published: true
-date: 2021-11-17T17:46:17.325Z
+date: 2021-11-17T18:14:05.496Z
 tags: 
 editor: markdown
 dateCreated: 2021-11-17T17:46:17.325Z
@@ -13,6 +13,8 @@ dateCreated: 2021-11-17T17:46:17.325Z
 ### Internal Resources
 
 [Intro to Airflow presentation](https://drive.google.com/drive/folders/1eZZatY5Q0my9mT9Aha2JLO1-hn55ZdUK?usp=sharing) created for a client (Belcorp)
+
+[Internal Study Guide for Astronomer Airflow Certification Exam](https://qbiz-wiki.com/en/training/Certifications/AstroAirFlowDagAuth)
 
 ### External Resources
 
