@@ -1,8 +1,8 @@
 ---
-title: GCP Professional Data Engineer Certification (Documentation Links)
+title: GCP Professional Data Engineer Certification (WiP)
 description: 
 published: true
-date: 2021-11-30T07:49:46.781Z
+date: 2021-11-30T07:50:14.594Z
 tags: 
 editor: markdown
 dateCreated: 2021-11-30T07:49:46.781Z
