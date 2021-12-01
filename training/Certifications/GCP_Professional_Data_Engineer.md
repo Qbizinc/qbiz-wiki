@@ -2,7 +2,7 @@
 title: GCP Professional Data Engineer Certification (WiP)
 description: 
 published: true
-date: 2021-11-30T07:50:14.594Z
+date: 2021-12-01T20:57:26.524Z
 tags: 
 editor: markdown
 dateCreated: 2021-11-30T07:49:46.781Z
@@ -142,6 +142,6 @@ Google recomended path:
 
 5) Register for the Google Cloud certification exam (https://www.webassessor.com/googlecloud/)
 
-# GCP Services
+# GCP Services...
 
 
