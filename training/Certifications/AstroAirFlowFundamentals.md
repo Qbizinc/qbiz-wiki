@@ -2,16 +2,24 @@
 title: Astronomer Apache Airflow Fundamentals
 description: 
 published: true
-date: 2021-12-02T22:38:43.254Z
+date: 2021-12-02T22:54:32.754Z
 tags: 
 editor: markdown
 dateCreated: 2021-12-02T22:38:43.254Z
 ---
 
-# Astronomer DAG Authoring for Apache Airflow
+# Astronomer Apache Airflow Fundamentals
 This article will help you as a study guide for the certification exam. However, I might miss some important remarks or exceptions made by the author. Feel free to contact me if something should be added
 
 **IMPORTANT: Please finish the course before going through this guide**
+
+## Welcome!
+
+- Mainly setting up local environment (installing [Docker](https://docs.docker.com/desktop/mac/install/) and [Astronomer CLI](https://www.astronomer.io/docs/cloud/stable/develop/cli-quickstart))
+- Note: During Astronomer CLI setup you may run into this issue detailed [here](https://forum.astronomer.io/t/astro-dev-start-error/1192)
+  - Fixed using solution [here](https://forum.astronomer.io/t/buildkit-not-supported-by-daemon-error-command-docker-build-t-airflow-astro-bcb837-airflow-latest-failed-failed-to-execute-cmd-exit-status-1/857) (i.e. using `DOCKER_BUILDKIT=0 astro dev start`)
+- Note: When using Docker image from course, was not able to pull up localhost in UI
+  - Looks like a [known issue](https://forum.astronomer.io/t/webserver-ui-does-not-appear/1111/3); unresolved as of 11/30/21
 
 ## DAG Basics
 
