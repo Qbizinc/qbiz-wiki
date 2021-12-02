@@ -2,7 +2,7 @@
 title: Astronomer Apache Airflow Fundamentals
 description: 
 published: true
-date: 2021-12-02T23:03:06.717Z
+date: 2021-12-02T23:11:00.987Z
 tags: 
 editor: markdown
 dateCreated: 2021-12-02T22:38:43.254Z
@@ -90,6 +90,23 @@ This article will help you as a study guide for the certification exam. However,
       2. Use set_upstream() or set_downstream() functions
   - Workflow: All of above concepts combined (a DAG containing various operators, which themselves contain/execute various tasks, all having various dependencies, etc.)
 
+### Task Lifecycle
+
+In addition to Web Server, scheduler, metastore, and executer a folder with all of the DAGs (All Python files) defined is also needed. This is regularly parsed by the web server (default every 30 seconds) and scheduler (default every 5 minutes).
+
+At the beginning of a DAG, the DAG itself as well as its individual tasks have no statuses. After parsing, if a DAG ready to be triggered the scheduler creates a DAG run object with a status of “running” and communicates the information within the DAG (overall start/execution date, task execution times, task dependencies, etc.) with the metastore as well as all necessary task information.
+
+As soon as task *within the DAGRun object* is ready to be triggered, the scheduler creates a Task instance object with a status of “Scheduled” (the status of the task is updated in the metastore).
+
+The scheduler sends the task instance object to the executor (or more specifically, the "queue" of the executor) with status of “Queued”  (the status of the task is updated in the metastore).
+
+The task is now ready to be sent off to a worker node for execution with a status of “Running” (the status of the task is updated in the metastore).
+
+Once individual tasks complete (successfully or not), the status of the task is updated in the metastore.
+
+Once all tasks in DAG complete, the status of DAG is updated in the metastore. 
+
+**(Update this):** Webserver updates the UI every ….?
 
 ### Idempotent and Deterministic
 Every Dag should be Idempotent and Deteministic
