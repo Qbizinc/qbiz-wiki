@@ -2,7 +2,7 @@
 title: Astronomer Apache Airflow Fundamentals
 description: 
 published: true
-date: 2021-12-02T23:11:33.307Z
+date: 2021-12-02T23:15:08.484Z
 tags: 
 editor: markdown
 dateCreated: 2021-12-02T22:38:43.254Z
@@ -108,4 +108,24 @@ Once all tasks in DAG complete, the status of DAG is updated in the metastore.
 
 **(Update this):** Webserver updates the UI every ….?
 
-### 
+### Installing Apache Airflow
+Included instructions on manual local installation of Airflow. Installing Airflow on Docker is easiest, but need to be able to do it manually as well. I unfortunately was not able to get it to work myself :(
+
+### Extras and Providers
+These both extend the “core functionalities” of Airflow.
+
+Extras allow you to install set of dependencies needs for a full feature. For example, install Kubernetes extras to be able to launch Kubernetes.
+
+Providers are a lightweight version of Extras in the the use case of only needing some operators/hooks/some simple functionality (i.e. Postgres). Providers can be updated independently of Airflow.
+
+### Upgrading Apache Airflow (steps)
+1. Make a backup of your metadata DB
+2. Make sure there are no deprecated features in the DAG code
+3. Pause all DAGs, make sure none are running
+4. Upgrade airflow
+   - I.e. pip install "apache-airflow[any_extra]==2.0.1" --constraint constraint-file
+5. Upgrade the DB
+   - Airflow db upgrade
+6. Restart the scheduler/webserver and worker(s)
+
+## Interacting with Apache Airflow
