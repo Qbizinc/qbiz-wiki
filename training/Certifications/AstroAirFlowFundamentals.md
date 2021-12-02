@@ -2,7 +2,7 @@
 title: Astronomer Apache Airflow Fundamentals
 description: 
 published: true
-date: 2021-12-02T22:55:38.699Z
+date: 2021-12-02T22:57:01.923Z
 tags: 
 editor: markdown
 dateCreated: 2021-12-02T22:38:43.254Z
@@ -25,15 +25,19 @@ This article will help you as a study guide for the certification exam. However,
 
 ### Three Core Components of Airflow
 
-1. Web Server (Flask server w/ interface)
+1. Web Server: Flask server w/ interface
   - Without it, not able to monitor jobs
-2. Scheduler
-  - Heart of Airflow
+2. Scheduler: Heart of Airflow
   - Without it, not able to schedule/trigger any tasks
   - Can have other schedulers in case one goes down
-3. Metadata Database
-  - Stores metadata data related to airflow (i.e. users, jobs, parameters, connections, etc.)
+3. Metadata Database: Stores metadata data related to airflow (i.e. users, jobs, parameters, connections, etc.)
   - Any DB that has integrations with SQLAlchemy can be used (default is SQLite)
+
+#### Additional Components running behind the scenes
+1. Executor: Defines how tasks will be executed (and on what systems) by Airflow
+    - I.e. if execution done via Kubernetes, will be done using Kubernetes executor
+  - By default, Airflow executes tasks sequentially (one after another)
+2. Worker: Process/subprocess(es) where task is actually executed
 
 ### Dag Scheduling
 
