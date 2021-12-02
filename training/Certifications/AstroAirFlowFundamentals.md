@@ -2,7 +2,7 @@
 title: Astronomer Apache Airflow Fundamentals
 description: 
 published: true
-date: 2021-12-02T22:54:32.754Z
+date: 2021-12-02T22:55:38.699Z
 tags: 
 editor: markdown
 dateCreated: 2021-12-02T22:38:43.254Z
@@ -21,21 +21,19 @@ This article will help you as a study guide for the certification exam. However,
 - Note: When using Docker image from course, was not able to pull up localhost in UI
   - Looks like a [known issue](https://forum.astronomer.io/t/webserver-ui-does-not-appear/1111/3); unresolved as of 11/30/21
 
-## DAG Basics
+## The Essentials
 
-### Dag Operator
+### Three Core Components of Airflow
 
-The scheduler is only going to Parse a python file in the dag directory if the file has the word DAG or the word airflow, you can change this in the configuration file. 
-
-Parameters of the DAG Constructor:
-
-- Dag_id: Name of your dag ( if two DAGs have the same dag id no errors will show, one of the DAGs will appear randomly at every dag_dir_list_interval on the UI)
-- Description
-- start_date:  The date when your dag starts being scheduled
-- schedule_interval: Defines the frequency the dag is triggered (None means the DAG must be triggered manually)
-- dagrun_timeout: The time that you dag is going to run before timingout
-- tags
-- catchup: Prevents backfilling your dag runs
+1. Web Server (Flask server w/ interface)
+  - Without it, not able to monitor jobs
+2. Scheduler
+  - Heart of Airflow
+  - Without it, not able to schedule/trigger any tasks
+  - Can have other schedulers in case one goes down
+3. Metadata Database
+  - Stores metadata data related to airflow (i.e. users, jobs, parameters, connections, etc.)
+  - Any DB that has integrations with SQLAlchemy can be used (default is SQLite)
 
 ### Dag Scheduling
 
