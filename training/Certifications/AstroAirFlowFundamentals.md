@@ -2,7 +2,7 @@
 title: Astronomer Apache Airflow Fundamentals
 description: 
 published: true
-date: 2021-12-02T22:57:01.923Z
+date: 2021-12-02T23:03:06.717Z
 tags: 
 editor: markdown
 dateCreated: 2021-12-02T22:38:43.254Z
@@ -39,35 +39,57 @@ This article will help you as a study guide for the certification exam. However,
   - By default, Airflow executes tasks sequentially (one after another)
 2. Worker: Process/subprocess(es) where task is actually executed
 
-### Dag Scheduling
+### Most Common Architectures
 
-Remember, the dag starts being scheduled from the start_date and will be triggered after every schedule_inteval. This means that if you start_date is 10:00 AM and your schedule_interval is 10 minutes, your first dag run is at 10:10 AM
+1. Single Node
+  - All components of Airflow (Web Server, scheduler, metastore, executer) run on same machine
+    - Note: The Executor contains a separate part called a “Queue” (list of tasks to be executed in a certain order
+  - Typical workflow
+    - All the time
+      - Web Server → Metastore (surfaces most information in UI)
+    - When tasks ready to be executed
+      - Scheduler → Metastore (changes task status in DB) 
+      - Scheduler → Executor (created task instance object, sent to the “queue” of executor to be executed)
+      - Executor → Metastore (updates status of task)
+2. Multi Node
+  - Components split up into different nodes
+    - I.e. using Celery executor, where Scheduler/Web Server/Executor are on one node and Metastore/Queue on other
+  - Note: In this set up, the “Queue” is external to the Executor
+    - *In order to have this work, will need a broker system like RabbitMQ or Redis (more on this [here](https://www.educba.com/rabbitmq-vs-redis/))*
+  - Worker nodes each in separate nodes as well
+  - Typical workflow
+    - All the time
+      - Web Server → Metastore (surfaces most information in UI)
+    - When tasks ready to be scheduled/executed
+      - Scheduler → Metastore (changes task status in DB) 
+      - Scheduler → Executor (created task instance object, sent to the “queue” of executor to be executed)
+      - Executor → Queue (task info sent to queue to be picked up by worker nodes)
 
-Execution_date: Is the logical date and time at which the dag and its task instances run. This also acts as a unique identifier for each DAG Run.
+### Core Concepts
+  - DAGs: Directed Acyclic Graphs (Data pipelines)
+    - Graph with nodes/edges
+    - Edges are directed, no loops
+  - Operators: Tasks within DAGs
+    - Object wrapper around task you want to execute
+    - Three types
+      1. Action Operators
+         - Executes code in data pipeline (i.e. PythonOperator executes Python code)
+      2. Transfer Operators
+         - Transfers data from source to destination (i.e. MySQLtoPrestoOperator)
+      3. Sensor Operators
+         - Logic to have tasks wait until conditions met before executing (i.e. FileSensor waits until file in certain location before having other task executed)
+    - When operator instantiated in a DAG, it becomes a Task
+  - Task: Instance of an operator
+    - When task ready to be scheduled, becomes a “Task Instance object”
+  - Task Instance: Object representing specific run of a task: DAG + Task + Point in time
+  - Dependencies: Edges in DAG graph
+    - Specifies relationships between tasks
+    - To declare dependencies between tasks
+      1. (Recommended) Use “bitshift” operators (<< or >>)
+         - I.e. task1 >> task2 to have task2 follow task1
+      2. Use set_upstream() or set_downstream() functions
+  - Workflow: All of above concepts combined (a DAG containing various operators, which themselves contain/execute various tasks, all having various dependencies, etc.)
 
-**EXTRA INFO:**
-start_date = The first dag start time. keep it STATIC
-execution_date = max(start_date, last_run_date)
-schedule_interval parameter accepts cron or timedelta values
-next_dag_start_date = execution_date + schedule_interval
-
-schedule_interval parameter accepts cron or timedelta values. This initiates the next dag run by utilizing the formula
-next_dag_start_date = max(start_date, last_run_date) + schedule_interval
-
-Example: - if your start_date = datetime(2019, 10, 13, 15, 50), schedule_interval = 0 * * * * or (@hourly)
-
-Case a) current_time is before start_date - 2019-10-13 00:00, then your dags will schedule at
-2019-10-13 16:50, and subsequently every hour.
-Please note that it will not start at start_date(2019-10-13 15:50), but rather at execution_date + schedule_interval
-
-Case b) current_time is after start_date - 2019-10-14 00:00, then your dags will schedule at
-2019-10-13 16:50, 2019-10-13 17:50, 2019-10-13 18:50 … and subsequently catchup till it reaches 2019-10-13 23:50
-Then it will wait for the strike of 2019-10-14 00:50 for the next run.
-Please not that the catchup can be avoided by setting catchup=False in dag object properties
-
-### Cron vs Timedelta
-
-In the schedule_interval parameter you can use Cron or a timedelta object, the difference between those is that Cron expression is stateless, whereas a timedelta is relative to the previous execution_date
 
 ### Idempotent and Deterministic
 Every Dag should be Idempotent and Deteministic
