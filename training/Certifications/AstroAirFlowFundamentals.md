@@ -2,7 +2,7 @@
 title: Astronomer Apache Airflow Fundamentals
 description: 
 published: true
-date: 2021-12-03T01:20:36.111Z
+date: 2021-12-03T01:29:39.829Z
 tags: 
 editor: markdown
 dateCreated: 2021-12-02T22:38:43.254Z
@@ -182,4 +182,14 @@ Use “with DAG(...) as dag” syntax for easier code writing. Also, choose a un
   - Based on above example, this DAG would have execution_dates of 1/1/2021 10:00 AM, 1/1/2021 11:00 AM, 1/1/2021 12:00 PM, and so on
     - **Note: Even though the DAG will START at 1/1/2021 11:00 AM its first execution date is the start date of 1/1/2021 10:00 AM**
   - Every time DAG is executed, the start_date of the next DAG run is incremented by the schedule_interval
-- `end_date`: Date/time that DAG will stop 
+- `end_date`: Date/time that DAG will stop
+
+### Playing with `start_date`
+
+The `start_date` argument is added as an argument to a instantiated “DAG” object. The first upstream task will inherit this `start_time` value. Tasks *can* be set with different start_date values than the DAGs, but this will likely never come up in practice.
+
+By default, all date times are in UTC time zone (Best practice).
+
+**Note:** If DAG is created/triggered with start date in past (and DAG hasn’t been triggered yet), Airflow will trigger all untriggered DAG runs between start date and current date (assuming `catchup` is set to True)
+
+**Do NOT use dynamic datetimes like datetime.now() for the start_date. Every time the DAG evaluated, the start_date moves forward in time so the DAG will never be triggered.**
