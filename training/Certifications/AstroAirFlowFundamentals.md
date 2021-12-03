@@ -2,7 +2,7 @@
 title: Astronomer Apache Airflow Fundamentals
 description: 
 published: true
-date: 2021-12-03T01:32:49.516Z
+date: 2021-12-03T01:42:16.215Z
 tags: 
 editor: markdown
 dateCreated: 2021-12-02T22:38:43.254Z
@@ -190,7 +190,7 @@ The `start_date` argument is added as an argument to an instantiated “DAG” o
 
 By default, all date times are in UTC time zone (Best practice).
 
-**Note:** If DAG is created/triggered with start date in past (and DAG hasn’t been triggered yet), Airflow will trigger all untriggered DAG runs between start date and current date (assuming `catchup` is set to True)
+**Note:** If DAG is created/triggered with start date in past (and DAG hasn’t been triggered yet), Airflow will trigger all untriggered DAG runs between start date and current date (assuming `catchup` is set to True; more on that below)
 
 **Do NOT use dynamic datetimes like datetime.now() for the start_date. Every time the DAG evaluated, the start_date moves forward in time so the DAG will never be triggered.**
 
@@ -202,3 +202,19 @@ This argument can either be a cron expression or timedelta object. A general rul
 
 More on cron expressions: https://crontab.guru/ 
 
+### Backfilling and Catchup
+
+- Backfilling: Running/rerunning past non-triggered or already triggered DAG runs
+- Catchup: Boolean keyword argument added to “DAG” object to declare whether or not the DAG should do backfill (i.e. catchup=True for backfill)
+
+Airflow also has a specialized Python method `days_ago` in the `airflow.utils.dates` library that can be used to declare a start date from x days ago (to be used only once + with catchup).
+
+### Focus on Operators
+
+- Operators can be thought of as a wrapper around a task; you should have 1 task per operator
+  - i.e. if there are extraction and cleaning tasks, they should NOT be combined into the same operator
+- Operators should have unique task ids
+- Leverage the `default_args` argument in DAG objects to establish default values (i.e. `retry`, `retry_delay`) for all tasks within a DAG
+  - I.e. create a `default_args` dictionary and pass into the `default_args` argument of an instantiated DAG object
+- Look at [BaseOperator class](https://airflow.apache.org/docs/apache-airflow/stable/_api/airflow/models/baseoperator/index.html) to see all the different kinds of arguments that can be passed into most Operator classes
+  - All other operators come from this one
