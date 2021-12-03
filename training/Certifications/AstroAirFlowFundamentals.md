@@ -2,7 +2,7 @@
 title: Astronomer Apache Airflow Fundamentals
 description: 
 published: true
-date: 2021-12-03T01:10:34.792Z
+date: 2021-12-03T01:20:36.111Z
 tags: 
 editor: markdown
 dateCreated: 2021-12-02T22:38:43.254Z
@@ -166,3 +166,20 @@ Between this section and the next are useful videos showing various aspects of t
 [Docs](https://airflow.apache.org/docs/apache-airflow/stable/stable-rest-api-ref.html)
 
 ## DAGs and Tasks
+
+### DAG Skeleton
+Use “with DAG(...) as dag” syntax for easier code writing. Also, choose a unique dag_id to make debugging easier.
+
+### Demystifying DAG Scheduling
+
+#### Parameters to know
+
+- `start_date`: Date/time that DAG will begin to be scheduled (i.e. 1/1/2021 @ 10am PST)
+- `schedule_interval`: Frequency at which DAG will run (i.e. every hour)
+  - **Note: DAG is actually triggered at start_date + schedule_interval**
+  - Based on above example, this DAG would be triggered at 1/1/2021 11:00 AM
+- `execution_date`: Date/time that DAG runs every interval
+  - Based on above example, this DAG would have execution_dates of 1/1/2021 10:00 AM, 1/1/2021 11:00 AM, 1/1/2021 12:00 PM, and so on
+    - **Note: Even though the DAG will START at 1/1/2021 11:00 AM its first execution date is the start date of 1/1/2021 10:00 AM**
+  - Every time DAG is executed, the start_date of the next DAG run is incremented by the schedule_interval
+- `end_date`: Date/time that DAG will stop 
