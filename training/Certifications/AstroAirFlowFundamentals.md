@@ -2,7 +2,7 @@
 title: Astronomer Apache Airflow Fundamentals
 description: 
 published: true
-date: 2021-12-03T01:02:01.516Z
+date: 2021-12-03T01:10:34.792Z
 tags: 
 editor: markdown
 dateCreated: 2021-12-02T22:38:43.254Z
@@ -144,20 +144,25 @@ Providers are a lightweight version of Extras in the the use case of only needin
 Between this section and the next are useful videos showing various aspects of the Airflow UI (DAGs view, Tree view, etc.). Give them a thorough watch if you've never used Airflow.
 
 ### Astronomer CLI Commands to Know
-docker ps: Shows running/stopped Docker images
-docker exec -it DOCKER_CONTAINER_ID /bin/bash: opens new bash session inside specified container
-airflow db init: initiate metadata DB and create require files/folders for Airflow
-airflow db upgrade: upgrade Airflow (updates schema of metadata DB)
-airflow db reset: removes everything in database (TESTING ONLY)
-airflow webserver: start the webserver
-airflow scheduler: start airflow scheduler
-airflow celery worker: start celery worker
-Note: Needs to be run on EVERY celery worker machine
-airflow dags pause: Pause DAGS
-airflow dags unpause: Unpause DAGs
-airflow dags trigger [additional argos for execution date, etc.]: Trigger DAGs (with operational arguments added)
-airflow dags list: list all dags in a given initialized airflow directory
-airflow tasks list DAG_ID: List all tasks in a DAG
-airflow tasks test DAG_ID TASK_ID [ARGS]: Test specific task in a DAG
-airflow dags backfill -s START_DATE_YYYY-MM-DD -e END_DATE_YYYY-MM-DD --reset_dagruns DAG_ID: Backfill DAGs with additional optional args 
-REST API
+- `docker ps`: Shows running/stopped Docker images
+- `docker exec -it DOCKER_CONTAINER_ID /bin/bash`: opens new bash session inside specified container
+- `airflow db init`: initiate metadata DB and create require files/folders for Airflow
+- `airflow db upgrade`: upgrade Airflow (updates schema of metadata DB)
+- `airflow db reset`: removes everything in database (TESTING ONLY)
+- `airflow webserver`: start the webserver
+- `airflow scheduler`: start airflow scheduler
+- `airflow celery worker`: start celery worker
+  - **Note:** Needs to be run on EVERY celery worker machine
+- `airflow dags pause`: Pause DAGS
+- `airflow dags unpause`: Unpause DAGs
+- `airflow dags trigger [additional args for execution date, etc.]`: Trigger DAGs (with operational arguments added)
+- `airflow dags list`: list all dags in a given initialized airflow directory
+- `airflow tasks list DAG_ID`: List all tasks in a DAG
+- `airflow tasks test DAG_ID TASK_ID [ARGS]`: Test specific task in a DAG
+- `airflow dags backfill -s START_DATE_YYYY-MM-DD -e END_DATE_YYYY-MM-DD --reset_dagruns DAG_ID:` Backfill DAGs with additional optional args
+
+### REST API
+
+[Docs](https://airflow.apache.org/docs/apache-airflow/stable/stable-rest-api-ref.html)
+
+## DAGs and Tasks
