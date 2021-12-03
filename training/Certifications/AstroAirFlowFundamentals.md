@@ -2,7 +2,7 @@
 title: Astronomer Apache Airflow Fundamentals
 description: 
 published: true
-date: 2021-12-02T23:15:08.484Z
+date: 2021-12-03T01:02:01.516Z
 tags: 
 editor: markdown
 dateCreated: 2021-12-02T22:38:43.254Z
@@ -129,3 +129,35 @@ Providers are a lightweight version of Extras in the the use case of only needin
 6. Restart the scheduler/webserver and worker(s)
 
 ## Interacting with Apache Airflow
+
+### The 3 Ways
+1. User Interface (UI): Most common/used way of interacting with Airflow
+   - Check job logs, history
+2. Command Line Interface (CLI)
+   - Test tasks
+   - Upgrade airflow
+   - Initialize Airflow
+   - Decent backup if UI is down
+3. REST API: Leverage additional functionality on top of airflow
+  - I.e. If you have front end, and customer clicks on a button then trigger a DAG
+
+Between this section and the next are useful videos showing various aspects of the Airflow UI (DAGs view, Tree view, etc.). Give them a thorough watch if you've never used Airflow.
+
+### Astronomer CLI Commands to Know
+docker ps: Shows running/stopped Docker images
+docker exec -it DOCKER_CONTAINER_ID /bin/bash: opens new bash session inside specified container
+airflow db init: initiate metadata DB and create require files/folders for Airflow
+airflow db upgrade: upgrade Airflow (updates schema of metadata DB)
+airflow db reset: removes everything in database (TESTING ONLY)
+airflow webserver: start the webserver
+airflow scheduler: start airflow scheduler
+airflow celery worker: start celery worker
+Note: Needs to be run on EVERY celery worker machine
+airflow dags pause: Pause DAGS
+airflow dags unpause: Unpause DAGs
+airflow dags trigger [additional argos for execution date, etc.]: Trigger DAGs (with operational arguments added)
+airflow dags list: list all dags in a given initialized airflow directory
+airflow tasks list DAG_ID: List all tasks in a DAG
+airflow tasks test DAG_ID TASK_ID [ARGS]: Test specific task in a DAG
+airflow dags backfill -s START_DATE_YYYY-MM-DD -e END_DATE_YYYY-MM-DD --reset_dagruns DAG_ID: Backfill DAGs with additional optional args 
+REST API
