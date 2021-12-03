@@ -2,7 +2,7 @@
 title: Astronomer Apache Airflow Fundamentals
 description: 
 published: true
-date: 2021-12-03T01:29:39.829Z
+date: 2021-12-03T01:32:49.516Z
 tags: 
 editor: markdown
 dateCreated: 2021-12-02T22:38:43.254Z
@@ -186,10 +186,19 @@ Use “with DAG(...) as dag” syntax for easier code writing. Also, choose a un
 
 ### Playing with `start_date`
 
-The `start_date` argument is added as an argument to a instantiated “DAG” object. The first upstream task will inherit this `start_time` value. Tasks *can* be set with different start_date values than the DAGs, but this will likely never come up in practice.
+The `start_date` argument is added as an argument to an instantiated “DAG” object. The first upstream task will inherit this `start_time` value. Tasks *can* be set with different start_date values than the DAGs, but this will likely never come up in practice.
 
 By default, all date times are in UTC time zone (Best practice).
 
 **Note:** If DAG is created/triggered with start date in past (and DAG hasn’t been triggered yet), Airflow will trigger all untriggered DAG runs between start date and current date (assuming `catchup` is set to True)
 
 **Do NOT use dynamic datetimes like datetime.now() for the start_date. Every time the DAG evaluated, the start_date moves forward in time so the DAG will never be triggered.**
+
+### Playing with `schedule_interval`
+
+This argument is also added as an argument to an instantiated “DAG” object. This will tell Airflow how often this DAG should be run. 
+
+This argument can either be a cron expression or timedelta object. A general rule of thumb is to use cron expressions when the DAG needs to be run every day at a certain time or certain days of the week. Use timedeltas where cron expressions fall short (i.e. when a DAG needs to be run every x minutes, hours or days).
+
+More on cron expressions: https://crontab.guru/ 
+
