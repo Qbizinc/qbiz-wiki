@@ -2,7 +2,7 @@
 title: Astronomer Apache Airflow Fundamentals
 description: 
 published: true
-date: 2021-12-06T19:25:21.117Z
+date: 2021-12-06T19:25:31.330Z
 tags: 
 editor: markdown
 dateCreated: 2021-12-02T22:38:43.254Z
