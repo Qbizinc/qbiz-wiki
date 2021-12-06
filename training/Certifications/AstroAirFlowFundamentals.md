@@ -2,7 +2,7 @@
 title: Astronomer Apache Airflow Fundamentals
 description: 
 published: true
-date: 2021-12-06T18:19:36.888Z
+date: 2021-12-06T18:41:24.031Z
 tags: 
 editor: markdown
 dateCreated: 2021-12-02T22:38:43.254Z
@@ -260,3 +260,28 @@ Here are some best practices to specify relationships between tasks (i.e. declar
 - The `cross_downstream()` function
   - `cross_downstream([task1, task2], [task3, task4])` will make `task3` and `task4` happen after `task1` and `task2`
 - CANNOT do `[task1, task2] >> [task3, task4]`; cannot declare dependencies like that, must use `cross_downstream()` function
+
+### Exchanging Data
+Airflow has methodology for sharing data between tasks (with limitations). Airflow’s method for doing this is called Xcoms. To make values shareable:
+- Method 1: have Python functions return values/objects you want to pass between tasks (easiest method)
+  - Use if the name of the key does not matter; the key will be called `return_value`
+- Method 2: return values/objects using `xcom_push()`, retreive values/objects using `xcom_pull()`
+  - Use if you want to customize the name of the key
+  - Example: in the task `task1`, the line of code `ti.xcom_push(key=’KEY_NAME’, value=VALUE)` is used
+    - `ti` is the task instance object and must be passed into the Python function where the values/objects are to be pushed 
+    - Will be able to see returned values in the Airflow UI after DAGs executed
+  - To retrieve values from other tasks/Python functions: use `xcom_pull()`
+  - Need to access context of DAG run, specifically the task instance object and pass the object into the Python function
+    - If above object is `ti` and we are grabbing the value pushed from `task1` above: 
+      - `my_xcom = ti.xcom_pull(key=’KEY_NAME’, task_ids=[‘task1’])`
+
+### Ops...We got a Failure
+Quick notes on notifications based on task/DAG states.
+
+If you want to notify someone of:
+- failed DAGs: add `email_on_failure` argument to default args list
+- retried DAGs: add `email_on_retry` argument to default args list
+  - Can add `on_failure_callback` parameter to Operators to call specific code in the event of failure
+- Can get DAG context via variable called context???
+
+This module also included typical debugging stuff; just make sure to navigate to the logs of failed tasks as needed.
