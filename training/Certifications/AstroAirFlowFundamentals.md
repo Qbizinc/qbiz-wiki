@@ -2,7 +2,7 @@
 title: Astronomer Apache Airflow Fundamentals
 description: 
 published: true
-date: 2021-12-06T17:11:50.468Z
+date: 2021-12-06T17:21:17.109Z
 tags: 
 editor: markdown
 dateCreated: 2021-12-02T22:38:43.254Z
@@ -218,3 +218,14 @@ Airflow also has a specialized Python method `days_ago` in the `airflow.utils.da
   - I.e. create a `default_args` dictionary and pass into the `default_args` argument of an instantiated DAG object
 - Look at [BaseOperator class](https://airflow.apache.org/docs/apache-airflow/stable/_api/airflow/models/baseoperator/index.html) to see all the different kinds of arguments that can be passed into most Operator classes
   - All other operators come from this one
+
+### Executing Python Functions
+The PythonOperator class is a specialized operator to execute Python code, specifically a Python callable function where one passed in  the name of the python function as an input to the Operator
+
+**Neat trick:** One can access context information (i.e. DAG ID, task IDs, timestamps, etc.) of a DAG by
+- Creating a python function that takes in keyword arguments (i.e. `**kwargs`) as it's only input
+- Have the function print the keyword arguments (i.e. `print(kwargs)`)
+- The result will be all of the DAG context information
+
+**Another trick:** Pass in a dictionary of key value pairs into the `op_kwargs` argument of the PythonOperator and you’ll be able to access the values from the dictionary using the keys directly
+
