@@ -2,7 +2,7 @@
 title: Astronomer Apache Airflow Fundamentals
 description: 
 published: true
-date: 2021-12-06T19:16:01.065Z
+date: 2021-12-06T19:21:49.296Z
 tags: 
 editor: markdown
 dateCreated: 2021-12-02T22:38:43.254Z
@@ -302,3 +302,13 @@ The default executor is Sequential executor, which triggers tasks one by one in 
 - `max_active_runs`: parameter that does the same as the above parameter but can be set for specific DAGS that overrides `max_active_runs_per_dag`
 
 Example: if `parallelism` = 4, `dag_concurrency` = 16, and `max_active_runs_per_dag` = 16 the maximum number of concurrent tasks that can be run at the same time is 4 (`parallelism` overrides all else)
+
+### Start Scaling Apache Airflow
+If tasks needs to be executed in parallel but there's only a local machine available for use, look into using `LocalExecutor` as well as using a different DB for the metadata DB (i.e. PostGres DB).
+
+### Scaling to the Infinity!
+`LocalExecutor` is a good start for executing tasks in parallel but is still limited since tasks only run on local machine. Scaling this up is not sustainable; for many parallel tasks, a good option to look into is the **Celery Executor**. This executes tasks on multiple machines rather than one local machine.
+
+**Note:** In order to properly do this, we must implement a queue system using 3rd party tool like Redis or RabbitMQ so that the queue can be executed on a different machine from the executor
+**Note:** Also must set up a result backend!!!
+
