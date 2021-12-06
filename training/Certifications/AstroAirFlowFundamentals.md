@@ -2,7 +2,7 @@
 title: Astronomer Apache Airflow Fundamentals
 description: 
 published: true
-date: 2021-12-06T19:03:43.974Z
+date: 2021-12-06T19:16:01.065Z
 tags: 
 editor: markdown
 dateCreated: 2021-12-02T22:38:43.254Z
@@ -292,3 +292,13 @@ This module also included typical debugging stuff; just make sure to navigate to
 Airflow has different types of executors for specific types of needs which each define how tasks are executed (executing tasks in parallel, one by one, etc.). Behind the executors is a queue; the executor defines what system executes the tasks.
 
 The default executor is Sequential executor, which triggers tasks one by one in order based on the defined dependencies. This executor uses SQLite as its metadata DB which doesn’t allow multiple writes at the same time (meaning tasks cannot be executed in parallel).
+
+### Concurrency, the parameters you must know!
+- `parallelism`: determined maximum number of tasks that can be executed at the same time in entire Airflow instance
+- `dag_concurrency`: defines number of tasks that can be executed for a given task across all DAG runs
+  - Default: 16 (i.e. can execute at most 16 tasks at same time for given DAG across all DAG runs)
+- `concurrency`: parameter that does the same as the above parameter but can be set for specific DAGS that overrides `dag_concurrency`
+- `max_active_runs_per_dag`: Defined maximum number of DAG runs that can be run at the same time
+- `max_active_runs`: parameter that does the same as the above parameter but can be set for specific DAGS that overrides `max_active_runs_per_dag`
+
+Example: if `parallelism` = 4, `dag_concurrency` = 16, and `max_active_runs_per_dag` = 16 the maximum number of concurrent tasks that can be run at the same time is 4 (`parallelism` overrides all else)
