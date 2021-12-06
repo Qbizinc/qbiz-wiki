@@ -2,7 +2,7 @@
 title: Astronomer Apache Airflow Fundamentals
 description: 
 published: true
-date: 2021-12-06T19:21:49.296Z
+date: 2021-12-06T19:25:21.117Z
 tags: 
 editor: markdown
 dateCreated: 2021-12-02T22:38:43.254Z
@@ -312,3 +312,15 @@ If tasks needs to be executed in parallel but there's only a local machine avail
 **Note:** In order to properly do this, we must implement a queue system using 3rd party tool like Redis or RabbitMQ so that the queue can be executed on a different machine from the executor
 **Note:** Also must set up a result backend!!!
 
+A quick example architecture:
+- Node 1: Web Server + Scheduler
+- Node 2: Metadata DB (i.e. Postgres) + Queue
+- Node 3: Celery worker
+- Node 4: Celery worker
+- Node 5: Celery worker 
+
+**Note:** In order to initialize the celery workers for use with Airflow, the following steps must be taken:
+1. Airflow must be installed on all machines as well as all required dependencies (Python packages, airflow provider packages, etc.)
+2. One must run `airflow celery worker` directly on all celery worker machines (in the above example nodes 3-5)
+
+When tasks are ready to go, scheduler (node 1) pushes task info to queue (node 2), then task is pushed to one of the celery workers (node 3/4/5).
