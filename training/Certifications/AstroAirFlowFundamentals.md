@@ -2,7 +2,7 @@
 title: Astronomer Apache Airflow Fundamentals
 description: 
 published: true
-date: 2021-12-06T17:32:20.684Z
+date: 2021-12-06T17:33:53.136Z
 tags: 
 editor: markdown
 dateCreated: 2021-12-02T22:38:43.254Z
@@ -235,3 +235,7 @@ Sometimes one will want to pause a DAG in order to wait for specific conditions 
 A common use case is to wait for a file to land in specific location before kicking off DAG. This use case (and similar ones where DAGs should wait to execute until conditions are met) can be solved by using Airflow "Sensor" objects. Specifically, a “FileSensor” object can solve the above example use case.
 - Requires a connection id, which references a manually declared connection created in the Airflow UI
 - Will need to manually add a connection in the Airflow UI to declare all needed info (i.e. AWS bucket creds)
+
+### Executing Bash Commands
+- Specialized Operator `BashOperator` that executes Bash commands
+- Takes in bash command using the `bash_command` argument
