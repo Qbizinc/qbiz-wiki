@@ -2,7 +2,7 @@
 title: Astronomer Apache Airflow Fundamentals
 description: 
 published: true
-date: 2021-12-06T17:56:24.422Z
+date: 2021-12-06T18:19:36.888Z
 tags: 
 editor: markdown
 dateCreated: 2021-12-02T22:38:43.254Z
@@ -250,7 +250,7 @@ Here are some best practices to specify relationships between tasks (i.e. declar
   - `set_upstream()` will make the task inside the function occur BEFORE the task that has set_upstream() called on it
     - I.e. `task2.set_upstream(task1)` will make task1 be an upstream task 2 (equivalent to `task2` being downstream of `task1`)
 
-Additional examples:
+#### Additional examples:
 - `task1 >> task2 >> task3`
   - This will have `task2` follow `task1` and `task3` follow `task2`
 - `task1 >> [task2, task3]`
