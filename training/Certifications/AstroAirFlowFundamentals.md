@@ -2,7 +2,7 @@
 title: Astronomer Apache Airflow Fundamentals
 description: 
 published: true
-date: 2021-12-06T17:33:53.136Z
+date: 2021-12-06T17:56:24.422Z
 tags: 
 editor: markdown
 dateCreated: 2021-12-02T22:38:43.254Z
@@ -239,3 +239,24 @@ A common use case is to wait for a file to land in specific location before kick
 ### Executing Bash Commands
 - Specialized Operator `BashOperator` that executes Bash commands
 - Takes in bash command using the `bash_command` argument
+
+### Define the path!
+Airflow DAGs that have multiple tasks defined require relationships/dependencies between the tasks to be defined as well. This is because typical use cases for Airflow are typically (but not always) modeled in the form of ETL (Extract, Transform, Load) tasks; in general the later tasks typically need earlier tasks to complete before running.
+
+Here are some best practices to specify relationships between tasks (i.e. declare dependencies between tasks)
+- (Recommended) Use “bitshift” operators (<< or >>)
+  - I.e. use `task1 >> task2` to have `task2` be downstream of (i.e. happen after) `task1`
+- Use `set_upstream()` or `set_downstream()` functions
+  - `set_upstream()` will make the task inside the function occur BEFORE the task that has set_upstream() called on it
+    - I.e. `task2.set_upstream(task1)` will make task1 be an upstream task 2 (equivalent to `task2` being downstream of `task1`)
+
+Additional examples:
+- `task1 >> task2 >> task3`
+  - This will have `task2` follow `task1` and `task3` follow `task2`
+- `task1 >> [task2, task3]`
+  - This will make both `task2` and `task3` follow `task1` in parallel
+- The `chain()` function
+  - `chain(task1, task2, task3)` is the same as `task1 >> task2 >> task3`
+- The `cross_downstream()` function
+  - `cross_downstream([task1, task2], [task3, task4])` will make `task3` and `task4` happen after `task1` and `task2`
+- CANNOT do `[task1, task2] >> [task3, task4]`; cannot declare dependencies like that, must use `cross_downstream()` function
