@@ -2,7 +2,7 @@
 title: Astronomer Apache Airflow Fundamentals
 description: 
 published: true
-date: 2021-12-06T19:00:04.724Z
+date: 2021-12-06T19:03:43.974Z
 tags: 
 editor: markdown
 dateCreated: 2021-12-02T22:38:43.254Z
@@ -285,3 +285,10 @@ If you want to notify someone of:
 - Can get DAG context via variable called context???
 
 This module also included typical debugging stuff; just make sure to navigate to the logs of failed tasks as needed.
+
+## The Executor Kingdom
+
+### The Default Executor
+Airflow has different types of executors for specific types of needs which each define how tasks are executed (executing tasks in parallel, one by one, etc.). Behind the executors is a queue; the executor defines what system executes the tasks.
+
+The default executor is Sequential executor, which triggers tasks one by one in order based on the defined dependencies. This executor uses SQLite as its metadata DB which doesn’t allow multiple writes at the same time (meaning tasks cannot be executed in parallel).
