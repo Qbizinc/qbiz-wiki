@@ -2,7 +2,7 @@
 title: DB Comparison Matrix
 description: Comparison of DB Strengths and Weaknesses 
 published: true
-date: 2021-11-04T12:14:01.920Z
+date: 2021-12-10T22:17:42.585Z
 tags: snowflake, redshift, db
 editor: markdown
 dateCreated: 2021-09-14T22:21:56.935Z
@@ -19,6 +19,9 @@ https://docs.google.com/spreadsheets/d/1LWmD-Nree-dJbvA12cGVuIPxOg4bVqyvQ3WQ1Yws
 ### Reference Links
 - Cloud DBs
 https://poplindata.com/data-warehouses/2021-database-showdown-bigquery-vs-redshift-vs-snowflake/
+https://medium.com/@rinkesh.pati/cloud-analytics-at-scale-with-cloud-data-warehouse-a-look-at-the-top-players-cd5590a96a38
+https://www.bluegranite.com/blog/synapse-vs-snowflake-the-data-warehouse-debate
+https://medium.com/snowflake/azure-synapse-analytics-vs-snowflake-decision-when-migrating-to-azure-cloud-f0dbd3f229b8
 https://hevodata.com/blog/snowflake-vs-redshift/
 https://www.upsolver.com/blog/snowflake-redshift-aws-data-warehouse-comparison
 https://flydata.com/blog/snowflake-vs-redshift-which-cloud-data-warehouse-is-right-for-you
