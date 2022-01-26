@@ -2,7 +2,7 @@
 title: Installing Apache Spark
 description: Some notes for myself as a reminder.  What to install, where to get extra libraries to read from S3.
 published: true
-date: 2022-01-03T19:03:31.869Z
+date: 2022-01-26T18:31:40.950Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-03T19:03:31.869Z
@@ -35,4 +35,13 @@ After downloading additional libaries...
 -rw-rw-r-- 1 9archi0 9archi0  4426299 Jun  1  2021 hadoop-common-3.3.1.jar
 -rw-r--r-- 1 9archi0 9archi0  3362359 Oct  6 13:18 hadoop-shaded-guava-1.1.1.jar
 -rw-r--r-- 1 9archi0 9archi0    56507 Oct  6 13:18 hadoop-yarn-server-web-proxy-3.3.1.jar
+```
+Getting Hadoop and AWS JARs
+```bash
+wget https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.3.1/hadoop-aws-3.3.1.jar; \
+wget https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-common/3.3.1/hadoop-common-3.3.1.jar; \
+wget https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk/1.12.136/aws-java-sdk-1.12.136.jar; \
+wget https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-core/1.12.136/aws-java-sdk-core-1.12.136.jar; \
+wget https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-s3/1.12.136/aws-java-sdk-s3-1.12.136.jar; \
+wget https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-dynamodb/1.12.136/aws-java-sdk-dynamodb-1.12.136.jar
 ```
