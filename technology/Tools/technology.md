@@ -2,7 +2,7 @@
 title: Installing Apache Spark
 description: Some notes for myself as a reminder.  What to install, where to get extra libraries to read from S3.
 published: true
-date: 2022-01-27T15:05:20.662Z
+date: 2022-01-27T16:28:41.740Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-03T19:03:31.869Z
@@ -53,3 +53,4 @@ Follow the instructions found in AWS' Documentation for [Developing and Testing 
 - The instructions are insufficent for Maven newbies to run without needing to google the solution.  Use `cd aws-glue-libs; mvn install dependency:copy-dependencies`.
 - Glue v3, designed to work with Spark v3.x, is designed to run on Amazon Linux.  I had issues installing it on Ubuntu, but there are so many things than can go wrong, I may have made some error.
 - Glue v2 requires Python 3.7.x, which seems to use standard Apache Spark. 
+- there is a bug in the AWS repo and these directions must be followed to repair: https://support.wharton.upenn.edu/help/glue-debugging#run-glue-setup-sh
