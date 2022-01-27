@@ -2,13 +2,13 @@
 title: Installing Apache Spark
 description: Some notes for myself as a reminder.  What to install, where to get extra libraries to read from S3.
 published: true
-date: 2022-01-26T18:31:40.950Z
+date: 2022-01-27T14:50:00.684Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-03T19:03:31.869Z
 ---
 
-# Apache Spark
+# Apache Spark and adding Glue libraries
 ## Installation
 Got to *https://spark.apache.org/downloads.html* and download the version that is pre-built with Apache Hadoop (unless you plan to leverage and existing hadoop cluster).  If installing on a remote Linux server, copy the download link and use *wget* to download the package.
 
@@ -45,3 +45,9 @@ wget https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-core/1.12.136/aws
 wget https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-s3/1.12.136/aws-java-sdk-s3-1.12.136.jar; \
 wget https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-dynamodb/1.12.136/aws-java-sdk-dynamodb-1.12.136.jar
 ```
+## Adding Glue libraries
+Follow the instructions found in AWS' Documentation for [Developing and Testing ETL Scripts Locally Using the AWS Glue ETL Library](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-libraries.html#develop-local-python).
+
+### Important Notes
+- Depending on the age of your OS, your version of Maven may be too old to run pull the dependencies with the provided `pom.xml`.
+- The instructions are insufficent for Maven newbies to run without needing to google the solution.  Use `cd aws-glue-libs; mvn install dependency:copy-dependencies`.
