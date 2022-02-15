@@ -2,17 +2,17 @@
 title: Merging Intervals
 description: 
 published: true
-date: 2022-02-15T19:56:10.429Z
+date: 2022-02-15T20:03:26.763Z
 tags: interview_question
 editor: markdown
 dateCreated: 2022-02-15T19:56:10.429Z
 ---
 
 # Interview Question: Merging Intervals
->Language: Python3
+>**Language: Python3**
 {.is-info}
 
->Difficulty: Medium
+>**Difficulty: Medium**
 {.is-warning}
 
 ## Question Text
