@@ -2,7 +2,7 @@
 title: Merging Intervals
 description: 
 published: true
-date: 2022-02-15T20:03:26.763Z
+date: 2022-02-15T20:41:05.937Z
 tags: interview_question
 editor: markdown
 dateCreated: 2022-02-15T19:56:10.429Z
@@ -29,7 +29,19 @@ def merge_intervals(intervals):
 
 ## Optimal Solution
 ```python
-# TBD
+def merge_intervals(intervals): 
+    sorted_by_lower_bound = sorted(intervals, key=lambda tup: tup[0])
+    merged=[] 
+    for h in sorted_by_lower_bound: 
+        if not merged: 
+            merged.append(h) 
+        else: 
+            l = merged[-1] 
+            if l[1]+1 >= h[0]: 
+                merged[-1] = (l[0],max(l[1],h[1])) 
+            else: 
+                merged.append(h) 
+    return merged
 ```
 
 ## Alternative Solutions
