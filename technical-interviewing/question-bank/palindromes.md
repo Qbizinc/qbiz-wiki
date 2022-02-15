@@ -2,15 +2,18 @@
 title: Palindromes
 description: 
 published: true
-date: 2022-02-15T19:49:02.488Z
+date: 2022-02-15T20:03:00.285Z
 tags: interview_question
 editor: markdown
 dateCreated: 2022-02-15T19:46:32.571Z
 ---
 
 # Interview Question: Palindromes
-Language: Python3
-Difficulty: Low
+> **Language: Python3**
+{.is-info}
+
+> **Difficulty: Low**
+{.is-success}
 
 ## Question Text
 
