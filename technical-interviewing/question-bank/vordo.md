@@ -2,7 +2,7 @@
 title: Vordo
 description: 
 published: true
-date: 2022-02-15T20:49:28.085Z
+date: 2022-02-15T20:53:11.540Z
 tags: interview_question
 editor: markdown
 dateCreated: 2022-02-15T20:49:28.085Z
@@ -16,6 +16,18 @@ dateCreated: 2022-02-15T20:49:28.085Z
 {.is-success}
 
 ## Question Text
+This series of questions builds up a simple SQL dataset and asks
+the candidate to perform queries that increase in complexity.
+
+### Questions
+1. Simple Where clause filter
+1. Simple Join between two tables
+1. Having clause or CTE to get the sum
+1. Two aggregates in the same query
+5. Two part question:
+5a. Three way join
+5b. Related to 5a, but needs to be the opposite set
+
 
 ```sql
 DROP TABLE IF EXISTS salespeople;
@@ -106,10 +118,12 @@ SELECT TBD
 
 ## Tricks and Traps
 * None of the tables have primary keys, despite a field being named id
-* There are two salespeople with the same id
-* Cailin has no orders
 * The call was coming from in the house
 * The key fields don't line up between the tables (i.e. `salespeople_id = id` or `order_id=id`
+* There are "primary key" conflicts in the salespeople table (ids are not primary keys)
+* Cailin has no orders, so question 2 needs a left join
+* Common mistake on 5b is to show all orders for customers that are not Vordo
+
 
 ## Follow on questions
 
