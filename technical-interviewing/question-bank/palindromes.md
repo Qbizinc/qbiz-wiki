@@ -2,7 +2,7 @@
 title: Palindromes
 description: 
 published: true
-date: 2022-02-15T19:46:32.571Z
+date: 2022-02-15T19:49:02.488Z
 tags: interview_question
 editor: markdown
 dateCreated: 2022-02-15T19:46:32.571Z
@@ -14,7 +14,7 @@ Difficulty: Low
 
 ## Question Text
 
-```
+```python
 # A palindrome is a sequence of characters which reads the same 
 # backward as forward, such as madam or racecar.
 #
@@ -29,7 +29,7 @@ mylist = ["airplane", "kayak", "racecar", "anna"]
 
 ## Optimal Solution
 In this case, using the python ability to slice a string into characters with a -1 index, will reverse the string, comparing a string to it's reverse should be true for a palindrome.
-```
+```python
 def is_palindrome(mystring):
     return mystring == mystring[::-1]
 
