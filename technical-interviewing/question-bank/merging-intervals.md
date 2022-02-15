@@ -2,7 +2,7 @@
 title: Merging Intervals
 description: 
 published: true
-date: 2022-02-15T20:41:05.937Z
+date: 2022-02-15T20:43:13.667Z
 tags: interview_question
 editor: markdown
 dateCreated: 2022-02-15T19:56:10.429Z
@@ -45,7 +45,7 @@ def merge_intervals(intervals):
 ```
 
 ## Alternative Solutions
-
+* One alternative could involve looping over the unsorted list
 
 ## Tricks and Traps
 * The sample input and output is shown in the comments, not really provided in code
