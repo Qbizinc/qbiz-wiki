@@ -2,7 +2,7 @@
 title: Beginners Guide to Qbiz Technical Interviews
 description: 
 published: true
-date: 2022-02-16T16:13:52.095Z
+date: 2022-02-16T16:14:57.783Z
 tags: interview
 editor: markdown
 dateCreated: 2022-02-16T16:13:52.095Z
@@ -52,6 +52,7 @@ This document is going to focus on the Initial Technical Screen.
     * Recommended: {Candidate Name} {Date} i.e. "John Doe 2022-02-09"
 * Select the questions you want to ask for both python and SQL
     * Pick out 2-3 python questions, and 2-3 SQL questions, you'll only have an hour for the interview, but you'll want to have some extras in case they fly through the easier questions.
+    * See [question-bank](/technical-interviewing/question-bank)
 
 
 ## Things you should do after the interview
