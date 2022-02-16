@@ -2,7 +2,7 @@
 title: Using Coding View
 description: 
 published: true
-date: 2022-02-16T19:16:51.331Z
+date: 2022-02-16T19:17:13.768Z
 tags: interview
 editor: markdown
 dateCreated: 2022-02-16T19:16:51.331Z
@@ -49,6 +49,4 @@ Things to note:
 Things to note:
 * The `Question Selection` radio buttons on the left change what is shown on the right
 * The `Copy` "button" takes all the text of the question and copies it to your clipboard.
-
-
-In practice you will copy the text of a question, 
+ 
