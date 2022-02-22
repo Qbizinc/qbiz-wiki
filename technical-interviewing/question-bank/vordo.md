@@ -2,7 +2,7 @@
 title: Vordo
 description: 
 published: true
-date: 2022-02-15T20:53:11.540Z
+date: 2022-02-22T18:10:50.305Z
 tags: interview_question
 editor: markdown
 dateCreated: 2022-02-15T20:49:28.085Z
@@ -105,14 +105,42 @@ WHERE s.salary >= 80000;
 ```
 ```sql
 -- 2. names of each salespeople, their number of orders, and total amount
-SELECT TBD
+SELECT s.name, count(o.id) as num_orders, sum(o.amount) as total_amount
+FROM salespeople s
+LEFT JOIN orders o on o.salespeople_id = s.id
+GROUP BY s.name;
 -- 3. names of salespeople with 2 or more orders.
+SELECT s.name
+FROM salespeople s
+LEFT JOIN orders o on o.salespeople_id = s.id
+GROUP BY s.name
+HAVING count(o.id) >= 2
+;
+
 ```
 ```sql
 -- 4.  dates of the oldest and most recent order made to Beebee
+SELECT min(o.order_date) as oldest_order, max(o.order_date) as most_recent_order
+FROM orders o
+JOIN customers c on o.cust_id = c.id
+WHERE c.name = 'Beebee';
 
 -- 5a. names of salespeople that have an order with Vordo
+SELECT DISTINCT s.name
+FROM orders o 
+JOIN salespeople s on o.salespeople_id = s.id
+JOIN customers c on o.cust_id = c.id
+WHERE c.name = 'Vordo';
 -- 5b. names of all salespeople that do not have any order with Vordo.
+SELECT s.name
+FROM salespeople s
+WHERE s.name not in (
+    SELECT DISTINCT s.name
+    FROM orders o 
+    JOIN salespeople s on o.salespeople_id = s.id
+    JOIN customers c on o.cust_id = c.id
+    WHERE c.name = 'Vordo'
+)
 ```
 ## Alternative Solutions
 
