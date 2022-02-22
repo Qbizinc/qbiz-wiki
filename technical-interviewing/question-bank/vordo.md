@@ -2,7 +2,7 @@
 title: Vordo
 description: 
 published: true
-date: 2022-02-22T18:10:50.305Z
+date: 2022-02-22T18:12:28.488Z
 tags: interview_question
 editor: markdown
 dateCreated: 2022-02-15T20:49:28.085Z
@@ -132,9 +132,9 @@ JOIN salespeople s on o.salespeople_id = s.id
 JOIN customers c on o.cust_id = c.id
 WHERE c.name = 'Vordo';
 -- 5b. names of all salespeople that do not have any order with Vordo.
-SELECT s.name
-FROM salespeople s
-WHERE s.name not in (
+SELECT s2.name
+FROM salespeople s2
+WHERE s2.name not in (
     SELECT DISTINCT s.name
     FROM orders o 
     JOIN salespeople s on o.salespeople_id = s.id
