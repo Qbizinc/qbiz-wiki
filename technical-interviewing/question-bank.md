@@ -2,7 +2,7 @@
 title: Questions
 description: 
 published: true
-date: 2022-02-15T19:27:40.827Z
+date: 2022-02-22T18:16:51.780Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-15T19:27:40.827Z
@@ -16,10 +16,15 @@ Taken from CodingView.io list
 
 [Palindromes](/technical-interviewing/question-bank/palindromes)
 [Merging Intervals](/technical-interviewing/question-bank/merging-intervals)
+[Markov Chain Text Generator](/technical-interviewing/question-bank/markov-chain)
+[Aggregate from Dictionary](/technical-interviewing/question-bank/dict-aggregate)
 
 ## SQL Questions
 
 [Vordo](/technical-interviewing/question-bank/vordo)
+[Mock Orders](/technical-interviewing/question-bank/mock-orders)
+[Animal Adoption Data Integrity](/technical-interviewing/question-bank/animal-adoption)
+[Air Routes](/technical-interviewing/question-bank/air-routes)
 
 ## Quick Guide
 <table border=1>
