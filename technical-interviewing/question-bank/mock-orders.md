@@ -2,7 +2,7 @@
 title: Mock Order Data
 description: 
 published: true
-date: 2022-02-28T18:22:06.592Z
+date: 2022-02-28T18:22:45.964Z
 tags: interview_question
 editor: markdown
 dateCreated: 2022-02-25T16:10:57.948Z
@@ -131,9 +131,9 @@ SELECT * FROM ANSWERS_TO_BE_WRITTEN
 
 ###### Expected
 
-|| name || num_order_lines || num_orders ||
+| name | num_order_lines | num_orders |
 |------|---------------|------------|
-|| Wynny McCullogh || 8 || 6 ||
+| Wynny McCullogh | 8 | 6 |
 
 ----------
 
