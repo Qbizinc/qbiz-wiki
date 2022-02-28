@@ -2,7 +2,7 @@
 title: GCP Professional Data Engineer Certification v2
 description: 
 published: true
-date: 2022-02-28T23:18:58.933Z
+date: 2022-02-28T23:32:55.418Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-28T23:09:08.207Z
@@ -83,7 +83,7 @@ The labs all follow a similar format:
 
 
 1. The labs are timed and cannot be paused. That said, I found the time allotted was usually far more than what was required to complete the labs, especially as I got more familiar with the GCP console.
-2. Open the GCP web console using the supplied student account ID and password. It's highly recommended that you use Chrome and open the console incognito window, so Chrome doesn't attempt to associate the student account with your personal one.
+2. Open the GCP web console using the supplied student account ID and password. It's highly recommended that you use Chrome and open the console in an incognito window so Chrome doesn't attempt to associate the student account with your personal one.
 3. Launch a service using the navigation bar to the left and/or open a shell session.
 4. Follow the step-by-step instructions for the specific lab (vs the setup instructions, which are generic). In almost all cases where code is required, you'll be able to copy the code directly and paste it in the shell.
 5. Some labs will check your work by confirming that you've completed a certain step. I found this helpful to prevent me from rushing through and overlooking important steps
