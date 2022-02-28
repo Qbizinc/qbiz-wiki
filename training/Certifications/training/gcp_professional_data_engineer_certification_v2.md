@@ -2,7 +2,7 @@
 title: GCP Professional Data Engineer Certification v2
 description: 
 published: true
-date: 2022-02-28T23:16:14.108Z
+date: 2022-02-28T23:18:58.933Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-28T23:09:08.207Z
@@ -107,7 +107,7 @@ As you gain confidence with the GCP products that are covered by the exam you'll
 * [Cloud Academy Cert Prep Exam](https://cloudacademy.com/quiz/35356/): draws 50 randomly from a larger set; this felt the closest to the actual exam to me, and its grading is more rigorous than others, requiring a minimum score for each major subject area
 * [A Cloud Guru Practice Exam](https://practice-exam.acloud.guru/gcp-certified-professional-data-engineer): draws 50 randomly from a larger set; simple pass/fail grading
 * [A Cloud Guru Final Exam](https://practice-exam.acloud.guru/fd871722-ab09-450b-8a3a-eac2852a84d5): similar to the above, but incorporates some of Google's own questions
-* [Exam Topics practice questions](https://www.examtopics.com/exams/google/professional-data-engineer/view/1/): while this site has a lot of questions, **the answers are often incorrect, **with the correct answer being debated in the question discussion. Use with caution!
+* [Exam Topics practice questions](https://www.examtopics.com/exams/google/professional-data-engineer/view/1/): while this site has a lot of questions, **the answers are often incorrect**, with the correct answers being debated in the question discussions. Use with caution!
 
 
 # Product notes and documentation
