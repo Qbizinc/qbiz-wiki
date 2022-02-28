@@ -2,7 +2,7 @@
 title: GCP Professional Data Engineer Certification v2
 description: 
 published: true
-date: 2022-02-28T23:14:33.194Z
+date: 2022-02-28T23:15:14.023Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-28T23:09:08.207Z
@@ -69,12 +69,12 @@ Both [A Cloud Guru](https://acloudguru.com/) and [Cloud Academy](https://cloudac
 
 ## Courses and Quests
 
-The training materials consist of courses, which are lecture-heavy, and quests, which consist primarily of hands-on lab challenges. Because the exam focuses more on use cases than on the actual mechanics of using the GCP services, I generally skipped the quests (with the exception of the first one, which introduces you using the GCP GUI and command line).
+The training materials consist of **courses**, which are lecture-heavy, and **quests**, which consist primarily of hands-on lab challenges. Because the exam focuses more on use cases than on the actual mechanics of using the GCP services, I generally skipped the quests (with the exception of the first one, which introduces you using the GCP GUI and command line).
 
 
 ## Modules, Lectures, and Labs
 
-Courses consist of multiple modules (I found most were in the 4-6 module range), and each module consists of a series of video lectures, hands-on labs (usually one per module), and links to PDF versions of the lectures.
+Courses consist of multiple **modules** (I found most were in the 4-6 module range), and each module consists of a series of video lectures, hands-on labs (usually one per module), and links to PDF versions of the lectures.
 
 I found many of the lectures spent more time than I would have liked introducing topics. If you're already familiar with key concepts in cloud computing such as separating compute from storage, map/reduce and Hadoop-related technologies, object stores, etc., feel free to skip ahead (or listen at a faster rate).
 
