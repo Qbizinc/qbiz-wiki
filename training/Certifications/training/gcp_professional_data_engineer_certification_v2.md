@@ -2,7 +2,7 @@
 title: GCP Professional Data Engineer Certification v2
 description: 
 published: true
-date: 2022-02-28T23:09:08.207Z
+date: 2022-02-28T23:14:33.194Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-28T23:09:08.207Z
@@ -64,7 +64,7 @@ Depending on your learning style and cloud experience, you may want to start wit
 
 ## Additional course options
 
-Both [A Cloud Guru](https://acloudguru.com/) and [Cloud Academy](https://cloudacademy.com/) offer an extensive set of similar courses and practice exams. I didn't dig deep into their materials but they appeared to be high quality from what I did see. Cloudera appeared to offer Google's course, and Udemy's offerings appeared lower quality to me.
+Both [A Cloud Guru](https://acloudguru.com/) and [Cloud Academy](https://cloudacademy.com/) offer an extensive set of similar courses and practice exams. I didn't dig deep into their materials but they appeared to be high quality from what I did see. Coursera appeared to offer Google's course, and Udemy's offerings appeared lower quality to me.
 
 
 ## Courses and Quests
