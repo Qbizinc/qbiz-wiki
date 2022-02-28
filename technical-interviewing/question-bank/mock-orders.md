@@ -2,13 +2,13 @@
 title: Mock Order Data
 description: 
 published: true
-date: 2022-02-28T18:15:55.624Z
+date: 2022-02-28T18:21:11.519Z
 tags: interview_question
 editor: markdown
 dateCreated: 2022-02-25T16:10:57.948Z
 ---
 
-# Interview Question: Vordo
+# Interview Questions: Mock Orders
 > **Language: SQL**
 {.is-warning}
 
@@ -102,7 +102,8 @@ There is some intentional vagueness in the wording of the question, if the candi
   * Let's just count
 * Should the count be of orders or order lines?
   * Either is fine, in this case the answer will be the same
-  * This does lead to a potential follow on question 
+  * This does lead to a potential follow on question which can speak to data quality and business process 
+    * Are there any reps who had multiple lines for 'Aonyx cinerea' within the same order?  Why do we think that is?
 
 ###### Solution
 Limit 1 
@@ -136,19 +137,16 @@ SELECT * FROM ANSWERS_TO_BE_WRITTEN
 
 ----------
 
--- 4. Who had the most sales for product 'Aonyx cinerea'
+##### 5. Show order totals by customer
 
 
--- 5. Show order totals by customer
+##### 6. Show order totals by salesperson
 
 
--- 6. Show order totals by salesperson
+##### 7. Show order totals by product
 
 
--- 7. Show order totals by product
-
-
--- 8. What order had the highest profit margin?  Who made that sale? Who was it to?
+##### 8. What order had the highest profit margin?  Who made that sale? Who was it to?
 
 ```sql
 ```
