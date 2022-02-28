@@ -2,7 +2,7 @@
 title: GCP Professional Data Engineer Certification v2
 description: 
 published: true
-date: 2022-02-28T23:15:14.023Z
+date: 2022-02-28T23:16:14.108Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-28T23:09:08.207Z
@@ -117,7 +117,7 @@ As you gain confidence with the GCP products that are covered by the exam you'll
 
 There will be numerous questions related to Dataflow so it's worth spending extra time understanding this product, especially considering how unique and complex it is.
 
-Dataflow is a serverless ETL service that handles both streaming and batch data. It uses [Apache Beam](https://beam.apache.org/) as its execution engine and provides both GUI and Python/Java APIs for workflow creation. At a high level, Apache Beam can be thought of as a framework that abstracts Spark-like concepts, and workflows are often set up in a mapreduce-like structure.
+Dataflow is a serverless ETL service that handles both streaming and batch data. It uses [Apache Beam](https://beam.apache.org/) as its execution engine and provides both GUI interfaces and Python/Java APIs for workflow creation. At a high level, Apache Beam can be thought of as a framework that abstracts Spark-like concepts, and workflows are often set up in a mapreduce-like structure.
 
 It's highly recommended that you familiarize yourself with some of the [Basics of the Beam model](https://beam.apache.org/documentation/basics/), even before you take your first Dataflow courses.
 
