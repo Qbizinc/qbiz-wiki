@@ -2,7 +2,7 @@
 title: Mock Order Data
 description: 
 published: true
-date: 2022-02-28T18:23:23.963Z
+date: 2022-02-28T18:27:49.996Z
 tags: interview_question
 editor: markdown
 dateCreated: 2022-02-25T16:10:57.948Z
@@ -37,7 +37,7 @@ WHERE c.name = 'Mante-Jenkins'
 ```
 ###### Expected
 |      name      |
-|-----------------|
+| :------------: |
 | Cheri Odom |
 | Cyrillus Cokly |
 | Erroll Rymmer |
@@ -90,7 +90,7 @@ WHERE mj_sales.name IS NULL;
 ###### Expected
 
 |     name      |
-|---------------|
+| :-----------: |
 | Mark Saderson |
 
 ----------
@@ -132,7 +132,7 @@ SELECT * FROM ANSWERS_TO_BE_WRITTEN
 ###### Expected
 
 | name | num_order_lines | num_orders |
-|------|---------------|------------|
+| :----: | -------------: | ----------: |
 | Wynny McCullogh | 8 | 6 |
 
 ----------
