@@ -2,7 +2,7 @@
 title: Mock Order Data
 description: 
 published: true
-date: 2022-02-28T16:57:16.963Z
+date: 2022-02-28T17:08:04.300Z
 tags: interview_question
 editor: markdown
 dateCreated: 2022-02-25T16:10:57.948Z
@@ -24,18 +24,62 @@ The first "question" has create table statements and about 400 inserts, this set
 
 The following section lists some sample questions along with the expected SQL to answer those questions.
 
-### Question
+### Question/Solution/Expected
+
+##### Show the names of all salespeople who sold to customer 'Mante-Jenkins'
 
 ```sql
+SELECT DISTINCT s.name
+FROM SALESPEOPLE s 
+JOIN ORDERS o on s.id = o.rep
+JOIN CUSTOMERS c on o.customer = c.cust_id
+WHERE c.name = 'Mante-Jenkins'
 ```
 
-### Solution
+```
+      name       
+-----------------
+ Cheri Odom
+ Cyrillus Cokly
+ Erroll Rymmer
+ Eyde Thurlow
+ Wynny McCullogh
+```
 
+##### Show the names of all salespeople who did not have an order with customer 'Mante-Jenkins'
 ```sql
+SELECT DISTINCT s.name 
+FROM SALESPEOPLE s 
+WHERE s.name not in (
+    SELECT DISTINCT s2.name
+    FROM SALESPEOPLE s2 
+    JOIN ORDERS o on s2.id = o.rep
+    JOIN CUSTOMERS c on o.customer = c.cust_id
+    WHERE c.name = 'Mante-Jenkins'
+)
 ```
 
-```sql
 ```
+     name      
+---------------
+ Mark Saderson
+```
+
+
+-- 4. Who had the most sales for product 'Aonyx cinerea'
+
+
+-- 5. Show order totals by customer
+
+
+-- 6. Show order totals by salesperson
+
+
+-- 7. Show order totals by product
+
+
+-- 8. What order had the highest profit margin?  Who made that sale? Who was it to?
+
 ```sql
 ```
 
