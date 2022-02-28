@@ -2,7 +2,7 @@
 title: Mock Order Data
 description: 
 published: true
-date: 2022-02-28T17:08:04.300Z
+date: 2022-02-28T18:15:55.624Z
 tags: interview_question
 editor: markdown
 dateCreated: 2022-02-25T16:10:57.948Z
@@ -26,8 +26,8 @@ The following section lists some sample questions along with the expected SQL to
 
 ### Question/Solution/Expected
 
-##### Show the names of all salespeople who sold to customer 'Mante-Jenkins'
-
+##### 1. Show the names of all salespeople who sold to customer 'Mante-Jenkins'
+###### Solution
 ```sql
 SELECT DISTINCT s.name
 FROM SALESPEOPLE s 
@@ -35,18 +35,19 @@ JOIN ORDERS o on s.id = o.rep
 JOIN CUSTOMERS c on o.customer = c.cust_id
 WHERE c.name = 'Mante-Jenkins'
 ```
+###### Expected
+||      name      ||
+|-----------------|
+| Cheri Odom |
+| Cyrillus Cokly |
+| Erroll Rymmer |
+| Eyde Thurlow |
+| Wynny McCullogh |
 
-```
-      name       
------------------
- Cheri Odom
- Cyrillus Cokly
- Erroll Rymmer
- Eyde Thurlow
- Wynny McCullogh
-```
-
-##### Show the names of all salespeople who did not have an order with customer 'Mante-Jenkins'
+-----
+##### 2. Show the names of all salespeople who did not have an order with customer 'Mante-Jenkins'
+###### Solutions
+Inner Query Alternative
 ```sql
 SELECT DISTINCT s.name 
 FROM SALESPEOPLE s 
@@ -58,13 +59,82 @@ WHERE s.name not in (
     WHERE c.name = 'Mante-Jenkins'
 )
 ```
-
+CTE Alternative
+```sql
+WITH mj_sales as (
+    SELECT DISTINCT s2.name
+    FROM SALESPEOPLE s2 
+    JOIN ORDERS o on s2.id = o.rep
+    JOIN CUSTOMERS c on o.customer = c.cust_id
+    WHERE c.name = 'Mante-Jenkins'
+)
+SELECT DISTINCT s.name 
+FROM SALESPEOPLE s 
+WHERE s.name not in (SELECT name from mj_sales)
 ```
-     name      
----------------
- Mark Saderson
+Join CTE Alternative
+```sql
+WITH mj_sales as (
+    SELECT DISTINCT s2.name
+    FROM SALESPEOPLE s2 
+    JOIN ORDERS o on s2.id = o.rep
+    JOIN CUSTOMERS c on o.customer = c.cust_id
+    WHERE c.name = 'Mante-Jenkins'
+)
+SELECT DISTINCT s.name 
+FROM SALESPEOPLE s
+LEFT JOIN mj_sales on s.name = mj_sales.name
+WHERE mj_sales.name IS NULL;
 ```
 
+###### Expected
+
+||     name      ||
+|---------------|
+| Mark Saderson |
+
+----------
+
+##### 4. Who had the most sales for product 'Aonyx cinerea'
+###### Potential Clarifications
+There is some intentional vagueness in the wording of the question, if the candidates
+* What does "most sales mean"?  How should it be measured?
+  * Let's just count
+* Should the count be of orders or order lines?
+  * Either is fine, in this case the answer will be the same
+  * This does lead to a potential follow on question 
+
+###### Solution
+Limit 1 
+```sql
+SELECT s.name, count(ol.id) as num_order_lines, count(distinct o.id) as num_orders 
+FROM SALESPEOPLE s 
+JOIN ORDERS o on s.id = o.rep
+JOIN ORDER_LINES ol on o.id = ol.order_id
+JOIN PRODUCTS p on ol.product = p.id
+WHERE p.name = 'Aonyx cinerea'
+GROUP BY s.name
+ORDER BY num_order_lines desc 
+LIMIT 1
+```
+
+RANK Alternative
+```sql
+SELECT * FROM ANSWERS_TO_BE_WRITTEN
+```
+
+HAVING Alternative
+```sql
+SELECT * FROM ANSWERS_TO_BE_WRITTEN
+```
+
+###### Expected
+
+|| name || num_order_lines || num_orders ||
+|------|---------------|------------|
+|| Wynny McCullogh || 8 || 6 ||
+
+----------
 
 -- 4. Who had the most sales for product 'Aonyx cinerea'
 
