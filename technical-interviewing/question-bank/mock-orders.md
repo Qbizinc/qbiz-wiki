@@ -2,7 +2,7 @@
 title: Mock Order Data
 description: 
 published: true
-date: 2022-02-25T16:10:57.948Z
+date: 2022-02-28T16:57:16.963Z
 tags: interview_question
 editor: markdown
 dateCreated: 2022-02-25T16:10:57.948Z
@@ -40,11 +40,7 @@ The following section lists some sample questions along with the expected SQL to
 ```
 
 ## Tricks and Traps
-* None of the tables have primary keys, despite a field being named id
-* The key fields don't line up between the tables (i.e. `salespeople_id = id` or `order_id=id`
-* There are "primary key" conflicts in the salespeople table (ids are not primary keys)
-* Cailin has no orders, so question 2 needs a left join
-* Common mistake on 5b is to show all orders for customers that are not Vordo
+* 
 
 
 ## Follow on questions
