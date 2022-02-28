@@ -2,7 +2,7 @@
 title: Mock Order Data
 description: 
 published: true
-date: 2022-02-28T18:22:45.964Z
+date: 2022-02-28T18:23:23.963Z
 tags: interview_question
 editor: markdown
 dateCreated: 2022-02-25T16:10:57.948Z
@@ -36,7 +36,7 @@ JOIN CUSTOMERS c on o.customer = c.cust_id
 WHERE c.name = 'Mante-Jenkins'
 ```
 ###### Expected
-||      name      ||
+|      name      |
 |-----------------|
 | Cheri Odom |
 | Cyrillus Cokly |
@@ -89,7 +89,7 @@ WHERE mj_sales.name IS NULL;
 
 ###### Expected
 
-||     name      ||
+|     name      |
 |---------------|
 | Mark Saderson |
 
