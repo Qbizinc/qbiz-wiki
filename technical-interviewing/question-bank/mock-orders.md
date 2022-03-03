@@ -2,7 +2,7 @@
 title: Mock Order Data
 description: 
 published: true
-date: 2022-02-28T18:27:49.996Z
+date: 2022-03-03T22:58:23.138Z
 tags: interview_question
 editor: markdown
 dateCreated: 2022-02-25T16:10:57.948Z
@@ -121,12 +121,21 @@ LIMIT 1
 
 RANK Alternative
 ```sql
-SELECT * FROM ANSWERS_TO_BE_WRITTEN
-```
-
-HAVING Alternative
-```sql
-SELECT * FROM ANSWERS_TO_BE_WRITTEN
+WITH ranked_orders as (
+     SELECT s.name, 
+            count(ol.id) as num_order_lines, 
+            count(distinct o.id) as num_orders,
+            rank() over (order by count(ol.id) desc) as order_rank
+       FROM SALESPEOPLE s 
+       JOIN ORDERS o on s.id = o.rep
+       JOIN ORDER_LINES ol on o.id = ol.order_id
+       JOIN PRODUCTS p on ol.product = p.id
+      WHERE p.name = 'Aonyx cinerea'
+   GROUP BY s.name
+)
+SELECT name, num_order_lines, num_orders
+FROM ranked_orders
+WHERE order_rank = 1
 ```
 
 ###### Expected
@@ -138,18 +147,68 @@ SELECT * FROM ANSWERS_TO_BE_WRITTEN
 ----------
 
 ##### 5. Show order totals by customer
-
+```sql
+SELECT c.name as cust_name,
+       sum(o.total) as total_order_amount
+FROM   ORDERS o
+JOIN   CUSTOMERS c on o.customer = c.cust_id
+GROUP BY c.name
+```
 
 ##### 6. Show order totals by salesperson
+```sql
+SELECT s.name as rep_name,
+       sum(o.total) as total_order_amount
+FROM   ORDERS o
+JOIN   SALESPEOPLE s on o.rep = s.id
+GROUP BY s.name
+```
 
 
 ##### 7. Show order totals by product
+```sql
+SELECT p.name as product_name,
+       sum(o.total) as total_order_amount
+FROM   ORDERS o
+JOIN   ORDER_LINES ol on ol.order_id = o.id
+JOIN   PRODUCT p on ol.product = p.id
+GROUP BY p.name
+```
 
 
 ##### 8. What order had the highest profit margin?  Who made that sale? Who was it to?
+This one is more complex than it seems on the surface because the order lines contain the list price and the cost, but not the amount it contributed to the order.
 
 ```sql
+with total_order_cost as (
+    SELECT o.id,
+           o.total,
+           o.rep,
+           o.customer,
+           sum(ol.cost) as total_order_line_cost,
+           count(ol.id) as num_lines
+    FROM   ORDERS o
+    JOIN   ORDER_LINES ol on ol.order_id = o.id
+  GROUP BY o.id, o.total, o.rep, o.customer 
+)
+select toc.id, 
+       toc.total as order_total, 
+       toc.total_order_line_cost, 
+       toc.total - toc.total_order_line_cost as net_profit, 
+       (((toc.total - toc.total_order_line_cost)/total_order_line_cost)*100)::int as total_order_profit_percent,
+
+       s.name as salesperson_name,
+       c.name as customer_name
+FROM total_order_cost toc
+JOIN SALESPEOPLE s on toc.rep = s.id
+JOIN CUSTOMERS c on toc.customer = c.cust_id
+order by net_profit desc 
+limit 1
 ```
+
+| id | total  | total_order_line_cost | net_profit | total_order_profit_percent | salesperson_name | customer_name |
+---: | ------: | -----------------: | -----------: | -----: | :----------------| :---------------
+ 77 | 480.58 |                 36.45 |     444.13 | 1218 | Cyrillus Cokly   | Klocko-Osinski
 
 ## Tricks and Traps
 * 
