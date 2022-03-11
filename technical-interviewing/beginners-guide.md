@@ -2,7 +2,7 @@
 title: Beginners Guide to Qbiz Technical Interviews
 description: 
 published: true
-date: 2022-02-16T16:14:57.783Z
+date: 2022-03-11T01:42:54.273Z
 tags: interview
 editor: markdown
 dateCreated: 2022-02-16T16:13:52.095Z
@@ -21,7 +21,7 @@ This document is meant to help ensure some standardization in how we conduct tec
 
 1. Resumes are sourced
 2. Initial screen of candidate by a recruiter
-3. HackerRank quiz
+3. HackerRank quiz  - see [hacker-rank-results](/technical-interviewing/hacker-rank-results) for more on the HackerRank quiz
 4. **Initial Technical Screen**
 5. "Final" Interviews
 
