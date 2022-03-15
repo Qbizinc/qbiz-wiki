@@ -2,7 +2,7 @@
 title: GCP Professional Data Engineer Certification v2
 description: 
 published: true
-date: 2022-02-28T23:32:55.418Z
+date: 2022-03-15T18:27:07.741Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-28T23:09:08.207Z
@@ -33,7 +33,7 @@ The majority of questions will relate to the following:.
 * **Dataproc**: runs the Hadoop family of services including Spark
 * **Cloud** **Storage**: an object store, pretty much identical to Amazon's S3
 * **Machine learning** is a significant component (up to 30%) of the exam, with neural networks/deep learning and remedying overfitting/underfitting being important topics.
-* Other products touched on include **Cloud SQL **(MySQL/Postgres in the cloud), **Cloud Spanner** (a highly available transactional database that can span multiple regions across the globe and handle vast amounts of data), and **Compute Engine** (virtual machines that act like servers, nearly identical to Amazon's EC2 instances)
+* Other products touched on include **Cloud SQL** (MySQL/Postgres in the cloud), **Cloud Spanner** (a highly available transactional database that can span multiple regions across the globe and handle vast amounts of data), and **Compute Engine** (virtual machines that act like servers, nearly identical to Amazon's EC2 instances)
 * Many scenarios involve the most effective and secure ways to move on-premise workloads and data to the cloud. As you learn about GCP services, it can be helpful to think about them from this perspective.
 
 
