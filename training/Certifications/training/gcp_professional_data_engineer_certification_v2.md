@@ -2,7 +2,7 @@
 title: GCP Professional Data Engineer Certification v2
 description: 
 published: true
-date: 2022-03-15T18:27:07.741Z
+date: 2022-03-17T20:26:11.915Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-28T23:09:08.207Z
@@ -137,7 +137,7 @@ Finally, some notes about the Dataflow labs:
 
 ## BigQuery
 
-BigQuery is a flagship GCP product and is featured in numerous questions. At a high level, it's a serverless columnar store SQL database that features:
+BigQuery is a flagship GCP product and is featured in numerous questions. At a high level, it's a serverless columnar store SQL database whose features include:
 
 
 
@@ -146,4 +146,10 @@ BigQuery is a flagship GCP product and is featured in numerous questions. At a h
 * High resiliency. Because of the separation of compute and storage, data isn't lost if a node goes down. Additionally, shuffling data (e.g., during a resize) is fast because it's just shuffling pointers, not the data itself.
 * GIS SQL extensions
 * The ability to perform machine learning via SQL extensions
+* The ability to read from and write to Cloud Storage
+
+There are a lot of topics to dive into, including:
+* [Access control](https://cloud.google.com/bigquery/docs/access-control) to tables and views, especially Authorized Views, and [column-level security](https://cloud.google.com/bigquery/docs/column-level-security)
+* [Big Query ML](https://cloud.google.com/bigquery-ml/docs/introduction)
+
 
