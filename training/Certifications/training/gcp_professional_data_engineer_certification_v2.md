@@ -2,7 +2,7 @@
 title: GCP Professional Data Engineer Certification v2
 description: 
 published: true
-date: 2022-03-17T20:26:11.915Z
+date: 2022-03-18T15:55:24.699Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-28T23:09:08.207Z
@@ -148,8 +148,10 @@ BigQuery is a flagship GCP product and is featured in numerous questions. At a h
 * The ability to perform machine learning via SQL extensions
 * The ability to read from and write to Cloud Storage
 
-There are a lot of topics to dive into, including:
-* [Access control](https://cloud.google.com/bigquery/docs/access-control) to tables and views, especially Authorized Views, and [column-level security](https://cloud.google.com/bigquery/docs/column-level-security)
+There is a wide variety of topics to dive into, including:
+* [Access control](https://cloud.google.com/bigquery/docs/access-control) to tables and views, especially Authorized Views
+* [Column](https://cloud.google.com/bigquery/docs/column-level-security) and [row](https://cloud.google.com/bigquery/docs/row-level-security-intro) level security
 * [Big Query ML](https://cloud.google.com/bigquery-ml/docs/introduction)
+* [Denormalizing](https://cloud.google.com/bigquery/docs/loading-data#loading_denormalized_nested_and_repeated_data) by [specifying nested and repeated](https://cloud.google.com/bigquery/docs/nested-repeated) fields
 
 
