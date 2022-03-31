@@ -2,7 +2,7 @@
 title: Install Spark on Windows 10
 description: Install Apache Spark on PC
 published: true
-date: 2022-03-31T17:11:40.249Z
+date: 2022-03-31T17:34:06.260Z
 tags: 
 editor: code
 dateCreated: 2022-03-30T23:15:18.467Z
@@ -45,3 +45,61 @@ dateCreated: 2022-03-30T23:15:18.467Z
 <p>2. Next, open a command line and enter the following command:<br/>
 
 certutil -hashfile c:\users\username\Downloads\spark-2.4.5-bin-hadoop2.7.tgz SHA512</p>
+
+<h4>Step 5: Install Apache Spark</h4>
+<p>Installing Apache Spark involves extracting the downloaded file to the desired location.</p>
+
+<p>1. Create a new folder named Spark in the root of your C: drive. From a command line, enter the following:</p>
+
+<p>cd \</p>
+
+<p>mkdir Spark</p>
+
+<p>2. In Explorer, locate the Spark file you downloaded.</p>
+
+<p>3. Right-click the file and extract it to C:\Spark using the tool you have on your system (e.g., 7-Zip).</p>
+
+<p>4. Now, your C:\Spark folder has a new folder spark-3.1.3-bin-hadoop3.2 with the necessary files inside.</p>
+
+<h4>Step 6: Add winutils.exe File</h4>
+<p>Download the winutils.exe file for the underlying Hadoop version for the Spark installation you downloaded.</p>
+
+<p>1. Navigate to this URL https://github.com/cdarlint/winutils and inside the bin folder, locate winutils.exe, and click it.</p>
+
+<p>2. Find the Download button on the right side to download the file.</p>
+
+<p>3. Now, create new folders Hadoop and bin on C: using Windows Explorer or the Command Prompt.</p>
+
+<p>4. Copy the winutils.exe file from the Downloads folder to C:\hadoop\bin.</p>
+
+<h4>Step 7: Configure Environment Variables</h4>
+<p>Configuring environment variables in Windows adds the Spark and Hadoop locations to your system PATH. It allows you to run the Spark shell directly from a command prompt window.</p>
+
+<p>1. Click Start and type environment.</p>
+
+<p>2. Select the result labeled Edit the system environment variables.</p>
+
+<p>3. A System Properties dialog box appears. In the lower-right corner, click Environment Variables and then click New in the next window.</p>
+
+<p>4. Variable Name: </p>
+<p>SPARK_HOME: C:\Spark\spark-3.1.3-bin-hadoop3.2
+PATH: %SPARK_HOME%\bin</p>
+
+<p>HADOOP_HOME: C:\hadoop
+PATH: %HADOOP_HOME%\bin</p>
+
+<p>JAVA_HOME: the path to your Java JDK directory (for example C:\Program Files\Java\jdk-11.0.13)
+PATH: %JAVA_HOME%\bin</p>
+
+<h4>Step 8: Launch Spark</h4>
+1<p>. Open a new command-prompt window using the right-click and Run as administrator:</p>
+
+<p>2. To start Spark, enter:</p>
+
+<p>C:\Spark\spark-3.1.3-bin-hadoop3.2\bin\spark-shell</p>
+
+<p>If you set the environment path correctly, you can type spark-shell to launch Spark.</p>
+
+<p>3. The system should display several lines indicating the status of the application. You may get a Java pop-up. Select Allow access to continue.</p>
+
+<p>Finally, the Spark logo appears, and the prompt displays the Scala shell.</p>
