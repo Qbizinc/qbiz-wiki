@@ -2,7 +2,7 @@
 title: Install Spark on Windows 10
 description: Install Apache Spark on PC
 published: true
-date: 2022-03-31T04:00:39.131Z
+date: 2022-03-31T17:11:40.249Z
 tags: 
 editor: code
 dateCreated: 2022-03-30T23:15:18.467Z
@@ -24,3 +24,24 @@ dateCreated: 2022-03-30T23:15:18.467Z
 <p>If Java is installed, it will respond with the version, Java SE Runtime Enviroment, Java HotSpot Client VM version information.</p>
 
 <H4>Step 2: Install Python</H4>
+
+<p>Please check Spark documentation to see what are the versions this Spark release recommand. If not, install the lastest Python version (https://www.python.org/) </p>
+
+<p>Open the command line by clicking Start > type cmd > click Command Prompt.</p>
+
+<p>Type the following command in the command prompt:</p>
+
+<p>python --version</p>
+
+<p>It will respond with the Python version installed</p>
+
+<h4>Step 3: Download Apache Spark</h4>
+
+<p>Open a browser and navigate to https://spark.apache.org/downloads.html, choose a Spark release, and download the .tgz file</p>
+
+<h4>Step 4: Verify Spark Software File</h4>
+<p>1. Verify the integrity of your download by checking the checksum of the file. This ensures you are working with unaltered, uncorrupted software.
+
+<p>2. Next, open a command line and enter the following command:<br/>
+
+certutil -hashfile c:\users\username\Downloads\spark-2.4.5-bin-hadoop2.7.tgz SHA512</p>
