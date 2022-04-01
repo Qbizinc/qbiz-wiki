@@ -2,7 +2,7 @@
 title: Installing Apache Spark
 description: Some notes for myself as a reminder.  What to install, where to get extra libraries to read from S3.
 published: true
-date: 2022-04-01T22:08:50.151Z
+date: 2022-04-01T22:35:56.674Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-03T19:03:31.869Z
