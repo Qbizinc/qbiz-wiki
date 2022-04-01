@@ -2,7 +2,7 @@
 title: Installing Apache Spark
 description: Some notes for myself as a reminder.  What to install, where to get extra libraries to read from S3.
 published: true
-date: 2022-01-27T16:28:41.740Z
+date: 2022-04-01T22:08:50.151Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-03T19:03:31.869Z
@@ -54,3 +54,21 @@ Follow the instructions found in AWS' Documentation for [Developing and Testing 
 - Glue v3, designed to work with Spark v3.x, is designed to run on Amazon Linux.  I had issues installing it on Ubuntu, but there are so many things than can go wrong, I may have made some error.
 - Glue v2 requires Python 3.7.x, which seems to use standard Apache Spark. 
 - there is a bug in the AWS repo and these directions must be followed to repair: https://support.wharton.upenn.edu/help/glue-debugging#run-glue-setup-sh
+
+## Adding Rapids Libraries
+Rapids is a Spark Plugin (supported as of version 3.0) that accelerates Spark SQL, ML operations and dataframe operations using GPUs.  See the [Rapids Homepage](https://nvidia.github.io/spark-rapids/) for more details.
+
+In short, GPUs can accelerate many Spark tasks.  However, there is overhead in moving data between main memory and GPU memory so you may see performance degredation in short jobs where moving data in and out of main memory outweighs the cost of processing the data with CPUs.
+
+Follow these steps to enable GPUs with Rapids:
+-	Download RAPIDS JAR, its dependency cuDF JAR, and the CUDA discovery script.  The JAR versions must be compatible with your CUDA driver versions.  Set the environment variables as specified int he documentation and add update the `spark-env.sh` configuration file.
+- Launch your script or REPL with the flags that tell you want to use GPUs and the RAPIDS plugin.
+e.g.
+```
+$SPARK_HOME/bin/pyspark --master local[*] \
+    --conf spark.rapids.sql.concurrentGpuTasks=1 \
+    --conf spark.rapids.memory.pinnedPool.size=4G \
+    --conf spark.plugins=com.nvidia.spark.SQLPlugin \
+    --jars ${SPARK_CUDF_JAR},${SPARK_RAPIDS_PLUGIN_JAR}
+```
+At this time, it seems that Rapids is available in AWS but only as part of EMR -- [Use the Nvidia Spark-RAPIDS Accelerator for Spark](https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-spark-rapids.html).
