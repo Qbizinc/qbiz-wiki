@@ -2,7 +2,7 @@
 title: Qbiz Looker POC Environment
 description: Overview of Qbiz Internal Looker Partner Portal available for POCs
 published: true
-date: 2021-08-30T22:23:07.442Z
+date: 2022-04-13T19:32:19.036Z
 tags: looker, poc, lookml
 editor: markdown
 dateCreated: 2021-08-30T15:57:17.235Z
@@ -15,8 +15,17 @@ dateCreated: 2021-08-30T15:57:17.235Z
 - The environment can be accessed at the following url.
 https://qbiz.cloud.looker.com/login
 
+- NOTE: When setting up a new user the email that is sent out will have a broken url.  The new user should hack the url in the email and stick cloud between qbiz and looker qbiz.cloud.looker 
+
 - If you want to explore more indepth concepts check out this LookML guide created by Gustavo
 https://docs.google.com/document/d/1l9BDziWBhFqinO5IN8TxoIrM2HguBkgC/edit
+
+### Additional Training
+https://cloud.google.com/certification/lookml-developer
+https://partner.cloudskillsboost.google/course_templates/253
+https://connect.looker.com/
+https://run.qwiklabs.com/profile/activity
+
 
 ### Setup of the environment 
 - A sample project has been setup against a mysql external dimensional tutorial DB.  This project and corresponding Data Warehouse DB can be used for POC and evaluation of the Looker functionalities.  Below are the steps followed to setup the POC environment.
