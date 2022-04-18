@@ -2,7 +2,7 @@
 title: Astronomer DAG Authoring for Apache Airflow
 description: 
 published: true
-date: 2022-04-18T16:25:23.174Z
+date: 2022-04-18T16:28:04.800Z
 tags: 
 editor: markdown
 dateCreated: 2021-09-13T16:48:50.416Z
@@ -25,7 +25,7 @@ Parameters of the DAG Constructor:
 - Description
 - start_date:  The date when your dag starts being scheduled
 - schedule_interval: Defines the frequency the dag is triggered (None means the DAG must be triggered manually)
-- dagrun_timeout: The time that you dag is going to run before timingout
+- dagrun_timeout: The time that you dag is going to run before timing out
 - tags
 - catchup: Prevents backfilling your dag runs
 
@@ -60,23 +60,23 @@ Please note that the catchup can be avoided by setting catchup=False in dag obje
 In the schedule_interval parameter you can use Cron or a timedelta object, the difference between those is that Cron expression is stateless, whereas a timedelta is relative to the previous execution_date
 
 ### Idempotent and Deterministic
-Every Dag should be Idempotent and Deteministic
+Every Dag should be Idempotent and Deterministic
 
-- Idempotent: If you execute your dag multimple times, you should always get the same side effects
+- Idempotent: If you execute your dag multiple times, you should always get the same side effects
 - Deterministic: If you execute your dag with the same inputs you will get the same output
 
 ### Backfilling
 You can use the CLI (with the "airflow" command) or the UI to backfill your dags if necessary, indicating the start_date and end_date that you want to backfill. You can also clear the states of the dag runs in case you ran the dag before
 
-- max_active_run (DAG object parameter): Allows you to select how many dag runs can be executed concurrently  (usefull for backfilling)
+- max_active_run (DAG object parameter): Allows you to select how many dag runs can be executed concurrently  (useful for backfilling)
 
 ## Variables
-Variables are a key-value object that is stored in the metadeta database in airflow. Dags can access this variables using the function Variable.get(*key_of_variable*). Variables are useful when different dags interact with the same API endpoint or the same entry bucket. 
+Variables are a key-value object that is stored in the metadata database in airflow. Dags can access this variables using the function Variable.get(*key_of_variable*). Variables are useful when different dags interact with the same API endpoint or the same entry bucket. 
 
 To create a variable you can use the UI, the REST API or the CLI. You can also hide variables from users using the "_secret" suffix
 
 ### Properly Fetch your Variables
-Do not fecth variables outside of tasks as each time you dag is parsed, you will create a connection in the metedata database, even if you dag is not running yet. 
+Do not fetch variables outside of tasks as each time you dag is parsed, you will create a connection in the metadata database, even if you dag is not running yet. 
 
 If you need to retrieve different variables for the same dags; to avoid connecting multiple times to the metadata database, you can create a variable with a json value. To fetch this type of variables you can use two methods:
 
@@ -136,7 +136,7 @@ Remember how to create dependencies in "Taskflow API tasks": store_data_task(pro
 
 ## Grouping Tasks
 
-### SubDags (Hard way and not usefull)
+### SubDags (Hard way and not useful)
 
 Just remember that you can group tasks and create dependencies between two different dags with this method
 
