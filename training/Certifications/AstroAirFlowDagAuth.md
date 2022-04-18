@@ -2,7 +2,7 @@
 title: Astronomer DAG Authoring for Apache Airflow
 description: 
 published: true
-date: 2022-04-18T16:22:41.527Z
+date: 2022-04-18T16:25:23.174Z
 tags: 
 editor: markdown
 dateCreated: 2021-09-13T16:48:50.416Z
@@ -71,7 +71,7 @@ You can use the CLI (with the "airflow" command) or the UI to backfill your dags
 - max_active_run (DAG object parameter): Allows you to select how many dag runs can be executed concurrently  (usefull for backfilling)
 
 ## Variables
-Variables are a key-value object that is stored in the metadeta database in airflow. Dags can access this variables using the function Variable.get(*key_of_variable*). Variables are usefull when different dags interact with the same API endipoint or the same entry bucket. 
+Variables are a key-value object that is stored in the metadeta database in airflow. Dags can access this variables using the function Variable.get(*key_of_variable*). Variables are useful when different dags interact with the same API endpoint or the same entry bucket. 
 
 To create a variable you can use the UI, the REST API or the CLI. You can also hide variables from users using the "_secret" suffix
 
