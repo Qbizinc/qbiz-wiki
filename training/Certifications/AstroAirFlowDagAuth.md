@@ -2,7 +2,7 @@
 title: Astronomer DAG Authoring for Apache Airflow
 description: 
 published: true
-date: 2022-04-18T16:28:04.800Z
+date: 2022-04-18T17:58:08.186Z
 tags: 
 editor: markdown
 dateCreated: 2021-09-13T16:48:50.416Z
@@ -84,7 +84,7 @@ If you need to retrieve different variables for the same dags; to avoid connecti
 - {{var.json.key_of_variable.key_of_json}} (Jinja Template)
 
 ### Environment Variables
-If you need to completely hide a variable from your users, you can fetch an Envorimental Variable using the same methods as before, the name of the variables needs to have the sructure AIRFLOW_VAR_NAME='variable'. 
+If you need to completely hide a variable from your users, you can fetch an Environmental  Variable using the same methods as before, the name of the variables needs to have the structure AIRFLOW_VAR_NAME='variable'. 
 
 This process also removes the need of connecting to the metadata database
 
@@ -142,18 +142,18 @@ Just remember that you can group tasks and create dependencies between two diffe
 
 ### TaskGroups
 
-You can instantiate a Task Group using a with statement and the TaskGroup function (providing allways a group_id). Inside the TaskGroup, you can define the tasks and their respective dependencies.
+You can instantiate a Task Group using a with statement and the TaskGroup function (providing always a group_id). Inside the TaskGroup, you can define the tasks and their respective dependencies.
 
-To simplify your code, you can allways put your grouped task in another folder inside the dag directory and import the tasks in your dag. You can also create nested TaskGroups (Groups inside another Group).
+To simplify your code, you can always put your grouped task in another folder inside the dag directory and import the tasks in your dag. You can also create nested TaskGroups (Groups inside another Group).
 
 ## Advanced Concepts
 ### Dynamic Tasks
-You can create Dynamic tasks storing the values in a dictionary in your dag. You can only do this if the values are already known, airflow need to know in advance the strucutre of your dag.
+You can create Dynamic tasks storing the values in a dictionary in your dag. You can only do this if the values are already known, airflow need to know in advance the structure of your dag.
 
 ### Branching Operator
-With Branching you can execute tasks according to a condition; if your condition is True, then you have to return the task_id or multple task_id's that you want to execute in that condition. 
+With Branching you can execute tasks according to a condition; if your condition is True, then you have to return the task_id or multiple task_id's that you want to execute in that condition. 
 
-Remember that you have to allways return something, if you don't do that the dag will throw an error. You can solve this modifying your scheduing_interval or adding a Dummy/Stop task to the conditions that you need to fill
+Remember that you have to always return something, if you don't do that the dag will throw an error. You can solve this modifying your scheduing_interval or adding a Dummy/Stop task to the conditions that you need to fill
 
 Examples of Branch Operators:
 
@@ -183,7 +183,7 @@ If t1, t2, t3, t4, t5 and t6 are tasks, you can create dependencies in the follo
 - t1 >> t2
 - [ t1, t2, t3 ] >> t4
 - cross_downstream([t1, t2, t3], [t4, t5, t6]) (cross dependency, this doesn't work [t1, t2, t3] >> [t4, t5, t6])
-- chain(t1, [t2, t3], [t4, t5], t6) (lenght of the lists have to be the same when chaining tasks)
+- chain(t1, [t2, t3], [t4, t5], t6) (length of the lists have to be the same when chaining tasks)
 
 ### Concurrency
 
@@ -220,7 +220,7 @@ When working with pools, there are a couple of limitations to keep in mind:
 
 ### Task Priority
 
-If there is a task that is critical in your pipeline and you want to run it first before the other tasks you can use the paramater priority_weight. 
+If there is a task that is critical in your pipeline and you want to run it first before the other tasks you can use the parameter priority_weight. 
 
 When tasks are assigned to a pool, they will be scheduled as normal until all of the pool's slots are filled. As slots open up, the remaining queued tasks will start running. You can control which tasks within the pool are run first by assigning priority weights which define priorities for the executor queue. These are assigned at the pool level with the priority_weights parameter. The values can be any arbitrary integer (default is 1), and higher values get higher priority.
 
@@ -242,11 +242,11 @@ Sensors are a special kind of operator. When they run, they will check to see if
 
 You can define a timeout in the DAG object:
 
-- dagrun_timeout: The time that you dag is going to run before timingout
+- dagrun_timeout: The time that you dag is going to run before timing out
 
 At the operator level:
 
-- execution_timeout: The time that you task is going to run before timingout
+- execution_timeout: The time that you task is going to run before timing out
 
 ### Callback
 
@@ -271,7 +271,7 @@ Whenever a task fails you can modify how airflow is going to retry your task. To
 
 The goal of an SLA is to verify that your task gets completed in period of time. Similar to callbacks, if the task is not completed in the expected time, you can trigger a Python function to get notified about this
 
-An SLA is relative to the DAG execution date. At the dag level, if you want to trigger an sla, you can use the folling parameter:
+An SLA is relative to the DAG execution date. At the dag level, if you want to trigger an sla, you can use the following parameter:
 
 - sla_miss_callback: _sla_miss_callback
 
