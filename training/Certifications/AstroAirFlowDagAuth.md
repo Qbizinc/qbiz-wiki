@@ -2,7 +2,7 @@
 title: Astronomer DAG Authoring for Apache Airflow
 description: 
 published: true
-date: 2021-09-14T22:18:17.418Z
+date: 2022-04-18T16:22:41.527Z
 tags: 
 editor: markdown
 dateCreated: 2021-09-13T16:48:50.416Z
@@ -53,7 +53,7 @@ Please note that it will not start at start_date(2019-10-13 15:50), but rather a
 Case b) current_time is after start_date - 2019-10-14 00:00, then your dags will schedule at
 2019-10-13 16:50, 2019-10-13 17:50, 2019-10-13 18:50 … and subsequently catchup till it reaches 2019-10-13 23:50
 Then it will wait for the strike of 2019-10-14 00:50 for the next run.
-Please not that the catchup can be avoided by setting catchup=False in dag object properties
+Please note that the catchup can be avoided by setting catchup=False in dag object properties
 
 ### Cron vs Timedelta
 
@@ -62,7 +62,7 @@ In the schedule_interval parameter you can use Cron or a timedelta object, the d
 ### Idempotent and Deterministic
 Every Dag should be Idempotent and Deteministic
 
-- Idempotent: If you execute your dag multimple times, you should allways get the same side effects
+- Idempotent: If you execute your dag multimple times, you should always get the same side effects
 - Deterministic: If you execute your dag with the same inputs you will get the same output
 
 ### Backfilling
