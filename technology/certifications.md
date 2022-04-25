@@ -2,7 +2,7 @@
 title: Certifications
 description: 
 published: true
-date: 2022-04-25T19:54:01.362Z
+date: 2022-04-25T21:49:40.083Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-25T18:07:39.671Z
@@ -18,6 +18,8 @@ dateCreated: 2022-04-25T18:07:39.671Z
   - Apache Airflow DAG Authoring
 - AWS Cloud Practitioner
 	- https://aws.amazon.com/certification/certified-cloud-practitioner/
+- AWS ML Specialty
+  - https://aws.amazon.com/certification/certified-machine-learning-specialty/
   
 ## People
 - Jenny Kwan
@@ -43,3 +45,6 @@ dateCreated: 2022-04-25T18:07:39.671Z
     - Neural Networks and Deep Learning
     - Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization
     - Machine Learning
+
+- Ornob Siddiquee
+  - AWS Certified Machine Learning - Specialty
