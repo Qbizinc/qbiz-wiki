@@ -2,7 +2,7 @@
 title: Certifications
 description: 
 published: true
-date: 2022-04-25T19:40:56.512Z
+date: 2022-04-25T19:41:19.925Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-25T18:07:39.671Z
@@ -33,4 +33,4 @@ dateCreated: 2022-04-25T18:07:39.671Z
 	- AWS Cloud Practitioner (exp: 9/24)
   
 - Anthony Ly
-  - Astronomer Certification: Apache Airflow Fundamentals (acquired 3/12/21)
+  - Apache Airflow Fundamentals (acquired 3/12/21)
