@@ -2,7 +2,7 @@
 title: Certifications
 description: 
 published: true
-date: 2022-04-25T19:41:19.925Z
+date: 2022-04-25T19:54:01.362Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-25T18:07:39.671Z
@@ -34,3 +34,12 @@ dateCreated: 2022-04-25T18:07:39.671Z
   
 - Anthony Ly
   - Apache Airflow Fundamentals (acquired 3/12/21)
+
+- Soren Archibald
+  - AWS Solutions Architect – Associate (Expires Oct 2023)
+  - Snowflake Bootcamp (never expires)
+  - Snowflake SnowPro Core (Expired Apr 2021)
+  - Coursera (never expires)
+    - Neural Networks and Deep Learning
+    - Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization
+    - Machine Learning
