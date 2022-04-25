@@ -2,7 +2,7 @@
 title: Certifications
 description: 
 published: true
-date: 2022-04-25T18:52:39.281Z
+date: 2022-04-25T19:40:56.512Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-25T18:07:39.671Z
@@ -32,4 +32,5 @@ dateCreated: 2022-04-25T18:07:39.671Z
 - Stoddard Meigs
 	- AWS Cloud Practitioner (exp: 9/24)
   
-  
+- Anthony Ly
+  - Astronomer Certification: Apache Airflow Fundamentals (acquired 3/12/21)
