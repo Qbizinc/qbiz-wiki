@@ -2,7 +2,7 @@
 title: Certifications
 description: 
 published: true
-date: 2022-04-25T21:49:40.083Z
+date: 2022-04-27T19:00:23.963Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-25T18:07:39.671Z
@@ -48,3 +48,6 @@ dateCreated: 2022-04-25T18:07:39.671Z
 
 - Ornob Siddiquee
   - AWS Certified Machine Learning - Specialty
+
+- David Sevier
+	- None
