@@ -2,7 +2,7 @@
 title: Certifications
 description: 
 published: true
-date: 2022-04-27T19:14:15.551Z
+date: 2022-04-27T19:57:52.177Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-25T18:07:39.671Z
@@ -59,3 +59,8 @@ dateCreated: 2022-04-25T18:07:39.671Z
   
 - Harshad Shanbhag
 	- None
+  
+- Nathan Fritter
+	- Coursera Machine Learning Course by Andrew Ng (acquired Sept 2018; no expiration date)
+  - Astronomer Certification for Apache Airflow Fundamentals (acquired Dec 2021; no expiration date)
+  - Udemy Apache Airflow: The Hands-On Guide (acquired Jan 2022; no expiration date)
