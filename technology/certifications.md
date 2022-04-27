@@ -2,7 +2,7 @@
 title: Certifications
 description: 
 published: true
-date: 2022-04-27T19:12:05.354Z
+date: 2022-04-27T19:14:15.551Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-25T18:07:39.671Z
@@ -56,3 +56,6 @@ dateCreated: 2022-04-25T18:07:39.671Z
 	- AWS Certified Solutions Architect - Associate
   - HackerRank - SQL (Advanced)
   - HackerRank - Python
+  
+- Harshad Shanbhag
+	- None
