@@ -2,7 +2,7 @@
 title: Certifications
 description: 
 published: true
-date: 2022-04-27T19:00:23.963Z
+date: 2022-04-27T19:12:05.354Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-25T18:07:39.671Z
@@ -51,3 +51,8 @@ dateCreated: 2022-04-25T18:07:39.671Z
 
 - David Sevier
 	- None
+  
+- Frank Besson
+	- AWS Certified Solutions Architect - Associate
+  - HackerRank - SQL (Advanced)
+  - HackerRank - Python
