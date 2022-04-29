@@ -2,7 +2,7 @@
 title: Certifications
 description: 
 published: true
-date: 2022-04-27T21:30:43.326Z
+date: 2022-04-29T15:20:51.753Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-25T18:07:39.671Z
@@ -26,7 +26,7 @@ dateCreated: 2022-04-25T18:07:39.671Z
   - None
 
 - Jeff Eck
-	- None
+	- Apache Airflow Fundamentals (acquired 4/29/22)
   
 - Anna Belkine
 	- TABLEAU (expired 2021)
