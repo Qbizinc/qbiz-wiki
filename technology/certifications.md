@@ -2,7 +2,7 @@
 title: Certifications
 description: 
 published: true
-date: 2022-04-29T15:20:51.753Z
+date: 2022-04-29T17:35:26.014Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-25T18:07:39.671Z
@@ -27,6 +27,8 @@ dateCreated: 2022-04-25T18:07:39.671Z
 
 - Jeff Eck
 	- Apache Airflow Fundamentals (acquired 4/29/22)
+  - Python (Hackerrank)
+  - SQL (Basic/Intermediate/Advanced) (Hackerrank)
   
 - Anna Belkine
 	- TABLEAU (expired 2021)
