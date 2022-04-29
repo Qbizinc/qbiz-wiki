@@ -2,7 +2,7 @@
 title: Certifications
 description: 
 published: true
-date: 2022-04-29T17:35:57.351Z
+date: 2022-04-29T18:21:45.892Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-25T18:07:39.671Z
@@ -29,6 +29,7 @@ dateCreated: 2022-04-25T18:07:39.671Z
 	- Apache Airflow Fundamentals (acquired 4/29/22)
   - Python (Hackerrank)
   - SQL (Basic/Intermediate/Advanced) (Hackerrank)
+  - REST API (Intermediate) (Hackerrank)
   
 - Anna Belkine
 	- TABLEAU (expired 2021)
