@@ -2,7 +2,7 @@
 title: Certifications
 description: 
 published: true
-date: 2022-04-29T18:21:45.892Z
+date: 2022-04-30T18:33:23.607Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-25T18:07:39.671Z
@@ -67,3 +67,28 @@ dateCreated: 2022-04-25T18:07:39.671Z
 	- Coursera Machine Learning Course by Andrew Ng (acquired Sept 2018; no expiration date)
   - Astronomer Certification for Apache Airflow Fundamentals (acquired Dec 2021; no expiration date)
   - Udemy Apache Airflow: The Hands-On Guide (acquired Jan 2022; no expiration date)
+  
+- Scott Mitchell
+	- AWS Cloud Practitioner - exp 7/31/2024
+  - Looker Stuff
+    - Journey connect.looker.com (legacy)
+    Data Consumer
+    LookML Developer
+    Admin
+
+    - Activity Badges - quick labs (legacy)
+    Looker Connect data consumer learning journey: Writing table calculations
+    Looker Connect data consumer learning journey: Pivoting data
+    Looker Connect data consumer learning journey: Filtering dashboards
+    Looker Connect data consumer learning journey: Creating new dashboards in Looker
+    Looker Connect data consumer learning journey: Filtering Looks
+    Looker Connect data consumer learning journey: Filtering data by measure
+    Looker Connect data consumer learning journey: Filtering data by dimension
+
+    - Course partner.cloudskillboost.google (Badges)
+    Looker Business Intelligence Learning Path			
+    Driving Data Culture and Designing Dashboards
+    Achieving Business Outcomes with Looker
+    Analyzing and Visualizing Data in Looker
+    Looker Explained		
+    The Modern Data Platform and LookML
