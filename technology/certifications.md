@@ -2,7 +2,7 @@
 title: Certifications
 description: 
 published: true
-date: 2022-05-03T18:32:24.587Z
+date: 2022-05-03T18:48:45.982Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-25T18:07:39.671Z
@@ -52,7 +52,11 @@ dateCreated: 2022-04-25T18:07:39.671Z
   - Python (Hackerrank)
   - SQL (Basic/Intermediate/Advanced) (Hackerrank)
   - REST API (Intermediate) (Hackerrank)
-  
+
+- Gustavo Bermudez
+	- Python for Everybody Specialization (Issued Oct 2016, no expiry)
+  - Looker Certified LookML Developer (Issued Jan 2020, expired Jan 2021)
+
 - Nathan Fritter
 	- Coursera Machine Learning Course by Andrew Ng (acquired Sept 2018; no expiration date)
   - Astronomer Certification for Apache Airflow Fundamentals (acquired Dec 2021; no expiration date)
