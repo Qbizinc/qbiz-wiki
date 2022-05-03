@@ -2,7 +2,7 @@
 title: Certifications
 description: 
 published: true
-date: 2022-05-03T18:02:10.351Z
+date: 2022-05-03T18:02:26.085Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-25T18:07:39.671Z
