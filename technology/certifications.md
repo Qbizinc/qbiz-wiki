@@ -2,7 +2,7 @@
 title: Certifications
 description: 
 published: true
-date: 2022-05-03T18:19:12.962Z
+date: 2022-05-03T18:20:16.366Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-25T18:07:39.671Z
@@ -22,6 +22,8 @@ dateCreated: 2022-04-25T18:07:39.671Z
   - https://aws.amazon.com/certification/certified-machine-learning-specialty/
 - Udemy Apache Airflow Hands On Guide
   - https://www.udemy.com/course/the-ultimate-hands-on-course-to-master-apache-airflow/
+- Coursera Machine Learning
+  - https://www.coursera.org/learn/machine-learning
   
 ## People
 
