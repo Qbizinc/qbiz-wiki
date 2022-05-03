@@ -2,7 +2,7 @@
 title: Certifications
 description: 
 published: true
-date: 2022-05-03T18:48:45.982Z
+date: 2022-05-03T21:44:06.527Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-25T18:07:39.671Z
@@ -107,3 +107,7 @@ dateCreated: 2022-04-25T18:07:39.671Z
 
 - Jay Thomas
   - [Google Cloud Platform -- Professional Data Engineer (expires 2024-02-09)](https://www.credential.net/50270678-ae98-414f-b084-d92dde2e25b1?key=c6258d6063febaa417238e29595d59110d2df03574d182a3f766f0457a3bf710)
+  
+- Martin Yim
+  - Astronomer Apache Airflow Fundamentals
+  - Astronomer Apache Airflow DAG Authoring
