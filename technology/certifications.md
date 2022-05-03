@@ -2,7 +2,7 @@
 title: Certifications
 description: 
 published: true
-date: 2022-05-03T21:44:06.527Z
+date: 2022-05-03T21:52:51.931Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-25T18:07:39.671Z
@@ -111,3 +111,4 @@ dateCreated: 2022-04-25T18:07:39.671Z
 - Martin Yim
   - Astronomer Apache Airflow Fundamentals
   - Astronomer Apache Airflow DAG Authoring
+  - Coursera: Machine Learning (Andrew Ng) (acq 2015)
