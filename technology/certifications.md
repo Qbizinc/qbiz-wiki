@@ -2,7 +2,7 @@
 title: Certifications
 description: 
 published: true
-date: 2022-04-30T18:33:23.607Z
+date: 2022-05-03T18:02:10.351Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-25T18:07:39.671Z
@@ -22,23 +22,6 @@ dateCreated: 2022-04-25T18:07:39.671Z
   - https://aws.amazon.com/certification/certified-machine-learning-specialty/
   
 ## People
-- Jenny Kwan
-  - None
-
-- Jeff Eck
-	- Apache Airflow Fundamentals (acquired 4/29/22)
-  - Python (Hackerrank)
-  - SQL (Basic/Intermediate/Advanced) (Hackerrank)
-  - REST API (Intermediate) (Hackerrank)
-  
-- Anna Belkine
-	- TABLEAU (expired 2021)
-  
-- Stoddard Meigs
-	- AWS Cloud Practitioner (exp: 9/24)
-  
-- Anthony Ly
-  - Apache Airflow Fundamentals (acquired 3/12/21)
 
 - Soren Archibald
   - AWS Solutions Architect – Associate (Expires Oct 2023)
@@ -48,25 +31,34 @@ dateCreated: 2022-04-25T18:07:39.671Z
     - Neural Networks and Deep Learning
     - Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization
     - Machine Learning
-
-- Ornob Siddiquee
-  - AWS Certified Machine Learning - Specialty
-
-- David Sevier
-	- None
+  
+- Anna Belkine
+	- TABLEAU (expired 2021)
   
 - Frank Besson
 	- AWS Certified Solutions Architect - Associate
   - HackerRank - SQL (Advanced)
   - HackerRank - Python
-  
-- Harshad Shanbhag
-	- None
+
+- Jeff Eck
+	- Apache Airflow Fundamentals (acquired 4/29/22)
+  - Python (Hackerrank)
+  - SQL (Basic/Intermediate/Advanced) (Hackerrank)
+  - REST API (Intermediate) (Hackerrank)
   
 - Nathan Fritter
 	- Coursera Machine Learning Course by Andrew Ng (acquired Sept 2018; no expiration date)
   - Astronomer Certification for Apache Airflow Fundamentals (acquired Dec 2021; no expiration date)
   - Udemy Apache Airflow: The Hands-On Guide (acquired Jan 2022; no expiration date)
+
+- Jenny Kwan
+  - None
+  
+- Anthony Ly
+  - Apache Airflow Fundamentals (acquired 3/12/21)
+  
+- Stoddard Meigs
+	- AWS Cloud Practitioner (exp: 9/24)
   
 - Scott Mitchell
 	- AWS Cloud Practitioner - exp 7/31/2024
@@ -92,3 +84,12 @@ dateCreated: 2022-04-25T18:07:39.671Z
     Analyzing and Visualizing Data in Looker
     Looker Explained		
     The Modern Data Platform and LookML
+
+- David Sevier
+	- None
+  
+- Harshad Shanbhag
+	- None
+
+- Ornob Siddiquee
+  - AWS Certified Machine Learning - Specialty
