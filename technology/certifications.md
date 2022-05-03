@@ -2,7 +2,7 @@
 title: Certifications
 description: 
 published: true
-date: 2022-05-03T18:20:16.366Z
+date: 2022-05-03T18:28:57.235Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-25T18:07:39.671Z
@@ -24,6 +24,9 @@ dateCreated: 2022-04-25T18:07:39.671Z
   - https://www.udemy.com/course/the-ultimate-hands-on-course-to-master-apache-airflow/
 - Coursera Machine Learning
   - https://www.coursera.org/learn/machine-learning
+- Google Cloud Platform - Professional Data Engineer
+  - https://cloud.google.com/certification/data-engineer
+  - [Resources](/training/Certifications/training/gcp_professional_data_engineer_certification_v2)
   
 ## People
 
@@ -97,3 +100,6 @@ dateCreated: 2022-04-25T18:07:39.671Z
 
 - Ornob Siddiquee
   - AWS Certified Machine Learning - Specialty
+
+- Jay Thomas
+  - Google Cloud Platform - Professional Data Engineer
