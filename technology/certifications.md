@@ -2,7 +2,7 @@
 title: Certifications
 description: 
 published: true
-date: 2022-05-03T21:52:51.931Z
+date: 2022-05-04T01:53:57.396Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-25T18:07:39.671Z
@@ -24,6 +24,8 @@ dateCreated: 2022-04-25T18:07:39.671Z
   - https://www.udemy.com/course/the-ultimate-hands-on-course-to-master-apache-airflow/
 - Coursera Machine Learning
   - https://www.coursera.org/learn/machine-learning
+- Looker Inteligence Learning Path
+	- https://partner.cloudskillsboost.google/course_templates/253
 - Google Cloud Platform - Professional Data Engineer
   - https://cloud.google.com/certification/data-engineer
   - [Resources](/training/Certifications/training/gcp_professional_data_engineer_certification_v2)
@@ -38,6 +40,12 @@ dateCreated: 2022-04-25T18:07:39.671Z
     - Neural Networks and Deep Learning
     - Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization
     - Machine Learning
+    
+- Andres Astorga Espriella
+	- AWS Cloud Practitioner (Expires Oct 2024)
+  - Google Cloud Platform - Professional Data Engineer (Expires Dic 2023)
+  - Astronomer Apache Airflow DAG Authoring
+  - Looker Inteligence Learning Path
   
 - Anna Belkine
 	- TABLEAU (expired 2021)
