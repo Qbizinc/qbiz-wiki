@@ -2,7 +2,7 @@
 title: Certifications
 description: 
 published: true
-date: 2022-05-04T01:53:57.396Z
+date: 2022-05-04T15:30:43.982Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-25T18:07:39.671Z
@@ -69,6 +69,16 @@ dateCreated: 2022-04-25T18:07:39.671Z
 	- Coursera Machine Learning Course by Andrew Ng (acquired Sept 2018; no expiration date)
   - Astronomer Certification for Apache Airflow Fundamentals (acquired Dec 2021; no expiration date)
   - Udemy Apache Airflow: The Hands-On Guide (acquired Jan 2022; no expiration date)
+
+- Jonathan Laks
+  - Looker Labs https://connect.looker.com/
+  	- Data Consumer
+    - LookML Developer
+    - Admin
+  - Online Coursework (no expiration)
+  	- Udemy: 2022 Complete Python Bootcamp
+    - Udemy: 2019 Data Science and Machine Bootcamp with R
+    - LinkedIn Learning: Advanced SQL for Data Scientists
 
 - Jenny Kwan
   - None
