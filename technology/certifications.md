@@ -2,7 +2,7 @@
 title: Certifications
 description: 
 published: true
-date: 2022-05-04T15:30:43.982Z
+date: 2022-05-04T15:31:24.391Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-25T18:07:39.671Z
@@ -77,7 +77,7 @@ dateCreated: 2022-04-25T18:07:39.671Z
     - Admin
   - Online Coursework (no expiration)
   	- Udemy: 2022 Complete Python Bootcamp
-    - Udemy: 2019 Data Science and Machine Bootcamp with R
+    - Udemy: 2019 Data Science and Machine Learning Bootcamp with R
     - LinkedIn Learning: Advanced SQL for Data Scientists
 
 - Jenny Kwan
