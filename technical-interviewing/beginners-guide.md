@@ -2,7 +2,7 @@
 title: Beginners Guide to Qbiz Technical Interviews
 description: 
 published: true
-date: 2022-03-11T01:42:54.273Z
+date: 2022-05-09T23:09:20.300Z
 tags: interview
 editor: markdown
 dateCreated: 2022-02-16T16:13:52.095Z
@@ -26,6 +26,38 @@ This document is meant to help ensure some standardization in how we conduct tec
 5. "Final" Interviews
 
 This document is going to focus on the Initial Technical Screen.
+
+## L3/L4 vs. L5/L6 Candidates
+
+Keep in mind that the "Initial Technical Screen" is the opportunity we have to assess hands-on coding live. In your feedback, please provide a sense of SQL proficiency and Python proficiency at a particular level. This isn't hard-and-fast, as consultative skills factor in more, but these data points go into the rest of the process with the candidate.
+
+**The "Initial Technical Screen" is more than simply a pass/fail for mutual fit at Qbiz (though it includes that). It also establishes a sense of level/seniority for hands-on coding.**
+
+### L3/L4 Candidates
+
+We are converging on a standard approach for L3/L4 candidates:
+
+* SQL to a level that includes:
+  * Set theory (JOINs including cardinality and NULL handling)
+  * Aggregation (multiple levels of aggregation in a single resultset; not window functions)
+  * Awareness of potential data quality issues and how to handle them
+    * Checking assumptions about data as part of the interview
+    * Poking at the data as part of the assumption checking process
+* Python to a level that includes:
+  * Ability to put together orchestration (DAGs w/ tasks)
+  * Conversation and discovery
+    * Ideally, "operational awareness" - what could go wrong as scheduled jobs and tasks run live
+    
+At this level, the questions are:
+
+* SQL: [Vordo](/technical-interviewing/question-bank/vordo)
+* Python3: [Orchestration](/technical-interviewing/question-bank/orchestration)
+
+For less senior interviewers, the final round interview should be conducted by a more senior interviewer as a feedback loop for internal training and development purposes.
+
+### L5/L6 Candidates
+
+We are currently refining the approach with more senior interviewers.
 
 ## Structure of the Interview
 
