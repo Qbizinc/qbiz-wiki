@@ -2,17 +2,17 @@
 title: Orchestration
 description: 
 published: true
-date: 2022-05-09T22:47:07.284Z
+date: 2022-05-09T22:48:11.216Z
 tags: 
 editor: markdown
 dateCreated: 2022-05-09T22:47:07.284Z
 ---
 
 # Interview Question: Orchestration
-> **Language: SQL**
+> **Language: Python3**
 {.is-warning}
 
-> **Difficulty: Low**
+> **Difficulty: Medium**
 {.is-success}
 
 ## Steps
