@@ -2,7 +2,7 @@
 title: Certifications
 description: 
 published: true
-date: 2022-05-04T15:31:24.391Z
+date: 2022-05-09T18:05:25.280Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-25T18:07:39.671Z
@@ -49,6 +49,10 @@ dateCreated: 2022-04-25T18:07:39.671Z
   
 - Anna Belkine
 	- TABLEAU (expired 2021)
+
+- Gustavo Bermudez
+	- Python for Everybody Specialization (Issued Oct 2016, no expiry)
+  - Looker Certified LookML Developer (Issued Jan 2020, expired Jan 2021)
   
 - Frank Besson
 	- AWS Certified Solutions Architect - Associate
@@ -61,9 +65,7 @@ dateCreated: 2022-04-25T18:07:39.671Z
   - SQL (Basic/Intermediate/Advanced) (Hackerrank)
   - REST API (Intermediate) (Hackerrank)
 
-- Gustavo Bermudez
-	- Python for Everybody Specialization (Issued Oct 2016, no expiry)
-  - Looker Certified LookML Developer (Issued Jan 2020, expired Jan 2021)
+- Rob Ellman (TBC)
 
 - Nathan Fritter
 	- Coursera Machine Learning Course by Andrew Ng (acquired Sept 2018; no expiration date)
