@@ -2,7 +2,7 @@
 title: Certifications
 description: 
 published: true
-date: 2022-05-09T18:05:25.280Z
+date: 2022-05-09T18:06:26.785Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-25T18:07:39.671Z
@@ -71,6 +71,8 @@ dateCreated: 2022-04-25T18:07:39.671Z
 	- Coursera Machine Learning Course by Andrew Ng (acquired Sept 2018; no expiration date)
   - Astronomer Certification for Apache Airflow Fundamentals (acquired Dec 2021; no expiration date)
   - Udemy Apache Airflow: The Hands-On Guide (acquired Jan 2022; no expiration date)
+
+- Min Huang (TBC)
 
 - Jonathan Laks
   - Looker Labs https://connect.looker.com/
