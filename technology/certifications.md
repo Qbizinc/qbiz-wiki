@@ -2,7 +2,7 @@
 title: Certifications
 description: 
 published: true
-date: 2022-05-09T18:06:26.785Z
+date: 2022-05-09T18:07:22.988Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-25T18:07:39.671Z
@@ -73,6 +73,8 @@ dateCreated: 2022-04-25T18:07:39.671Z
   - Udemy Apache Airflow: The Hands-On Guide (acquired Jan 2022; no expiration date)
 
 - Min Huang (TBC)
+
+- Aino Ketenci (TBC)
 
 - Jonathan Laks
   - Looker Labs https://connect.looker.com/
