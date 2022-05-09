@@ -2,7 +2,7 @@
 title: Certifications
 description: 
 published: true
-date: 2022-05-09T18:12:47.314Z
+date: 2022-05-09T19:52:25.163Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-25T18:07:39.671Z
@@ -20,6 +20,9 @@ dateCreated: 2022-04-25T18:07:39.671Z
 	- https://aws.amazon.com/certification/certified-cloud-practitioner/
 - AWS ML Specialty
   - https://aws.amazon.com/certification/certified-machine-learning-specialty/
+- AWS Solution Architect
+	- https://aws.amazon.com/certification/certified-solutions-architect-associate/
+  - https://aws.amazon.com/certification/certified-solutions-architect-professional/
 - Udemy Apache Airflow Hands On Guide
   - https://www.udemy.com/course/the-ultimate-hands-on-course-to-master-apache-airflow/
 - Coursera Machine Learning
