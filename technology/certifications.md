@@ -2,7 +2,7 @@
 title: Certifications
 description: 
 published: true
-date: 2022-05-09T18:07:22.988Z
+date: 2022-05-09T18:08:03.203Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-25T18:07:39.671Z
@@ -76,6 +76,9 @@ dateCreated: 2022-04-25T18:07:39.671Z
 
 - Aino Ketenci (TBC)
 
+- Jenny Kwan
+  - None
+
 - Jonathan Laks
   - Looker Labs https://connect.looker.com/
   	- Data Consumer
@@ -85,9 +88,6 @@ dateCreated: 2022-04-25T18:07:39.671Z
   	- Udemy: 2022 Complete Python Bootcamp
     - Udemy: 2019 Data Science and Machine Learning Bootcamp with R
     - LinkedIn Learning: Advanced SQL for Data Scientists
-
-- Jenny Kwan
-  - None
   
 - Anthony Ly
   - Apache Airflow Fundamentals (acquired 3/12/21)
