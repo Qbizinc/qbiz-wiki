@@ -2,7 +2,7 @@
 title: Certifications
 description: 
 published: true
-date: 2022-05-09T18:11:41.899Z
+date: 2022-05-09T18:12:47.314Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-25T18:07:39.671Z
@@ -74,8 +74,9 @@ dateCreated: 2022-04-25T18:07:39.671Z
 
 - Min Huang (TBC)
 
-- Aino Ketenci (TBC)
+- Aino Ketenci
 	- Machine Learning Certificate (University of Washington)
+
 - Jenny Kwan
   - None
 
