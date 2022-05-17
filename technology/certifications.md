@@ -2,7 +2,7 @@
 title: Certifications
 description: 
 published: true
-date: 2022-05-09T19:52:25.163Z
+date: 2022-05-17T00:16:59.432Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-25T18:07:39.671Z
@@ -74,8 +74,6 @@ dateCreated: 2022-04-25T18:07:39.671Z
 	- Coursera Machine Learning Course by Andrew Ng (acquired Sept 2018; no expiration date)
   - Astronomer Certification for Apache Airflow Fundamentals (acquired Dec 2021; no expiration date)
   - Udemy Apache Airflow: The Hands-On Guide (acquired Jan 2022; no expiration date)
-
-- Min Huang (TBC)
 
 - Aino Ketenci
 	- Machine Learning Certificate (University of Washington)
