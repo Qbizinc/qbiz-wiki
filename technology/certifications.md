@@ -2,7 +2,7 @@
 title: Certifications
 description: 
 published: true
-date: 2022-05-18T20:39:08.321Z
+date: 2022-05-18T20:39:41.147Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-25T18:07:39.671Z
@@ -81,7 +81,7 @@ dateCreated: 2022-04-25T18:07:39.671Z
 - Aino Ketenci
 	- Machine Learning Certificate (University of Washington)
 
-- Jenny Kwan
+- Jenny Kwan (2022-05-18)
   - None
 
 - Jonathan Laks
