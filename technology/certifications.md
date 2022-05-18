@@ -2,7 +2,7 @@
 title: Certifications
 description: 
 published: true
-date: 2022-05-17T16:02:52.243Z
+date: 2022-05-18T20:39:08.321Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-25T18:07:39.671Z
@@ -61,6 +61,9 @@ dateCreated: 2022-04-25T18:07:39.671Z
 	- AWS Certified Solutions Architect - Associate
   - HackerRank - SQL (Advanced)
   - HackerRank - Python
+
+- Billy Daly
+	- None
 
 - Jeff Eck
 	- Apache Airflow Fundamentals (acquired 4/29/22)
@@ -138,6 +141,3 @@ dateCreated: 2022-04-25T18:07:39.671Z
   - Astronomer Apache Airflow Fundamentals
   - Astronomer Apache Airflow DAG Authoring
   - Coursera: Machine Learning (Andrew Ng) (acq 2015)
-
-- Billy Daly
-	- None
