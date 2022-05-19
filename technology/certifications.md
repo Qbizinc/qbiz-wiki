@@ -2,7 +2,7 @@
 title: Certifications
 description: 
 published: true
-date: 2022-05-18T20:39:41.147Z
+date: 2022-05-19T14:22:38.518Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-25T18:07:39.671Z
@@ -71,7 +71,13 @@ dateCreated: 2022-04-25T18:07:39.671Z
   - SQL (Basic/Intermediate/Advanced) (Hackerrank)
   - REST API (Intermediate) (Hackerrank)
 
-- Rob Ellman (TBC)
+- Rob Ellman
+  - Snowflake Hands On Essentials - Data Warehouse
+      - Issued March 2021 / No Expiration Date
+      - [Credential Link](https://www.youracclaim.com/badges/f505f32b-d5fb-4bcd-86a2-ac2270b5e3e3?source=linked_in_profile)
+  - Neo4j Certified Professional
+      - Issued January 2020 / No Expiration Date
+      - [Credential Link](https://graphacademy.neo4j.com/certificates/4b823013076c1047e8d1cca37d7423825e3f224646dc254594ebccf11700d241.pdf)
 
 - Nathan Fritter
 	- Coursera Machine Learning Course by Andrew Ng (acquired Sept 2018; no expiration date)
