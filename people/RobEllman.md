@@ -2,7 +2,7 @@
 title: Rob Ellman's Page
 description: This is a page where you can find out more about Rob Ellman
 published: true
-date: 2021-07-08T22:52:42.587Z
+date: 2022-05-24T15:35:49.890Z
 tags: people
 editor: markdown
 dateCreated: 2021-07-08T22:52:42.587Z
@@ -21,6 +21,8 @@ Rob is a team lead for Qbiz
 ### Projects
 * Lyft
 * Komodo Health
+* CashApp (Netowrk Operations with UK Team)
+* data.world
 * Wiki advocate
 * Slack advocate
 
@@ -33,4 +35,4 @@ Rob is a team lead for Qbiz
 
 ### Personal
 * Wife: Sara
-* Daughter: Sophie (Age 15)
+* Daughter: Sophie (Age 16)
