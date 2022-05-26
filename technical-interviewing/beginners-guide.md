@@ -2,7 +2,7 @@
 title: Beginners Guide to Qbiz Technical Interviews
 description: 
 published: true
-date: 2022-05-09T23:09:20.300Z
+date: 2022-05-26T18:21:52.714Z
 tags: interview
 editor: markdown
 dateCreated: 2022-02-16T16:13:52.095Z
@@ -51,7 +51,7 @@ We are converging on a standard approach for L3/L4 candidates:
 At this level, the questions are:
 
 * SQL: [Vordo](/technical-interviewing/question-bank/vordo)
-* Python3: [Orchestration](/technical-interviewing/question-bank/orchestration)
+* Python3: [Separate and Summarize](/technical-interviewing/question-bank/separate-and-summarize)
 
 For less senior interviewers, the final round interview should be conducted by a more senior interviewer as a feedback loop for internal training and development purposes.
 
