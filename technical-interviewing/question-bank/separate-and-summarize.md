@@ -2,7 +2,7 @@
 title: Separate and Summarize
 description: 
 published: true
-date: 2022-05-26T17:57:54.360Z
+date: 2022-05-26T18:18:13.264Z
 tags: 
 editor: markdown
 dateCreated: 2022-05-26T17:57:54.360Z
@@ -26,6 +26,8 @@ dateCreated: 2022-05-26T17:57:54.360Z
 
 # For example:
 
+import pprint
+
 def separate_and_summarize(orders):
     # your code
 
@@ -35,7 +37,8 @@ orders = [
     {'customer_id': 456, 'product_id': 111, 'amount': 76},
 ]
 
-print(separate_and_summarize)
+output = separate_and_summarize(orders)
+pprint.PrettyPrinter(indent=4).pprint(output)
 
 # Expected Output:
 # {
@@ -56,27 +59,54 @@ print(separate_and_summarize)
 ```
 
 ## Optimal Solution
-In this case, using the python ability to slice a string into characters with a -1 index, will reverse the string, comparing a string to it's reverse should be true for a palindrome.
-```python
-def is_palindrome(mystring):
-    return mystring == mystring[::-1]
 
-mylist = ["airplane", "kayak", "racecar", "anna"]
-for word in mylist:
-    print(f'{word} is a palindrome? {is_palindrome(word)}')
+### Imperative Programming Approach
+```python
+def separate_and_summarize(orders):
+    output = {}
+    for order in orders:
+        customer_id = order['customer_id']
+        if customer_id in output:
+            output[customer_id]['amount'] += order['amount']
+            output[customer_id]['orders'].append(order)
+        else:
+            output[customer_id] = {
+                'amount': order['amount'],
+                'orders': [
+                    order,
+                ],
+            }
+    return output
+```
+
+### Functional Programming Approach
+
+This approach shows someone thinks functionally, i.e. most likely has a background in a FP like Scala.
+They would likely also write more efficient PySpark code.
+
+```python
+import itertools
+import operator
+
+def separate_and_summarize(orders):
+    orders_by_customer_id_tuple_iter = itertools.groupby(orders, operator.itemgetter('customer_id'))
+    def summarize(orders):
+        orders = list(orders)
+        amount = sum(map(orders), operator.itemgetter('amount'))
+        summary = {'amount': amount, 'orders': orders}
+        return summary
+    summaries_by_customer_id_iter = map(orders_by_customer_id_tuple_iter, summarize)
+    summaries_by_customer_id = dict(summaries_by_customer_id_iter)
 ```
 
 ## Alternative Solutions
-Alternative approaches:
-* Looping over the characters and comparing the start to the end 
-* Reversing the string using something other than [::-1] 
+
+?
 
 ## Tricks and Traps
-* The sample data provided is a list, but the method seems to take a string
-  * Python does not have strong typing by default so if they just pass mylist into is_palindrome they may not get what they expected
-* There is no call provided to is_palindrome, so someone may write code that seems to do nothing if they don't print the results
+* In the imperative approach, the initial dict for each customer_id needs to have a list(order) as its starting 'orders' list.
+  Otherwise, the .append(order) call will not work. (This comes up a lot in the HackerRank for good Python candidates.)
 
 ## Follow on questions
-* Add case sensitivity to the inputs i.e. `"Anna"` instead of `"anna"`
-* Add punctuation to the inputs i.e. `"A man, A plan, A canal, Panama!"`
 
+Not recommended.
