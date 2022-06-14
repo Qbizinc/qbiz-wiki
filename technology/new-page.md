@@ -2,7 +2,7 @@
 title: AWS Metrics
 description: Each AWS service provides some metrics by default, but to get better insight into your EC2 instance, you may need to add additional metrics using the Cloudwatch Agent
 published: true
-date: 2022-06-14T00:47:04.386Z
+date: 2022-06-14T00:49:37.227Z
 tags: aws, cloudwatch
 editor: markdown
 dateCreated: 2022-06-13T23:23:24.332Z
@@ -23,7 +23,7 @@ Cloudwatch provides some EC2 metrics by default, such as CPU utilization, Networ
 1. Starting the agent (if you didn't choose #2.1 in the list above) is `/opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a start`.
 
 ### Editing the configuration JSON file
-Of key interest to me is the *Namespace* (such as *AWS/EC2*) in which my metrics are written.  A namespace will group my metrics in a location seperated from the standard metrics.  As an example, I want the production run of Data.World's biweekly run to be seperate from all the other metrics that are produced -- such as the metrics produced by our lab servers.  
+Of key interest to me is the *Namespace* (such as *AWS/EC2*) in which my metrics are written.  A namespace will group my metrics in a location seperated from the standard metrics.  As an example, I want the production run of Data.World's biweekly run to be seperate from all the other metrics that are produced -- such as the metrics produced by our lab servers.  The following configuration relies on the *collectd* package.
 ```
 {
         "agent": {
