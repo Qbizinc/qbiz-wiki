@@ -1,14 +1,14 @@
 ---
-title: VMware: Taurus/Moneta
+title: Taurus/Moneta
 description: 
 published: true
-date: 2022-06-28T21:50:41.851Z
+date: 2022-06-28T21:51:14.930Z
 tags: 
 editor: markdown
 dateCreated: 2022-06-28T21:50:41.851Z
 ---
 
-# VMware: Taurus / Moneta
+# Taurus / Moneta
 
 ## Org Chart (2022-06-27)
 
