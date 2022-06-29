@@ -2,7 +2,7 @@
 title: Taurus/Moneta
 description: 
 published: true
-date: 2022-06-29T17:55:47.546Z
+date: 2022-06-29T18:59:06.680Z
 tags: 
 editor: markdown
 dateCreated: 2022-06-28T21:50:41.851Z
@@ -26,6 +26,7 @@ dateCreated: 2022-06-28T21:50:41.851Z
   > Designed metadata management system for VMware's data platform capable of storing data catalogue and lineage information for hundreds of databases and tens of thousands of tables.
 - Stefan Vladov - Tech lead of Lakehouse (https://www.linkedin.com/in/stefan-vladov-278bb612/)
 - Konstantin Georgiev - contractor Scrum Master from Aardwark (https://www.aardwark.com/?lang=en)? (https://www.linkedin.com/in/konstantingeorgievsofia/) (4 months; Aardwark does IT outsourcing in Czech Republic and Slovakia)
+- Antoni Ivanov - Staff engineer? VDK (https://blogs.vmware.com/opensource/2021/10/07/versatile-data-kit/) (https://www.linkedin.com/in/antoni-ivanov-919b772b/)
 - Rumen Barov - Tech lead above service level? (https://www.linkedin.com/in/pymeh/)
   > Currently on the drawing board to find a way beyond trillions of DB rows and into the quadrillion range.
 
