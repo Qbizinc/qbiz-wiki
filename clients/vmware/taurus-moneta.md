@@ -2,7 +2,7 @@
 title: Taurus/Moneta
 description: 
 published: true
-date: 2022-06-29T17:53:00.763Z
+date: 2022-06-29T17:55:47.546Z
 tags: 
 editor: markdown
 dateCreated: 2022-06-28T21:50:41.851Z
@@ -25,7 +25,7 @@ dateCreated: 2022-06-28T21:50:41.851Z
   > Technical lead of the control plane for VMware data analytics platform. The microservices based system enabled over 130 data teams to integrate with the data platform in a complete self-service manner reducing support work with 70%.
   > Designed metadata management system for VMware's data platform capable of storing data catalogue and lineage information for hundreds of databases and tens of thousands of tables.
 - Stefan Vladov - Tech lead of Lakehouse (https://www.linkedin.com/in/stefan-vladov-278bb612/)
-- Konstantin Georgiev - contractor Scrum Master from Aardwark? (https://www.linkedin.com/in/konstantingeorgievsofia/) (4 months)
+- Konstantin Georgiev - contractor Scrum Master from Aardwark (https://www.aardwark.com/?lang=en)? (https://www.linkedin.com/in/konstantingeorgievsofia/) (4 months; Aardwark does IT outsourcing in Czech Republic and Slovakia)
 - Rumen Barov - Tech lead above service level? (https://www.linkedin.com/in/pymeh/)
   > Currently on the drawing board to find a way beyond trillions of DB rows and into the quadrillion range.
 
