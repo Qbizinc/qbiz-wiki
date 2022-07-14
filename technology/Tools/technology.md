@@ -2,7 +2,7 @@
 title: Installing Apache Spark
 description: Some notes for myself as a reminder.  What to install, where to get extra libraries to read from S3.
 published: true
-date: 2022-07-14T14:22:46.260Z
+date: 2022-07-14T15:45:23.668Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-03T19:03:31.869Z
@@ -77,4 +77,4 @@ At this time, it seems that Rapids is available in AWS but only as part of EMR -
 - Youtube by Databricks regarding Spark 3.0 features: https://www.youtube.com/watch?v=4MI_LYah900
 - Spark performance monitoring (2019): https://www.youtube.com/watch?v=daXEp4HmS-E
 - https://docs.rapids.ai/api/cudf/nightly/user_guide/10min.html#Object-Creation
-
+- https://medium.com/walmartglobaltech/getting-started-with-apache-spark-gpu-rapids-part-i-938664771092
