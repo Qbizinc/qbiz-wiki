@@ -2,7 +2,7 @@
 title: Installing Apache Spark
 description: Some notes for myself as a reminder.  What to install, where to get extra libraries to read from S3.
 published: true
-date: 2022-07-20T22:08:51.925Z
+date: 2022-07-20T22:16:57.743Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-03T19:03:31.869Z
@@ -79,6 +79,7 @@ At this time, it seems that Rapids is available in AWS but only as part of EMR -
 - https://docs.rapids.ai/api/cudf/nightly/user_guide/10min.html#Object-Creation
 - https://medium.com/walmartglobaltech/getting-started-with-apache-spark-gpu-rapids-part-i-938664771092
 - [Deep Dive into the New Features of Apache Spark 3.2 and 3.3](https://www.youtube.com/watch?v=CZWYKRkXhy8) Data+AI Summit 2022.
+- 
 
 ## Things to think about and review
 - Small files are the death of Shuffles!
@@ -89,5 +90,11 @@ At this time, it seems that Rapids is available in AWS but only as part of EMR -
 
 ## Physical Plans
 * Exchange Operator -- A shuggle.
- - Shuffle Exchange -- large data sets are written to local drives then read by next operation, required when data needs to be redistributed.
- - Broadcast Echange -- small data sets are sent to Drive node and then sent to all Executors.
+    - Shuffle Exchange -- large data sets are written to local drives then read by next operation, required when data needs to be redistributed.
+    - Broadcast Echange -- small data sets are sent to Drive node and then sent to all Executors.
+    
+* Join Types
+    - SortMergeJoinExec
+    - BroadcastHashJoinExec
+    - BroadcastNestedLoopJoinExec
+    - CartesianProductExec
