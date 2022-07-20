@@ -2,7 +2,7 @@
 title: Installing Apache Spark
 description: Some notes for myself as a reminder.  What to install, where to get extra libraries to read from S3.
 published: true
-date: 2022-07-20T22:35:56.572Z
+date: 2022-07-20T22:58:26.833Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-03T19:03:31.869Z
@@ -99,3 +99,5 @@ At this time, it seems that Rapids is available in AWS but only as part of EMR -
     - BroadcastHashJoinExec
     - BroadcastNestedLoopJoinExec
     - CartesianProductExec
+    
+* Partial Aggregations -- can be very slow for lots of distinct key values.  An aggregation operator in the _Map_ phase.  Can use Spark Configuration parameter (_spark.sql.aggregate.partialaggregare.skip.enabled=true_).  
