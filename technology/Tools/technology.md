@@ -2,7 +2,7 @@
 title: Installing Apache Spark
 description: Some notes for myself as a reminder.  What to install, where to get extra libraries to read from S3.
 published: true
-date: 2022-07-20T22:16:57.743Z
+date: 2022-07-20T22:28:04.303Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-03T19:03:31.869Z
@@ -93,7 +93,7 @@ At this time, it seems that Rapids is available in AWS but only as part of EMR -
     - Shuffle Exchange -- large data sets are written to local drives then read by next operation, required when data needs to be redistributed.
     - Broadcast Echange -- small data sets are sent to Drive node and then sent to all Executors.
     
-* Join Types
+* Join Types (See 46:11 mark of [From Query Plan to Performance](https://www.youtube.com/watch?v=_Ne27JcLnEc))
     - SortMergeJoinExec
     - BroadcastHashJoinExec
     - BroadcastNestedLoopJoinExec
