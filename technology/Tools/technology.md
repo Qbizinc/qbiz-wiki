@@ -2,7 +2,7 @@
 title: Installing Apache Spark
 description: Some notes for myself as a reminder.  What to install, where to get extra libraries to read from S3.
 published: true
-date: 2022-07-20T22:02:47.572Z
+date: 2022-07-20T22:04:19.491Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-03T19:03:31.869Z
@@ -90,4 +90,4 @@ At this time, it seems that Rapids is available in AWS but only as part of EMR -
 ## Physical Plans
 - Exchange Operator -- A shuggle.
 -- Shuffle Exchange.
--- Broadcast Echange.
+-- Broadcast Echange -- small data sets are sent to Drive node and then sent to all Executors.
