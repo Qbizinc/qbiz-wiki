@@ -2,7 +2,7 @@
 title: Installing Apache Spark
 description: Some notes for myself as a reminder.  What to install, where to get extra libraries to read from S3.
 published: true
-date: 2022-07-20T18:28:53.582Z
+date: 2022-07-20T22:02:47.572Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-03T19:03:31.869Z
@@ -82,3 +82,12 @@ At this time, it seems that Rapids is available in AWS but only as part of EMR -
 
 ## Things to think about and review
 - Small files are the death of Shuffles!
+
+## Glossary
+- Wide Operations -- require an exchangev (Shuffle).
+- Narrow Operations -- don't require an exchnage (Shuffle).
+
+## Physical Plans
+- Exchange Operator -- A shuggle.
+-- Shuffle Exchange.
+-- Broadcast Echange.
