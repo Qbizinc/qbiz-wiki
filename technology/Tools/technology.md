@@ -2,7 +2,7 @@
 title: Installing Apache Spark
 description: Some notes for myself as a reminder.  What to install, where to get extra libraries to read from S3.
 published: true
-date: 2022-07-20T22:04:19.491Z
+date: 2022-07-20T22:08:51.925Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-03T19:03:31.869Z
@@ -88,6 +88,6 @@ At this time, it seems that Rapids is available in AWS but only as part of EMR -
 - Narrow Operations -- don't require an exchnage (Shuffle).
 
 ## Physical Plans
-- Exchange Operator -- A shuggle.
--- Shuffle Exchange.
--- Broadcast Echange -- small data sets are sent to Drive node and then sent to all Executors.
+* Exchange Operator -- A shuggle.
+ - Shuffle Exchange -- large data sets are written to local drives then read by next operation, required when data needs to be redistributed.
+ - Broadcast Echange -- small data sets are sent to Drive node and then sent to all Executors.
