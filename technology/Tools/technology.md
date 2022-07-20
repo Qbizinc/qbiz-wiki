@@ -2,7 +2,7 @@
 title: Installing Apache Spark
 description: Some notes for myself as a reminder.  What to install, where to get extra libraries to read from S3.
 published: true
-date: 2022-07-20T23:21:18.127Z
+date: 2022-07-20T23:21:53.719Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-03T19:03:31.869Z
@@ -81,7 +81,7 @@ At this time, it seems that Rapids is available in AWS but only as part of EMR -
 - [Deep Dive into the New Features of Apache Spark 3.2 and 3.3](https://www.youtube.com/watch?v=CZWYKRkXhy8) Data+AI Summit 2022.
 - [From Query Plan to Performance](https://www.youtube.com/watch?v=_Ne27JcLnEc)
     - @49:40, nice diagram of join decision tree.
-- [Top 5 Mistakes When Writing Spark Applictons](https://www.youtube.com/watch?v=WyfHUNnMutg) Spark Summit 2016.
+- [Top 5 Mistakes When Writing Spark Applictons](https://www.youtube.com/watch?v=WyfHUNnMutg) Spark Summit 2016 (NYC).
 
 ## Things to think about and review
 - Small files are the death of Shuffles!
