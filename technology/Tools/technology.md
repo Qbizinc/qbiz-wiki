@@ -2,7 +2,7 @@
 title: Installing Apache Spark
 description: Some notes for myself as a reminder.  What to install, where to get extra libraries to read from S3.
 published: true
-date: 2022-07-27T22:31:48.332Z
+date: 2022-07-28T18:33:52.598Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-03T19:03:31.869Z
@@ -83,6 +83,7 @@ At this time, it seems that Rapids is available in AWS but only as part of EMR -
     - @49:40, nice diagram of join decision tree.
 - [Top 5 Mistakes When Writing Spark Applictons](https://www.youtube.com/watch?v=WyfHUNnMutg) Spark Summit 2016 (NYC).
 - Article on memory parameters [Decoding Memory in Spark](https://medium.com/walmartglobaltech/decoding-memory-in-spark-parameters-that-are-often-confused-c11be7488a24)
+- Another article about memory settings [Spark Performance Tuning: spill](https://selectfrom.dev/spark-performance-tuning-spill-7318363e18cb)
 
 ## Things to think about and review
 - Small files are the death of Shuffles!
