@@ -2,7 +2,7 @@
 title: Installing Apache Spark
 description: Some notes for myself as a reminder.  What to install, where to get extra libraries to read from S3.
 published: true
-date: 2022-08-10T00:24:01.810Z
+date: 2022-08-10T00:25:17.091Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-03T19:03:31.869Z
@@ -85,6 +85,7 @@ At this time, it seems that Rapids is available in AWS but only as part of EMR -
 - Article on memory parameters [Decoding Memory in Spark](https://medium.com/walmartglobaltech/decoding-memory-in-spark-parameters-that-are-often-confused-c11be7488a24)
 - Another article about memory settings [Spark Performance Tuning: spill](https://selectfrom.dev/spark-performance-tuning-spill-7318363e18cb)
 - S3 Commiters (Improve Apache Spark performance with the S3 magic committer)[WARN AbstractS3ACommitterFactory: Using standard FileOutputCommitter to commit work. This is slow and potentially unsafe.]
+- Delight, a free perormance monitor (Delight)[https://www.datamechanics.co/blog-post/delight-the-new-improved-spark-ui-spark-history-server-is-now-ga].
 
 ## Things to think about and review
 - Small files are the death of Shuffles!
