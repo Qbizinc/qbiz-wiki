@@ -2,7 +2,7 @@
 title: Certifications
 description: 
 published: true
-date: 2022-05-19T14:22:38.518Z
+date: 2022-08-12T19:59:51.337Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-25T18:07:39.671Z
@@ -147,3 +147,6 @@ dateCreated: 2022-04-25T18:07:39.671Z
   - Astronomer Apache Airflow Fundamentals
   - Astronomer Apache Airflow DAG Authoring
   - Coursera: Machine Learning (Andrew Ng) (acq 2015)
+  
+- Francisco Rodríguez
+  - Astronomer Apache Airflow Fundamentals (Acquired 8/12/22)
