@@ -1,8 +1,8 @@
 ---
-title: Soren's Spark Links
+title: Spark Links
 description: 
 published: true
-date: 2022-08-22T17:27:58.469Z
+date: 2022-08-22T17:37:43.736Z
 tags: 
 editor: markdown
 dateCreated: 2022-08-22T16:30:39.560Z
