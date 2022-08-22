@@ -2,15 +2,13 @@
 title: Soren's Spark Links
 description: 
 published: true
-date: 2022-08-22T17:27:04.029Z
+date: 2022-08-22T17:27:58.469Z
 tags: 
 editor: markdown
 dateCreated: 2022-08-22T16:30:39.560Z
 ---
 
-# Some interesting Spark links
-
-# Interesting links on Spark
+# Some interesting links on Spark and using GPUs with Dataframes
 ## Videos
 - Youtube by Databricks regarding Spark 3.0 support for GPUs (2020): [Deep Dive into GPU Support in Apache Spark 3.x](https://www.youtube.com/watch?v=4MI_LYah900)
 - Spark performance monitoring (2019): [Apache Spark Core—Deep Dive—Proper Optimization Daniel Tomes Databricks](https://www.youtube.com/watch?v=daXEp4HmS-E)
