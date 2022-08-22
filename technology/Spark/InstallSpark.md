@@ -2,7 +2,7 @@
 title: Installing Apache Spark on Linux
 description: Some notes for myself as a reminder.  What to install, where to get extra libraries to read from S3.
 published: true
-date: 2022-08-22T17:43:09.247Z
+date: 2022-08-22T17:43:57.480Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-03T19:03:31.869Z
@@ -81,7 +81,7 @@ At this time, it seems that Rapids is available in AWS but only as part of EMR -
 - Small files are the death of Shuffles!
 
 ## Glossary
-- Wide Operations -- require an exchangev (Shuffle).
+- Wide Operations -- require an exchange (Shuffle).
 - Narrow Operations -- don't require an exchnage (Shuffle).
 
 ## Physical Plans
