@@ -2,17 +2,20 @@
 title: Installing Apache Spark
 description: Some notes for myself as a reminder.  What to install, where to get extra libraries to read from S3.
 published: true
-date: 2022-08-10T00:25:17.091Z
+date: 2022-08-22T16:22:30.627Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-03T19:03:31.869Z
 ---
 
-# Apache Spark and adding Glue libraries
-## Installation
-Got to *https://spark.apache.org/downloads.html* and download the version that is pre-built with Apache Hadoop (unless you plan to leverage and existing hadoop cluster).  If installing on a remote Linux server, copy the download link and use *wget* to download the package.
+# Apache Spark 
+## Installation and adding Glue libraries
+The code one downloads from he Apache website -- Go to *https://spark.apache.org/downloads.html* doesn't include some libraries that integrate with AWS Services.  To add support for S3 and integration with AWS Glue Metadata Catalog, do the following:
+1. Go to *https://spark.apache.org/downloads.html*
+2. Download the version that is pre-built with Apache Hadoop (unless you plan to leverage and existing hadoop cluster).
+3. If installing on a remote Linux server, copy the download link and use *wget* to download the package.
 
-Once you've unpackaged the compressed tar file, you will need to download. some additional Jars if you want to connect to S3.  A Google search for the following libraries should lead you to a Maven repository where you can download the jars.  Make sure you download the same version as the hadoop libaries included in you Apache Spark package.  For instance, at the time I did this, the version is 3.3.1.
+Once you've unpackaged the compressed tar file, you will need to download. some additional Jars if you want to connect to S3.  A Google search for the following libraries should lead you to a remote Maven repository where you can download the jars.  Make sure you download the same version as the hadoop libaries included in you Apache Spark package.  For instance, at the time I did this, the version is 3.3.1.
 
 Additional Libareries
 * hadoop-aws
@@ -73,7 +76,7 @@ $SPARK_HOME/bin/pyspark --master local[*] \
 ```
 At this time, it seems that Rapids is available in AWS but only as part of EMR -- [Use the Nvidia Spark-RAPIDS Accelerator for Spark](https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-spark-rapids.html).
 
-## Other important links
+# Other important links
 - Youtube by Databricks regarding Spark 3.0 features: https://www.youtube.com/watch?v=4MI_LYah900
 - Spark performance monitoring (2019): https://www.youtube.com/watch?v=daXEp4HmS-E
 - https://docs.rapids.ai/api/cudf/nightly/user_guide/10min.html#Object-Creation
