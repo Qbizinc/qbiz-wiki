@@ -1,8 +1,8 @@
 ---
-title: Installing Apache Spark
+title: Installing Apache Spark on Linux
 description: Some notes for myself as a reminder.  What to install, where to get extra libraries to read from S3.
 published: true
-date: 2022-08-22T16:33:13.441Z
+date: 2022-08-22T17:43:09.247Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-03T19:03:31.869Z
