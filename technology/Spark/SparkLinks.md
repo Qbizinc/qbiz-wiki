@@ -2,7 +2,7 @@
 title: Spark Links
 description: 
 published: true
-date: 2022-08-22T17:40:09.784Z
+date: 2022-08-23T14:32:16.510Z
 tags: 
 editor: markdown
 dateCreated: 2022-08-22T16:30:39.560Z
@@ -24,6 +24,15 @@ dateCreated: 2022-08-22T16:30:39.560Z
 - Another article about memory settings [Spark Performance Tuning: spill](https://selectfrom.dev/spark-performance-tuning-spill-7318363e18cb).
 - S3 Committers (important when not using Yarn) [Improve Apache Spark performance with the S3 magic committer](https://spot.io/blog/improve-apache-spark-performance-with-the-s3-magic-committer/).  Warning you may get when not using Yarn: *[WARN AbstractS3ACommitterFactory: Using standard FileOutputCommitter to commit work. This is slow and potentially unsafe.]*.
 - Delight, a free perormance monitor (Delight)[https://www.datamechanics.co/blog-post/delight-the-new-improved-spark-ui-spark-history-server-is-now-ga].
+- [Spark by Example Blog](https://sparkbyexamples.com/).
+### Databricks
+Must register to access most material.
+- [Databricks training](https://www.databricks.com/learn/training/lakehouse-fundamentals). 
+- [Databricks ML Guide](https://docs.databricks.com/applications/machine-learning/index.html).
+- [Databricks Big Book of ML Ops](https://www.databricks.com/p/ebook/the-big-book-of-mlops).
+- [Databricks - how to automate your ML pipeline](https://www.databricks.com/p/ebook/automate-your-machine-learning-pipeline).
+- [Databricks - ML Projs plan to prod](https://www.databricks.com/p/ebook/machine-learning-engineering-in-action).
+
 
 ## Not Spark specific
 - A tutorial on using the RAPIDS library and cuDF (CUDA dataframes) for GPUs -- not Spark related.  This library supports GPUs for standalone Pandas and Dask: [10 Minutes to cuDF and Dask-cuDF](https://docs.rapids.ai/api/cudf/nightly/user_guide/10min.html#Object-Creation).
