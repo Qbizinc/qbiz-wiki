@@ -2,7 +2,7 @@
 title: Databricks Lakehouse
 description: Add information about Databricks
 published: true
-date: 2022-08-31T18:41:53.198Z
+date: 2022-09-06T16:48:32.040Z
 tags: lakehouse, databricks, pyspark
 editor: markdown
 dateCreated: 2022-08-31T18:41:53.198Z
@@ -19,6 +19,9 @@ Databricks is a software platform that helps its customers unify their analytics
 ## Get Started
 - Free Databricks introduction training: [Lakehouse Fundamentals]('https://www.databricks.com/learn/training/lakehouse-fundamentals')
 - Create free cloud enviroment using community edition: [Try Databricks]('https://www.databricks.com/try-databricks')
+
+### Fundamental Courses
+- Coursera Specialization (Free courses for audit): [Data Science with Databricks](https://www.coursera.org/specializations/data-science-with-databricks-for-data-analysts) 
 
 ### Machine Learning
 - Learn to Use Databricks for the Full ML Lifecycle: [Databricks Clinic]('https://www.youtube.com/watch?v=dQD2gVPJggQ&ab_channel=Databricks')
