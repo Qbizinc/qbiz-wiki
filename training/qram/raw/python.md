@@ -2,7 +2,7 @@
 title: Python
 description: 
 published: true
-date: 2022-09-28T15:56:07.321Z
+date: 2022-09-28T16:01:40.932Z
 tags: 
 editor: markdown
 dateCreated: 2022-09-28T15:56:07.321Z
@@ -14,11 +14,11 @@ dateCreated: 2022-09-28T15:56:07.321Z
 ### Learning materials 
 
 - Resources:
-The Python Tutorial (Official)
-Introduction to Python (Real Python)
-Full Stack Python
+The Python Tutorial (Official)  [link](https://docs.python.org/3/tutorial/index.html)
+Introduction to Python (Real Python) [link](https://realpython.com/learning-paths/python3-introduction/)
+Full Stack Python [link](https://www.fullstackpython.com/)
 
 - Courses:
-Python for Everybody (Coursera)
-Introduction to Python Programming (Udacity)
-2020 Complete Python Bootcamp: From Zero to Hero in Python (Udemy)
+Python for Everybody (Coursera) [link](https://www.coursera.org/specializations/python)
+Introduction to Python Programming (Udacity) [link](https://classroom.udacity.com/courses/ud1110)
+2020 Complete Python Bootcamp: From Zero to Hero in Python (Udemy) [link](https://www.udemy.com/course/complete-python-bootcamp/?LSNPUBID=vedj0cWlu2Y&ranEAID=vedj0cWlu2Y&ranMID=39197&ranSiteID=vedj0cWlu2Y-zyrD9zSd.Vi960y7DZ1BlQ&utm_medium=udemyads&utm_source=aff-campaign)
