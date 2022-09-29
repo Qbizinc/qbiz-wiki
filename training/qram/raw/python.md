@@ -2,7 +2,7 @@
 title: Python
 description: 
 published: true
-date: 2022-09-28T16:15:04.732Z
+date: 2022-09-29T17:10:18.589Z
 tags: 
 editor: markdown
 dateCreated: 2022-09-28T15:56:07.321Z
@@ -23,3 +23,6 @@ Mode Analytics - Python Tutorial [link](https://mode.com/python-tutorial/)
 Python for Everybody (Coursera) [link](https://www.coursera.org/specializations/python)
 Introduction to Python Programming (Udacity) [link](https://classroom.udacity.com/courses/ud1110)
 2020 Complete Python Bootcamp: From Zero to Hero in Python (Udemy) [link](https://www.udemy.com/course/complete-python-bootcamp/?LSNPUBID=vedj0cWlu2Y&ranEAID=vedj0cWlu2Y&ranMID=39197&ranSiteID=vedj0cWlu2Y-zyrD9zSd.Vi960y7DZ1BlQ&utm_medium=udemyads&utm_source=aff-campaign)
+
+- Tools and Tips
+Why you should not *silently* catch Exceptions [link](https://realpython.com/the-most-diabolical-python-antipattern/)
