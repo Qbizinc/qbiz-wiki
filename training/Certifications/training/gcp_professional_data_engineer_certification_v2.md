@@ -2,7 +2,7 @@
 title: GCP Professional Data Engineer Certification v2
 description: 
 published: true
-date: 2022-10-04T20:13:09.877Z
+date: 2022-10-04T20:22:16.834Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-28T23:09:08.207Z
@@ -164,5 +164,7 @@ Vertex AI is a suite of services designed to make ML more turnkey.  It has a mod
 - A manual training option, through the UI, that allows for the labeling of your data to be outsourced.
 
 ## Transfer Appliance
-[Transfer Appliance](https://cloud.google.com/transfer-appliance/docs/4.0/overview) is a suitcase-sized or rack-sized storage device used to physically move data from on-prem to Cloud Storage.  It comes in 7, 40 and 300 TB sizes (see [pricing](https://cloud.google.com/transfer-appliance/pricing)).  
+
+[Transfer Appliance](https://cloud.google.com/transfer-appliance/docs/4.0/overview) is a suitcase-sized or rack-sized storage device used to physically move data from on-prem to Cloud Storage.  It comes in 7, 40 and 300 TB sizes (see [pricing](https://cloud.google.com/transfer-appliance/pricing)).  On the Practice Exam, I got the following question:
+- 
 
