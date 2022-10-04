@@ -2,7 +2,7 @@
 title: GCP Professional Data Engineer Certification v2
 description: 
 published: true
-date: 2022-10-04T20:29:30.539Z
+date: 2022-10-04T21:32:15.900Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-28T23:09:08.207Z
