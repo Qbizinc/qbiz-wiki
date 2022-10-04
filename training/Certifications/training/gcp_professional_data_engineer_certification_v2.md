@@ -2,7 +2,7 @@
 title: GCP Professional Data Engineer Certification v2
 description: 
 published: true
-date: 2022-10-04T20:22:16.834Z
+date: 2022-10-04T20:29:30.539Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-28T23:09:08.207Z
@@ -166,5 +166,6 @@ Vertex AI is a suite of services designed to make ML more turnkey.  It has a mod
 ## Transfer Appliance
 
 [Transfer Appliance](https://cloud.google.com/transfer-appliance/docs/4.0/overview) is a suitcase-sized or rack-sized storage device used to physically move data from on-prem to Cloud Storage.  It comes in 7, 40 and 300 TB sizes (see [pricing](https://cloud.google.com/transfer-appliance/pricing)).  On the Practice Exam, I got the following question:
-- 
+
+- Low-cost one-way one-time migration of two 100-TB file servers to Google Cloud; data will be frequently accessed and only from Germany.  *Note the question mentiones "one-time" and the total capacity required fits within a 300TB appliance.*  Be careful: multiple answers can include Transfer Appliance, the difference between the correct and wrong answers may be in the kind of storage the data is transfered to.
 
