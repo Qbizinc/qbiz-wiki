@@ -2,7 +2,7 @@
 title: GCP Professional Data Engineer Certification v2
 description: 
 published: true
-date: 2022-03-18T15:55:24.699Z
+date: 2022-10-04T20:05:35.167Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-28T23:09:08.207Z
@@ -154,4 +154,12 @@ There is a wide variety of topics to dive into, including:
 * [Big Query ML](https://cloud.google.com/bigquery-ml/docs/introduction)
 * [Denormalizing](https://cloud.google.com/bigquery/docs/loading-data#loading_denormalized_nested_and_repeated_data) by [specifying nested and repeated](https://cloud.google.com/bigquery/docs/nested-repeated) fields
 
+## Vertex AI
+Vertex AI is a suite of services designed to make ML more turnkey.  It has a models ready-to-use (no training required) in areas of NLP and image processing.  An example is translating one language to another, just like Google Translate; another is Optical Character Recognition.  With these pre-traineed models, you just upload you documents; models have been trianed with text and images avialble to Google.
+
+- Has pre-trained models.
+- Has built-in feature store.
+- Can build custome models using Tensorflow.
+- Has Workbench (Jupyter Notebook) for doing development and EDA.
+- A manual training option, through the UI, that allows for the labeling of your data to be outsourced.
 
