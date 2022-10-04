@@ -2,7 +2,7 @@
 title: GCP Professional Data Engineer Certification v2
 description: 
 published: true
-date: 2022-10-04T21:42:45.411Z
+date: 2022-10-04T21:44:37.012Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-28T23:09:08.207Z
@@ -134,7 +134,7 @@ Finally, some notes about the Dataflow labs:
 * It's worth learning where to find the log output in the Dataflow console; if there's an error, your job may continue silently retrying for awhile (this can be another cause of a job appearing frozen)
 * Sometimes your first job run in the cloud fails almost immediately, due to a permission issue. If this happens, submit it again or disable then enable the Dataflow API (you'll learn how to do this in the labs)
 
-Lastly, I've come across an inconsistency between the Videos and Documentation on the subject of Windowing.  In the Labs, the diffferent types of Windowing are knows as *Fixed*, *Sliding* and *Session* (these are the terms used by Apache Beam); However, in [Google's Dataproc Streaming documenation](https://cloud.google.com/dataflow/docs/concepts/streaming-pipelines), calls these modes *Tumbeling*, *Hopping* and *Widowning*.  This absolutely tripped me up on the pracice exam because the exam used terms not presented in the labs or lessons.
+Lastly, I've come across an inconsistency between the Videos and Documentation on the subject of Windowing.  In the Labs, the diffferent types of Windowing are knows as *Fixed*, *Sliding* and *Session* (these are the terms used by Apache Beam); However, in [Google's Dataproc Streaming documenation](https://cloud.google.com/dataflow/docs/concepts/streaming-pipelines), calls these modes *Tumbeling*, *Hopping* and *Session*.  This absolutely tripped me up on the pracice exam because the exam used terms not presented in the labs or lessons.
 
 ## BigQuery
 
