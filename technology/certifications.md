@@ -2,7 +2,7 @@
 title: Certifications
 description: 
 published: true
-date: 2022-08-23T15:45:31.414Z
+date: 2022-10-05T22:33:59.096Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-25T18:07:39.671Z
@@ -30,6 +30,7 @@ dateCreated: 2022-04-25T18:07:39.671Z
 - Looker Inteligence Learning Path
 	- https://partner.cloudskillsboost.google/course_templates/253
 - Google Cloud Platform - Professional Data Engineer
+	- Kickstart program!  Get a voucher to take your GCP exam!
   - https://cloud.google.com/certification/data-engineer
   - [Resources](/training/Certifications/training/gcp_professional_data_engineer_certification_v2)
   
