@@ -1,0 +1,793 @@
+<!--
+title: AWS ML Specialty
+description: Study guide for the AWS Certification ML - Specialty exam
+published: true
+date: 2022-10-05T17:30:32.271Z
+tags: machine-learning, certification, aws
+editor: code
+dateCreated: 2021-08-16T16:47:39.772Z
+-->
+
+<h1 class="toc-header" id="exam-information"> Exam Information</h1>
+<h2 class="toc-header" id="background"> Background</h2>
+<p>The AWS Certified Machine Learning - Specialty certification is intended for individuals who perform a development or data science role. It validates a candidate's ability to design, implement, deploy, and maintain machine learning (ML) solutions for given business problems.</p>
+<h3 class="toc-header" id="exam-outline"> Exam Outline</h3>
+<p>The exam is 65 questions in length which must be answered within 190 minutes.  Scores are provided on a scale from 100, 1000, with 750 the minimum passing score.  The exam is available for taking remotely, but proctoring is required and provided.  There are no breaks (so manage your liquids!), and no resources can be used, online or otherwise, during the exam.</p>
+<p>There are two question types on the exam, multiple choice, and multiple response.  For multiple response questions, the number of responses expected is provided  (i.e., select 2 of 5 choices).</p>
+<p>The exam is organized into four key topics, with several objectives under each topic, as outlined below.</p>
+<p><strong>Domain 1: Data Engineering (20%)</strong></p>
+<ul>
+<li><strong>1.1</strong> Create data repositories for machine learning.</li>
+<li><strong>1.2</strong> Identify and implement a data-ingestion solution.</li>
+<li><strong>1.3</strong> Identify and implement a data-transformation solution.</li>
+</ul>
+<p><strong>Domain 2: Exploratory Data Analysis (24%)</strong></p>
+<ul>
+<li><strong>2.1</strong> Sanitize and prepare data for modeling.</li>
+<li><strong>2.2</strong> Perform feature engineering.</li>
+<li><strong>2.3</strong> Analyze and visualize data for machine learning.</li>
+</ul>
+<p><strong>Domain 3: Modeling (36%)</strong></p>
+<ul>
+<li><strong>3.1</strong> Frame business problems as machine learning problems.</li>
+<li><strong>3.2</strong> Select the appropriate model(s) for a given machine learning problem.</li>
+<li><strong>3.3</strong> Train machine learning models.</li>
+<li><strong>3.4</strong> Perform hyperparameter optimization.</li>
+<li><strong>3.5</strong> Evaluate machine learning models.</li>
+</ul>
+<p><strong>Domain 4: Machine Learning Implementation and Operations (20%)</strong></p>
+<ul>
+<li><strong>4.1</strong> Build machine learning solutions for performance, availability, scalability, resiliency, and fault tolerance.</li>
+<li><strong>4.2</strong> Recommend and implement the appropriate machine learning services and features for a given problem.</li>
+<li><strong>4.3</strong> Apply basic AWS security practices to machine learning solutions.</li>
+<li><strong>4.4</strong> Deploy and operationalize machine learning solutions.</li>
+</ul>
+<p>More details on the structure of the exam are available via <a class="is-external-link" href="https://d1.awsstatic.com/training-and-certification/docs-ml/AWS-Certified-Machine-Learning-Specialty_Exam-Guide.pdf">AWS's provided Exam Guide</a>.</p>
+<h2 class="toc-header" id="recommended-learning-path"> Recommended Learning Path</h2>
+<p><strong>Learning ML</strong><br>
+<a class="is-external-link" href="https://www.aws.training/Details/eLearning?id=26598">Elements of Data Science</a> - (8 hours)<br>
+<a class="is-external-link" href="https://www.aws.training/Details/Curriculum?id=27243">Developing Machine Learning Applications</a> - (2.5 hours)<br>
+<a class="is-external-link" href="https://www.aws.training/Details/Curriculum?id=27271">Machine Learning Exam Basics</a> - (2 hours)</p>
+<p><strong>Exam Specific</strong><br>
+<a class="is-external-link" href="https://www.aws.training/Details/eLearning?id=42183">Exam Readiness Digital Course</a> - (4.5 hours)</p>
+<p><strong>Important APIs</strong><br>
+<a class="is-external-link" title="KNOW THIS!" href="https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html">SageMaker Developer Guide</a> - (as many hours as it takes)<br>
+<a class="is-external-link" href="https://sagemaker.readthedocs.io/en/stable/overview.html">SageMaker Python SDK</a> - (high level understanding)<br>
+<a class="is-external-link" href="https://aws.amazon.com/machine-learning/ai-services/">All Other AWS AI Service APIs</a> - (high level understanding)</p>
+<p><strong>Important Blog Posts</strong><br>
+<a class="is-external-link" href="https://aws.amazon.com/blogs/machine-learning/use-the-amazon-sagemaker-local-mode-to-train-on-your-notebook-instance/">SageMaker Local Mode</a><br>
+<a class="is-external-link" href="https://aws.amazon.com/blogs/machine-learning/the-importance-of-hyperparameter-tuning-for-scaling-deep-learning-training-to-multiple-gpus/">Scaling Hyperparameter Tuning on GPUs</a><br>
+<a class="is-external-link" href="https://tomgregory.com/when-to-use-an-aws-s3-vpc-endpoint/">S3 VPC Endpoints</a></p>
+<p><strong>Practice Tests</strong><br>
+<a class="is-external-link" title="65 questions" href="https://www.udemy.com/course/aws-machine-learning-practice-exam/">Udemy Practice Test</a><br>
+<a class="is-external-link" title="3 tests with 50 questions each and 1 test with 37 questions" href="https://www.braincert.com/course/22419-AWS-Certified-Machine-Learning-%E2%80%93-Specialty-Practice-Exams">Braincert Practice Test</a><br>
+<a class="is-external-link" href="https://www.certmetrics.com/amazon/">Official AWS Certified Machine Learning - Specialty Practice (MLS-P01)</a></p>
+<p><strong>Optional</strong><br>
+<a class="is-external-link" href="https://www.aws.training/Details/eLearning?id=26597">Math for Machine Learning</a> - (8 hours)<br>
+<a class="is-external-link" href="https://www.aws.training/Details/eLearning?id=26599">Linear and Logistic Regression</a> - (8.5 hours)</p>
+<h1 class="toc-header" id="aws-services"> AWS Services</h1>
+<h2 class="toc-header" id="aws-machine-learning-stack"> AWS Machine Learning Stack</h2>
+<p><img alt="aws_ml_stack.png" src="/images/aws_ml_certification/aws_ml_stack.png"><br>
+The AWS ML stack is made up of three key layers of abstraction.  When building a machine learning solution, key priorities to balance may consist of:</p>
+<ul>
+<li>speed to market</li>
+<li>level of customization</li>
+<li>machine learning skill level</li>
+</ul>
+<p>At the top layer, you have AI Services, which are “fully managed services for quickly adding machine learning capabilities to workloads using API calls”; ML knowledge is not required to utilize these.</p>
+<p>The middle layer, ML Services, is primarily made up of SageMaker related tools.  SageMaker spans the machine learning pipeline by offering solutions for labeling data as well as building, training and deploying machine learning models while largely abstracting away infrastructure maintenance requirements.</p>
+<p>The bottom layer, ML Frameworks + Infrastructure, contains the “closest to the metal” solutions, allowing machine learning practitioners to build machine learning solutions from the ground up.  With deep learning containers and images, AWS supports many common machine learning frameworks such as TensorFlow, PyTorch and Apache MXNet.</p>
+<p><br>
+</p><h3 class="toc-header" id="ai-services"> AI Services</h3>
+<p><a class="is-external-link" href="https://aws.amazon.com/augmented-ai/">Amazon Augmented AI</a></p>
+<ul>
+<li>machine learning service which makes it easy to build the workflows required for human review</li>
+</ul>
+<p><br>
+</p><p><a class="is-external-link" href="https://aws.amazon.com/codeguru/">Amazon CodeGuru</a></p>
+<p><a class="is-external-link" href="https://aws.amazon.com/comprehend/">Amazon Comprehend</a></p>
+<ul>
+<li>natural language processing (NLP) service</li>
+<li>uses machine learning to find insights and relationships in text</li>
+<li>learn the sentiment hidden inside language (identifying negative reviews, or positive customer interactions with customer service agents), at almost limitless scale</li>
+</ul>
+<p><br>
+</p><p><a class="is-external-link" href="https://aws.amazon.com/comprehend/medical/">Amazon Comprehend Medical</a></p>
+<p><a class="is-external-link" href="https://aws.amazon.com/forecast/">Amazon Forecast</a></p>
+<ul>
+<li>fully managed service that uses machine learning to deliver highly accurate forecasts</li>
+<li>combine time series data with additional variables to build forecasts</li>
+<li>no servers to provision and no machine learning models to build, train, or deploy</li>
+</ul>
+<p><br>
+</p><p><a class="is-external-link" href="https://aws.amazon.com/fraud-detector/">Amazon Fraud Detector</a></p>
+<p><a class="is-external-link" href="https://aws.amazon.com/healthlake/">Amazon HealthLake</a></p>
+<p><a class="is-external-link" href="https://aws.amazon.com/kendra/">Amazon Kendra</a></p>
+<p><a class="is-external-link" href="https://aws.amazon.com/lex/">Amazon Lex</a></p>
+<ul>
+<li>service for building conversational interfaces into any application using voice and text (chatbots)</li>
+<li>advanced deep learning functionalities of automatic speech recognition (ASR) for converting speech to text, and natural language understanding (NLU) to recognize the intent of the text</li>
+<li>build applications with highly engaging user experiences and lifelike conversational interactions</li>
+</ul>
+<p><br>
+</p><p><a class="is-external-link" href="https://aws.amazon.com/lookout-for-equipment/">Amazon Lookout for Equipment</a></p>
+<p><a class="is-external-link" href="https://aws.amazon.com/lookout-for-vision/">Amazon Lookout for Vision</a></p>
+<p><a class="is-external-link" href="https://aws.amazon.com/monitron/">Amazon Monitron</a></p>
+<p><a class="is-external-link" href="https://aws.amazon.com/personalize/">Amazon Personalize</a></p>
+<ul>
+<li>real-time personalized product and content recommendations, and targeted marketing promotions</li>
+<li>simple APIs to easily integrate sophisticated personalization capabilities into your systems and platform</li>
+<li>automates build, train, tune, and deploy a machine learning recommendation model so you can deliver personalized user experiences faster</li>
+<li>data is encrypted to be private and secure</li>
+</ul>
+<p><br>
+</p><p><a class="is-external-link" href="https://aws.amazon.com/polly/">Amazon Polly</a></p>
+<ul>
+<li>Text-to-Speech (TTS) service uses advanced deep learning technologies to synthesize natural sounding human speech</li>
+<li>turns text into lifelike speech</li>
+<li>create applications that talk, and build entirely new categories of speech-enabled products</li>
+<li>dozens of lifelike voices across a broad set of languages</li>
+</ul>
+<p><br>
+</p><p><a class="is-external-link" href="https://aws.amazon.com/rekognition/">Amazon Rekognition</a></p>
+<ul>
+<li>add image and video analysis to your applications using proven, highly scalable, deep learning technology</li>
+<li>requires no machine learning expertise</li>
+<li>identify objects, people, text, scenes, and activities in images and videos, as well as detect any inappropriate content</li>
+<li>highly accurate facial analysis and facial search capabilities that you can use to detect, analyze, and compare faces for a wide variety of user verification, people counting, and public safety use cases</li>
+</ul>
+<p><br>
+</p><p><a class="is-external-link" href="https://aws.amazon.com/textract/">Amazon Textract</a></p>
+<ul>
+<li>automatically extracts text and data from scanned documents to identify, understand, and extract data from forms and tables</li>
+<li>fully managed machine learning service</li>
+<li>goes beyond simple optical character recognition (OCR)</li>
+<li>instantly read and process any type of document, accurately extracting text, forms, tables and, other data without the need for any manual effort or custom code</li>
+</ul>
+<p><br>
+</p><p><a class="is-external-link" href="https://aws.amazon.com/transcribe/">Amazon Transcribe</a></p>
+<ul>
+<li>deep learning process called automatic speech recognition (ASR) to convert speech to text quickly and accurately</li>
+<li>add speech to text capability to applications</li>
+<li>recorded speech often needs to be converted to text before it can be used in applications</li>
+<li>transcribe customer service calls, automate closed captioning and subtitling, and to generate metadata for media assets to create a fully searchable archive</li>
+<li>Amazon Transcribe Medical to add medical speech to text capabilities to clinical documentation applications</li>
+</ul>
+<p><br>
+</p><p><a class="is-external-link" href="https://aws.amazon.com/translate/">Amazon Translate</a></p>
+<ul>
+<li>delivers fast, high-quality, and affordable language translation</li>
+<li>uses deep learning models to deliver more accurate and more natural sounding translation than traditional statistical and rule-based translation algorithms</li>
+<li>localize content - such as websites and applications - for international users</li>
+<li>translate large volumes of text efficiently and easily</li>
+</ul>
+<p><br>
+</p><p><a class="is-external-link" href="https://aws.amazon.com/panorama/">AWS Panorama</a></p>
+<ul>
+<li>allows organizations to bring computer vision (CV) to on-premises cameras to make predictions locally with high accuracy and low latency</li>
+</ul>
+<p><br>
+</p><h3 class="toc-header" id="ml-services"> ML Services</h3>
+<p><a class="is-external-link" href="https://aws.amazon.com/sagemaker/">SageMaker</a><br>
+SageMaker is a fully managed service, empowering developers and data scientists to process, build, train and deploy machine models quickly and efficiently.  All components required for machine learning are included in a single toolset so models get to production faster, with less effort, and at lower cost.</p>
+<p><img alt="sagemaker_workflow.png" src="/images/aws_ml_certification/sagemaker_workflow.png"></p>
+<p><strong>Prepare</strong><br>
+<a class="is-external-link" href="https://aws.amazon.com/sagemaker/data-wrangler/">Data Wrangler</a><br>
+<a class="is-external-link" href="https://aws.amazon.com/sagemaker/feature-store/">Feature Store</a><br>
+<a class="is-external-link" href="https://aws.amazon.com/sagemaker/groundtruth/"><strong>Ground Truth</strong></a></p>
+<ul>
+<li>fully managed data labeling service</li>
+<li>workflows support a variety of use cases including 3D point clouds, video, images, and text</li>
+<li>labelers have access to assistive labeling features such as automatic 3D cuboid snapping, removal of distortion in 2D images, and auto-segment tools to reduce the time required to label datasets</li>
+<li>offers automatic data labeling which uses a machine learning model to label your data</li>
+</ul>
+<p><a class="is-external-link" href="https://aws.amazon.com/sagemaker/clarify/">Clarify</a></p>
+<p><strong>Build</strong><br>
+<a class="is-external-link" href="https://aws.amazon.com/sagemaker/studio/"><strong>Studio</strong></a></p>
+<ul>
+<li>first fully integrated development environment (IDE) for machine learning (ML)</li>
+<li>unifies at last all the tools needed for ML development</li>
+<li>developers can write code, track experiments, visualize data, and perform debugging and monitoring all within a single, integrated visual interface, significantly boosting developer productivity</li>
+<li>quickly move back and forth between steps, and also clone, tweak, and replay them.</li>
+<li>gives developers the ability to make changes quickly, observe outcomes, and iterate faster, reducing the time to market for high quality ML solutions</li>
+</ul>
+<p><a class="is-external-link" href="https://aws.amazon.com/sagemaker/autopilot/"><strong>Autopilot</strong></a></p>
+<ul>
+<li>based on your data, automatically trains and tunes the best machine learning models for classification or regression</li>
+<li>maintain full control and visibility</li>
+<li>provide a tabular dataset and select the target column to predict, which can be a number (such as a house price, called regression), or a category (such as spam/not spam, called classification)</li>
+<li>Autopilot will automatically explore different solutions to find the best model</li>
+<li>directly deploy the model to production with just one click, or iterate on the recommended solutions within Studio to further improve the model quality</li>
+</ul>
+<p><a class="is-external-link" href="https://aws.amazon.com/sagemaker/getting-started/">JumpStart</a></p>
+<p><strong>Train &amp; Tune</strong><br>
+<a class="is-external-link" href="https://aws.amazon.com/sagemaker/debugger/">Debugger</a><br>
+<a class="is-external-link" href="https://aws.amazon.com/sagemaker/distributed-training/">Distributed Training</a></p>
+<p><strong>Deploy &amp; Manage</strong><br>
+<a class="is-external-link" href="https://aws.amazon.com/sagemaker/pipelines/">Pipelines</a><br>
+<a class="is-external-link" href="https://aws.amazon.com/sagemaker/model-monitor/">Model Monitor</a><br>
+<a class="is-external-link" href="https://aws.amazon.com/sagemaker/kubernetes/">Kubernetes Integration</a><br>
+<a class="is-external-link" href="https://aws.amazon.com/sagemaker/edge-manager/">Edge Manager</a><br>
+<a class="is-external-link" href="https://aws.amazon.com/sagemaker/neo/"><strong>Neo</strong></a></p>
+<ul>
+<li>enables developers to train machine learning models once and run them anywhere in the cloud and at the edge</li>
+<li>optimizes models to run up to twice as fast, with less than a tenth of the memory footprint, with no loss in accuracy</li>
+<li>automatically optimizes machine learning models to perform at up to twice the speed with no loss in accuracy</li>
+</ul>
+<p><br><br></p>
+<blockquote class="is-info">
+<p>The most commonly covered services on the exam are linked below, but others may be worthwhile to skim. However, the most important documentation to study regarding SageMaker is the <a class="is-external-link" href="https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html">developer guide</a>.</p>
+<p><a class="is-external-link" href="https://aws.amazon.com/sagemaker/groundtruth/">Ground Truth</a><br>
+<a class="is-external-link" href="https://aws.amazon.com/sagemaker/autopilot/">Autopilot</a><br>
+<a class="is-external-link" href="https://aws.amazon.com/sagemaker/distributed-training/">Distributed Training</a><br>
+<a class="is-external-link" href="https://aws.amazon.com/sagemaker/neo/">Neo</a></p>
+</blockquote>
+<h3 class="toc-header" id="frameworks"> Frameworks</h3>
+<p><a class="is-external-link" href="https://aws.amazon.com/tensorflow/">TensorFlow on AWS</a><br>
+<a class="is-external-link" href="https://aws.amazon.com/pytorch/">PyTorch on AWS</a><br>
+<a class="is-external-link" href="https://aws.amazon.com/mxnet/">Apache MXNet on AWS</a><br>
+<a class="is-external-link" href="https://aws.amazon.com/machine-learning/hugging-face/">Hugging Face on Amazon SageMaker</a></p>
+<p><br>
+</p><h3 class="toc-header" id="infrastructure"> Infrastructure</h3>
+<p><a class="is-external-link" href="https://aws.amazon.com/machine-learning/amis/">AWS DL AMIs</a></p>
+<ul>
+<li>AWS Deep Learning AMIs provide machine learning practitioners and researchers with the infrastructure and tools to accelerate deep learning in the cloud, at any scale. You can quickly launch Amazon EC2 instances pre-installed with popular deep learning frameworks and interfaces such as TensorFlow, PyTorch, Apache MXNet, Chainer, Gluon, Horovod, and Keras to train sophisticated, custom AI models, experiment with new algorithms, or to learn new skills and techniques.</li>
+<li>Whether you need Amazon EC2 GPU or CPU instances, there is no additional charge for the Deep Learning AMIs – you only pay for the AWS resources needed to store and run your applications.</li>
+</ul>
+<p><br>
+</p><p><a class="is-external-link" href="https://aws.amazon.com/machine-learning/containers/">AWS DL Containers</a></p>
+<ul>
+<li>Docker images pre-installed with deep learning frameworks to make it easy to deploy custom machine learning (ML) environments quickly letting you skip the complicated process of building and optimizing your environments from scratch</li>
+<li>containers are available through Amazon Elastic Container Registry (Amazon ECR) and AWS Marketplace at no cost</li>
+<li>supports popular frameworks</li>
+</ul>
+<p><br>
+</p><p><a class="is-external-link" href="https://aws.amazon.com/ecs/">Elastic Container Service (ECS)</a></p>
+<ul>
+<li>fully managed container orchestration service that helps you easily deploy, manage, and scale containerized appplications</li>
+<li>choose to run your ECS clusters using AWS Fargate, which is serverless compute for containers</li>
+<li>used to power services such as Amazon SageMaker, AWS Batch, Amazon Lex, and <a class="is-external-link" href="http://Amazon.com">Amazon.com</a>’s recommendation engine, ensuring ECS is tested extensively for security, reliability, and availability</li>
+</ul>
+<p><br>
+</p><p><a class="is-external-link" href="https://aws.amazon.com/machine-learning/elastic-inference/">Elastic Inference</a></p>
+<ul>
+<li>attach low-cost GPU-powered acceleration to Amazon EC2 and Sagemaker instances or Amazon ECS tasks</li>
+<li>reduce the cost of running deep learning inference by up to 75%</li>
+<li>supports TensorFlow, Apache MXNet, PyTorch and ONNX models</li>
+<li>attach just the right amount of GPU-powered inference acceleration to any EC2 or SageMaker instance type or ECS task, with no code changes</li>
+<li>choose any CPU instance in AWS that is best suited to the overall compute and memory needs of your application, and then separately configure the right amount of GPU-powered inference acceleration, allowing you to efficiently utilize resources and reduce costs</li>
+</ul>
+<p><br>
+</p><p><a class="is-external-link" href="https://aws.amazon.com/greengrass/">IoT Greengrass</a></p>
+<ul>
+<li>seamlessly extends AWS to edge devices so they can act locally on the data they generate, while still using the cloud for management, analytics, and durable storage</li>
+<li>connected devices can run AWS Lambda functions, Docker containers, or both, execute predictions based on machine learning models, keep device data in sync, and communicate with other devices securely – even when not connected to the Internet.</li>
+<li>use familiar languages and programming models to create and test your device software in the cloud, and then deploy it to your devices</li>
+</ul>
+<p><br>
+</p><p><a class="is-external-link" href="https://aws.amazon.com/machine-learning/inferentia/">Inferentia</a></p>
+<ul>
+<li>custom silicon designed to accelerate deep learning workloads</li>
+<li>designed to provide high performance inference in the cloud, to drive down the total cost of inference, and to make it easy for developers to integrate machine learning into their business applications</li>
+<li>AWS Neuron software development kit (SDK), consisting of a compiler, run-time, and profiling tools that help optimize the performance of workloads for AWS Inferentia, enables complex neural net models, created and trained in popular frameworks such as Tensorflow, PyTorch, and MXNet, to be executed using AWS Inferentia-based Amazon EC2 Inf1 instances</li>
+</ul>
+<p><br>
+</p><p><a class="is-external-link" href="https://aws.amazon.com/autoscaling/">AWS Auto Scaling</a><br>
+It monitors your applications and automatically adjusts capacity to maintain steady, predictable performance at the lowest possible cost. Using AWS Auto Scaling, it’s easy to setup application scaling for multiple resources across multiple services in minutes. The service provides a simple, powerful user interface that lets you build scaling plans for resources including Amazon EC2 instances and Spot Fleets, Amazon ECS tasks, Amazon DynamoDB tables and indexes, and Amazon Aurora Replicas. AWS Auto Scaling makes scaling simple with recommendations that allow you to optimize performance, costs, or balance between them. If you’re already using Amazon EC2 Auto Scaling to dynamically scale your Amazon EC2 instances, you can now combine it with AWS Auto Scaling to scale additional resources for other AWS services. With AWS Auto Scaling, your applications always have the right resources at the right time.</p>
+<p><a class="is-external-link" href="https://aws.amazon.com/ec2/instance-types/">Instance types</a>:</p>
+<ul>
+<li><strong>T:</strong> most basic</li>
+<li><strong>M:</strong> more memory, cores</li>
+<li><strong>C:</strong> compute optimized - ideal for compute bound applications that benefit from high performance processors. Instances belonging to this family are well suited for batch processing workloads, media transcoding, high performance web servers, high performance computing (HPC), scientific modeling, dedicated gaming servers and ad server engines, machine learning inference and other compute intensive applications</li>
+<li><strong>P:</strong> GPU optimized - accelerated computing instances use hardware accelerators, or co-processors, to perform 		functions, such as floating point number calculations, graphics processing, or data pattern matching, more efficiently than is possible in software running on CPUs</li>
+</ul>
+<p><br>
+</p><h2 class="toc-header" id="aws-data-engineering-stack"> AWS Data Engineering Stack</h2>
+<table>
+<thead>
+<tr>
+<th>Concepts</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>High Availability</strong></td>
+<td>System will continue to function even when any component of the architecture stops working</td>
+</tr>
+<tr>
+<td><strong>Fault Tolerance</strong></td>
+<td>Ensures that applications will continue to function without degradation in performance, despite complete failure of any component of the architecture</td>
+</tr>
+<tr>
+<td><strong>Loose Coupling</strong></td>
+<td>In a distributed system, failure of one component can be managed in between application tiers so that the faults do not spread beyond that single point achieved by making sure application components are independent of each other. Read up on queues: <a class="is-external-link" href="https://aws.amazon.com/sqs/">Amazon SQS</a> and <a class="is-external-link" href="https://aws.amazon.com/sqs/">AWS Step Functions</a>.</td>
+</tr>
+<tr>
+<td><strong>CI/CD</strong></td>
+<td>Bridges the gaps between development and operation activities and teams by enforcing automation in building, testing and deployment of applications. Modern day DevOps practices involve continuous development, continuous testing, continuous integration, continuous deployment and continuous monitoring of software applications throughout its development life cycle.</td>
+</tr>
+<tr>
+<td><strong>Canary Deployment Methodology</strong></td>
+<td>Pattern for rolling out releases to a subset of users or servers. The idea is to first deploy the change to a small subset of servers, test it, and then roll the change out to the rest of the servers. The canary deployment serves as an early warning indicator with less impact on downtime: if the canary deployment fails, the rest of the servers aren't impacted.</td>
+</tr>
+</tbody>
+</table>
+<p><br><br></p>
+<h3 class="toc-header" id="compiling"> Compiling</h3>
+<p><a class="is-external-link" href="https://www.mturk.com/">Amazon Mechanical Turk</a></p>
+<ul>
+<li>crowdsourcing marketplace that makes it easier for individuals and businesses to outsource their processes and jobs to a distributed workforce who can perform these tasks virtually</li>
+<li>anything from conducting simple data validation and research to more subjective tasks like survey participation, content moderation, and more</li>
+<li>enables companies to harness the collective intelligence, skills, and insights from a global workforce to streamline business processes, augment data collection and analysis, and accelerate machine learning development</li>
+</ul>
+<h3 class="toc-header" id="streaming"> Streaming</h3>
+<p><a class="is-external-link" href="https://aws.amazon.com/kinesis/"><strong>Amazon Kinesis</strong></a><br>
+Kinesis facilitates the streaming of data, making it easy to collect, process, and analyze data real-time for timely insights, speeding reaction time.  Video, audio, application logs, clickstreams, and IoT data can be ingested real-time.<br>
+<img alt="kinesis_data_streams.png" src="/images/aws_ml_certification/kinesis_data_streams.png"></p>
+<p><br>
+<table>
+<thead>
+<tr>
+<th>Kinesis Capability</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="is-external-link" href="https://aws.amazon.com/kinesis/data-streams/"><strong>Amazon Kinesis Data Streams</strong></a></td>
+<td><ul><li>massively scalable and durable real-time data streaming service</li><li>continuously capture gigabytes of data per second from hundreds of thousands of sources such as website clickstreams, database event streams, financial transactions, social media feeds, IT logs, and location-tracking events</li> <li>data collected is available in milliseconds to enable real-time analytics use cases such as real-time dashboards, real-time anomaly detection, dynamic pricing, and more</li></ul>  <table>  <thead>  <tr>  <th>Component</th>  <th>Description</th>  </tr>  </thead>  <tbody>  <tr>  <td><a class="is-external-link" href="https://docs.aws.amazon.com/streams/latest/dev/developing-producers-with-kpl.html">Kinesis Producer Library (KPL)</a></td> <td>intermediary between producer application code and KDS API data, to write to a Kinesis data stream</td> </tr>  <tr>  <td><a class="is-external-link" href="https://docs.aws.amazon.com/streams/latest/dev/shared-throughput-kcl-consumers.html">Kinesis Client Library (KCL)</a></td>  <td>build own application to preprocess the streaming data as it arrives and emit data for generating incremental views and downstream analysis</td> </tr> </tbody></table></td>
+</tr>
+<tr>
+<td><a class="is-external-link" href="https://aws.amazon.com/kinesis/data-streams/"><strong>Amazon Kinesis Video Streams</strong></a></td>
+<td><ul><li>securely stream video from connected devices to AWS for analytics, machine learning, playback, and other processing</li> <li>automatically provisions and elastically scales all the infrastructure needed to ingest streaming video data from millions of devices</li> <li>durably stores, encrypts, and indexes video data in your streams, and allows you to access your data through easy-to-use APIs</li></ul></td>
+</tr>
+<tr>
+<td><a class="is-external-link" href="https://aws.amazon.com/kinesis/data-streams/"><strong>Amazon Kinesis Data Firehose</strong></a></td>
+<td><ul><li>reliably load streaming data into data lakes, data stores, and analytics services</li> <li>capture, transform (<a class="is-external-link" href="https://aws.amazon.com/lambda/">lambda</a>) , and deliver streaming data to Amazon S3, Amazon Redshift, Amazon Elasticsearch Service, generic HTTP endpoints, and service providers like Datadog, New Relic, MongoDB, and Splunk</li> <li>fully managed service that automatically scales to match the throughput of your data and requires no ongoing administration</li> <li>batch, compress, transform, and encrypt your data streams before loading, minimizing the amount of storage used and increasing security</li> <li>cannot ingest csv</li></ul></td>
+</tr>
+<tr>
+<td><a class="is-external-link" href="https://aws.amazon.com/kinesis/data-streams/"><strong>Amazon Kinesis Data Analytics</strong></a></td>
+<td><ul><li>transform and analyze streaming data in real time with Apache Flink (SQL), an open source framework and engine for processing data streams</li> <li>reduces the complexity of building, managing, and integrating Apache Flink applications with other AWS services</li> <li>takes care of everything required to run streaming applications continuously, and scales automatically to match the volume and throughput of your incoming data; no servers to manage, no minimum fee or setup cost, and you only pay for the resources your streaming applications consume</li></ul></td>
+</tr>
+</tbody>
+</table>
+</p><p><a class="is-external-link" href="https://aws.amazon.com/kinesis/data-streams/">Apache Kafka</a></p>
+<ul>
+<li>open-source platform for building real-time streaming data pipelines and applications</li>
+<li>used by thousands of companies for high-performance data pipelines, streaming analytics, data integration, and mission-critical applications</li>
+</ul>
+<p><a class="is-external-link" href="https://aws.amazon.com/msk/">Apache Kafka (MSK)</a></p>
+<ul>
+<li>fully managed service that makes it easy for you to build and run applications that use Apache Kafka to process streaming data</li>
+<li>use native Apache Kafka APIs to populate data lakes, stream changes to and from databases, and power machine learning and analytics applications</li>
+<li>build and run production applications on Apache Kafka without needing Apache Kafka infrastructure management expertise; spend less time managing infrastructure and more time building applications</li>
+</ul>
+<h3 class="toc-header" id="storage"> Storage</h3>
+<p><a class="is-external-link" href="https://aws.amazon.com/lake-formation/">AWS Lake Formation</a></p>
+<ul>
+<li>data lake is a centralized, curated, and secured repository that stores all your data, both in its original form and prepared for analysis</li>
+<li>creating a data lake with Lake Formation is as simple as defining data sources and what data access and security policies you want to apply</li>
+</ul>
+<p><a class="is-external-link" href="https://aws.amazon.com/s3/"><strong>Amazon Simple Storage Solution (S3)</strong></a><br>
+Storage for a data lake<br>
+<img alt="s3_bucket_access.png" src="/images/aws_ml_certification/s3_bucket_access.png"></p>
+<table>
+<thead>
+<tr>
+<th><a class="is-external-link" href="https://aws.amazon.com/s3/storage-classes/">Storage Class</a></th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Standard</td>
+<td>frequent access of data</td>
+</tr>
+<tr>
+<td>Intelligent-Tiering</td>
+<td>automatically optimizes storage costs for data with changing access patterns</td>
+</tr>
+<tr>
+<td>Standard-Infrequent Access</td>
+<td>standard with less access needed</td>
+</tr>
+<tr>
+<td>One Zone-Infrequent Access</td>
+<td>lower cost with less access and stores in one-zone</td>
+</tr>
+<tr>
+<td>Glacier</td>
+<td>cheap for slow reada</td>
+</tr>
+<tr>
+<td>Glacier Deep Archive</td>
+<td>slowest method</td>
+</tr>
+<tr>
+<td>Outpost</td>
+<td>on prem</td>
+</tr>
+</tbody>
+</table>
+<p><a class="is-external-link" href="https://aws.amazon.com/s3/">Amazon FSx for Lustre</a></p>
+<ul>
+<li>open-source highly scalable, highly distributed, and highly parallel file system for compute workloads like deep learning</li>
+<li>When your training data is already in Amazon S3 and you plan to run training jobs several times using different algorithms and parameters, consider using Amazon FSx for Lustre, a file system service</li>
+<li>speeds up your training jobs by serving your Amazon S3 data to Amazon SageMaker at high speeds</li>
+<li>first time you run a training job, FSx for Lustre automatically copies data from Amazon S3 and makes it available to Amazon SageMaker</li>
+<li>use the same Amazon FSx file system for subsequent iterations of training jobs, preventing repeated downloads of common Amazon S3 objects</li>
+</ul>
+<p><a class="is-external-link" href="https://aws.amazon.com/efs/">Amazon Elastic File System (EFS)</a></p>
+<ul>
+<li>serverless data storage without provisioning or managing storage</li>
+<li>useful when running batch processing on central locations</li>
+<li>directly launch your training jobs from the service without the need for data movement, resulting in faster training start times</li>
+</ul>
+<p><a class="is-external-link" href="https://aws.amazon.com/ebs/">Amazon Elastic Block Storage (EBS)</a></p>
+<ul>
+<li>persistent storage linked to a EC2 instance</li>
+<li>easy to use, high performance block storage service</li>
+<li>designed for use with Amazon Elastic Compute Cloud (EC2) for both throughput and transaction intensive workloads at any scale</li>
+<li>A broad range of workloads, such as relational and non-relational databases, enterprise applications, containerized applications, big data analytics engines, file systems, and media workflows are widely deployed on Amazon EBS</li>
+</ul>
+<h3 class="toc-header" id="etl"> ETL</h3>
+<p><a class="is-external-link" href="https://aws.amazon.com/glue/">AWS Glue</a></p>
+<ul>
+<li>fully managed extract, transform, and load (ETL) service that makes it easy for customers to prepare and load their data for analytics</li>
+<li>point AWS Glue to your data stored on AWS, and AWS Glue discovers your data and stores the associated metadata (e.g. table definition and schema) in the AWS Glue Data Catalog</li>
+<li>Once cataloged, your data is immediately searchable, queryable, and available for ETL</li>
+</ul>
+<h3 class="toc-header" id="distributed-computing"> Distributed Computing</h3>
+<p><a class="is-external-link" href="https://aws.amazon.com/emr/">Amazon Elastic Map Reduce (EMR)</a></p>
+<ul>
+<li>industry-leading cloud big data platform for processing vast amounts of data using open source tools such as Apache Spark, Apache Hive, Apache HBase, Apache Flink, Apache Hudi, and Presto</li>
+<li>run Petabyte-scale analysis at less than half of the cost of traditional on-premises solutions and over 3x faster than standard Apache Spark</li>
+</ul>
+<p><a class="is-external-link" href="https://spark.apache.org/">Apache Spark</a></p>
+<ul>
+<li>distributed processing framework and programming model that helps you do machine learning, stream processing, or graph analytics using Amazon EMR clusters</li>
+<li>open-source, distributed processing system commonly used for big data workloads</li>
+<li>optimized directed acyclic graph (DAG) execution engine and actively caches data in-memory, which can boost performance, especially for certain algorithms and interactive queries (in contrast to Hadoop)</li>
+</ul>
+<h3 class="toc-header" id="containers"> Containers</h3>
+<p><a class="is-external-link" href="https://aws.amazon.com/ecs/">Amazon Elastic Container Service (ECS)</a></p>
+<ul>
+<li>fully managed container orchestration service</li>
+<li>Duolingo, Samsung, GE, and Cookpad use ECS to run their most sensitive and mission critical applications because of its security, reliability, and scalability</li>
+<li>choose to run your ECS clusters using AWS Fargate, which is serverless compute for containers</li>
+<li>used to power services such as Amazon SageMaker, AWS Batch, Amazon Lex, and <a class="is-external-link" href="http://Amazon.com">Amazon.com</a>’s recommendation engine, ensuring ECS is tested extensively for security, reliability, and availability</li>
+</ul>
+<p><a class="is-external-link" href="https://aws.amazon.com/eks/">Amazon Elastic Kubernetes Service (EKS)</a><br>
+Amazon Elastic Kubernetes Service (Amazon EKS) is a fully managed Kubernetes service. Customers such as Intel, Snap, Intuit, GoDaddy, and Autodesk trust EKS to run their most sensitive and mission critical applications because of its security, reliability, and scalability.</p>
+<p><a class="is-external-link" href="https://aws.amazon.com/ecr/">Amazon Elastic Container Registry (ECR)</a></p>
+<ul>
+<li>fully-managed Docker container registry that makes it easy for developers to store, manage, and deploy Docker container images</li>
+<li>integrated with Amazon Elastic Container Service (ECS), simplifying your development to production workflow</li>
+<li>eliminates the need to operate your own container repositories or worry about scaling the underlying infrastructure</li>
+<li>hosts your images in a highly available and scalable architecture, allowing you to reliably deploy containers for your applications</li>
+</ul>
+<p><a class="is-external-link" href="https://aws.amazon.com/fargate/">AWS Fargate</a></p>
+<ul>
+<li>serverless compute engine for containers that works with both Amazon Elastic Container Service (ECS) and Amazon Elastic Kubernetes Service (EKS)</li>
+<li>removes the need to provision and manage servers, lets you specify and pay for resources per application, and improves security through application isolation by design</li>
+<li>allocates the right amount of compute, eliminating the need to choose instances and scale cluster capacity</li>
+<li>runs each task or pod in its own kernel providing the tasks and pods their own isolated compute environment, enabling application to have workload isolation and improved security by design</li>
+</ul>
+<h3 class="toc-header" id="orchestration"> Orchestration</h3>
+<p><a class="is-external-link" href="https://aws.amazon.com/sqs/">AWS Step Functions</a></p>
+<ul>
+<li>serverless function orchestrator that makes it easy to sequence AWS Lambda functions and multiple AWS services into business-critical applications</li>
+<li>create and run a series of checkpointed and event-driven workflows that maintain the application state</li>
+<li>output of one step acts as input into the next</li>
+<li>Each step in your application executes in order and as expected based on your defined business logic</li>
+<li>automatically manages error handling, retry logic, and state; with built-in operational controls, Step Functions manages sequencing</li>
+</ul>
+<p><a class="is-external-link" href="https://aws.amazon.com/lambda/">AWS Lambda</a></p>
+<ul>
+<li>run code without provisioning or managing servers; pay only for the compute time you consume</li>
+<li>upload your code and Lambda takes care of everything required to run and scale your code with high availability</li>
+<li>set up your code to automatically trigger from other AWS services or call it directly from any web or mobile app</li>
+</ul>
+<p><a class="is-external-link" href="https://aws.amazon.com/batch/">AWS Batch</a></p>
+<ul>
+<li>easily and efficiently run hundreds of thousands of batch computing jobs on AWS</li>
+<li>dynamically provisions the optimal quantity and type of compute resources (e.g., CPU or memory optimized instances) based on the volume and specific resource requirements of the batch jobs submitted</li>
+<li>no need to install and manage batch computing software or server clusters that you use to run your jobs, allowing you to focus on analyzing results and solving problems</li>
+<li>plans, schedules, and executes your batch computing workloads across the full range of AWS compute services and features, such as Amazon EC2 and Spot Instances</li>
+</ul>
+<h3 class="toc-header" id="search"> Search</h3>
+<p><a class="is-external-link" href="https://aws.amazon.com/elasticsearch-service/">ElasticSearch</a></p>
+<ul>
+<li>fully managed service that makes it easy for you to deploy, secure, and run Elasticsearch cost effectively at scale</li>
+<li>build, monitor, and troubleshoot your applications using the tools you love, at the scale you need</li>
+<li>service provides support for open source Elasticsearch APIs, managed Kibana, integration with Logstash and other AWS services, and built-in alerting and SQL querying</li>
+</ul>
+<h3 class="toc-header" id="deployment"> Deployment</h3>
+<p><a class="is-external-link" href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works-deployment.html">SageMaker Model Deployment</a></p>
+<p><a class="is-external-link" href="https://aws.amazon.com/elasticbeanstalk/">Elastic Beanstalk</a><br>
+AWS Elastic Beanstalk is an easy-to-use service for deploying and scaling web applications and services developed with Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker on familiar servers such as Apache, Nginx, Passenger, and IIS.</p>
+<p><a class="is-external-link" href="https://aws.amazon.com/deeplens/">AWS DeepLens</a><br>
+Machine learning in the hands of developers, literally, with a fully programmable video camera, tutorials, code, and pre-trained models designed to expand deep learning skills</p>
+<h3 class="toc-header" id="analytics"> Analytics</h3>
+<p><a class="is-external-link" href="https://aws.amazon.com/athena/">Amazon Athena</a></p>
+<ul>
+<li>interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL</li>
+<li>serverless, no infrastructure to manage, and you pay only for the queries that you run</li>
+<li>point to your data in Amazon S3, define the schema, and start querying using standard SQL</li>
+<li>no need for complex ETL jobs to prepare your data for analysis</li>
+<li>out-of-the-box integrated with AWS Glue Data Catalog, allowing you to create a unified metadata repository across various services, crawl data sources to discover schemas and populate your Catalog with new and modified table and partition definitions, and maintain schema versioning</li>
+</ul>
+<p><a class="is-external-link" href="https://aws.amazon.com/quicksight/">Amazon QuickSight</a></p>
+<ul>
+<li>fast, cloud-powered business intelligence service that makes it easy to deliver insights to everyone in your organization.</li>
+<li>As a fully managed service, QuickSight lets you easily create and publish interactive dashboards that include ML Insights. Dashboards can then be accessed from any device, and embedded into your applications, portals, and websites.</li>
+<li>With the Pay-per-Session pricing, QuickSight allows you to give everyone access to the data they need, while only paying for what you use.</li>
+</ul>
+<p><a class="is-external-link" href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-kibana.html">Kibana</a></p>
+<ul>
+<li>open-source data visualization and exploration tool used for log and time-series analytics, application monitoring, and operational intelligence use cases</li>
+<li>offers powerful and easy-to-use features such as histograms, line graphs, pie charts, heat maps, and built-in geospatial support</li>
+<li>provides tight integration with Elasticsearch, a popular analytics and search engine, which makes Kibana the default choice for visualizing data stored in Elasticsearch</li>
+</ul>
+<h3 class="toc-header" id="monitoring"> Monitoring</h3>
+<p><a class="is-external-link" href="https://aws.amazon.com/cloudwatch/">Amazon Cloudwatch</a></p>
+<ul>
+<li>Monitor applications, including SageMaker</li>
+<li>collects monitoring and operational data in the form of logs, metrics, and events, providing you with a unified view of AWS resources, applications, and services that run on AWS and on-premises servers.</li>
+<li>detect anomalous behavior in your environments, set alarms, visualize logs and metrics side by side, take automated actions, troubleshoot issues, and discover insights to keep your applications running smoothly</li>
+</ul>
+<p><a class="is-external-link" href="https://aws.amazon.com/cloudtrail/">AWS CloudTrail</a></p>
+<ul>
+<li>captures API calls and related events</li>
+<li>enables governance, compliance, operational auditing, and risk auditing of your AWS account</li>
+</ul>
+<p><a class="is-external-link" href="https://aws.amazon.com/sns/">Amazon Simple Notification Service (SNS)</a></p>
+<ul>
+<li>fully managed messaging service for both system-to-system and app-to-person (A2P) communication</li>
+<li>enables communication between systems through publish/subscribe (pub/sub) patterns that enable messaging between decoupled microservice applications or to communicate directly to users via SMS, mobile push and email</li>
+<li>A2P messaging functionality enables you to send messages to users at scale using either a pub/sub pattern or direct-publish messages using a single API</li>
+</ul>
+<h3 class="toc-header" id="security"> Security</h3>
+<p><a class="is-external-link" href="https://aws.amazon.com/iam/">Identity Access and Management (IAM)</a></p>
+<ul>
+<li>manage access to AWS services and resources securely</li>
+<li>create and manage AWS users and groups, and use permissions to allow and deny their access to AWS resources</li>
+</ul>
+<p><a class="is-external-link" href="https://aws.amazon.com/kms/">Key Management Service (KMS)</a></p>
+<ul>
+<li>create and manage cryptographic keys and control their use across a wide range of AWS services and in your applications</li>
+<li>integrated with AWS CloudTrail to provide you with logs of all key usage to help meet your regulatory and compliance needs</li>
+</ul>
+<p><a class="is-external-link" href="https://aws.amazon.com/vpc/">Virtual Private Cloud (VPC)</a></p>
+<ul>
+<li>
+<p>provision a logically isolated section of the AWS Cloud where you can launch AWS resources in a virtual network that you define</p>
+</li>
+<li>
+<p>You have complete control over your virtual networking environment, including selection of your own IP address range, creation of subnets, and configuration of route tables and network gateways</p>
+</li>
+<li>
+<p>use both IPv4 and IPv6 in your VPC for secure and easy access to resources and applications</p>
+</li>
+<li>
+<p><a class="is-external-link" href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security Groups:</a></p>
+<ul>
+<li>acts as a virtual firewall for your instance to control inbound and outbound traffic</li>
+<li>When you launch an instance in a VPC, you can assign up to five security groups to the instance</li>
+<li>Security groups act at the instance level, not the subnet level; each instance in a subnet in your VPC can be assigned to a different set of security groups</li>
+</ul>
+</li>
+<li>
+<p><a class="is-external-link" href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">Network Address Translation (NAT) gateways:</a></p>
+<ul>
+<li>enable instances in a private subnet to connect to the internet or other AWS services, but prevent the internet from initiating a connection with those instances</li>
+</ul>
+</li>
+<li>
+<p><a class="is-external-link" href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html">Internet Gateways:</a></p>
+<ul>
+<li>horizontally scaled, redundant, and highly available VPC component that allows communication between your VPC and the internet</li>
+<li>serves two purposes:</li>
+<li>provide a target in your VPC route tables for internet-routable traffic; and</li>
+<li>perform network address translation (NAT) for instances that have been assigned public IPv4 addresses</li>
+<li>supports IPv4 and IPv6 traffic; does not cause availability risks or bandwidth constraints on your network traffic</li>
+</ul>
+</li>
+</ul>
+<p><br>
+</p><h1 class="toc-header" id="exam-material"> Exam Material</h1>
+<h2 class="toc-header" id="data-engineering"> Data Engineering</h2>
+<h3 class="toc-header" id="h-11-create-data-repositories-for-machine-learning"> 1.1 Create data repositories for machine learning</h3>
+<blockquote class="is-info">
+<p><strong>For the exam you need to understand...</strong></p>
+<p>how to generate data with SageMaker Ground Truth, Mechanical Turk, Kinesis Data Analytics, and Kinesis Video Streams<br>
+know tradeoffs between AWS storage solutions</p>
+</blockquote>
+<p><img alt="storage_tradeoff.png" src="/images/aws_ml_certification/storage_tradeoff.png"><br>
+<br><br></p>
+<h3 class="toc-header" id="h-12-identify-and-implement-a-data-ingestion-solution"> 1.2 Identify and implement a data-ingestion solution</h3>
+<blockquote class="is-info">
+<p><strong>For the exam you need to understand...</strong></p>
+<p>the tradeoffs/capabilities between different ingestion solutions</p>
+<p><strong>Note:</strong> DMS is specific to migration and legacy systems. Glue is generally best when you don't want to do much work, while step functions are good for flexibility and queing. For streaming, data Kafka is more work, but offers porting code. Kinesis is easy.</p>
+<p><em>Tip: Much of this exam is finding the optimal solution and not just the right one for the specific business problem (simplest to implement, offer flexibility to port codebase, etc.)</em></p>
+</blockquote>
+<p><strong>Batch Processing</strong><br>
+With batch processing, the ingestion layer periodically collects and groups source data and sends it to a destination like Amazon S3. You can process groups based on any logical ordering, the activation of certain conditions, or a simple schedule. Batch processing is typically used when there is no real need for real-time or near-real-time data, because it is generally easier and more affordably implemented than other ingestion options.</p>
+<ul>
+<li>AWS Glue</li>
+<li>AWS DMS</li>
+<li>AWS Step Functions</li>
+</ul>
+<p><strong>Stream Processing</strong><br>
+Stream processing, which includes real-time processing, involves no grouping at all. Data is sourced, manipulated, and loaded as soon as it is created or recognized by the data ingestion layer. This kind of ingestion is less cost-effective, since it requires systems to constantly monitor sources and accept new information. But you might want to use it for real-time predictions using an Amazon SageMaker endpoint that you want to show your customers on your website or some real-time analytics that require continually refreshed data, like real-time dashboards</p>
+<ul>
+<li>Kinesis</li>
+<li>Kafka</li>
+</ul>
+<h3 class="toc-header" id="h-13-identify-and-implement-a-data-transformation-solution"> 1.3 Identify and implement a data-transformation solution</h3>
+<p>The raw data ingested into a service like Amazon S3 is usually not ML ready as is. The data needs to be transformed and cleaned, which includes deduplication, incomplete data management, and attribute standardization. Data transformation can also involve changing the data structures, if necessary, usually into an OLAP model to facilitate easy querying of data.</p>
+<p>Data transformation is often necessary to deal with huge amounts of data. Distributed computation frameworks like MapReduce and Apache Spark provide a protocol of data processing and node task distribution and management. They also use algorithms to split datasets into subsets and distribute them across nodes in a compute cluster.</p>
+<p>Using Apache Spark on Amazon EMR provides a managed framework that can process massive quantities of data. Amazon EMR supports many instance types that have proportionally high CPU with increased network performance, which is well suited for HPC (high-performance computing) applications.</p>
+<p>In the case of streaming data, Kinesis Firehose can transform data before storage using AWS Lambda.</p>
+<h2 class="toc-header" id="exploratory-data-analysis"> Exploratory Data Analysis</h2>
+<h3 class="toc-header" id="h-21-sanitize-and-prepare-data-for-modeling"> 2.1 Sanitize and prepare data for modeling</h3>
+<blockquote class="is-info">
+<p><strong>For the exam you need to understand...</strong></p>
+<p>what to do when you have imbalanced data<br>
+what to do with variable that are highly correlated<br>
+how to handle missing values and outliers<br>
+how to clean text data<br>
+how to handle scaling and normalizing tabular and image<br>
+SageMaker specific practices (formats, labels, pipe vs file, local mode, etc.)</p>
+</blockquote>
+<p><br><br></p>
+<h3 class="toc-header" id="h-22-perform-feature-engineering"> 2.2 Perform feature engineering</h3>
+<blockquote class="is-info">
+<p><strong>For the exam you need to understand...</strong></p>
+<p>why and how to augment data in both tabular, image, and text form<br>
+how to handle scaling and normalizing tabular and image<br>
+how to treat categorical features (one-hot encoding vs ordinality)<br>
+techniques for dimensionality reduction (PCA and LDA)</p>
+</blockquote>
+<p><br><br></p>
+<h3 class="toc-header" id="h-23-analyze-and-visualize-data-for-machine-learning"> 2.3 Analyze and visualize data for machine learning</h3>
+<p><strong>Scatter Plots</strong><br>
+<img width="650" alt="scatter_plots.png" src="/images/aws_ml_certification/scatter_plots.png"><br>
+<br><br></p>
+<p><strong>Histograms</strong><br>
+<img width="650" alt="histogram.png" src="/images/aws_ml_certification/histogram.png"><br>
+<br><br></p>
+<p><strong>Scatter Matrix</strong><br>
+<img width="750" alt="scatter_matrix.png" src="/images/aws_ml_certification/scatter_matrix.png"><br>
+<br><br></p>
+<p><strong>Correlation Matrix</strong><br>
+<img width="650" alt="correlation_matrix.png" src="/images/aws_ml_certification/correlation_matrix.png"><br>
+<br><br></p>
+<p><strong>Confusion Matrix</strong><br>
+<img width="450" alt="confusion_matrix.png" src="/images/aws_ml_certification/confusion_matrix.png"><br>
+<br><br></p>
+<h2 class="toc-header" id="modeling"> Modeling</h2>
+<h3 class="toc-header" id="h-31-frame-business-problems-as-machine-learning-problems"> 3.1 Frame business problems as machine learning problems</h3>
+<blockquote class="is-info">
+<p><strong>For the exam you need to understand...</strong></p>
+<p>all the built in SageMaker models</p>
+<p><a class="is-external-link" href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html"><strong>Read:</strong> Built-in SageMaker Models</a></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Problem Type</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supervised learning</td>
+<td>making predictions on a labeled set</td>
+</tr>
+<tr>
+<td>Unsupervised learning</td>
+<td>making predictions on an unlabeled set</td>
+</tr>
+<tr>
+<td>Regression</td>
+<td>predicting a continous target</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>predicting a discrete target</td>
+</tr>
+<tr>
+<td>Clustering</td>
+<td>grouping points together to make predictions</td>
+</tr>
+<tr>
+<td>Anomaly detection</td>
+<td>detecting outliers to make predictions</td>
+</tr>
+</tbody>
+</table>
+<p><br><br></p>
+<h3 class="toc-header" id="h-32-select-the-appropriate-models-for-a-given-machine-learning-problem"> 3.2 Select the appropriate model(s) for a given machine learning problem</h3>
+<p><strong>Anomaly Detection</strong><br>
+Random Cut Forest</p>
+<p><strong>Classification Models</strong><br>
+KNN</p>
+<p><strong>Regression/Classification Models</strong><br>
+Linear Learner<br>
+XGBoost</p>
+<p><strong>Natural Language Processing</strong><br>
+BlazingText<br>
+Sequence2Sequence<br>
+Object2Vec<br>
+LSTM<br>
+BERT<br>
+RNN</p>
+<p><strong>Computer Vision</strong><br>
+CNN<br>
+Semantic Segmentation<br>
+<br><br></p>
+<h3 class="toc-header" id="h-33-train-machine-learning-models"> 3.3 Train machine learning models</h3>
+<blockquote class="is-info">
+<p><strong>For the exam you need to understand...</strong></p>
+<p>how to train models with SageMaker</p>
+</blockquote>
+<p><br><br></p>
+<h3 class="toc-header" id="h-34-perform-hyperparameter-optimization"> 3.4 Perform hyperparameter optimization</h3>
+<blockquote class="is-info">
+<p><strong>For the exam you need to understand...</strong></p>
+<p>how to optimize hyperparameters for neural networks and tree-based models<br>
+what to do when the model isn't working (local minima, not coverging, etc)</p>
+</blockquote>
+<p><br><br></p>
+<h3 class="toc-header" id="h-35-evaluate-machine-learning-models"> 3.5 Evaluate machine learning models</h3>
+<blockquote class="is-info">
+<p><strong>For the exam you need to understand...</strong></p>
+<p>all evaluation metrics for classification and regressions (RSME, precision, accuracy, confusion matricies, etc.)<br>
+all visualizations for evaluation (AUC ROC, AUPR, residual plots, etc)<br>
+which metrics to use when you have an imbalanced dataset</p>
+</blockquote>
+<p><br><br></p>
+<h2 class="toc-header" id="ml-implementation-and-operations"> ML Implementation and Operations</h2>
+<h3 class="toc-header" id="h-41-build-machine-learning-solutions-for-performance-availability-scalability-resiliency-and-fault-tolerance"> 4.1 Build machine learning solutions for performance, availability, scalability, resiliency, and fault tolerance</h3>
+<p><strong>Key AWS Infrastructure</strong><br>
+<a class="is-external-link" href="https://aws.amazon.com/machine-learning/containers/">Deep Learning Containers</a><br>
+<a class="is-external-link" href="https://aws.amazon.com/machine-learning/amis/">Deep Learning AMI</a></p>
+<p><strong>AWS Monitoring Services</strong><br>
+<a class="is-external-link" href="https://aws.amazon.com/cloudwatch/">CloudWatch</a><br>
+<a class="is-external-link" href="https://aws.amazon.com/cloudtrail/">CloudTrail</a></p>
+<p><br><br></p>
+<h3 class="toc-header" id="h-42-recommend-and-implement-the-appropriate-machine-learning-services-and-features-for-a-given-problem"> 4.2 Recommend and implement the appropriate machine learning services and features for a given problem</h3>
+<blockquote class="is-info">
+<p><strong>For the exam you need to understand...</strong></p>
+<p>and memorize all the entire AWS AI and ML stack (not joking)</p>
+</blockquote>
+<p><br><br></p>
+<h3 class="toc-header" id="h-43-apply-basic-aws-security-practices-to-machine-learning-solutions"> 4.3 Apply basic AWS security practices to machine learning solutions</h3>
+<blockquote class="is-info">
+<p><strong>For the exam you need to understand...</strong></p>
+<p>VPCs and NAT/Internet gateways in-depth (this has increasing become more tested like almost 10% of the test)<br>
+security practices involving KMS and IAM</p>
+</blockquote>
+<p><a class="is-external-link" href="https://tomgregory.com/when-to-use-an-aws-s3-vpc-endpoint/">S3 VPC Endpoints</a><br>
+<br><br></p>
+<h3 class="toc-header" id="h-44-deploy-and-operationalize-machine-learning-solutions"> 4.4 Deploy and operationalize machine learning solutions</h3>
+<blockquote class="is-info">
+<p><strong>For the exam you need to understand...</strong></p>
+<p>how to deploy models on a SageMaker endpoint (multi-model endpoints, specific names of SDK functions, etc.)</p>
+</blockquote>
+<h1 class="toc-header" id="appendix"> Appendix</h1>
+<h2 class="toc-header"> Links</h2>
+<p><strong>Vetted Practice Tests</strong><br>
+<a class="is-external-link" title="3 tests with 50 questions each and 1 test with 37 questions" href="https://www.braincert.com/course/22419-AWS-Certified-Machine-Learning-%E2%80%93-Specialty-Practice-Exams">Braincert Practice Test</a><br>
+<a class="is-external-link" title="65 questions" href="https://www.udemy.com/course/aws-machine-learning-practice-exam/">Udemy Practice Test</a><br>
+<a class="is-external-link" href="https://www.certmetrics.com/amazon/">Official AWS Certified Machine Learning - Specialty Practice Test (MLS-P01)</a></p>
+<p><strong>Important Nibbles of Info</strong><br>
+<a class="is-external-link" href="https://docs.aws.amazon.com/firehose/latest/dev/record-format-conversion.html">Firehose Data Formats</a><br>
+<a class="is-external-link" href="https://docs.aws.amazon.com/firehose/latest/dev/record-format-conversion.html">SageMaker Endpoint Scaling</a><br>
+<a class="is-external-link" href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-notebook-and-internet-access.html">SageMaker and VPCs</a><br>
+<a class="is-external-link" href="https://towardsai.net/p/data-science/how-when-and-why-should-you-normalize-standardize-rescale-your-data-3f083def38ff">Scaling and Normalization of Data</a></p>
+<p><strong>Additional study guides</strong><br>
+<a class="is-external-link" title="Great study guide with plenty of information that's not included in the AWS webpages. Much of the info here is pulled from there." href="https://docs.google.com/document/d/1B7m0sxJOVedQZeHNRdpB_y0sBEzBGVrb8nENuM07P_k/edit?usp=sharing">Brian McMahon's Study Guide</a></p>
