@@ -2,7 +2,7 @@
 title: Google
 description: Earn a voucher to take the Cerification Exam for free! ($200 value)
 published: true
-date: 2022-10-06T01:13:29.187Z
+date: 2022-10-06T01:14:25.595Z
 tags: certification, gcp
 editor: markdown
 dateCreated: 2022-10-05T23:14:46.669Z
