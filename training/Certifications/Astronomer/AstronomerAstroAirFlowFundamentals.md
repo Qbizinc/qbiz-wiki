@@ -2,7 +2,7 @@
 title: Astronomer Apache Airflow Fundamentals
 description: 
 published: true
-date: 2021-12-06T19:25:31.330Z
+date: 2022-10-07T21:34:17.990Z
 tags: 
 editor: markdown
 dateCreated: 2021-12-02T22:38:43.254Z
@@ -12,6 +12,9 @@ dateCreated: 2021-12-02T22:38:43.254Z
 This article will help you as a study guide for the certification exam. However, I might miss some important remarks or exceptions made by the author. Feel free to contact me if something should be added
 
 **IMPORTANT: Please finish the course before going through this guide**
+
+## Registering for the Course: 
+[Prep course + Exam](https://academy.astronomer.io/plan/astronomer-certification-for-apache-airflow-fundamentals-exam). Promo code `cert-free-airflow-fundamentals` will grant free access to the course and exam. 
 
 ## Welcome!
 
