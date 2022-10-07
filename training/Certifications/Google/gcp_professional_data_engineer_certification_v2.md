@@ -2,7 +2,7 @@
 title: GCP Professional Data Engineer Certification v2
 description: 
 published: true
-date: 2022-10-04T22:24:26.805Z
+date: 2022-10-07T21:12:09.564Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-28T23:09:08.207Z
@@ -54,6 +54,7 @@ Often questions will have several viable answers and you'll need to choose the b
 
 
 ## Where to start?
+QBiz employees now have access to the partner kickstart program which includes a 6-week prep course and an exam voucher if the program is completed within 10 weeks of enrollment. More details here: [Kickstart](/training/Certifications/Google/Kickstart)
 
 You may find the training options complex and confusing. As of this writing, Google sponsors two sets of courses, the [Data Engineering & Analytics Courses | Google Cloud Training](https://cloud.google.com/training/data-engineering-and-analytics#data-engineer-learning-path) path and the [Data Engineer Learning Path | Google Cloud Skills Boost](https://www.cloudskillsboost.google/paths/16) path (recommended as it's more thorough), which is largely an expansion of the former. The latter currently offers unlimited learning and lab credits for $29/month (though you can purchase individual credits if you'd rather do that).
 
