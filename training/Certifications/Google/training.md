@@ -2,7 +2,7 @@
 title: GCP Google Cloud Platform
 description: 
 published: true
-date: 2022-10-07T21:27:54.305Z
+date: 2022-10-10T16:13:20.980Z
 tags: certification, gcp
 editor: markdown
 dateCreated: 2022-10-07T21:27:54.305Z
@@ -15,11 +15,10 @@ dateCreated: 2022-10-07T21:27:54.305Z
 Below are the certifications associated with a Partner Kickstart Program. The full list of certifications can be found here: https://cloud.google.com/certification#why-get-google-cloud-certified
 - Associate Cloud Engineer
 - Professional Cloud Architect
-- Professional Data Engineer
-- Professional Cloud Developer:
+- Professional Data Engineer:
 	* [GCP Professional Data Engineer Certification](/training/Certifications/Google/gcp_professional_data_engineer_certification_v2) 
   * [GCP Professional Data Engineer](/training/Certifications/Google/GCP_Professional_Data_Engineer)
-  
+- Professional Cloud Developer
 - Professional Google Workspace Administrator
 
 
