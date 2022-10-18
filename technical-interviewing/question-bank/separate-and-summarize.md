@@ -2,13 +2,13 @@
 title: Separate and Summarize
 description: 
 published: true
-date: 2022-05-26T18:18:13.264Z
+date: 2022-10-18T20:09:50.582Z
 tags: 
 editor: markdown
 dateCreated: 2022-05-26T17:57:54.360Z
 ---
 
-# Interview Question: Palindromes
+# Interview Question: Separate and Summarize
 > **Language: Python3**
 {.is-info}
 
