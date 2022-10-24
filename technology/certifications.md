@@ -2,7 +2,7 @@
 title: Certifications
 description: 
 published: true
-date: 2022-10-24T16:11:39.261Z
+date: 2022-10-24T16:36:54.974Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-25T18:07:39.671Z
@@ -154,7 +154,8 @@ dateCreated: 2022-04-25T18:07:39.671Z
   
 - Francisco Rodríguez
   - Astronomer Apache Airflow Fundamentals (Acquired 8/12/22)
-  - Academy Accreditation - Databricks Lakehouse Fundamentals (Acquired 8/20/22) 
+  - Academy Accreditation - [Databricks Lakehouse Fundamentals](https://www.credential.net/6f693434-9562-44cc-8555-cbd000eba8cb#gs.gmboz1) (Acquired 8/20/22)
+  - [dbt Fundamentals](https://www.credential.net/da6cb4f2-eaee-41d1-b621-546d4730d126#gs.gmbie7) (Acquired 10/24/22)
   
 - Maliory Chester
   - Astronomer Apache Airflow Fundamentals (Acquired 10/14/22)
