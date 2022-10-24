@@ -2,7 +2,7 @@
 title: Certifications
 description: 
 published: true
-date: 2022-10-21T18:17:12.142Z
+date: 2022-10-24T16:11:39.261Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-25T18:07:39.671Z
@@ -14,7 +14,7 @@ dateCreated: 2022-04-25T18:07:39.671Z
 
 - Astronomer
   https://academy.astronomer.io/page/astronomer-certification
-  - Apache Airflow Fundamentals
+  - Apache Airflow Fundamentals (use code cert-free-airflow-fundamentals for free course/exam enrollment)
   - Apache Airflow DAG Authoring
 - AWS Cloud Practitioner
 	- https://aws.amazon.com/certification/certified-cloud-practitioner/
