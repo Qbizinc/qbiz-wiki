@@ -2,7 +2,7 @@
 title: Certifications
 description: 
 published: true
-date: 2022-10-31T20:06:11.204Z
+date: 2022-11-04T20:16:12.070Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-25T18:07:39.671Z
@@ -87,6 +87,7 @@ dateCreated: 2022-04-25T18:07:39.671Z
   
 - Bryan Holcomb
 	- Astronomer Certification for Apache Airflow Fundamentals (acquired Oct 2022; no expiration date)
+  - Astronomer Certification DAG Authoring for Apache Airflow (acquired Nov 2022; no expiration date) 
 
 - Aino Ketenci
 	- Machine Learning Certificate (University of Washington)
