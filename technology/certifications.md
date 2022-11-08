@@ -2,7 +2,7 @@
 title: Certifications
 description: 
 published: true
-date: 2022-11-04T20:16:12.070Z
+date: 2022-11-08T19:35:43.399Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-25T18:07:39.671Z
@@ -32,7 +32,7 @@ dateCreated: 2022-04-25T18:07:39.671Z
 - Google Cloud Platform - Professional Data Engineer
 	- Kickstart program!  Get a voucher to take your GCP exam!
   - https://cloud.google.com/certification/data-engineer
-  - [Resources](/training/Certifications/training/gcp_professional_data_engineer_certification_v2)
+  - [Resources](https://qbiz-wiki.com/en/training/Certifications/Google/training)
   
 ## People
 
