@@ -2,7 +2,7 @@
 title: Certifications
 description: 
 published: true
-date: 2022-11-08T19:35:43.399Z
+date: 2022-11-28T20:34:56.622Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-25T18:07:39.671Z
@@ -137,7 +137,7 @@ dateCreated: 2022-04-25T18:07:39.671Z
     The Modern Data Platform and LookML
 
 - David Sevier
-	- None
+	- [Google Cloud Platform -- Professional Data Engineer (expires 2024-11-22)](https://www.credential.net/7447a3c7-1aa8-49d8-b306-8ad1b75a7df4?key=1c31dcc048db2ff9f6b48ad4b8fe86a36771a8c332dba452c192747d59351f51)
   
 - Harshad Shanbhag
 	- None
