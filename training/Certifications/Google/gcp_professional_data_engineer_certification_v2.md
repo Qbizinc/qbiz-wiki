@@ -2,7 +2,7 @@
 title: GCP Professional Data Engineer Certification v2
 description: 
 published: true
-date: 2022-11-15T21:33:58.679Z
+date: 2022-12-27T18:59:56.829Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-28T23:09:08.207Z
@@ -67,6 +67,7 @@ Depending on your learning style and cloud experience, you may want to start wit
 
 Both [A Cloud Guru](https://acloudguru.com/) and [Cloud Academy](https://cloudacademy.com/) offer an extensive set of similar courses and practice exams. I didn't dig deep into their materials but they appeared to be high quality from what I did see. Coursera appeared to offer Google's course, and Udemy's offerings appeared lower quality to me.
 
+> **NOTE**: A Cloud Guru offers practice exams that are only available for the paid plan, but there is a [week long trial period](/https://checkout.acloud.guru/signup/personal?packageType=personalBasic&billingCycle=monthly&promotionId=PLUSFORBASIC) that can be used for this plan in order to access the practice tests. 
 
 ## Courses and Quests
 
