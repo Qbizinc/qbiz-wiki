@@ -1,0 +1,122 @@
+---
+title: Qbiz - Data Integration Tool Evaluation
+description: Classification of Data Integration Vendors
+published: true
+date: 2023-01-13T00:18:53.830Z
+tags: client, technology, data-integration
+editor: markdown
+dateCreated: 2022-03-23T21:12:18.804Z
+---
+
+# **Evaluation Methodology**
+
+[https://docs.google.com/presentation/d/1lGI4geSnB3g2UL64lYZznal2EqZzrSClzKkvG5CT394/edit#slide=id.g64260c6b2c\_0\_97](https://docs.google.com/presentation/d/1lGI4geSnB3g2UL64lYZznal2EqZzrSClzKkvG5CT394/edit#slide=id.g64260c6b2c_0_97)
+
+## **Objectives of Evaluation:**
+
+-   To understand available technology in a particular domain
+-   To be able to compare similar technologies and establish pros/cons
+-   Best fit use cases for a particular client / tech stack
+-   How do these tools integrate with other technology
+-   Pricing / Licensing / Support
+-   Adopting / Learning Curve
+-   Migration Path / Vendor lock-in
+
+## **Technology Landscape:**
+
+[http://mattturck.wpenginepowered.com/wp-content/uploads/2021/12/Data-and-AI-Landscape-2021-v3-small.jpg](http://mattturck.wpenginepowered.com/wp-content/uploads/2021/12/Data-and-AI-Landscape-2021-v3-small.jpg)
+
+[https://www.datanami.com/wp-content/uploads/2022/05/Vertex\_modern\_data\_stack.png](https://www.datanami.com/wp-content/uploads/2022/05/Vertex_modern_data_stack.png)
+
+[https://www.datameer.com/blog/the-simplest-road-to-a-data-stack-with-snowflake/](https://www.datameer.com/blog/the-simplest-road-to-a-data-stack-with-snowflake/)
+
+[https://twitter.com/ValentinUmbach/status/1418242294952644611](https://twitter.com/ValentinUmbach/status/1418242294952644611)
+
+[https://www.linkedin.com/pulse/2022-technology-landscape-make-ai-self-service-uttamchandani-ph-d-/?trk=articles\_directory](https://www.linkedin.com/pulse/2022-technology-landscape-make-ai-self-service-uttamchandani-ph-d-/?trk=articles_directory)
+
+[https://dutchmobilityinnovations.com/spaces/86/dutch-mobility-innovations/articles/news/42915/red-hot-the-2021-machine-learning-ai-and-data-mad-landscape](https://dutchmobilityinnovations.com/spaces/86/dutch-mobility-innovations/articles/news/42915/red-hot-the-2021-machine-learning-ai-and-data-mad-landscape)
+
+## **Qbiz Client Data Integration TechStack:**
+
+[https://docs.google.com/spreadsheets/d/1y6yBPxPIIQtxHzLpGRUjUgswvdi0KV-msiVK2ecDW9g/edit#gid=0](https://docs.google.com/spreadsheets/d/1y6yBPxPIIQtxHzLpGRUjUgswvdi0KV-msiVK2ecDW9g/edit#gid=0)
+
+## **Tool Comparisons:**
+
+### **Cloud Database Comparison Matrix**
+
+[https://docs.google.com/spreadsheets/d/1LWmD-Nree-dJbvA12cGVuIPxOg4bVqyvQ3WQ1Ywscxg/edit#gid=0](https://docs.google.com/spreadsheets/d/1LWmD-Nree-dJbvA12cGVuIPxOg4bVqyvQ3WQ1Ywscxg/edit#gid=0) 
+
+_Cloud DB Reference Links_  
+[https://poplindata.com/data-warehouses/2021-database-showdown-bigquery-vs-redshift-vs-snowflake/](https://poplindata.com/data-warehouses/2021-database-showdown-bigquery-vs-redshift-vs-snowflake/)  
+[https://medium.com/@rinkesh.pati/cloud-analytics-at-scale-with-cloud-data-warehouse-a-look-at-the-top-players-cd5590a96a38](https://medium.com/@rinkesh.pati/cloud-analytics-at-scale-with-cloud-data-warehouse-a-look-at-the-top-players-cd5590a96a38)  
+[https://www.bluegranite.com/blog/synapse-vs-snowflake-the-data-warehouse-debate](https://www.bluegranite.com/blog/synapse-vs-snowflake-the-data-warehouse-debate)  
+[https://medium.com/snowflake/azure-synapse-analytics-vs-snowflake-decision-when-migrating-to-azure-cloud-f0dbd3f229b8](https://medium.com/snowflake/azure-synapse-analytics-vs-snowflake-decision-when-migrating-to-azure-cloud-f0dbd3f229b8)  
+[https://hevodata.com/blog/snowflake-vs-redshift/](https://hevodata.com/blog/snowflake-vs-redshift/)  
+[https://www.upsolver.com/blog/snowflake-redshift-aws-data-warehouse-comparison](https://www.upsolver.com/blog/snowflake-redshift-aws-data-warehouse-comparison)  
+[https://flydata.com/blog/snowflake-vs-redshift-which-cloud-data-warehouse-is-right-for-you](https://flydata.com/blog/snowflake-vs-redshift-which-cloud-data-warehouse-is-right-for-you)  
+[https://blog.getcensus.com/snowflake-vs-redshift-just-choose-snowflake/](https://blog.getcensus.com/snowflake-vs-redshift-just-choose-snowflake/)  
+[https://blog.panoply.io/redshift-vs-snowflake-the-full-comparison](https://blog.panoply.io/redshift-vs-snowflake-the-full-comparison)  
+[https://www.sprinkledata.com/blogs/snowflake-vs-redshift](https://www.sprinkledata.com/blogs/snowflake-vs-redshift)  
+[https://www.cloudzero.com/blog/snowflake-vs-redshift](https://www.cloudzero.com/blog/snowflake-vs-redshift)  
+[https://www.xplenty.com/blog/redshift-vs-snowflake/](https://www.xplenty.com/blog/redshift-vs-snowflake/)  
+[https://www.xplenty.com/blog/redshift-vs-bigquery-comprehensive-guide/](https://www.xplenty.com/blog/redshift-vs-bigquery-comprehensive-guide/)  
+[https://www.stitchdata.com/resources/snowflake-vs-redshift/](https://www.stitchdata.com/resources/snowflake-vs-redshift/)  
+[https://supermetrics.com/blog/redshift-vs-snowflake-vs-bigquery](https://supermetrics.com/blog/redshift-vs-snowflake-vs-bigquery)  
+[https://cloud.google.com/bigquery/quotas](https://cloud.google.com/bigquery/quotas)
+
+### **Semantic Layer Comparison Matrix**
+
+[https://docs.google.com/spreadsheets/d/1-LJK9QR6h3O1p0Kaqr29rI\_QrzIMKbSf1YAzb\_JPNOs/edit#gid=0](https://docs.google.com/spreadsheets/d/1-LJK9QR6h3O1p0Kaqr29rI_QrzIMKbSf1YAzb_JPNOs/edit#gid=0)
+
+_Additional Information on Semantic Layers_
+
+White Paper - written for Nerdwallet - [https://docs.google.com/document/d/1NTjpKdypwEPO9hjoJi5z1Oo36F1jvxrYnZaMVO1POTw/edit](https://docs.google.com/document/d/1NTjpKdypwEPO9hjoJi5z1Oo36F1jvxrYnZaMVO1POTw/edit#)
+
+_Semantic Layer Reference Links_
+
+[https://docs.getdbt.com/blog/understanding-the-components-of-the-dbt-semantic-layer](https://docs.getdbt.com/blog/understanding-the-components-of-the-dbt-semantic-layer)
+
+[https://www.atscale.com/wp-content/uploads/2020/12/The-Complete-Buyers-Guide-to-a-Semantic-Layer.pdf](https://www.atscale.com/wp-content/uploads/2020/12/The-Complete-Buyers-Guide-to-a-Semantic-Layer.pdf)
+
+[https://www.denodo.com/en/document/solution-brief/accelerating-self-service-analytics-unified-semantic-layer](https://www.denodo.com/en/document/solution-brief/accelerating-self-service-analytics-unified-semantic-layer)
+
+[https://www.dremio.com/resources/demos/dremio-semantic-layer/](https://www.dremio.com/resources/demos/dremio-semantic-layer/)
+
+[https://www.atscale.com/resource/semantic-layer-summit-on-demand-sessions](https://www.atscale.com/resource/semantic-layer-summit-on-demand-sessions/?utm_medium=email&utm_source=atscale&utm_campaign=sls22&utm_content=null&utm_term=null&mkt_tok=MjIyLVpZUy0xNTgAAAGH3HIbkLaNWQSGKHGkFJPM8VXAT7BSdO4j1iQ1UYmbu4LPnTNii7rzB1Fo2Jra8mhgVcmN03enZ1KtR8Qem4cAL43woXMR4qwQVYGsTylRww)
+
+### **Data Civics/Governance Tools**
+
+Objectives of Evaluation:
+
+Categories of Evaluation:
+
+Capabilities: 
+
+Scale:
+
+Recommendation analysis - written for Nerdwallet - [https://docs.google.com/document/d/14bvq6ul23KnnDEbiHRhDkX74mZefOiFXq2plcljhqhk/edit#heading=h.6yab4wq0l6l8](https://docs.google.com/document/d/14bvq6ul23KnnDEbiHRhDkX74mZefOiFXq2plcljhqhk/edit#heading=h.6yab4wq0l6l8) 
+
+Data Management Ecosystem - deck
+
+[https://docs.google.com/presentation/d/19MAXb9U0le2REjBf03ZFGhIm3F3KYxcU/edit#slide=id.g113b91efcc1\_0\_195](https://docs.google.com/presentation/d/19MAXb9U0le2REjBf03ZFGhIm3F3KYxcU/edit#slide=id.g113b91efcc1_0_195)
+
+#### Appendix:
+
+**Technology Matrix**
+
+This is a WORK IN PROGRESS
+
+This is a initial classification attempt of various technologies used as part of the Data Integration landscape.
+
+[https://docs.google.com/spreadsheets/d/1Q3s8vDH6KFu\_PQ1LoNLckLZj0v1rPk14slQEqLCM29o/edit#gid=0&fvid=156098901](https://docs.google.com/spreadsheets/d/1Q3s8vDH6KFu_PQ1LoNLckLZj0v1rPk14slQEqLCM29o/edit#gid=0&fvid=156098901)
+
+Feel free to collaborate and expand
+
+-   add additional technologies
+-   add additional classification categories
+-   complete technology assessment for already listed technology
+-   update/correct inaccuracies in currently listed information
+-   add links to deep dive reviews of the technology
+-   add associations with clients who are using the technology
+-   add associations with Qbiz resources that have worked with a technology
+-   you can turn it into a DB
