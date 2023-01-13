@@ -2,7 +2,7 @@
 title: Qbiz - Data Integration Tool Evaluation
 description: Classification of Data Integration Vendors
 published: true
-date: 2023-01-13T00:18:53.830Z
+date: 2023-01-13T00:19:41.378Z
 tags: client, technology, data-integration
 editor: markdown
 dateCreated: 2022-03-23T21:12:18.804Z
@@ -73,15 +73,10 @@ _Additional Information on Semantic Layers_
 White Paper - written for Nerdwallet - [https://docs.google.com/document/d/1NTjpKdypwEPO9hjoJi5z1Oo36F1jvxrYnZaMVO1POTw/edit](https://docs.google.com/document/d/1NTjpKdypwEPO9hjoJi5z1Oo36F1jvxrYnZaMVO1POTw/edit#)
 
 _Semantic Layer Reference Links_
-
 [https://docs.getdbt.com/blog/understanding-the-components-of-the-dbt-semantic-layer](https://docs.getdbt.com/blog/understanding-the-components-of-the-dbt-semantic-layer)
-
 [https://www.atscale.com/wp-content/uploads/2020/12/The-Complete-Buyers-Guide-to-a-Semantic-Layer.pdf](https://www.atscale.com/wp-content/uploads/2020/12/The-Complete-Buyers-Guide-to-a-Semantic-Layer.pdf)
-
 [https://www.denodo.com/en/document/solution-brief/accelerating-self-service-analytics-unified-semantic-layer](https://www.denodo.com/en/document/solution-brief/accelerating-self-service-analytics-unified-semantic-layer)
-
 [https://www.dremio.com/resources/demos/dremio-semantic-layer/](https://www.dremio.com/resources/demos/dremio-semantic-layer/)
-
 [https://www.atscale.com/resource/semantic-layer-summit-on-demand-sessions](https://www.atscale.com/resource/semantic-layer-summit-on-demand-sessions/?utm_medium=email&utm_source=atscale&utm_campaign=sls22&utm_content=null&utm_term=null&mkt_tok=MjIyLVpZUy0xNTgAAAGH3HIbkLaNWQSGKHGkFJPM8VXAT7BSdO4j1iQ1UYmbu4LPnTNii7rzB1Fo2Jra8mhgVcmN03enZ1KtR8Qem4cAL43woXMR4qwQVYGsTylRww)
 
 ### **Data Civics/Governance Tools**
