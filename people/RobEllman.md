@@ -2,10 +2,10 @@
 title: Rob Ellman's Page
 description: This is a page where you can find out more about Rob Ellman
 published: true
-date: 2022-05-24T15:35:49.890Z
+date: 2023-01-18T22:14:34.294Z
 tags: people
 editor: markdown
-dateCreated: 2021-07-08T22:52:42.587Z
+dateCreated: 2023-01-18T19:34:37.326Z
 ---
 
 # Rob's Space
@@ -35,4 +35,4 @@ Rob is a team lead for Qbiz
 
 ### Personal
 * Wife: Sara
-* Daughter: Sophie (Age 16)
+* Daughter: Sophie (Age 17)
