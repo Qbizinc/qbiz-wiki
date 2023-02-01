@@ -2,7 +2,7 @@
 title: GCP Professional Machine Learning Engineer
 description: 
 published: true
-date: 2023-01-31T00:28:46.464Z
+date: 2023-02-01T16:10:32.063Z
 tags: 
 editor: ckeditor
 dateCreated: 2023-01-18T19:37:50.189Z
@@ -48,4 +48,8 @@ dateCreated: 2023-01-18T19:37:50.189Z
 <p>&nbsp;</p>
 <h3>Structured data prediction using Vertex AI Platform</h3>
 <p>It isn't that much of a problem, since the prompts are there in the notebook, but this lab uses the old AI Platform rather than Vertex AI in places (despite the title), so you need to enable the AI Platform API (ml.googleapis.com) as well as the standard Vertex AI APIs, and then the model &amp; jobs are listed in the AI Platform web UI rather than the conventional Vertex AI location. E.g. https://console.cloud.google.com/ai-platform/jobs</p>
+<p>&nbsp;</p>
+<h3>Keras for Text Classification using Vertex AI</h3>
+<p>Problem: <code>model.fit()</code> only runs for two epochs, resulting in poor accuracy and there being insufficient data to graph in the subsequent metric curve plots.<br>Solution: The early stopping control parameter <code>patience </code>is set to zero, so the training gives up immediately. Set the <code>PATIENCE </code>constant to a small number greater than zero.</p>
+<p>&nbsp;</p>
 <p>&nbsp;</p>
