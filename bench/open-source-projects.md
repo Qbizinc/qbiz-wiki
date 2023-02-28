@@ -2,7 +2,7 @@
 title: Open Source Projects
 description: 
 published: true
-date: 2023-02-28T17:49:24.678Z
+date: 2023-02-28T19:01:41.844Z
 tags: opensource bench tools
 editor: markdown
 dateCreated: 2023-02-28T17:16:04.993Z
@@ -15,7 +15,7 @@ Projects and tools should have clear practical value -- for us, for the broader 
 
 [Auto DAG maker for Airflow](/bench/open-source-projects/auto-dag-maker)
 [Version control for product teams](/bench/open-source-projects/product-version-control)
-[Cookie Cutter Templates for DE projects](/bench/open-source-projects/cookie-cutter-temaples)
+[Cookie Cutter Templates for DE projects](/bench/open-source-projects/cookie-cutter-templates)
 [Pylint plugin for enforcing Airflow or Spark standards](/bench/open-source-projects/pylint-plugin)
 [Pytest plugin for mocking and seeding upstream tables](/bench/open-source-projects/pytest-plugin)
 [Extensions for Prefect](/bench/open-source-projects/prefect-extensions)
