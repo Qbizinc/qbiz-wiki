@@ -2,8 +2,8 @@
 title: Version Control for Product Teams
 description: 
 published: true
-date: 2023-02-28T18:31:19.447Z
-tags: 
+date: 2023-03-01T18:53:45.064Z
+tags: bench, opensource, tools, vcs, versioncontrol, product, visualization
 editor: markdown
 dateCreated: 2023-02-28T18:31:19.447Z
 ---
