@@ -2,8 +2,8 @@
 title: Auto DAG Maker for Airflow
 description: 
 published: true
-date: 2023-02-28T17:46:13.080Z
-tags: opensource tools airflow dag
+date: 2023-03-01T18:52:52.722Z
+tags: bench, opensource tools airflow dag, opensource, tools, airflow, dags
 editor: markdown
 dateCreated: 2023-02-28T17:46:13.080Z
 ---
