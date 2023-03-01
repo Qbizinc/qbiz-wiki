@@ -2,7 +2,7 @@
 title: Pylint Plugin for Enforcing Airflow or Spark Standards
 description: 
 published: true
-date: 2023-03-01T18:35:50.507Z
+date: 2023-03-01T18:36:04.832Z
 tags: bench, opensource, python, pylint, airflow, spark
 editor: markdown
 dateCreated: 2023-03-01T18:35:10.889Z
