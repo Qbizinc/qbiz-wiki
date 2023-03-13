@@ -2,7 +2,7 @@
 title: GCP Professional Machine Learning Engineer
 description: 
 published: true
-date: 2023-02-10T17:13:31.543Z
+date: 2023-03-13T15:19:16.456Z
 tags: 
 editor: ckeditor
 dateCreated: 2023-01-18T19:37:50.189Z
@@ -51,6 +51,20 @@ dateCreated: 2023-01-18T19:37:50.189Z
 <p>&nbsp;</p>
 <h3>Keras for Text Classification using Vertex AI</h3>
 <p>Problem: <code>model.fit()</code> only runs for two epochs, resulting in poor accuracy and there being insufficient data to graph in the subsequent metric curve plots.<br>Solution: The early stopping control parameter <code>patience </code>is set to zero, so the training gives up immediately. Set the <code>PATIENCE </code>constant to a small number greater than zero.</p>
+<p>&nbsp;</p>
 <h3>NLP on Google Cloud, Lab 1: Exploring the Dialogflow API</h3>
 <p>In Task 1, you should open DialogFlow via link: <a href="https://partner.cloudskillsboost.google/course_sessions/2413062/labs/dialogflow.cloud.google.com">dialogflow.cloud.google.com,</a> but you'll encounter a “Page not found” error. Following link should work: &nbsp;<a href="https://dialogflow.cloud.google.com/#/getStarted">https://dialogflow.cloud.google.com/#/getStarted</a></p>
+<p>&nbsp;</p>
+<h3>ML on GCP: Hybrid Recommendations with the MovieLens Dataset</h3>
+<p>The instructions at the start of the lab regarding running a “previous” lab are a bit vague and misleading. Enter the correct project ID then run all of the code cells in als_bqml.ipynb from the solutions folder to import the data to the BQ dataset.</p>
+<p>&nbsp;</p>
+<h3>Applying Contextual Bandits for Recommendation systems using Tensorflow and Cloud Storage</h3>
+<p>I encountered a number of package dependency and permissions issues.&nbsp;</p>
+<p>My hacky workaround:</p>
+<p>Add the <code>--user</code> option to the two <code>pip install</code>s, then ignore all of the pip warnings and errors.</p>
+<p>Execute &nbsp;</p>
+<p><code>!sudo rm -f /opt/conda/lib/python3.7/site-packages/tensorflow/core/kernels/libtfkernel_sobol_op.so</code></p>
+<p>before the code cell with the main imports.</p>
+<p>There are also lots of variables set to None or 0 that need to be populated as indicated in the markup text, but without <code>TODO</code>s.&nbsp;</p>
+<p>&nbsp;</p>
 <p>&nbsp;</p>
