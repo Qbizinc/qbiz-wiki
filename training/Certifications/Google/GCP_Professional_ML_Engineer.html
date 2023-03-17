@@ -2,7 +2,7 @@
 title: GCP Professional Machine Learning Engineer
 description: 
 published: true
-date: 2023-03-15T19:23:44.879Z
+date: 2023-03-17T20:03:40.473Z
 tags: 
 editor: ckeditor
 dateCreated: 2023-01-18T19:37:50.189Z
@@ -72,4 +72,14 @@ dateCreated: 2023-01-18T19:37:50.189Z
 <p>&nbsp;</p>
 <h3>TFX on Cloud AI Platform Pipelines</h3>
 <p>TIP: Don't leave a trailing forward slash on the <code>ARTIFACT_STORE_URI</code> string referencing the GCS bucket, as it will cause the last stage of the Kubeflow pipeline to fail.</p>
+<p>&nbsp;</p>
+<h3>Continuous Training Pipelines with Cloud Composer</h3>
+<p>When you attempt to run the command to create an Airflow environment, Composer comes back with the following error:<br><code>ERROR: (gcloud.composer.environments.create) Cannot specify --python-version with Composer 2.X or greater.</code></p>
+<p>Simply removing the python version results in a different error and the lab appears to have been built around Composer v1 and Airflow v1, therefore run the following command instead:</p>
+<pre><code class="language-plaintext">gcloud composer environments create demo-environment \
+--location $REGION \
+--python-version 3 \
+--image-version=composer-1-airflow-1</code></pre>
+<p>In the DAG code, the BigQuery query doesn't go back far enough since the data in the table (at the time of writing) ends in October 2022, so extend the lookback period, e.g.: <code>TIMESTAMP('{{ macros.ds_add(ds, -180) }}')</code></p>
+<p>&nbsp;</p>
 <p>&nbsp;</p>
