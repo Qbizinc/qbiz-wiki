@@ -2,10 +2,10 @@
 title: Installing Apache Spark on Linux
 description: Some notes for myself as a reminder.  What to install, where to get extra libraries to read from S3.
 published: true
-date: 2022-08-22T17:43:57.480Z
+date: 2023-03-22T21:06:25.036Z
 tags: 
 editor: markdown
-dateCreated: 2022-01-03T19:03:31.869Z
+dateCreated: 2023-01-18T19:36:43.882Z
 ---
 
 # Apache Spark 
@@ -76,7 +76,11 @@ $SPARK_HOME/bin/pyspark --master local[*] \
 ```
 At this time, it seems that Rapids is available in AWS but only as part of EMR -- [Use the Nvidia Spark-RAPIDS Accelerator for Spark](https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-spark-rapids.html).
 
-
+## Installing JARs to connect to GCS and BigQuery
+Java Archive (JAR) files to connect to GCS servies can be found in GCS buckets or
+from other HTTP URLs.
+* The [GCS Storage Connector](https://cloud.google.com/dataproc/docs/concepts/connectors/cloud-storage) page.
+* The [Big Query Connector](https://cloud.google.com/dataproc/docs/concepts/connectors/bigquery) page.
 ## Things to think about and review
 - Small files are the death of Shuffles!
 
