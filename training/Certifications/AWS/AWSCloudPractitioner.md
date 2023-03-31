@@ -2,10 +2,10 @@
 title: AWS Cloud Practitioner
 description: This is the foundational AWS certification. Above this there are more focused certifications (e.g. ML Specialty).
 published: true
-date: 2021-08-02T19:33:42.477Z
+date: 2023-03-31T19:50:52.378Z
 tags: training, certification
 editor: markdown
-dateCreated: 2021-07-30T21:59:46.218Z
+dateCreated: 2023-01-18T19:37:33.663Z
 ---
 
 # AWS Cloud Practitioner
@@ -32,3 +32,8 @@ At present the best study guide is [here](https://aws.amazon.com/certification/c
   - It covers the course, but also has material at the end on content that wasn't necessarily in the course, but was on the exam.
 - Lots of questions around well-architected framework on the exam. (e.g. What are the pillars? Which pillar does __ fall into?)
 - Deepest parts of the exam is around roles and users. Other stuff tends to be more surface level. 
+- Material on Bryan's exam (March 2023):
+	- Specifically, make sure you understand specific AWS solutions, particularly around Machine Learning (Rekognition, QuickSight, etc.)
+  - Review the different types of storage systems and their tradeoffs/compatibility with other resources
+  - Lots of questions about various database systems and their compatibility/efficiency with RDS
+  - Review all the different types of network security, specifically as it relates to blocking SQL injection attacks or unauthorized web traffic
