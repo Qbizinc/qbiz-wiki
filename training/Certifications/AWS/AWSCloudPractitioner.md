@@ -2,7 +2,7 @@
 title: AWS Cloud Practitioner
 description: This is the foundational AWS certification. Above this there are more focused certifications (e.g. ML Specialty).
 published: true
-date: 2023-03-31T19:52:49.128Z
+date: 2023-04-03T20:17:59.184Z
 tags: training, certification
 editor: markdown
 dateCreated: 2023-01-18T19:37:33.663Z
@@ -37,4 +37,4 @@ At present the best study guide is [here](https://aws.amazon.com/certification/c
   - Review the different types of storage systems and their tradeoffs/compatibility with other resources
   - Lots of questions about various database systems and their compatibility/efficiency with RDS
   - Review all the different types of network security, specifically as it relates to blocking SQL injection attacks or unauthorized web traffic
-  - Also understand the various ways to connect ioT devices and/or private on-prem data centers to VPC.
+  - Also understand the various ways to connect ioT devices and/or private on-prem data centers to VPC
