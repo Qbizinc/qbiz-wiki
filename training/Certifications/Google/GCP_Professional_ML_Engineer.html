@@ -2,7 +2,7 @@
 title: GCP Professional Machine Learning Engineer
 description: 
 published: true
-date: 2023-03-17T20:03:40.473Z
+date: 2023-04-17T16:30:08.535Z
 tags: 
 editor: ckeditor
 dateCreated: 2023-01-18T19:37:50.189Z
@@ -81,5 +81,50 @@ dateCreated: 2023-01-18T19:37:50.189Z
 --python-version 3 \
 --image-version=composer-1-airflow-1</code></pre>
 <p>In the DAG code, the BigQuery query doesn't go back far enough since the data in the table (at the time of writing) ends in October 2022, so extend the lookback period, e.g.: <code>TIMESTAMP('{{ macros.ds_add(ds, -180) }}')</code></p>
+<p>&nbsp;</p>
+<h2>Experience of actual exam</h2>
+<p>&nbsp;</p>
+<h3>Brian Donaghy (April 2023)</h3>
+<p>&nbsp;</p>
+<h4>Summary</h4>
+<p>Overall, there were lots of questions with numerous reasonable approaches, so you often find yourself picking the best candidate from two or three perfectly viable options, or picking the least bad option from two or three suboptimal sounding options. So I found doing practice exams where you have to make those sorts of choices, carefully parsing the language in the question helpful, noting that the actual questions in the third party practice exams may or may not be representative of the content of the real exam. I did not see any questions I'd seen before in real exam.</p>
+<p>&nbsp;</p>
+<h4>Resources I found useful</h4>
+<p>Official Exam Guide:&nbsp;<br>https://cloud.google.com/certification/guides/machine-learning-engineer</p>
+<p>Official Sample Questions:&nbsp;<br>https://docs.google.com/forms/d/e/1FAIpQLSeYmkCANE81qSBqLW0g2X7RoskBX9yGYQu-m1TtsjMvHabGqg/viewform</p>
+<p>Good list of resources:<br>https://github.com/sathishvj/awesome-gcp-certifications/blob/master/professional-machine-learning-engineer.md</p>
+<p>&nbsp;</p>
+<p>GCP Docs:<br>https://cloud.google.com/vertex-ai/docs/start/introduction-unified-platform<br>https://cloud.google.com/tpu/docs</p>
+<p>Best Practices:<br>https://cloud.google.com/architecture/ml-on-gcp-best-practices<br>https://cloud.google.com/architecture/best-practices-for-ml-performance-cost<br>https://cloud.google.com/architecture/architecture-for-mlops-using-tfx-kubeflow-pipelines-and-cloud-build</p>
+<p>&nbsp;</p>
+<p>Practice Exam/$20 (just the exams, didn't get the other material) :<br>https://www.whizlabs.com/professional-machine-learning-engineer</p>
+<p>Udemy course for exam prep/ &lt;$20 :<br>https://www.udemy.com/course/google-cloud-machine-learning-engineer-certification-prep</p>
+<p>&nbsp;</p>
+<h4>Specific types of questions I encountered</h4>
+<p>Dealing with missing data, picking between removing rows with missing data and different imputation methods &nbsp;</p>
+<p>Interfaces between different components</p>
+<p>Lots about TFX &amp; Kubeflow</p>
+<p>Selecting GPUs &amp; TPUs</p>
+<p>Choosing between GPUs &amp; TPUs</p>
+<p>When to use Precision or Recall</p>
+<p>How to deal with imbalanced classes</p>
+<p>Tensorflow Model Analysis tool</p>
+<p>How to deal with some random error messages. E.g. an out of memory error &nbsp;</p>
+<p>A few questions about PII and the Cloud Data Loss Prevention API</p>
+<p>Quite a bit on Rec Sys but at a fairly high level. Nothing about WALS or the inner workings of matrix factorization etc.</p>
+<p>Nothing on Keras. A lot of options surrounding TF at a very high level. A couple of deep in the weeds TF questions but generally nothing really at a coding level.</p>
+<p>A few high level CV questions.</p>
+<p>Nothing on RL.&nbsp;</p>
+<p>Nothing really about tertiary GCP AI services like Contact Center AI etc.</p>
+<p>&nbsp;</p>
+<h4>Some specific questions that I encountered</h4>
+<ol>
+  <li>You want to reduce memory footprint of model in prod with minimal reduction in performance and without re-training model. I *think* I chose correctly to quantize the model from float32 to bfloat16 using TPUs.</li>
+  <li>A hate speech classifier is producing false positives due to general religious discussion. How do you deal with it? I said add synthetic data to training.</li>
+  <li>What does "The resource 'projects/deeplearning-platform/zones/europe-west4-c/acceleratorTypes/nvidia-tesla-k80' was not found" mean The two most plausible options were: there are no K80s in the region/zone specified or the GPU quota has been exceeded. I guessed correctly, picking the former, confirmed by the docs. Pulled from https://cloud.google.com/deep-learning-vm/docs/troubleshooting</li>
+</ol>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
