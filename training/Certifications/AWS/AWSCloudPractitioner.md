@@ -2,7 +2,7 @@
 title: AWS Cloud Practitioner
 description: This is the foundational AWS certification. Above this there are more focused certifications (e.g. ML Specialty).
 published: true
-date: 2023-04-21T15:26:48.729Z
+date: 2023-04-21T15:27:15.948Z
 tags: training, certification
 editor: markdown
 dateCreated: 2023-01-18T19:37:33.663Z
