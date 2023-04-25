@@ -2,7 +2,7 @@
 title: AWS Cloud Practitioner
 description: This is the foundational AWS certification. Above this there are more focused certifications (e.g. ML Specialty).
 published: true
-date: 2023-04-25T19:08:22.345Z
+date: 2023-04-25T19:11:50.245Z
 tags: training, certification
 editor: markdown
 dateCreated: 2023-01-18T19:37:33.663Z
@@ -39,6 +39,9 @@ At present the best study guide is [here](https://aws.amazon.com/certification/c
   - Review all the different types of network security, specifically as it relates to blocking SQL injection attacks or unauthorized web traffic
   - Also understand the various ways to connect ioT devices and/or private on-prem data centers to VPC
 - A set of six practice tests by Udemy can be found [here](https://drive.google.com/drive/folders/1qGI4t6G-3TK2gFfN0xxtqp9U1SX8K7Ng)
+- Nate also put together a [Google Doc](https://docs.google.com/document/d/1rgpkTq3sau5BA5BFWoefMFnL5_j591eB1VTjbD9YV4U/edit?usp=sharing)
+	- Lots of different resources, free and paid
+  - Would recommend paying for "A Cloud Guru" and expensing this cost: https://acloudguru.com/
 - Material on Nate's Exam (April 2023):
 	- Multiple questions on the "Cloud Adoption Framework" and "AWS Well Architected Framework"
   - Multiple questions on VPCs, subnets, Network Access Control Lists (ACL), security groups; make sure to know differences
