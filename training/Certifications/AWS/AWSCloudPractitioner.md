@@ -2,7 +2,7 @@
 title: AWS Cloud Practitioner
 description: This is the foundational AWS certification. Above this there are more focused certifications (e.g. ML Specialty).
 published: true
-date: 2023-04-25T19:04:57.631Z
+date: 2023-04-25T19:08:22.345Z
 tags: training, certification
 editor: markdown
 dateCreated: 2023-01-18T19:37:33.663Z
@@ -42,6 +42,9 @@ At present the best study guide is [here](https://aws.amazon.com/certification/c
 - Material on Nate's Exam (April 2023):
 	- Multiple questions on the "Cloud Adoption Framework" and "AWS Well Architected Framework"
   - Multiple questions on VPCs, subnets, Network Access Control Lists (ACL), security groups; make sure to know differences
+  - Multiple questions on various ways that AWS resources can be accessed (AWS console, application code via SDKs, CLI)
+  - LOTS of questions on AWS shared responsibility model, make sure to know this very well
+  	- I.e. difference between what is AWS's responsibility regarding non-managed/non-serverless services (i.e. EC2) vs managed/serverless architectures (i.e. S3, RDS, etc.)
   - Had a question regarding best practices on securing AWS accounts, my chosen answers were:
   	- Implementing MFA on AWS users
     - Restricting IP access to AWS users
