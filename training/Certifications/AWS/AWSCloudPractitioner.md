@@ -2,7 +2,7 @@
 title: AWS Cloud Practitioner
 description: This is the foundational AWS certification. Above this there are more focused certifications (e.g. ML Specialty).
 published: true
-date: 2023-04-25T18:53:25.456Z
+date: 2023-04-25T19:04:57.631Z
 tags: training, certification
 editor: markdown
 dateCreated: 2023-01-18T19:37:33.663Z
@@ -41,5 +41,9 @@ At present the best study guide is [here](https://aws.amazon.com/certification/c
 - A set of six practice tests by Udemy can be found [here](https://drive.google.com/drive/folders/1qGI4t6G-3TK2gFfN0xxtqp9U1SX8K7Ng)
 - Material on Nate's Exam (April 2023):
 	- Multiple questions on the "Cloud Adoption Framework" and "AWS Well Architected Framework"
-  - Had a question regarding the following (was either "Redshift" or "DynamoDB"; not 100% sure):
-  	- "Company has alot of unstructured data (Dynamo?) and requires up to millions of concurrent users (Redshift?); which DB solution should be used?"
+  - Multiple questions on VPCs, subnets, Network Access Control Lists (ACL), security groups; make sure to know differences
+  - Had a question regarding best practices on securing AWS accounts, my chosen answers were:
+  	- Implementing MFA on AWS users
+    - Restricting IP access to AWS users
+  - Had a question regarding the following (was either "Redshift" or "DynamoDB"; not 100% sure but went with "DynamoDB"):
+  	- "Company has alot of unstructured data (DynamoDB?) and requires up to millions of concurrent users (Redshift?); which DB solution should be used?"
