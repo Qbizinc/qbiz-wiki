@@ -2,7 +2,7 @@
 title: Architecture Solution Constraints and Assumptions
 description: Guide for assessing the constraints and assumptions of potential architecture solutions
 published: true
-date: 2023-05-01T22:32:41.444Z
+date: 2023-05-01T22:32:52.929Z
 tags: 
 editor: markdown
 dateCreated: 2023-04-28T23:02:08.075Z
@@ -35,4 +35,4 @@ After this is done, proceed to the following sections.
 - Were there "nice to have" infrastucture pieces that were deprioritized due to constraints like cost?
 - Are there specific bottlenecks to this architecture that will need to be closely monitored?
   - I.e. Is the limiting factor CPU or IOPs? Network bandwith or number of concurrent queries?
-- Will this architecture be provisioned automatically via tools like Terraform, or 
+- Will this architecture be provisioned automatically via tools like Terraform, or will it be provisioned automatically?
