@@ -1,8 +1,8 @@
 ---
-title: Architecture Solution Assessment Guide
-description: Guide for assessing and evaluating client infrastructure
+title: Architecture Solution Constraints and Assumptions
+description: Guide for assessing the constraints and assumptions of potential architecture solutions
 published: true
-date: 2023-05-01T21:27:55.901Z
+date: 2023-05-01T21:33:12.886Z
 tags: 
 editor: markdown
 dateCreated: 2023-04-28T23:02:08.075Z
@@ -36,7 +36,7 @@ This guide provides a step by step process for assessing client infrastructure a
 - Will there be a team managing this infrastructure or not (i.e. fully managed vs serverless vs codeless offerings)? 
 - Include here any analytics/ML/etc. use cases that this architecture achieves that was not possible before with the old architecture.
 
-#### Constraints
+#### Constraints of the Solution
 
 - What are the constraints to being able to successfully spin up the new architecture? 
 - Is there a specific budget and/or timeframe that needs to be adhered to? 
