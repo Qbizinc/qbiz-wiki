@@ -2,7 +2,7 @@
 title: Architecture Solution Constraints and Assumptions
 description: Guide for assessing the constraints and assumptions of potential architecture solutions
 published: true
-date: 2023-05-01T21:53:31.817Z
+date: 2023-05-01T22:09:52.651Z
 tags: 
 editor: markdown
 dateCreated: 2023-04-28T23:02:08.075Z
@@ -33,4 +33,5 @@ After this is done, proceed to the following sections.
 - Are there complicated legacy systems that need to be migrated to the cloud/connected to the cloud? 
 - Is the team managing this infrastructure properly staffed and/or trained to maintain this architecture?
 - Were there "nice to have" infrastucture pieces that were deprioritized due to constraints like cost?
-- Is the permissions access model 
+- Are there specific bottlenecks to this architecture that will need to be closely monitored?
+  - I.e. Is the limiting factor CPU or IOPs? Network bandwith or number of concurrent queries?
