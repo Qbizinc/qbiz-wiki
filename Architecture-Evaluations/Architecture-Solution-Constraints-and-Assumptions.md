@@ -2,13 +2,13 @@
 title: Architecture Solution Constraints and Assumptions
 description: Guide for assessing the constraints and assumptions of potential architecture solutions
 published: true
-date: 2023-05-01T21:53:02.710Z
+date: 2023-05-01T21:53:31.817Z
 tags: 
 editor: markdown
 dateCreated: 2023-04-28T23:02:08.075Z
 ---
 
-# Architecture Solution Assessment Guide
+# Architecture Solution Constraints and Assumptions Guide
 
 This guide provides a step by step process for assessing client infrastructure and needs to capture all the requirements and constraints of a new cloud based software architecture.
 
