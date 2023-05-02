@@ -2,7 +2,7 @@
 title: Architecture Solution Constraints and Assumptions
 description: Guide for assessing the constraints and assumptions of potential architecture solutions
 published: true
-date: 2023-05-01T23:55:32.261Z
+date: 2023-05-02T00:36:05.967Z
 tags: 
 editor: markdown
 dateCreated: 2023-04-28T23:02:08.075Z
@@ -27,6 +27,12 @@ After this is done, proceed to the following sections.
 - What workloads should this architecture *theoretically* be able to handle?
   - Building off this, what is the limiting factor of this architecture? CPU? Network bandwidth?
 - Does this architecture have high availability? Utilize DB backups? Utilize multi region? Or are any/all of these options eschewed for cost savings in anticipation of not needing them?
+- Will this architecture be temporary (i.e. a few months to a few years) or indefinitely permanent?
+- Is this project a migration project? If so, what are the details of the migration? Be as detailed as possible:
+  - Amount of overlap time between old and new provider
+  - Order in which migration will proceed (i.e. batch processes (i.e. OLAP databases and workloads), then microservice workloads, then smaller OLTP databases, then larger OLTP databases, legacy/monolithic workloads, etc.etc.)
+  - Whether or not any managed cloud migration service will be used
+  - Etc.
 
 ### Potential constraints of the solution
 
