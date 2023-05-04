@@ -2,7 +2,7 @@
 title: Architecture Solution Constraints and Assumptions
 description: Guide for assessing the constraints and assumptions of potential architecture solutions
 published: true
-date: 2023-05-04T16:33:14.938Z
+date: 2023-05-04T20:15:20.192Z
 tags: 
 editor: markdown
 dateCreated: 2023-04-28T23:02:08.075Z
