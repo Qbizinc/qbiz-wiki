@@ -2,7 +2,7 @@
 title: Architecture Solution Constraints and Assumptions
 description: Guide for assessing the constraints and assumptions of potential architecture solutions
 published: true
-date: 2023-05-04T16:32:34.877Z
+date: 2023-05-04T16:33:14.938Z
 tags: 
 editor: markdown
 dateCreated: 2023-04-28T23:02:08.075Z
@@ -30,7 +30,7 @@ After this is done, proceed to the following sections.
 - Will this architecture be temporary (i.e. a few months to a few years) or indefinitely permanent?
 - Is this project a migration project? If so, what are the assumptions of the migration? Be as detailed as possible:
   - Amount of overlap time between old and new provider
-  - Order in which migration will proceed. Example order:
+  - Order in which infrastructure will be migrated. Example order:
     1. Batch processes and backup data stores (i.e. OLAP databases and workloads, DR databases, etc.)
     2. Microservice workloads
     3. NoSQL databases
