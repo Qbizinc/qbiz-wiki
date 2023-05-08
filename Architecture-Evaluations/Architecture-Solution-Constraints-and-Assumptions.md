@@ -2,7 +2,7 @@
 title: Architecture Solution Constraints and Assumptions
 description: Guide for assessing the constraints and assumptions of potential architecture solutions
 published: true
-date: 2023-05-08T17:12:56.870Z
+date: 2023-05-08T17:15:03.675Z
 tags: 
 editor: markdown
 dateCreated: 2023-04-28T23:02:08.075Z
@@ -27,7 +27,7 @@ After this is done, proceed to the following sections.
   - Have any of the above assumptions been validated through exercises like performance/load testing?
 - What workloads should this architecture *theoretically* be able to handle?
   - Building off this, what is the limiting factor of this architecture? CPU? Network bandwidth? Number of users?
-- Have any capacity planning/forecasting exercises been performed for this architecture? If so, at what point will this architecture need to be scaled up?
+- Have any capacity planning/forecasting exercises been performed for this architecture? If so, at what point will this architecture need to be scaled up? Has engineering leadership signed off on any required scaling events?
 - Does this architecture have high availability? Utilize DB backups? Utilize multi region? Or are any/all of these options eschewed for cost savings in anticipation of not needing them? If these options are not used, are the risks of not using them understood?
 - Will this architecture be temporary (i.e. a few months to a few years) or indefinitely permanent? If it is temporary, is there a plan for what the next architecture will look like (if any)?
 - Is this project a migration project? If so, what are the assumptions of the migration? Be as detailed as possible:
