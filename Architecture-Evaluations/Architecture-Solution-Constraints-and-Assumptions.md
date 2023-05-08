@@ -2,7 +2,7 @@
 title: Architecture Solution Constraints and Assumptions
 description: Guide for assessing the constraints and assumptions of potential architecture solutions
 published: true
-date: 2023-05-04T20:15:20.192Z
+date: 2023-05-08T17:08:41.999Z
 tags: 
 editor: markdown
 dateCreated: 2023-04-28T23:02:08.075Z
@@ -23,7 +23,8 @@ After this is done, proceed to the following sections.
 ### Assumptions of the solution
 
 - What are the assumptions of the solution architecture?
-  - Are there any significant assumptions, like requests per second per server? IOPs per request?
+  - Are there any significant assumptions, like requests per second per server? IOPs per request? Number of users
+  - Have any of the above assumptions been validated through exercises like performance/load testing?
 - What workloads should this architecture *theoretically* be able to handle?
   - Building off this, what is the limiting factor of this architecture? CPU? Network bandwidth?
 - Does this architecture have high availability? Utilize DB backups? Utilize multi region? Or are any/all of these options eschewed for cost savings in anticipation of not needing them?
