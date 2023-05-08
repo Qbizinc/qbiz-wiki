@@ -2,7 +2,7 @@
 title: Google Cloud console Data administration Checklist
 description: Sourced from: https://cloud.google.com/docs/enterprise/setup-checklist
 published: true
-date: 2023-05-08T20:30:52.822Z
+date: 2023-05-08T20:40:31.943Z
 tags: 
 editor: ckeditor
 dateCreated: 2023-05-08T20:30:52.822Z
@@ -12,9 +12,9 @@ dateCreated: 2023-05-08T20:30:52.822Z
 <p>This checklist helps you set up Google Cloud for scalable, production-ready, enterprise workloads. It is designed for administrators who are trusted with complete control over the company's Google Cloud resources.</p>
 <p>The checklist includes 10 tasks that have step-by-step procedures. Some tasks can be accomplished multiple ways; we describe the most common path. If you need to deviate from the recommended path, keep track of your choices because they may be important later in the checklist.</p>
 <p>&nbsp;</p>
-<p><strong>Click on a checklist item to see more information and click the box when you complete a task.</strong></p>
-<ul>
-  <li><a href="https://cloud.google.com/docs/enterprise/setup-checklist#:~:text=Click%20on%20a,Support">Cloud identity and organization</a></li>
+<h2>Top level checklist:</h2>
+<ol>
+  <li>Cloud identity and organization</li>
   <li>Users and groups</li>
   <li>Administrative access</li>
   <li>Set up billing</li>
@@ -24,4 +24,759 @@ dateCreated: 2023-05-08T20:30:52.822Z
   <li>Monitoring and logging</li>
   <li>Security</li>
   <li>Support</li>
+</ol>
+<p>&nbsp;</p>
+<h2>Full details from <a href="https://cloud.google.com/docs/enterprise/setup-checklist">Google Cloud setup checklist:</a></h2>
+<p>&nbsp;</p>
+<h3>1. Cloud identity and organization</h3>
+<p>&nbsp;</p>
+<h3>Before you begin</h3>
+<ul>
+  <li>To help secure your Google Cloud account, learn and utilize the <a href="https://cloud.google.com/resource-manager/docs/super-admin-best-practices">Super administrator account best practices</a>.</li>
+  <li>Gather administrator credentials for the domain (such as "<i>example.com</i>") that you want to link to Google Cloud. You need these credentials to adjust DNS settings during setup.</li>
+  <li>Identify a primary email account (such as <i>maria@example.com</i>) to use as a recovery address for your Google Cloud organization. When you begin the signup process, Cloud Identity asks you for this address first.</li>
+  <li>Identify a secondary, backup email address for redundancy. You'll link this backup address to your super admin account. This email <i>must be</i> different from the primary email address. Cloud Identity asks for this address <i>after</i> you have already provided the account recovery address described earlier.</li>
 </ul>
+<h3>What you do in this task</h3>
+<ul>
+  <li>Provide an initial email address to use for account recovery.</li>
+  <li>Create a <a href="https://cloud.google.com/architecture/identity/overview-google-authentication#managed_user_account">managed user account</a> for your first Google Cloud super admin user.</li>
+  <li>Link your company’s domain (such as <i>example.com</i>) to Google Cloud by using a verification process.</li>
+</ul>
+<p>After you complete these actions, Google Cloud creates the root node of your resource hierarchy, which we refer to as the <a href="https://cloud.google.com/resource-manager/docs/creating-managing-organization">organization resource</a>.</p>
+<p>You use Cloud Identity in the Admin Console to complete this task. Cloud Identity provides unified identity, access, application, and endpoint management across Google services. It offers fifty <a href="https://cloud.google.com/identity/pricing#free_edition">free user licenses</a>, and you can request more free licenses if needed. Cloud Identity users also can access your organization's Google Drive, Google Keep, and Google Groups services.</p>
+<p>Google Cloud offers Cloud Identity as a <a href="https://cloud.google.com/identity#overview">standalone product</a> or bundled with <a href="https://workspace.google.com/">Google Workspace</a>. With Google Workspace, you get Cloud Identity along with familiar productivity and collaboration tools, like Gmail, Calendar, Meet, Chat, etc. It has several <a href="https://support.google.com/a/answer/53926">free trial</a> options. Some companies save costs by using a combination of standalone Cloud Identity licenses for some users, with Google Workspace licenses going only to those users who need the additional collaboration tools.</p>
+<h3>Required permissions</h3>
+<p>In this task, you create the first <a href="https://support.google.com/cloudidentity/answer/2405986">super admin</a> for your Google Cloud organization. The super admin has irrevocable, root administrator privileges for your organization, and can grant the same role to other users.</p>
+<h3>Security best practices</h3>
+<p>Securing your super admin accounts is critical to the security of your Google Cloud organization. Please review and follow Google Cloud <a href="https://cloud.google.com/resource-manager/docs/super-admin-best-practices">super admin account best practices</a> when creating your super admin accounts.</p>
+<h3>Procedure</h3>
+<p><strong>Note:</strong> You can find a more dynamic, responsive form of these procedures in the <a href="https://console.cloud.google.com/cloud-setup/organization"><u>Google Cloud console</u></a>. The console-based checklist automates and simplifies several tasks. You must be signed in to the Google Cloud console to complete the procedure there.</p>
+<p>To complete this task, select whether you are a <strong>New customer</strong> or a current <strong>Google Workspace customer</strong>.</p>
+<p><a href="https://cloud.google.com/docs/enterprise/setup-checklist#new-customers">New customers</a><a href="https://cloud.google.com/docs/enterprise/setup-checklist#google-workspace-customers">Google Workspace customers</a></p>
+<p>This checklist shows steps for the free, standalone edition of Cloud Identity. To learn more about the premium edition, see <a href="https://support.google.com/cloudidentity/answer/7431902">Compare Cloud Identity features and editions</a>. (If you want to use Google Workspace, you can enable it after completing your initial setup.)</p>
+<p><a href="https://workspace.google.com/signup/gcpidentity/welcome#0">Create your first Cloud Identity account and super admin username</a>. You'll specify your email address and company details, as well as the username for your first super admin.</p>
+<p><strong>Note:</strong> Specify the super admin username in this format: <code>admin-[user]</code> (for example, <code>admin-maria</code>). Cloud Identity adds <code>&lt;username&gt;@&lt;your-domain&gt;.com</code> as the first super admin for Cloud Identity. You can <a href="https://support.google.com/cloudidentity/topic/7558754">specify additional super admins</a> using the Admin Console.</p>
+<p><a href="https://support.google.com/cloudidentity/answer/7331243">Verify your domain</a>. This process may take several hours. If you run into issues, see the <a href="https://cloud.google.com/docs/enterprise/onboarding-checklist#troubleshooting">Troubleshooting section</a>. We will add more users later in this checklist; when you're prompted to add users to your account, <strong>skip that process</strong> as follows:</p>
+<ol>
+  <li>Click <strong>Create users</strong>.</li>
+  <li>Select <strong>I have finished adding users for now</strong>, and then click <strong>Next</strong>.</li>
+  <li>Click <strong>Continue to Google Cloud console</strong>.</li>
+</ol>
+<p>By default, the free edition of Cloud Identity provides fifty user licenses. This checklist uses four of those. You can view existing licenses at the Admin Console <a href="https://admin.google.com/ac/billing/subscriptions">Billing page</a>. If you need additional free licenses, you can request them by completing the following steps:</p>
+<ol>
+  <li>Sign in to <a href="https://admin.google.com/">Google Admin console</a> with the super admin account created in the preceding procedure.</li>
+  <li>Request additional free licenses by following <a href="https://support.google.com/cloudidentity/answer/7295541">this process</a>.</li>
+</ol>
+<h3>Troubleshooting</h3>
+<p><strong>Unable to sign up my domain for a Google service</strong></p>
+<p>For more information about common problems and solutions, see <a href="https://support.google.com/a/answer/80610">Can't sign up my domain for a Google service</a>.</p>
+<p><strong>The Google account already exists</strong></p>
+<p>See <a href="https://support.google.com/a/answer/1275816">'Google Account already exists' error</a> for a workaround.</p>
+<p><strong>My account doesn't have permission to administer or use my company’s Google Cloud org</strong></p>
+<p>This error implies that your company's domain has already been verified and has super admins in place. If you still need access to administer your Google Cloud organization, find an administrator within your company to give you access.</p>
+<p><strong>My firewall is showing errors and I am unable to verify the domain</strong></p>
+<p>If your company uses a proxy server that denies particular URLs, you will encounter errors when you attempt to register your domain. This scenario is common with customers who have advanced security setups, such as financial institutions. If you see this error, ensure that your proxy server explicitly allows the following URLs:</p>
+<figure class="table" style="width:794px;">
+  <table style="background-color:rgb(32, 32, 32);border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;">
+    <thead>
+      <tr>
+        <th style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;height:48px;padding:var(--devsite-table-heading-padding, 8px);"><strong>Required URL</strong></th>
+        <th style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;height:48px;padding:var(--devsite-table-heading-padding, 8px);"><strong>Why it matters</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;">accounts.google.com</td>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;">
+          <p>Required for SAML SSO federation to Google Cloud and for SSO access to Google Cloud console.</p>
+          <p>Note: This works only after the customer domain has been allowlisted in the Google Cloud backend.</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;">www.googleapis.com</td>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;">Required during sign-in for sync of Active Directories if you use a federated identity provider.</td>
+      </tr>
+      <tr>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;">console.cloud.google.com</td>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;">Required to access Google Cloud console.</td>
+      </tr>
+      <tr>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;">fonts.googleapis.com</td>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;">Fonts for Google Cloud console. Required for proper UI styling.</td>
+      </tr>
+      <tr>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;">*.clients6.google.com</td>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;">Required for Google Cloud console. This URI provides Service API gRPC endpoints used to display information in the Google Cloud console.</td>
+      </tr>
+      <tr>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;">ssl.gstatic.com<br>www.gstatic.com<br>lh3.googleusercontent.com<br>lh4.googleusercontent.com<br>lh5.googleusercontent.com<br>lh6.googleusercontent.com<br>&nbsp;</td>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;">
+          <p>Required for Google Cloud console to serve static content and some APIs. Also stores public keys for custom certificates.</p>
+          <p>&nbsp;</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;">cloud.google.com</td>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;">Required for access to Google Cloud documentation and help pages.</td>
+      </tr>
+      <tr>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;">ssh.cloud.google.com</td>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;">Required for Cloud Shell.</td>
+      </tr>
+      <tr>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;">apis.google.com<br>*.googleapis.com</td>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;">Required for remote API access to Google Cloud. (Optional for Google Cloud console; prefer private or restricted API access when using the Google Cloud CLI command-line interface.)</td>
+      </tr>
+      <tr>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;">admin.google.com</td>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;">Optional when administering (Cloud Identity).</td>
+      </tr>
+      <tr>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;">payments.google.com</td>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;">Optional when submitting payment information, Google Admin subscriptions and billing accounts.</td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<h3>Additional resources</h3>
+<p>The following resources provide more context identity and other topics relevant to this task.</p>
+<ul>
+  <li><a href="https://cloud.google.com/resource-manager/docs/creating-managing-organization">Overview of creating and managing organizations</a></li>
+  <li><a href="https://cloud.google.com/architecture/identity/best-practices-for-planning">Best practices for planning accounts and organizations</a></li>
+  <li><a href="https://cloud.google.com/architecture/identity/overview-assess-and-plan">Assessing and planning your identity setup</a></li>
+  <li>Cloud Identity <a href="https://support.google.com/cloudidentity/answer/7295541">free edition</a></li>
+  <li>Domain verification:<ul>
+      <li><a href="https://support.google.com/cloudidentity/answer/7331243">Documentation</a></li>
+      <li><a href="https://www.youtube.com/watch?v=x-0DvzK0IkM&amp;t=28s">Video walkthrough</a></li>
+    </ul>
+  </li>
+  <li><a href="https://support.google.com/a/answer/33325?ref_topic=4514341">Google Workspace administrator roles</a></li>
+  <li><a href="https://support.google.com/cloudidentity/topic/7558458">Cloud Identity administrator roles</a></li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>2. Users and groups</h3>
+<p>&nbsp;</p>
+<p>In this task, you add your first users, create groups to administer user access, and assign users to those groups. You assign the permissions to those user groups in task 3. You need the Admin Console and the Google Cloud console to do the following:</p>
+<ul>
+  <li>Add <a href="https://cloud.google.com/architecture/identity/overview-google-authentication#managed_user_account">managed users</a> to your Google Cloud organization.</li>
+  <li>Create a Google Group for each type of administrative user (such as organization admins, billing admins).</li>
+  <li>Assign users to the groups corresponding to their roles.</li>
+</ul>
+<h3>Before you begin</h3>
+<p><strong>Important:</strong> Some users in your domain may already have Google Accounts. This can happen when an employee uses their company-domain email address to enroll in a Google consumer service like YouTube, and Google Drive. You need to explicitly <a href="https://support.google.com/a/answer/11112794"><u>find</u></a> and plan to <a href="https://support.google.com/a/answer/7062710"><u>migrate</u></a> these accounts separately from your other users. If you do not find and migrate these accounts, you'll create account conflicts in Google Admin console that are difficult to resolve.</p>
+<ul>
+  <li>Ensure that you are signed in to the <a href="https://admin.google.com/">Google Admin console</a> and <a href="https://console.cloud.google.com/cloud-setup/">Google Cloud console</a> with one of the super admin accounts created in task 1.</li>
+  <li>If your company already uses an identity provider, such as Active Directory, Azure AD, Okta, or Ping Identity, you can federate it into Google Cloud. For details see the identity provider <a href="https://cloud.google.com/architecture/identity/reference-architectures#using_an_external_idp">reference architectures</a> for identity federation.</li>
+  <li><a href="https://cloud.google.com/architecture/identity/federating-gcp-with-active-directory-introduction">Federate Cloud Identity with Active Directory</a> to automatically provision users and enable single sign-on.</li>
+  <li>Create a custom solution using the <a href="https://developers.google.com/admin-sdk/">Google Workspace Admin SDK</a>.</li>
+</ul>
+<h3>Security best practices</h3>
+<p><a href="https://cloud.google.com/kms/docs/iam#principle_of_least_privilege">Principle of least privilege</a>: Give users the minimum necessary permissions to perform their role, and remove access as soon as it is no longer needed.</p>
+<p><a href="https://en.wikipedia.org/wiki/Role-based_access_control">Role-based access control (RBAC)</a>: Assign permissions to groups of users according to their job role, using Google Groups to organize your users. We recommend against adding specific permissions to individual user accounts.</p>
+<h3>Procedure</h3>
+<p><strong>Note:</strong> You can find a more dynamic, responsive form of these procedures in the <a href="https://console.cloud.google.com/cloud-setup/organization"><u>Google Cloud console</u></a>. The console-based checklist automates and simplifies several tasks. You must be signed in to the Google Cloud console to complete the procedure there.</p>
+<h4>Add users in the Google Admin console</h4>
+<p><strong>Important:</strong> Before adding new users to your Google Cloud organization, take time to <a href="https://support.google.com/a/answer/6178640"><u>identify user accounts already tied to Google services</u></a>.</p>
+<p>For the purpose of this onboarding checklist, we recommend that you add users who will participate in the checklist tasks, such as administrators and decision makers involved with cloud setup practices.</p>
+<ol>
+  <li>Sign in to <a href="https://admin.google.com/">Google Admin console</a> using a super admin account.</li>
+  <li>Add users with one of the following options:<ul>
+      <li><a href="https://support.google.com/cloudidentity/answer/40057">Add several users at once</a>.</li>
+      <li><a href="https://support.google.com/cloudidentity/answer/33310">Add users individually</a>.</li>
+    </ul>
+  </li>
+</ol>
+<h4>Create Google Groups and add group members</h4>
+<p>Next, you’ll use the <a href="https://console.cloud.google.com/iam-admin/groups">Groups</a> feature of the Google Cloud console to create Google Groups corresponding to the different types of users in your organization. A Google Group is a named collection of Google Accounts and service accounts. Every Google Group has a unique email address associated with the group (such as <i>grp-gcp-billing-admins@example.com</i>).</p>
+<p>The groups below are common in enterprise organizations that have multiple departments administering its cloud infrastructure. If your setup requires a different group structure, feel free to customize our recommendations to your needs.</p>
+<figure class="table" style="width:794px;">
+  <table style="background-color:rgb(32, 32, 32);border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;">
+    <tbody>
+      <tr>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;"><strong>Group</strong></td>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;"><strong>Function</strong></td>
+      </tr>
+      <tr>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;"><code>grp-gcp-organization-admins</code><br><i>(group or individual accounts required for checklist)</i></td>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;">Administering any resource that belongs to the organization. Assign this role sparingly; org admins have access to all of your Google Cloud resources. Alternatively, because this function is highly privileged, consider using individual accounts instead of creating a group.</td>
+      </tr>
+      <tr>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;"><code>grp-gcp-network-admins</code><br><i>(required for checklist)</i></td>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;">Creating networks, subnets, firewall rules, and network devices such as Cloud Router, Cloud VPN, and cloud load balancers.</td>
+      </tr>
+      <tr>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;"><code>grp-gcp-billing-admins</code><br><i>(required for checklist)</i></td>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;">Setting up billing accounts and monitoring their usage.</td>
+      </tr>
+      <tr>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;"><code>grp-gcp-developers</code><br><i>(required for checklist)</i></td>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;">Designing, coding, and testing applications.</td>
+      </tr>
+      <tr>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;"><code>grp-gcp-security-admins</code><br>&nbsp;</td>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;">Establishing and managing security policies for the entire organization, including access management and <a href="https://cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints">organization constraint policies</a>. See the <a href="https://cloud.google.com/architecture/security-foundations/authentication-authorization#users_and_groups">Google Cloud security foundations guide</a> for more information about planning your Google Cloud security infrastructure.</td>
+      </tr>
+      <tr>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;"><code>grp-gcp-devops</code></td>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;">Creating or managing end-to-end pipelines that support continuous integration and delivery, monitoring, and system provisioning.</td>
+      </tr>
+      <tr>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;"><code>grp-gcp-billing-viewer</code></td>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;">Monitoring the spend on projects. Typical members are part of the finance team.</td>
+      </tr>
+      <tr>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;"><code>grp-gcp-platform-viewer</code></td>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;">Reviewing resource information across the Google Cloud organization.</td>
+      </tr>
+      <tr>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;"><code>grp-gcp-security-reviewer</code></td>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;">Reviewing cloud security.</td>
+      </tr>
+      <tr>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;"><code>grp-gcp-network-viewer</code></td>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;">Reviewing network configurations.</td>
+      </tr>
+      <tr>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;"><code>grp-gcp-audit-viewer</code></td>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;">Viewing audit logs.</td>
+      </tr>
+      <tr>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;"><code>grp-gcp-scc-admin</code></td>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;">Administering Security Command Center.</td>
+      </tr>
+      <tr>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;"><code>grp-gcp-secrets-admin</code></td>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;">Managing secrets in Secret Manager.</td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<p>To complete, later steps in the checklist you need the following groups with at least one member in each group.</p>
+<ul>
+  <li><code>grp-gcp-organization-admins</code> or individual accounts</li>
+  <li><code>grp-gcp-network-admins</code></li>
+  <li><code>grp-gcp-billing-admins</code></li>
+  <li><code>grp-gcp-devops</code></li>
+</ul>
+<p><strong>Note:</strong> The instructions below show you how to create groups manually using the Google Cloud console. You can find a more personalized, automated version of these same procedures in the <a href="https://console.cloud.google.com/cloud-setup/users-groups"><u>Google Cloud console Setup Checklist</u></a> (requires you to sign in).</p>
+<p>To create groups and add users using the Google Cloud console:</p>
+<ol>
+  <li>Log in to the Google Cloud console with a super admin account created in Task 1.</li>
+</ol>
+<p>Go to the <strong>Groups</strong> page in the Google Cloud console.</p>
+<p><a href="https://console.cloud.google.com/iam-admin/groups">Go to the Groups page</a></p>
+<p>Click <strong>Create</strong>.</p>
+<p>Fill in details for a group, including the group name, email address, and an optional description.</p>
+<p>Add members to the group:</p>
+<ol>
+  <li>Click <strong>Add member</strong>.</li>
+  <li>Enter the member's email address.</li>
+</ol>
+<p>Choose their <a href="https://support.google.com/groups/answer/2464975?ref_topic=2458761">Google Groups role</a>.</p>
+<ol>
+  <li><strong>Note:</strong> When you add a member to a Google group, they inherit all IAM roles granted to that group, regardless of their Google Groups role.</li>
+</ol>
+<p>Click <strong>Submit</strong> to create the group with the specified users.</p>
+<h3>Additional resources</h3>
+<ul>
+  <li><a href="https://cloud.google.com/architecture/identity/migrating-consumer-accounts">Managing conflicting accounts</a>:<ul>
+      <li>Using the <a href="https://support.google.com/a/answer/6178640">transfer tool for unmanaged users</a>.<ul>
+          <li>Using a <a href="https://support.google.com/a/answer/7044710">CSV upload</a>.</li>
+          <li>Using the <a href="https://cloud.google.com/identity/docs/concepts/overview-user-invitations">User Invitation API</a>.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="https://cloud.google.com/iam/docs/overview">Overview of Identity and Access Management (IAM)</a> and <a href="https://cloud.google.com/iam/docs/overview#google_group">Google Groups</a>.</li>
+  <li><a href="https://cloud.google.com/architecture/framework/security/identity-access">Best practices for IAM</a>.</li>
+  <li><a href="https://support.google.com/cloudidentity/answer/33343">Create a group</a>.</li>
+  <li><a href="https://support.google.com/cloudidentity/answer/6191469">Add or invite users to a group</a>.</li>
+  <li>Identity federation:<ul>
+      <li>Review <a href="https://cloud.google.com/architecture/identity/reference-architectures#using_an_external_idp">Reference architecture</a> for federating with external identity providers.</li>
+      <li>Sync Active Directory or other LDAP-based identity stores to Google Cloud using the options outlined in the next section.</li>
+      <li>Automate identity administration using the <a href="https://developers.google.com/admin-sdk/">Google Workspace Admin SDK</a>.</li>
+    </ul>
+  </li>
+  <li>Sync identity stores to Google Cloud using either GCDS or Directory Sync:<ul>
+      <li>To sync Active Directory or other LDAP-based identity stores to Google Cloud, use <a href="https://support.google.com/cloudidentity/answer/106368">Google Cloud Directory Sync (GCDS)</a>:</li>
+      <li>To sync Active Directory users and groups to Google Cloud, use <a href="https://support.google.com/a/topic/10343447">Directory Sync</a>, an agentless solution that requires setting up Cloud VPN or Interconnect (covered in task 8).</li>
+      <li><a href="https://support.google.com/a/answer/10342938">Compare GCDS and Directory Sync</a>.</li>
+    </ul>
+  </li>
+</ul>
+<p>&nbsp;</p>
+<h3>3. Administrative access</h3>
+<p>&nbsp;</p>
+<p>In this task you set up administrator access for your organization, which gives the administrators central visibility and control over every cloud resource that belongs to your organization.</p>
+<h3>Who performs this task</h3>
+<p>If your company already uses a paid Google Workspace service, a person with Google Workspace super admin access must perform this step. If not, use the Cloud Identity account created in task 1.</p>
+<h3>What you do in this task</h3>
+<ul>
+  <li>Verify that your organization was created.</li>
+</ul>
+<p>Assign administrative roles to the <code>grp-gcp-organization-admins@&lt;your-domain&gt;.com</code> group that was created in task 2.</p>
+<ul>
+  <li><strong>Note:</strong> You can choose to assign these highly privileged roles to individual accounts instead of to a group.</li>
+</ul>
+<p>Add administrative permissions to yourself, and to other administrators in your organization, so that you can perform later tasks in the checklist.</p>
+<h3>Why we recommend this task</h3>
+<p>For security reasons, you must explicitly define all administrative roles for your organization. Separating super admin and organization admin roles is a <a href="https://cloud.google.com/security/best-practices">Google Cloud security best practice</a>. The super admin role manages all other identities in Cloud Identity and Google Workspace, and is required to create the root Google Cloud organization. To learn more, please visit <a href="https://cloud.google.com/resource-manager/docs/super-admin-best-practices#designate_organization_admins">super admin best practices</a>.</p>
+<h3>Verify that your organization was created</h3>
+<p><strong>Note:</strong> You can find a more dynamic, responsive form of these procedures in the <a href="https://console.cloud.google.com/cloud-setup/organization"><u>Google Cloud console</u></a>. The console-based checklist automates and simplifies several tasks. You must be signed in to the Google Cloud console to complete the procedure there.</p>
+<p>Log in to the Google Cloud console using either your Google Workspace</p>
+<p>super administrator account, or using the Cloud Identity Super Admin account that you set up in task 1.</p>
+<p>Go to the <a href="https://console.cloud.google.com/iam-admin/cloudidentity">Identity and Organization</a></p>
+<p>page to finish creating the organization. After you go to the link, you might need to wait a few minutes for the process to complete.</p>
+<p>Make sure that your organization name appears in the <strong>Select an organization</strong> list. It can take a few minutes for your organization to be created from the steps in task 1. If you don't see the organization name, wait a few minutes and then refresh the page.</p>
+<h3>Set up administrator access</h3>
+<p>Next, you assign administrative roles to the <code>grp-gcp-organization-admins@&lt;your-domain&gt;.com</code> group that was created in task 2.</p>
+<p><strong>Note:</strong> You can choose to assign these highly privileged roles to individual accounts instead of to a group.</p>
+<p>You can find a more dynamic, responsive form of these procedures in the <a href="https://console.cloud.google.com/cloud-setup/organization">Google Cloud console</a>. The console-based checklist automates and simplifies several tasks. You must be signed in to the Google Cloud console to complete the procedure there.</p>
+<p>Complete the steps at <a href="https://cloud.google.com/iam/docs/granting-changing-revoking-access#grant_access">Grant access</a>, with the following changes:</p>
+<p>After you open the IAM page in the Google Cloud console, make sure that your organization name is selected in the organization list at the top of the page.</p>
+<p>When you're asked to enter an email address, use <code>grp-gcp-organization-admins@&lt;your-domain&gt;.com</code>.</p>
+<p>When you're asked to select a role, select <strong>Resource Manager</strong> &gt; <strong>Organization Administrator</strong>.</p>
+<p>After you've added the first role, click <strong>Add another role</strong> and then add the following additional roles for the <code>grp-gcp-organization-admins@&lt;your-domain&gt;.com</code> member:</p>
+<ul>
+  <li><strong>Resource Manager</strong> &gt; <strong>Folder Admin</strong></li>
+  <li><strong>Resource Manager</strong> &gt; <strong>Project Creator</strong></li>
+  <li><strong>Billing</strong> &gt; <strong>Billing Account User</strong></li>
+  <li><strong>Roles</strong> &gt; <strong>Organization Role Administrator</strong></li>
+  <li><strong>Organization Policy</strong> &gt; <strong>Organization Policy Administrator</strong></li>
+  <li><strong>Security Center</strong> &gt; <strong>Security Center Admin</strong></li>
+  <li><strong>Support</strong> &gt; <strong>Support Account Administrator</strong></li>
+</ul>
+<p>When you're done adding roles, click <strong>Save</strong>.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>4. Set up billing</h3>
+<p>&nbsp;</p>
+<p>In this task, you set up a billing account to pay for Google Cloud resources, and you set administrator access for your billing accounts.</p>
+<p>As you prepare for this task, you'll need to decide which type of billing account to use for your setup:</p>
+<ul>
+  <li><strong>Self-serve</strong>. You sign up online using a credit or debit card, or ACH direct debit. Costs are charged automatically.</li>
+  <li><strong>Invoiced</strong>. If you already have self-service billing set up, you might be eligible to switch your account type to monthly invoiced billing if your business meets <a href="https://cloud.google.com/billing/docs/how-to/invoiced-billing">certain requirements</a>. Invoices are sent by mail or electronically and may be paid by check or wire transfer.</li>
+</ul>
+<p>For more information, see <a href="https://cloud.google.com/billing/docs/concepts#billing_account_types">Billing account types</a>.</p>
+<h3>Who performs this task</h3>
+<p>This task requires multiple people:</p>
+<p>A person in the <code>grp-gcp-organization-admins@&lt;your-domain&gt;.com</code> group created in task 2, or someone with the administrator access defined in task 3.</p>
+<p>A person in the <code>grp-gcp-billing-admins@&lt;your-domain&gt;.com</code> group created in task 2.</p>
+<h3>What you do in this task</h3>
+<ul>
+  <li>Assign administrative access to the <code>grp-gcp-billing-admins@&lt;your-domain&gt;.com</code> group created in task 2.</li>
+  <li>Decide whether to use a self-serve or invoiced billing account.</li>
+  <li>Set up a billing account and a payment method.</li>
+</ul>
+<h3>Why we recommend this task</h3>
+<p>A <a href="https://cloud.google.com/billing/docs">Cloud Billing</a> account is required to use Google Cloud products. Cloud Billing accounts are linked to one or more Google Cloud projects and are used to pay for the resources you use, such as virtual machines, networking, and storage. IAM roles control access to Cloud Billing accounts.</p>
+<h3>Set up administrator access</h3>
+<p><strong>Note:</strong> You can find a more dynamic, responsive form of these procedures in the <a href="https://console.cloud.google.com/cloud-setup/billing"><u>Google Cloud console</u></a>. The console-based checklist automates and simplifies several tasks. You must be signed in to the Google Cloud console to complete the procedure there.</p>
+<p>Team members who are assigned the Billing Account Administrator IAM role can complete tasks such as managing payments and invoices, setting budgets, and associating projects with billing accounts. The role does not give team members permission to view the contents of the projects.</p>
+<p>Make sure that you're signed in to the Google Cloud console as a user in the <code>grp-gcp-organization-admins</code> Google Group that was created in task 2, or as a user with the administrator access defined in task 3.</p>
+<p>Complete the steps at <a href="https://cloud.google.com/iam/docs/granting-changing-revoking-access#grant_access">Grant access</a>, with the following changes:</p>
+<p>When you're asked to enter an email address, use <code>grp-gcp-billing-admins@&lt;your-domain&gt;.com</code>.</p>
+<p>When you're asked to select a role, select <strong>Billing</strong> &gt; <strong>Billing Account Administrator</strong>.</p>
+<p>After you've added the first role, click <strong>Add another role</strong> and then add the following additional roles for the <code>grp-gcp-billing-admins@&lt;your-domain&gt;.com</code> member:</p>
+<ul>
+  <li><strong>Billing</strong> &gt; <strong>Billing Account Creator</strong></li>
+  <li><strong>Resource Manager</strong> &gt; <strong>Organization Viewer</strong></li>
+</ul>
+<h3>Set up the billing account</h3>
+<p>Next, you set up a Cloud Billing account. There are two types of billing accounts:</p>
+<p><strong>Self-serve</strong>. You sign up online using a credit or debit card, or ACH direct debit. Costs are charged automatically.</p>
+<p><strong>Invoiced</strong>. You pay by check or wire transfer. Invoices are sent by mail or electronically.</p>
+<p>When you sign up online for a billing account, your account is automatically set up as a <i>self-serve</i> type of account. You cannot <i>sign up online</i> for an invoiced type of account, rather, <i>you must apply for invoiced billing</i>. For more information, see <a href="https://cloud.google.com/billing/docs/concepts#billing_account_types">Billing account types</a>.</p>
+<p><strong>Note:</strong> You can find a more dynamic, responsive form of these procedures in the <a href="https://console.cloud.google.com/cloud-setup/billing"><u>Google Cloud console</u></a>. The console-based checklist automates and simplifies several tasks. You must be signed in to the Google Cloud console to complete the procedure there.</p>
+<p><a href="https://cloud.google.com/docs/enterprise/setup-checklist#self-serve-accounts">Self-serve accounts</a><a href="https://cloud.google.com/docs/enterprise/setup-checklist#invoiced-accounts">Invoiced accounts</a></p>
+<p>Log in to the Google Cloud console as a user in the <code>grp-gcp-billing-admins</code> Google Group that was created in task 2.</p>
+<p><a href="https://cloud.google.com/billing/docs/how-to/manage-billing-account#create_a_new_billing_account">Create a new billing account</a>.</p>
+<p>To verify that the billing account was created, go to the <a href="https://console.cloud.google.com/billing">Billing page</a>, and then select your organization in the <strong>Select an organization</strong> list. If the billing account was successful, you see it in the billing account list.</p>
+<h3>After you set up the billing account</h3>
+<p>To monitor your costs and avoid surprises on your bill, after you have set up your Cloud Billing account, we recommend you implement the following billing best practices for each billing account:</p>
+<ul>
+  <li><a href="https://cloud.google.com/billing/docs/how-to/export-data-bigquery">Configure Cloud Billing data exports to a BigQuery dataset</a>.</li>
+  <li><a href="https://cloud.google.com/billing/docs/how-to/budgets">Define budgets to generate alerts when spending reaches certain thresholds</a>.</li>
+</ul>
+<p>For best practices to monitor and control costs, see <a href="https://cloud.google.com/architecture/framework/cost-optimization/monitor">Monitor and control cost</a>.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>5. Resource hierarchy</h3>
+<p>&nbsp;</p>
+<p>In this task, you create a basic structure for <i>folders</i> and <i>projects</i> in your resource hierarchy:</p>
+<p><a href="https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy#folders">Folders</a></p>
+<p>provide a grouping mechanism and isolation boundaries between projects. For example, they can represent the main departments in your organization such as finance or retail, or environments such as production versus non-production.</p>
+<p><a href="https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy#projects">Projects</a></p>
+<p>contain your cloud resources, such as virtual machines, databases, and storage buckets. For design considerations and best practices to organize your resources in projects, see <a href="https://cloud.google.com/architecture/landing-zones/decide-resource-hierarchy">Decide a resource hierarchy for your Google Cloud landing zone</a>.</p>
+<p>You can set IAM policies to control access at different levels of the resource hierarchy. You will set these policies as a later task in this checklist.</p>
+<h3>Who performs this task</h3>
+<p>A person in the <code>grp-gcp-organization-admins@&lt;your-domain&gt;.com</code> group that was created in task 2, or someone with the administrator access defined in task 3.</p>
+<h3>What you do in this task</h3>
+<p>Create the initial hierarchy structure with folders and projects.</p>
+<h3>Why we recommend this task</h3>
+<p>Creating the structure is a requirement for a later task where you set IAM policies in order to control access at different levels of the resource hierarchy.</p>
+<h3>Plan the resource hierarchy</h3>
+<p>There are many ways to create your resource hierarchy. The following diagram shows a typical example:</p>
+<figure class="image image_resized" style="width:794px;"><img src="https://cloud.google.com/static/docs/enterprise/images/checklist-resource-hierarchy.png" alt="Sample resource hierarchy"></figure>
+<p>In the example, the organization resource hierarchy contains three levels of folders:</p>
+<p>Environment (non-production and production). By isolating environments from each other, you can better control access to production environments and avoid non-production changes accidentally impacting production.</p>
+<p>Business units. In the diagram, these are represented by <code>Dept X</code> and <code>Dept Y</code>, which might be business units such as Engineering and Marketing, and a <code>Shared</code> folder that has projects that contain resources shared across the hierarchy, such as networking, logging, and monitoring.</p>
+<p>Teams. In the diagram, these are represented by <code>Team A</code>, <code>Team B</code>, and <code>Team C</code>, which might be teams like Development, Data Science, QA, and so on.</p>
+<p><strong>Note:</strong> You can find a more dynamic, responsive form of these procedures in the <a href="https://console.cloud.google.com/cloud-setup/resource-hierarchy"><u>Google Cloud console</u></a>. The console-based checklist automates and simplifies several tasks. You must be signed in to the Google Cloud console to complete the procedure there.</p>
+<h3>Create initial folders in the resource hierarchy</h3>
+<p>In this step, you create basic folders for your initial setup, as shown in <a href="https://cloud.google.com/static/docs/enterprise/images/checklist-resource-hierarchy-full.png">this diagram</a>. Folders allow you to group resources.</p>
+<p><strong>Note:</strong> The folders created in this step are required in the remaining tasks of the checklist. Later, you can build on this hierarchy to mirror your organization and customize it to your company's needs as you grow your workloads.</p>
+<p>To create initial folders:</p>
+<ol>
+  <li>Sign in to the Google Cloud console as a user in the <code>grp-gcp-organization-admins</code> Google Group (created in task 2), or as a user with the administrator access defined in task 3.</li>
+</ol>
+<p>In the Google Cloud console, go to the <strong>Manage resources</strong> page:</p>
+<p><a href="https://console.cloud.google.com/cloud-resource-manager">Go to Manage resources</a></p>
+<p>Create the following two folders:</p>
+<ul>
+  <li>Production &gt; Shared</li>
+  <li>Non-Production &gt; Shared</li>
+</ul>
+<h3>Create initial projects in the resource hierarchy</h3>
+<p>After creating the initial hierarchy, you create projects. Following the principle of separating production and non-production environments, for this checklist you need to create the following projects:</p>
+<p><code>example-vpc-host-nonprod</code>. This project is used to help connect non-production resources from multiple projects to a common VPC network.</p>
+<p><code>example-vpc-host-prod-draft</code>. This project is a placeholder to eventually connect production resources from multiple projects to a common VPC network.</p>
+<p><code>example-monitoring-nonprod</code>. This project is used to host non-production monitoring resources.</p>
+<p><code>example-monitoring-prod-draft</code>. This project is a placeholer to eventually host production monitoring resources.</p>
+<p><code>example-logging-nonprod</code>. This project is used to host exported log data from your non-production environment.</p>
+<p><code>example-logging-prod-draft</code>. This project is a placeholder used to eventually host exported log data from your production environment.</p>
+<p>Project names are limited to 30 characters. Typically, you would use your own company name in place of <code>example</code>, as long as you can do so within the 30-character limit. When you create projects in the resource hierarchy in the future, we recommend using a naming convention such as <code>&lt;business unit name&gt;-&lt;team name&gt;-&lt;application name&gt;-&lt;environment&gt;</code>, according to the resource hierarchy of your organization.</p>
+<p>To create the projects:</p>
+<p>In the Google Cloud console, go to the <strong>Manage resources</strong> page:</p>
+<p><a href="https://console.cloud.google.com/cloud-resource-manager">Go to Manage resources</a></p>
+<p>Click <strong>Create Project</strong>.</p>
+<p>In the <strong>New Project</strong> window, enter one of the project names listed earlier.</p>
+<p>If you're prompted to select a billing account, select the billing account you want to use for this checklist.</p>
+<p>For <strong>Location</strong>, click <strong>Browse</strong> and then set the location as follows:</p>
+<ul>
+  <li>If the name of the project you're creating ends with <code>prod</code>, select <strong>Production</strong> &gt; <strong>Shared</strong>.</li>
+  <li>If the name of the project you're creating ends with <code>nonprod</code>, select <strong>Non-Production</strong> &gt; <strong>Shared</strong>.</li>
+</ul>
+<p>Click <strong>Create</strong>.</p>
+<p>Repeat steps 2 through 6 for each of the recommended projects.</p>
+<h3>Confirm projects are linked to the appropriate billing account</h3>
+<p>In order to perform tasks later in this checklist, projects must be linked to a billing account. For a current list of your projects and linked billing accounts, visit <a href="https://console.cloud.google.com/cloud-setup/resource-hierarchy">Task 5 in the Google Cloud console</a>.</p>
+<p>If you do not have access to an active billing account, skip to the next task. If you attempt to use projects not linked to a billing account, the Google Cloud console prompts you to enable billing. When a billing account is ready, return to this step to enable billing for those projects.</p>
+<p>To review or change billing accounts set for projects in Cloud Billing:</p>
+<ol>
+  <li>View billing accounts on the <a href="https://console.cloud.google.com/billing/projects">Billing</a> page and select the <strong>My Projects</strong> tab. The page lists all billing accounts linked to your organization's projects.</li>
+  <li>To change the billing account for any project, see <a href="https://cloud.google.com/billing/docs/how-to/modify-project">Enable, disable, or change billing for a project</a>.</li>
+</ol>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>6. Access</h3>
+<p>&nbsp;</p>
+<p>In this task, you set up access control for your resource hierarchy by adding <a href="https://cloud.google.com/iam/docs/overview#iam_policy">IAM policies</a> to the resources. An IAM policy is a collection of statements that define who has what type of access. A policy is attached to a resource and is used to enforce access control whenever that resource is accessed.</p>
+<p>To set permissions, you perform the same basic procedure, but you do it for resources at different levels of the hierarchy (organization, folders, and projects). We recommend that you use the principle of least privilege and grant the least amount of access that's necessary to resources in each level. The roles that we recommend in the following procedures help you enforce the principle of least privilege.</p>
+<h3>Who performs this task</h3>
+<p>A person in the <code>grp-gcp-organization-admins@&lt;your-domain&gt;.com</code> group that was created in task 2, or someone with the administrator access defined in task 3.</p>
+<h3>What you do in this task</h3>
+<p>Set IAM policies on the organization, folder, and project level.</p>
+<h3>Why we recommend this task</h3>
+<p>Setting IAM policies across your resource hierarchy lets you scalably control access to your cloud resources.</p>
+<h3>About IAM policies</h3>
+<p>IAM policies apply at three levels of your resource hierearchy:</p>
+<ol>
+  <li><i>The organization.</i> Policies that you set at the organization level apply to all folders and projects in the organization.</li>
+  <li><i>A folder.</i> Policies set on a folder apply to projects within the folder.</li>
+  <li><i>A project.</i> Policies set at the project level apply only to that project.</li>
+</ol>
+<p>The following table lists the principals and the roles that you assign to them at the organization level.</p>
+<figure class="table" style="width:794px;">
+  <table style="background-color:rgb(32, 32, 32);border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;">
+    <thead>
+      <tr>
+        <th style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;height:48px;padding:var(--devsite-table-heading-padding, 8px);"><strong>Principal</strong></th>
+        <th style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;height:48px;padding:var(--devsite-table-heading-padding, 8px);"><strong>Roles to grant</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;"><code>grp-gcp-network-admins@&lt;your-domain&gt;.com</code></td>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;">
+          <ul>
+            <li><strong>Compute Engine</strong> &gt; <strong>Compute Network Admin</strong>. This grants permissions to create, modify, and delete networking resources, except for firewall rules and SSL certificates.</li>
+            <li><strong>Compute Engine</strong> &gt; <strong>Compute Shared VPC Admin</strong>. This grants permissions to administer Shared VPC host projects.</li>
+            <li><strong>Compute Engine</strong> &gt; <strong>Compute Security Admin</strong>. This grants permissions to create, modify, and delete firewall rules and SSL certificates.</li>
+            <li><strong>Resource Manager</strong> &gt; <strong>Folder Viewer</strong>. This grants permissions to view folders.</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;"><code>grp-gcp-security-admins@&lt;your-domain&gt;.com</code></td>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;">
+          <ul>
+            <li><strong>Organization Policy</strong> &gt; <strong>Organization Policy Admin</strong>. This grants permissions to set organization-level IAM policies.</li>
+            <li><strong>Organization Policy</strong> &gt; <strong>Organization Policy Viewer</strong>. This grants permissions to view the IAM policies that apply to the organization.</li>
+            <li><strong>IAM</strong> &gt; <strong>Security Reviewer</strong>. This grants permissions to view all resources for the organization, and to view the IAM policies that apply to them.</li>
+            <li><strong>Roles</strong> &gt; <strong>Organization Role Viewer</strong>. This grants permissions to view all custom IAM roles in the organization, and to view the projects that they apply to.</li>
+            <li><strong>Security Center</strong> &gt; <strong>Security Center Admin</strong>. This grants administrator access to the security command center.</li>
+            <li><strong>Resource Manager</strong> &gt; <strong>Folder IAM Admin</strong>. This grants permissions to set folder-level IAM policies.</li>
+            <li><strong>Logging</strong> &gt; <strong>Private Logs Viewer</strong>. This grants read-only access to Cloud Logging features, including the ability to read private logs.</li>
+            <li><strong>Logging</strong> &gt; <strong>Logs Configuration Writer</strong>. This grants permissions to create logs-based metrics and export sinks.</li>
+            <li><strong>Kubernetes Engine</strong> &gt; <strong>Kubernetes Engine Viewer</strong>. This grants read-only access to Google Kubernetes Engine resources.</li>
+            <li><strong>Compute Engine</strong> &gt; <strong>Compute Viewer</strong>. This grants read-only access to Compute Engine resources.</li>
+            <li><strong>BigQuery</strong> &gt; <strong>BigQuery Data Viewer</strong>. This grants permissions for BigQuery datasets.</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;"><code>grp-gcp-devops@&lt;your-domain&gt;.com</code></td>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;"><strong>Resource Manager</strong> &gt; <strong>Folder Viewer</strong>. This grants permissions to view folders.</td>
+      </tr>
+      <tr>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;"><code>grp-gcp-billing-viewer</code></td>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;"><strong>Billing</strong> &gt; <strong>Viewer</strong>. This role provides permissions to view billing account cost and pricing information.</td>
+      </tr>
+      <tr>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;"><code>grp-gcp-platform-viewer</code></td>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;"><strong>Viewer</strong>. This role provides permissions to view existing resources of data.</td>
+      </tr>
+      <tr>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;"><code>grp-gcp-security-reviewer</code></td>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;"><strong>IAM</strong> &gt; <strong>Security Reviewer</strong>. This role provides permissions to list all resources and allow policies on them.</td>
+      </tr>
+      <tr>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;"><code>grp-gcp-network-viewer</code></td>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;"><strong>Compute Enginer</strong> &gt; <strong>Network Viewer</strong>. This role provides read-only access to all networking resources.</td>
+      </tr>
+      <tr>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;"><code>grp-gcp-audit-viewer</code></td>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;">
+          <ul>
+            <li><strong>Logging</strong> &gt; <strong>Viewer</strong>. This role provides access to view logs.</li>
+            <li><strong>Logging</strong> &gt; <strong>Private Log Viewer</strong>. This role provides read-only access to log entries in private logs.</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;"><code>grp-gcp-scc-admin</code></td>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;"><strong>Security Center</strong> &gt; <strong>Admin</strong>. This role provides administrator access to the security center.</td>
+      </tr>
+      <tr>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;"><code>grp-gcp-secrets-admin</code></td>
+        <td style="border-bottom:0px;border-left:0px;border-right:0px;border-top:0px;padding:var(--devsite-table-cell-padding, 7px 8px 8px);vertical-align:top;"><strong>Secret Manager</strong> &gt; <strong>Admin</strong>. This role provides full access to administer Secret Manager resources.</td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<h3>Administer IAM roles</h3>
+<p><strong>Note:</strong> You can find a more dynamic, responsive form of these procedures in the <a href="https://console.cloud.google.com/cloud-setup/access"><u>Google Cloud console</u></a>. The console-based checklist automates and simplifies several tasks. You must be signed in to the Google Cloud console to complete the procedure there.</p>
+<p>Make sure that you're signed in to the Google Cloud console as a user in the <code>grp-gcp-organization-admins</code> Google Group that was created in task 2, or as someone with the administrator access defined in task 3.</p>
+<p>In the Google Cloud console, go to the <strong>Manage resources</strong> page:</p>
+<p><a href="https://console.cloud.google.com/cloud-resource-manager">Go to Manage resources</a></p>
+<p>Select your organization from the organization tree grid.</p>
+<p>If the <strong>Info Panel</strong> pane on the right is hidden, click <strong>Show Info Panel</strong> in the top right corner.</p>
+<p>Select the checkbox for the organization.</p>
+<p>In the <strong>Info Panel</strong> pane, in the <strong>Permissions</strong> tab, click <strong>Add Member</strong>.</p>
+<p>In the <strong>New members</strong> field, enter the name of a member from the table. For example, start by entering <code>grp-gcp-network-admins@&lt;your-domain&gt;.com</code>, as listed in the preceding table.</p>
+<p>In the <strong>Select a role</strong> list, select the first role for that member as listed in the table. For example, for the first member, the first role that you select is <strong>Compute Engine</strong> &gt; <strong>Compute Network Admin</strong>.</p>
+<p>Click <strong>Add another role</strong>, and then add the next role for that member.</p>
+<p>Add the next role for that member.</p>
+<p>When you've added all the roles for a member, click <strong>Save</strong>.</p>
+<p>Repeat step 2 through 7 for the other members listed in the table.</p>
+<h3>Set IAM policies at the folder level</h3>
+<p>Policies set on the folder level also apply to projects in the folders. The procedure is similar to what you did for your organization, except that you select a different level in the hierarchy.</p>
+<p><strong>Note:</strong> You can find a more dynamic, responsive form of these procedures in the <a href="https://console.cloud.google.com/cloud-setup/access"><u>Google Cloud console</u></a>. The console-based checklist automates and simplifies several tasks. You must be signed in to the Google Cloud console to complete the procedure there.</p>
+<p>Clear the checkbox for the organization and for any other resource that is selected.</p>
+<p>Select the checkbox for the <code>Production</code> folder.</p>
+<p>In the <strong>Info Panel</strong> pane, in the <strong>Permissions</strong> tab, click <strong>Add Member</strong>.</p>
+<p>In the <strong>New members</strong> field, enter <code>grp-gcp-devops@&lt;your-domain&gt;.com</code>.</p>
+<p>Using the same steps you used for adding roles to organization members, add the following roles to the <code>grp-gcp-devops@&lt;your-domain&gt;.com</code> member:</p>
+<ul>
+  <li><strong>Logging</strong> &gt; <strong>Logging Admin</strong>. This grants full permissions to Cloud Logging.</li>
+  <li><strong>Error Reporting</strong> &gt; <strong>Error Reporting Admin</strong>. This grants full permissions to error reporting data.</li>
+  <li><strong>Service Management</strong> &gt; <strong>Quota Administrator</strong>. This grants access to administer service quotas.</li>
+  <li><strong>Monitoring</strong> &gt; <strong>Monitoring Admin</strong>. This grants full permissions to monitoring data.</li>
+  <li><strong>Compute Engine</strong> &gt; <strong>Compute Admin</strong>. This grants full permissions to Compute Engine resources.</li>
+  <li><strong>Kubernetes Engine</strong> &gt; <strong>Kubernetes Engine Admin</strong>. This grants full permissions to Google Kubernetes Engine container clusters.</li>
+</ul>
+<p>When you've finished adding roles, click <strong>Save</strong>.</p>
+<p>Clear the checkbox for the <code>Production</code> folder.</p>
+<p>Select the checkbox for the <code>Non-Production</code> folder.</p>
+<p>Add <code>grp-gcp-developers@&lt;your-domain&gt;.com</code> as a new member.</p>
+<p>Assign the following IAM roles to the <code>grp-gcp-developers@&lt;your-domain&gt;.com</code> member:</p>
+<ul>
+  <li><strong>Compute Engine</strong> &gt; <strong>Compute Admin</strong>. This grants full permissions to Compute Engine resources.</li>
+  <li><strong>Kubernetes Engine</strong> &gt; <strong>Kubernetes Engine Admin</strong>. This grants full permissions to Google Kubernetes Engine container clusters.</li>
+</ul>
+<h3>Set IAM policies at the project level</h3>
+<p>Policies that you set at the project level apply only to the projects they are applied to. This lets you set fine-grained permissions for individual projects.</p>
+<p><strong>Note:</strong> You can find a more dynamic, responsive form of these procedures in the <a href="https://console.cloud.google.com/cloud-setup/access"><u>Google Cloud console</u></a>. The console-based checklist automates and simplifies several tasks. You must be signed in to the Google Cloud console to complete the procedure there.</p>
+<p>Clear the checkbox for any folders and for any other resource that has been selected.</p>
+<p>Select the checkboxes for the following projects:</p>
+<ul>
+  <li><code>example-vpc-host-nonprod</code></li>
+  <li><code>example-vpc-host-prod</code></li>
+</ul>
+<p>Add <code>grp-gcp-network-admins@&lt;your-domain&gt;.com</code> as a member.</p>
+<p>Assign the following role to the <code>grp-gcp-network-admins@&lt;your-domain&gt;.com</code> member:</p>
+<ul>
+  <li><strong>Project</strong> &gt; <strong>Owner</strong>. This grants full permissions to all resources in the selected projects.</li>
+</ul>
+<p>Click <strong>Save</strong>.</p>
+<p>Clear the checkboxes for the selected projects.</p>
+<p>Select the checkboxes for the following projects:</p>
+<ul>
+  <li><code>example-monitoring-nonprod</code></li>
+  <li><code>example-monitoring-prod</code></li>
+  <li><code>example-logging-nonprod</code></li>
+  <li><code>example-logging-prod</code></li>
+</ul>
+<p>Add <code>gcp-devops@&lt;your-domain&gt;.com</code> as a new member.</p>
+<p>Assign the following role to the <code>grp-gcp-devops@&lt;your-domain&gt;.com</code> member:</p>
+<ul>
+  <li><strong>Project</strong> &gt; <strong>Owner</strong>. This grants full permissions to all resources in the selected projects.</li>
+</ul>
+<p>Click <strong>Save</strong>.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>7. Networking</h3>
+<p>&nbsp;</p>
+<p>In this task, you set up your initial networking configuration. Typically, you need to do the following:</p>
+<ul>
+  <li>Design, create, and configure a virtual private cloud architecture.</li>
+  <li>If you have on-premises networking, or networking in another cloud provider, configure connectivity between that provider and Google Cloud.</li>
+  <li>Set up a path for external egress traffic.</li>
+  <li>Implement network security controls, such as firewall rules.</li>
+  <li>Choose a preferred ingress traffic option for services that are hosted on the cloud.</li>
+</ul>
+<p>This task shows you an example for item 1 as a basis for your own virtual private cloud architecture.</p>
+<p>The remaining items—external connectivity, egress traffic configuration, implementing firewall rules, and choosing an ingress option—are dependent on your business needs. Therefore, we don't cover those in this checklist. However, we provide links to additional information for these items.</p>
+<h3>Who performs this task</h3>
+<p>A person in the <code>grp-gcp-network-admins@&lt;your-domain&gt;.com</code> group that was created in task 2.</p>
+<h3>What you do in this task</h3>
+<p>Set up an initial networking configuration.</p>
+<ul>
+  <li>Create Shared VPC networks</li>
+  <li>Configure connectivity between the external provider and Google Cloud</li>
+  <li>Set up a path for external egress traffic</li>
+  <li>Implement network security controls</li>
+  <li>Choose an ingress traffic option</li>
+</ul>
+<h3>Why we recommend this task</h3>
+<p>Shared VPC allows separate teams to connect to a common, centrally-managed VPC network from multiple distinct products.</p>
+<p>Configuring hybrid connectivity allows seamless migration of applications to Google Cloud while still connecting to service dependencies.</p>
+<p>Designing secure ingress and egress pathways from the start enables your teams to productively work in Google Cloud without compromising security.</p>
+<h3>Virtual private cloud architecture</h3>
+<p>Google offers Virtual Private Cloud (VPC), which provides networking functionality to your Google Cloud resources such as Compute Engine virtual machine instances, GKE containers, and App Engine flexible environment. The following diagram shows a basic multi-regional architecture:</p>
+<figure class="image image_resized" style="width:794px;"><img src="https://cloud.google.com/static/docs/enterprise/images/checklist-networking-diagram.png" alt="Sample resource hierarchy"></figure>
+<p>This architecture has two Shared VPC host projects. One host project is for your non-production environment, and the other is for your eventual production environment (currently labeled "production-draft". Shared Virtual Private Cloud allows organizations to connect resources from multiple projects to a common network, so that the resources can communicate with each other more securely and efficiently using internal IP addresses from that network.</p>
+<p>A Shared VPC host project contains one or more Shared VPC networks. In this architecture, each Shared VPC network (both production-draft and non-production) contains public and private subnets across two regions (in this case, <code>us-east1</code> and <code>us-west1</code>):</p>
+<ul>
+  <li>The public subnet can be used for instances that are internet-facing to provide external connectivity.</li>
+  <li>The private subnet can be used for instances that are solely internal-facing and should not be allocated public IP addresses.</li>
+</ul>
+<p>The architecture that's shown in the preceding diagram uses example names for various resources. For your own setup, you might change elements of the name, such as your company (<code>example</code> in the example names) and the region you're using (<code>us-east1</code> and <code>us-west1</code> in the examples).</p>
+<h3>Configure networking</h3>
+<p><strong>Note:</strong> You can find a more dynamic, responsive form of these procedures in the <a href="https://console.cloud.google.com/cloud-setup/networking"><u>Google Cloud console</u></a>. The console-based checklist automates and simplifies several tasks. You must be signed in to the Google Cloud console to complete the procedure there.</p>
+<p>Although networking setups vary based on your workload, the following activities are common:</p>
+<p><strong>Create shared Virtual Private Cloud (VPC) networks.</strong> Shared VPC allows an organization to connect resources from multiple projects to a common VPC network. To create a shared VPC network, use the <a href="https://console.cloud.google.com/cloud-setup/networking">Google Cloud console</a>.</p>
+<ol>
+  <li><strong>Note:</strong> In order to create VPC) networks, you first need to <a href="https://cloud.google.com/endpoints/docs/openapi/enable-api"><u>enable the Compute Engine API</u></a>.</li>
+</ol>
+<p><strong>Configure connectivity between the external provider and Google Cloud.</strong> If you have on-premises networking, or networking in another cloud provider, you can set up Cloud VPN, a service that helps securely connect your peer network to your Google Cloud VPC network through an IPSec VPN connection. Cloud VPN is suitable for speeds up to 3.0 Gbps. If you need higher bandwidth to connect your on-premises system to Google Cloud, see <a href="https://cloud.google.com/network-connectivity/docs/interconnect/partners">Partner Interconnect</a> and <a href="https://cloud.google.com/network-connectivity/docs/interconnect/concepts/dedicated-overview">Dedicated Interconnect</a>. To create a VPN connection, follow the instructions at <a href="https://cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn">Creating a gateway and tunnel</a> for both the production-draft and non-production Shared VPC networks created in the previous procedure.</p>
+<ol>
+  <li><strong>Note:</strong> If you want to use <a href="https://support.google.com/a/topic/10343447"><u>Directory Sync</u></a> for automatic user and group provisioning, now is a good time to set it up. <a href="https://support.google.com/a/answer/10616183"><u>Learn more</u></a>.</li>
+</ol>
+<p><strong>Set up a path for external egress traffic.</strong> You use Cloud NAT to allow your VMs to connect to the internet without using external IP addresses. Cloud NAT is a regional resource. You can configure it to allow traffic from all primary and secondary IP ranges of subnets in a region, or you can configure it to apply to only some of those ranges. To set up a path for external egress traffic, follow the instructions at <a href="https://cloud.google.com/nat/docs/set-up-network-address-translation#create_nat">Create NAT</a> for all regions in the shared VPC networks created in the previous procedure for both production-draft and non-production networks.</p>
+<p><strong>Implement network security controls.</strong> Firewall rules let you allow or deny traffic to and from your virtual machine (VM) instances based on a configuration that you specify. Follow the instructions at <a href="https://cloud.google.com/vpc/docs/using-firewalls">Using firewall rules </a>to configure these controls for both production-draft and non-production Shared VPC networks that was created in the previous procedure.</p>
+<p><strong>Choose an ingress traffic option.</strong> Cloud Load Balancing allows you to control how compute resources are distributed across regions. Load balancing helps you meet availability requirements both for incoming external traffic and for traffic within your VPC network. As you plan your application architecture on Google Cloud, review <a href="https://cloud.google.com/load-balancing/docs/choosing-load-balancer">Choosing a Load Balancer</a> to decide which types of load balancers you need.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>8. Monitoring and logging</h3>
+<p>&nbsp;</p>
+<p>In this task, you set up basic logging and monitoring features using Cloud Logging and Cloud Monitoring.</p>
+<h3>Who performs this task</h3>
+<p>A person in the <code>grp-gcp-devops@&lt;your-domain&gt;.com</code> group that was created in task 2.</p>
+<h3>What you do in this task</h3>
+<p>Set up basic logging and monitoring features using Cloud Logging and Cloud Monitoring.</p>
+<h3>Why we recommend this task</h3>
+<p>Comprehensive logging and monitoring is key to maintaining observability in your cloud environment. Configuring appropriate logging retention from the start allows you to build and have confidence that an audit trail is preserved, while setting up centralized monitoring will give your team a central dashboard for viewing your environments.</p>
+<h3>Set up monitoring</h3>
+<p><strong>Note:</strong> You can find a more dynamic, responsive form of these procedures in the <a href="https://console.cloud.google.com/cloud-setup/monitoring"><u>Google Cloud console</u></a>. The console-based checklist automates and simplifies several tasks. You must be signed in to the Google Cloud console to complete the procedure there.</p>
+<p><a href="https://cloud.google.com/monitoring">Cloud Monitoring</a> collects metrics, events, and metadata from Google Cloud services, hosted uptime probes, application instrumentation, and other common application components.</p>
+<p>In this task, you configure a Google Cloud project to have access to the metrics of other Google Cloud projects:</p>
+<ol>
+  <li>Sign in to the Google Cloud console as a user in the <code>grp-gcp-devops</code> Google Group created in task 2.</li>
+  <li>Add the <a href="https://cloud.google.com/monitoring/settings/multiple-projects#add-monitored-project">projects</a> that you want to monitor. For example, add all of the other non-production projects.</li>
+  <li>Repeat this procedure for your production projects. Use <code>example-monitoring-prod</code> as the scoping project, and add the production projects that you wish to monitor.</li>
+</ol>
+<h3>Set up logging</h3>
+<p><strong>Note:</strong> You can find a more dynamic, responsive form of these procedures in the <a href="https://console.cloud.google.com/cloud-setup/monitoring"><u>Google Cloud console</u></a>. The console-based checklist automates and simplifies several tasks. You must be signed in to the Google Cloud console to complete the procedure there.</p>
+<p>Cloud Logging allows you to store, search, analyze, monitor, and alert on log data and events from Google Cloud and Amazon Web Services (AWS). Cloud Logging also allows you to ingest custom log data from any source, and to export logs to external data sinks.</p>
+<p>Make sure that you're signed in to the Google Cloud console as a user in the <code>grp-gcp-devops</code> group that was created in task 2.</p>
+<p><a href="https://cloud.google.com/solutions/exporting-stackdriver-logging-for-security-and-access-analytics#set_up_the_logging_export">Enable logging export for BigQuery</a>, using the following values:</p>
+<ul>
+  <li>Select the <code>example-logging-nonprod</code> project.</li>
+  <li>Create a <a href="https://cloud.google.com/bigquery/docs/datasets#create-dataset">BigQuery dataset</a>. For <strong>Dataset ID</strong>, use a name like <code>example_logging_export_nonprod</code>.</li>
+  <li>After you've named the dataset, click <strong>Create dataset</strong>.</li>
+</ul>
+<p>Repeat the previous step for the <code>example-logging-prod</code> project, but use <code>example_logging_export_prod</code> for the dataset ID.</p>
+<p>Review the <a href="https://cloud.google.com/logging/quotas#logs_retention_periods">logs retention periods</a> to determine whether they meet your compliance requirements. If they don't, set up <a href="https://cloud.google.com/solutions/exporting-stackdriver-logging-for-compliance-requirements">log export to Cloud Storage</a>, which can be helpful for long-term retention.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>9. Security</h3>
+<p>&nbsp;</p>
+<p>In this task, you configure Google Cloud products to help protect your organization. Google Cloud provides many <a href="https://cloud.google.com/security/products">security offerings</a>.</p>
+<p><strong>Note:</strong> The security settings that you make for this task are just a first step in configuring security. Every deployment presents unique challenges, and it's up to you to perform security audits, understand the attack surface for your system, and so on.</p>
+<h3>Who performs this task</h3>
+<p>A person in the <code>grp-gcp-organization-admins@&lt;your-domain&gt;.com</code> group that was created in task 2, or someone with the administrator access defined in task 3.</p>
+<h3>What you do in this task</h3>
+<ul>
+  <li>Enable the Security Command Center dashboard</li>
+  <li>Set up Organization Policy</li>
+</ul>
+<h3>Why we recommend this task</h3>
+<p>We recommend setting up the following two products:</p>
+<p><a href="https://cloud.google.com/security-command-center">Security Command Center</a>. This comprehensive security management and data risk platform enables you to monitor your cloud assets, scan storage systems for sensitive data, detect common web vulnerabilities, and review access rights to critical resources.</p>
+<p><a href="https://cloud.google.com/resource-manager/docs/organization-policy/overview">Organization Policy Service</a>. This service gives you centralized and programmatic control over your organization's cloud resources.</p>
+<h3>Set up the products</h3>
+<p><strong>Note:</strong> You can find a more dynamic, responsive form of these procedures in the <a href="https://console.cloud.google.com/cloud-setup/security"><u>Google Cloud console</u></a>. The console-based checklist automates and simplifies several tasks. You must be signed in to the Google Cloud console to complete the procedure there.</p>
+<p>Sign in to the Google Cloud console as a user in the <code>grp-gcp-organization-admins</code> group that was created in task 2, or as a user with the administrator access defined in task 3).</p>
+<p><a href="https://cloud.google.com/security-command-center/docs/quickstart-scc-setup#enable-dashboard">Enable the Security Command Center dashboard</a>.</p>
+<p>Set up Organization Policy by following the steps at <a href="https://cloud.google.com/resource-manager/docs/organization-policy/creating-managing-policies#boolean_constraints">Customizing policies for boolean constraints</a>. When you're asked to select a project, folder, or organization, select your organization.</p>
+<p>We recommend setting the following policies:</p>
+<p>Skip default network creation.</p>
+<ol>
+  <li>On the <a href="https://console.cloud.google.com/iam-admin/orgpolicies">Organization policies</a> screen, filter for <strong>Skip default network creation</strong>.</li>
+  <li>Select <strong>Skip default network creation policy</strong>.</li>
+  <li>Click <strong>Edit</strong>.</li>
+  <li>Select <strong>Customize</strong> and click <strong>Add Rule</strong>.</li>
+  <li>When asked to select an enforcement option, select <strong>On</strong>.</li>
+</ol>
+<p>Define <a href="https://cloud.google.com/compute/docs/configure-ip-addresses#disableexternalip">allowed external IPs for VM instances</a>.</p>
+<ol>
+  <li>On the <a href="https://console.cloud.google.com/iam-admin/orgpolicies">Organization policies</a> screen, filter for <strong>Define allowed external IPs for VM instances</strong>.</li>
+  <li>Select <strong>Define allowed external IPs for VM instances policy</strong> and click <strong>Edit</strong>.</li>
+  <li>Select <strong>Customize</strong> and click <strong>Add Rule</strong>. When you're asked to select policy values, select <strong>Deny All</strong>.</li>
+</ol>
+<p><a href="https://cloud.google.com/resource-manager/docs/organization-policy/restricting-domains#setting_the_organization_policy">Set up the <strong>Domain restricted sharing</strong> constraint</a>.</p>
+<p>&nbsp;</p>
+<h3>10. Support</h3>
+<p>&nbsp;</p>
+<p>In this task, you can choose a support option.</p>
+<h3>Who performs this task</h3>
+<p>A person in the <code>grp-gcp-organization-admins@&lt;your-domain&gt;.com</code> group created in task 2, or someone with the administrator access defined in task 3.</p>
+<h3>What you do in this task</h3>
+<p>Choose a support plan based on your company's needs.</p>
+<h3>Why we recommend this task</h3>
+<p>A premium support plan provides you with business-critical support to quickly resolve issues with help from experts at Google.</p>
+<h3>Choose a support option</h3>
+<p>Every Google Cloud customer automatically gets free support that includes <a href="https://cloud.google.com/support/docs/best-practices">support product documentation</a>, <a href="https://cloud.google.com/support/docs/community">community support</a>, and <a href="https://cloud.google.com/support/billing">support for billing issues</a>. However, we recommend that enterprise customers sign up for a <a href="https://cloud.google.com/support/docs/premium">premium support plan</a>, which offers one-on-one technical support with Google support engineers. For more information, you can <a href="https://cloud.google.com/support#support-plans">compare support plans</a>.</p>
+<h3>Enable support</h3>
+<p><strong>Note:</strong> You can find a more dynamic, responsive form of these procedures in the <a href="https://console.cloud.google.com/cloud-setup/support"><u>Google Cloud console</u></a>. The console-based checklist automates and simplifies several tasks. You must be signed in to the Google Cloud console to complete the procedure there.</p>
+<p><a href="https://cloud.google.com/support#support-plans">Read about the support plans</a></p>
+<p>and decide which plan you want. You set up the support plan in a later step. If you decide to stay with free support options, you can continue to the next task.</p>
+<p>Make sure that you're signed in to the Google Cloud console as a user in the <code>grp-gcp-organization-admins</code> Google Group that was created in task 2, or as a user with the administrator access defined in task 3.</p>
+<p>Set up the support plan.</p>
+<p>To request Premium Support, contact your Google sales representative. If you don't have a representative, <a href="https://cloud.google.com/support/upgrade">contact sales</a>.</p>
+<p>To enable Role-Based Support, go to the <a href="https://console.cloud.google.com/support/registration">Enable Role-Based Support</a> page in Google Cloud console and follow the on-screen prompts to complete the required steps.</p>
+<p>Follow the instructions at <a href="https://cloud.google.com/support/docs/role-based-support#support_user_roles">Support user roles</a> to assign the <strong>Support User</strong> and <strong>Org Viewer</strong> roles to each user who needs to interact with Google Cloud Support.</p>
