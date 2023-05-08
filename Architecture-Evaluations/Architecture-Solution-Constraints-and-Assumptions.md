@@ -2,7 +2,7 @@
 title: Architecture Solution Constraints and Assumptions
 description: Guide for assessing the constraints and assumptions of potential architecture solutions
 published: true
-date: 2023-05-08T17:15:57.604Z
+date: 2023-05-08T18:13:17.110Z
 tags: 
 editor: markdown
 dateCreated: 2023-04-28T23:02:08.075Z
@@ -53,3 +53,4 @@ After this is done, proceed to the following sections.
 - Will this architecture be provisioned automatically via tools like Terraform, or will it be provisioned manually?
 - Does this architecture employ continuous integration/deployment (CI/CD), or do code changes need to be deployed manually?
 - Does this architecture lack high availability (i.e. multi-zone/AZ or multi-region deployment)?
+- Is this architecture taking full advantage of the cloud by using managed services and features like EC2 auto scaling?
