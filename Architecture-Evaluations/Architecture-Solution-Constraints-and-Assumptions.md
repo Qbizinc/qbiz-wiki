@@ -2,7 +2,7 @@
 title: Architecture Solution Constraints and Assumptions
 description: Guide for assessing the constraints and assumptions of potential architecture solutions
 published: true
-date: 2023-05-08T17:10:33.828Z
+date: 2023-05-08T17:11:04.394Z
 tags: 
 editor: markdown
 dateCreated: 2023-04-28T23:02:08.075Z
@@ -35,7 +35,7 @@ After this is done, proceed to the following sections.
   - Order in which infrastructure will be migrated. Example order:
     1. Batch processes and backup data stores (i.e. OLAP databases and workloads, DR databases, etc.)
     2. Microservice workloads
-    3. NoSQL databases
+    3. NoSQL databases (typically supporting microservices)
     4. Smaller OLTP databases
     5. Larger OLTP databases & legacy/monolithic workloads
   - Whether or not any managed cloud migration service will be used
