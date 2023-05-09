@@ -1,0 +1,54 @@
+<!--
+title: Security-and-Compliance-Checklist
+description: 
+published: true
+date: 2023-05-09T17:28:37.343Z
+tags: 
+editor: ckeditor
+dateCreated: 2023-05-09T17:28:37.343Z
+-->
+
+<h2>Security and Compliance Assessment</h2>
+<p>While security and compliance is often well outside the scope of our project, and should be managed by dedicated resources within the client, we often have the ability and expertise to provide recommendations and best practices. This checklist is designed to be a non-exhaustive list of common pitfalls that should be reviewed when we have the opportunity.</p>
+<h5>Infrastructure Security:</h5>
+<ul>
+  <li>Review IAM configurations to ensure that they follow the principle of least privilege.</li>
+  <li>Ensure that all keys and credentials are stored securely and access is restricted to only authorized personnel.</li>
+  <li>Infrastructure is regularly scanned for vulnerabilities.</li>
+  <li>Verify that there are strong access controls for network traffic, including firewalls and network segmentation.</li>
+  <li>Verify that logging and monitoring capabilities are enabled for all infrastructure components.</li>
+</ul>
+<h5>Security of Data:</h5>
+<ul>
+  <li>Verify what service (client or cloud provider) is responsible for data encryption at rest and in transit, and ensure that appropriate encryption is enabled.</li>
+  <li>Evaluate access controls for data storage and ensure that only authorized personnel have access to data.</li>
+  <li>Verify that monitoring and logging capabilities are enabled for data access and transfer.</li>
+  <li>Ensure that client has measures to protect against data loss, including backups and disaster recovery procedures.</li>
+  <li>Ensure that all third-party data processors have adequate security controls in place.</li>
+</ul>
+<h5>Role-Based Access Control:</h5>
+<ul>
+  <li>Identify and document all data storage components, databases, or specific components of databases in products such as BigQuery.</li>
+  <li>Implement role-based access controls to ensure that users only have access to the data they need for their specific role.</li>
+  <li>Ensure that all users and roles are documented and regularly reviewed for accuracy.</li>
+  <li>Enable two-factor authentication for all privileged accounts.</li>
+</ul>
+<h5>Compliance:</h5>
+<ul>
+  <li>Identify all industry-level and geographic-based compliance requirements affecting data usage.</li>
+  <li>Ensure that all compliance requirements are documented in a centralized location.</li>
+  <li>Ensure that client performs regular compliance audits to ensure that all security controls are in place and effective.</li>
+  <li>Verify that client conducts regular employee training on compliance requirements and security best practices.</li>
+  <li>Implement regular testing of security controls to ensure they remain effective over time.</li>
+</ul>
+<h3>Potential Security Pitfalls:</h3>
+<ul>
+  <li>Weak passwords and shared accounts.</li>
+  <li>Failure to regularly patch and update software.</li>
+  <li>Unsecured API endpoints.</li>
+  <li>Unencrypted data during transit.</li>
+  <li>Misconfiguration of IAM roles and permissions.</li>
+  <li>Lack of logging and monitoring capabilities.</li>
+  <li>Failure to implement data backups and disaster recovery procedures.</li>
+  <li>Failure to regularly review and update security controls and compliance requirements.</li>
+</ul>
