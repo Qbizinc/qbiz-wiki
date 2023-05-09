@@ -2,11 +2,13 @@
 title: AWS Developer Associate
 description: 
 published: true
-date: 2023-04-20T04:47:20.992Z
+date: 2023-05-09T22:34:51.365Z
 tags: 
 editor: markdown
 dateCreated: 2023-04-20T04:47:20.992Z
 ---
+
+Note: these are not complete notes but are rather items I needed to remember. [Google doc](https://docs.google.com/document/d/1xwlkUBe_Nat9P9opwH5R_0obYa-xEea1rHrhtSUsIVg/edit?usp=sharing)
 
 # S3
 
@@ -1051,3 +1053,120 @@ dateCreated: 2023-04-20T04:47:20.992Z
     * For extra charge, can go down to 1 minute 
 * Install CloudWatch agent for OS-level metrics
     * E.g., memory usage, disk space, CPU idle time, etc
+
+### Metrics
+
+
+
+* Time series with optional value sent to CloudWatch
+* Uniquely defined by name, namespace, and 0 or more dimensions
+* Namespace is a "container" for metrics. E.g., EC2 uses the "AWS/EC2" namespace
+    * Can create your own
+    * Each namespace is completely isolated from others
+* Dimensions are like filters (e.g., instanceId)
+    * CloudWatch can aggregate across dimensions for some services (e.g., EC2)
+* Can be added to CloudWatch Dashboards
+
+
+### CloudWatch Actions
+
+
+
+* CloudWatch API supports actions to publish, monitor, alert on various metrics
+* PutMetricData
+    * Publishes metric name, namespace, value, and timestamp
+* PutMetricAlarm
+    * Creates an alarm that alerts on threshold being reached
+
+
+### CloudWatch Logs Insights
+
+
+
+* Interactive query/analysis for CloudWatch logs
+    * Filter, visualization, etc
+* Bespoke query language
+    * Console provides many examples
+
+
+# CloudTrail
+
+
+
+* Records events (API calls) related to management activity within AWS
+    * E.g., creating/destroying resources
+    * Delivers logs to S3
+    * Can be integrated with CloudWatch Logs
+        * Which means we could alert, e.g., on failed login attempts
+
+
+## EventBridge
+
+
+
+* Event-driven architecture that responds to changes in state
+* Rules invoke appropriate Targets
+* Targets initiate Actions
+    * (e.g., shutting down an EC2 instance)
+* Can also create rules for cron-like schedules
+* EventBridge and Cloudwatch Rules use same underlying API
+    * EventBridge is preferred
+
+
+## Common HTTP Error Codes
+
+
+
+* 4XX – client side errors
+    * 400 Access denied
+    * 403 Missing auth token
+        * No valid X.509 certificate or access key ID
+    * 404 Malformed query string
+        * Always a client side error
+        * File not found is most typical response message
+* 5XX - server side errors
+    * 500 Internal failure
+        * Generic, unknown internal error
+    * 503 Service Unavailable
+        * Server is not responding or is failing
+
+
+# Practice Exam Notes
+
+
+
+* Use multipart uploads for files larger than 100MB
+* Parameter store does not rotate secrets. Secrets and Parameter Store both:
+    * Integrate with IAM
+    * Store hierarchical credentials
+    * Support encryption at rest using customer KMS keys
+* For CloudFront, set **viewer** protocol for secure encrypted requests via https
+* If someone needs 1-time access to AWS, create an IAM user and delete it afterwards
+* If a question contains REST, it's usually API Gateway
+* S3 uses read-after-write consistency so uploaded objects are readable immediately
+* Can't configure CPU capacity for Lambda
+* If you need X-Ray in EC2, run it in its own container alongside other containers
+* Serverless Application Model (SAM) is a simplified CloudFormation for serverless
+* "Transformations" is not part of the CloudFormation template (but "transform" is)
+* TLS Termination for encryption in transit in Elastic Load Balancer 
+* CodePipeline has a manual approval feature
+* Refreshing the DNS lookup is used in conjunction with exponential backoff for S3 requests
+* Exponential backoff is almost always the answer if it appears
+* Lambda can use custom runtimes (which can be useful for runtimes with additional packages, etc)
+* Pre-signed URLs are useful for securely sharing S3 data
+* API Gateway has a caching feature
+* Time-ordered is a keyword with regard to DynamoDB streams. Streams are more useful for troubleshooting management events than CloudTrail
+* Extended Client Library for Java SDK cannot create a new bucket and move messages to them; however, it can delete messages from S3
+* KMS-CLI: generate-data-key is an important call
+* There is an Amazon Encryption SDK – use this for client-side encryption
+* Trusted Advisor is about best practices. Policy simulator is for everything to do with policies and permissions
+* `amz-server-side-encryption:&lt;type>` can be required in headers sent to S3 for encryption in transit
+* Use Cognito for tracking user devices
+* ELB doesn't do session management (but ElasticCache does)
+* Lambdas must be configured to access VPC in order to access resources in a private subnet (but now there are in-VPC features as well as Lambda@Edge)
+* String, Number, and Binary can be used as sort keys in DynamoDb
+* Use DeletionPolicy in CloudFormation to deal with deletion of resources
+* EC2 instances must be running a CodeDeploy agent to use CodeDeploy – this agent is what will pull from CodeCommit. CodeDeploy doesn't do the pull
+* DynamoDb is low latency but it isn't used to REDUCE latency – use caching for that
+* Use exponential backoff for 5xx errors. Exponential backoff is almost ALWAYS the right answer when it appears
+* S3 cross region replication requires bucket versioning – buckets are region-specific, only bucket NAMES are region agostic
