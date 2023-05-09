@@ -2,7 +2,7 @@
 title: AWS Developer Associate
 description: 
 published: true
-date: 2023-05-09T22:40:03.594Z
+date: 2023-05-09T22:47:12.586Z
 tags: 
 editor: markdown
 dateCreated: 2023-04-20T04:47:20.992Z
@@ -12,9 +12,9 @@ Note: these are not complete notes but are rather items I needed to remember. [G
 
 A few key areas that aren't well-covered here but appeared heavily on the exam:
 * API Gateway and CodeBuild/CodeDeploy should be studied in significant detail, ideally with some hands on labs and/or experimentation
-* Quickest vs safest/least-disruptive deployment stratgies are important topics
+* Quickest vs safest/least-disruptive deployment strategies are important topics for the above. Be familiar with canary deployments and options for doing them
 * You should thoroughly understand how Lambda does and doesn't work  with resources in a VPC. The trainings I took and the notes here DO NOT cover newer VPC-specific Lambda features or a new feature called Lambda@Edge
-* Knowing how to enforce encryption at rest and in transit for a variety of services is extremely important. Sometimes the answer is as detailed as putting a specific tag in an HTTPS request header
+* Knowing how to enforce encryption at rest and in transit for a variety of services is very important. Sometimes the answer is as detailed as putting a specific tag in an HTTPS request header
 
 # S3
 
