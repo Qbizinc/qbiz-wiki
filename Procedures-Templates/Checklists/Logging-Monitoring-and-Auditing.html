@@ -1,0 +1,24 @@
+<!--
+title: Logging, Monitoring, and Auditing Checklist
+description: 
+published: true
+date: 2023-05-10T22:40:44.047Z
+tags: 
+editor: ckeditor
+dateCreated: 2023-05-10T22:40:44.047Z
+-->
+
+<p>Sourced from: <a href="https://medium.com/google-cloud/gcp-checklist-6-monitoring-and-alerting-maintaining-reliability-5701a8b9e86f"><strong>GCP Checklist 6 — Logging ,Monitoring and Alerting (maintaining reliability)</strong></a></p>
+<ul>
+  <li>Configure Audit collection project</li>
+  <li>Configure a test project to use to validate the configuration of your data-access audit collection before propagating to developer and production projects,</li>
+  <li>Apply appropriate IAM controls to restrict who can access the audit logs</li>
+  <li>Export logs for longer term retention</li>
+  <li>Design aggregated exports on which your organization can filter and export the data for future analysis</li>
+  <li>Configure log sinks before you start receiving logs</li>
+  <li>Follow the best practices for common logging export scenarios</li>
+  <li>Make sure to use exclusion filters to exclude logging data that isn’t useful</li>
+  <li>Set appropriate IAM controls against the export sink destination&nbsp;</li>
+  <li>Instrument your applications to provide metrics
+    Configure Stackdriver for monitoring and alerting</li>
+</ul>
