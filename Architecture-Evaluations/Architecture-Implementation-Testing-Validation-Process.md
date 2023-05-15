@@ -2,7 +2,7 @@
 title: Architecture Implementation Testing and Validation Process
 description: Process for testing/validating that a data architecture was implemented successfully
 published: true
-date: 2023-05-15T23:33:29.804Z
+date: 2023-05-15T23:38:20.255Z
 tags: 
 editor: markdown
 dateCreated: 2023-05-15T23:04:43.963Z
@@ -24,4 +24,8 @@ Reference document: https://docs.google.com/document/d/13mK6aW6BINitKzSKXtIbxIca
 - Solidify the validation plan with specific tests
   - What will the tests actually look like? What does the test design look like in a test environment?
   - How does each test contribute to showing that the architecture was implemented successsfully?
-- 
+- Describe infrastructure management moving forward
+  - What sort of tools/services/etc. have been implemented to help with infrastructure management? 
+    - Will these methods hold up in the event that the relationship between Qbiz and the client ends?
+  - Have logging/monitoring/alerting tools/services been set up to help detect and alert the owning team to issues?
+- List out recommendations for the client after the architecture has been setup (ideally upcoming/future projects)
