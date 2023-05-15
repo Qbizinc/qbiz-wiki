@@ -2,7 +2,7 @@
 title: Data Lifecycle Checklist
 description: A checklist to ensure that all aspects of the Data Lifecycle are properly accounted for
 published: true
-date: 2023-05-05T23:00:50.141Z
+date: 2023-05-15T23:19:31.379Z
 tags: checklists
 editor: ckeditor
 dateCreated: 2023-05-05T23:00:50.141Z
@@ -12,46 +12,121 @@ dateCreated: 2023-05-05T23:00:50.141Z
 <p>&nbsp;</p>
 <p>This checklist is to be used to ensure that all aspects of the Data Lifecycle have been properly documented and implemented for client projects. (Ingested, Transformed, Curated, Queried, Explored, Analyzed and visualized, Stored)</p>
 <p>&nbsp;</p>
+<p>In general, all of this information should go into the Project <a href="https://docs.google.com/document/d/1RXugNuzgyTjuqb50wvKnwd2hgFR4SaIPiGrHEqC4p94/edit#heading=h.fwx1qy190lxt">Design Document</a> either as specific sections or as links to other documents as appropriate.&nbsp;</p>
+<p>&nbsp;</p>
 <h5>Ingestion</h5>
 <ul>
-  <li>Source to target mapping</li>
-  <li>Source documentation (constraints, update timing, etc)</li>
+  <li><strong>Source to target mapping </strong>(What are all of the sources? Where are they going? Ideally, we'd have this down to the column level but at a minimum we should have this at the app/database level)</li>
+  <li><strong>Source documentation</strong>
+    <ul>
+      <li>Constraints</li>
+      <li>Update frequency/timing</li>
+      <li>Links to any existing client documentation</li>
+    </ul>
+  </li>
 </ul>
 <p>&nbsp;</p>
 <h6>Transformation</h6>
 <ul>
-  <li>Business rule definitions</li>
-  <li>Transformation rules</li>
-  <li>Unit tests</li>
+  <li><strong>Business rule definitions</strong> (not every column has rules, but every rule needs to be documented)</li>
+  <li><strong>Tool documentation </strong>(when, where, and how are these transformations done?)</li>
+  <li><strong>Transformation rules</strong>
+    <ul>
+      <li>Standard transformations (for example, all Datetimes get converted to UTC)</li>
+      <li>Specific column transformations</li>
+    </ul>
+  </li>
+  <li><strong>Unit tests</strong>
+    <ul>
+      <li>Should be documented using the Test <a href="https://docs.google.com/document/d/13mK6aW6BINitKzSKXtIbxIcaIvwT8HNGwpgJ5kPwTfs/edit#heading=h.fwx1qy190lxt">Design Document</a></li>
+      <li>What tools are being used?</li>
+      <li>Are the tests Automated? How?</li>
+      <li>How are the results shared with relevant stakeholders?</li>
+    </ul>
+  </li>
 </ul>
 <p>&nbsp;</p>
 <h6>Curation</h6>
 <ul>
-  <li>Data Model</li>
-  <li>Data Governance</li>
-  <li>Lineage</li>
+  <li><strong>Data Model</strong>
+    <ul>
+      <li>Entity relationships</li>
+      <li>How does this project's data fit into the overall data ecosystem?</li>
+      <li>Who has stewardship of the Model once the project is complete?</li>
+    </ul>
+  </li>
+  <li><strong>Data Governance</strong>
+    <ul>
+      <li>Are all major business rule definitions the same across units? (For example, do Sales and Finance agree on the definition of terms used by both?)</li>
+      <li>Who has stewardship of the Rules and Transformations once the project is complete?</li>
+      <li>Is there a tool being used? [Should have link to DG tool matrix]</li>
+    </ul>
+  </li>
+  <li><strong>Lineage</strong>
+    <ul>
+      <li>Is there clear mapping of columns from source to analytics?</li>
+      <li>If a change is made upstream, will it properly propagate downstream?</li>
+      <li>Is there a tool being used?&nbsp;</li>
+      <li>Is the lineage easily searched by end users?</li>
+    </ul>
+  </li>
 </ul>
 <p>&nbsp;</p>
 <h6>Data Quality Checks</h6>
 <ul>
-  <li>Cleanliness (Null counts, Orphan records, unmatched lookup values, etc)</li>
-  <li>Completeness checks</li>
-  <li>Appropriateness checks (bounding, negative values, unicode characters, etc)</li>
+  <li><strong>Cleanliness</strong> (Null counts, Orphan records, unmatched lookup values, etc)</li>
+  <li><strong>Completeness checks </strong>(Did all of the data from the source get pulled? If a backfill happens, can it be detected?)</li>
+  <li><strong>Appropriateness checks</strong> (bounding, negative values, unicode characters, etc)</li>
+  <li><strong>Tools/Automation</strong>
+    <ul>
+      <li>Is a tool being used?</li>
+      <li>How are results conveyed to users?</li>
+      <li>How are problems detected and fixed in a timely fashion?</li>
+    </ul>
+  </li>
 </ul>
 <p>&nbsp;</p>
 <h6>Analysis</h6>
 <ul>
-  <li>Data Profiling</li>
-  <li>Aggregate rules</li>
-  <li>Lookup tables</li>
-  <li>Findings</li>
-  <li>Recommendations</li>
+  <li><strong>Data Profiling</strong> (Metadata, min/max values, etc)<ul>
+      <li>What columns have been profiled?</li>
+      <li>How is the profiling done? How often is it updated?</li>
+      <li>Are any gaps in data properly communicated to stakeholders?</li>
+    </ul>
+  </li>
+  <li><strong>Aggregate rules</strong> (What columns are generated via aggregation? Are there rules regarding regeneration of data due to backfills or updates?)</li>
+  <li><strong>Lookup tables</strong> (What lookup tables were created for the project? What are they for?)</li>
+  <li><strong>Findings</strong> (What did our analysis turn up? How did we get those results and are the reproducible?)</li>
+  <li><strong>Recommendations</strong> (Any results here should be well documented as part of the Design Document linked at the start of this checklist)</li>
 </ul>
 <p>&nbsp;</p>
 <h6>Storage</h6>
 <ul>
-  <li>Day 1 size requirements</li>
-  <li>Predicted growth</li>
-  <li>Archive rules</li>
-  <li>Disaster recovery</li>
+  <li><strong>Day 1 size requirements</strong>&nbsp;<ul>
+      <li>How much space needs to be budgeted for with the initial backfill of data from the source systems?</li>
+      <li>If cost can be calculated, we should provide it</li>
+    </ul>
+  </li>
+  <li><strong>Predicted growth</strong>
+    <ul>
+      <li>Over months? Quarters? Years?</li>
+      <li>How consistent do we expect the growth to be?</li>
+      <li>Is it sustainable to store all data for the foreseeable future?&nbsp;</li>
+    </ul>
+  </li>
+  <li><strong>Archive rules</strong>
+    <ul>
+      <li>How long should data be stored before archiving?</li>
+      <li>Where is it archived?</li>
+      <li>How difficult or costly is it to retrieve archived information?</li>
+      <li>Are there any regulations about data that need to be considered? GDPR, for instance?</li>
+    </ul>
+  </li>
+  <li><strong>Disaster recovery</strong>
+    <ul>
+      <li>Is there a DR plan?</li>
+      <li>How quickly can data be recovered?</li>
+      <li>What changes to the process happen for older data vs newer data?</li>
+    </ul>
+  </li>
 </ul>
