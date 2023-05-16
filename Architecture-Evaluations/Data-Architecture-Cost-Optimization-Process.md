@@ -2,7 +2,7 @@
 title: Data Architecture Cost Optimization PRocess
 description: Process to periodically review data architecture costs and provide recommendations for cost optimization
 published: true
-date: 2023-05-16T00:31:40.731Z
+date: 2023-05-16T00:32:58.203Z
 tags: 
 editor: markdown
 dateCreated: 2023-05-16T00:20:47.434Z
