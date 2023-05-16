@@ -2,7 +2,7 @@
 title: Data Architecture Cost/Application Optimization Process
 description: Process to periodically review data architecture costs and provide recommendations for cost optimization as well as perform testing to determine how data applications can be optimizerd
 published: true
-date: 2023-05-16T23:08:49.528Z
+date: 2023-05-16T23:10:27.034Z
 tags: 
 editor: markdown
 dateCreated: 2023-05-16T00:20:47.434Z
@@ -20,7 +20,7 @@ In addition, other processes will be involved in order to fully optimize the cos
 
 Regularly testing applications for performance is crucial for **BOTH** cost and application optimization. Typically optimizing for performance will also help with optimizing cost and vice versa; however there may be cases where one has to be sacrificed for the other (i.e. always provisioning additional compute resources in a cluster as "overhead" that services can utilize to account for unexpected increases in usage, brand new workloads, etc.). 
 
-The goal thus should not be solely to minimize costs and/or maximize performance, but instead find the right balance of cost and performance that keeps costs down while also allowing for unexpected 
+The goal thus should not be solely to minimize costs and/or maximize performance, but instead find the right balance of cost and performance that keeps costs down while also allowing for the application to absorb a reasonable amount of additional traffic without a degredation in performance. This aligns with the system design best practice/principle known as "Planning for Failure".
 
 ## Cost Optimization
 - Find the "Billing" section in the cloud provider UI
