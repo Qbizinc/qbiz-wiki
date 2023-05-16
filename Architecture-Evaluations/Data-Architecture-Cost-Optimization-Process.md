@@ -2,7 +2,7 @@
 title: Data Architecture Cost Optimization Process
 description: Process to periodically review data architecture costs and provide recommendations for cost optimization
 published: true
-date: 2023-05-16T19:22:52.873Z
+date: 2023-05-16T19:36:36.270Z
 tags: 
 editor: markdown
 dateCreated: 2023-05-16T00:20:47.434Z
@@ -36,3 +36,8 @@ In addition, other processes will be involved in order to fully optimize the cos
     - For the resources that are not limiting, is there an opportunity to cut down on usage? 
       - Typically this will manifest itself in compute power (CPU/RAM); this is one of the easier resources to quickly spin up and down
       - Unless there is a ridiculous amount of disk provisioned but not utilized, it usually makes sense to just keep the disk provisioned and grow into it (assuming data is kept and not deleted after a certain period). Same applies to the Iops of a VM
+- Consider application rearchitecting
+  - This is usually one of the last options considered, as it typically requires the most amount of upfront engineering work and isn't always justified by cost savings
+  - However, depending on the use case it may make sense to consider. For example:
+    - Upon examination of billing data, it becomes clear that network egress costs seem much higher than they were projected. Looking closer, it is determined that this is being caused by one service making alot of data transfer requests, often times for data that has already been requested. The application gets rearchitected to make less calls for the redundant data (perhaps leveraging a cache) and reduce networking costs
+    - An application is found to perform all of its operations using multiple virtual machines in parallel and is woefully underutilizing the provisioned CPU on each machine. Multiple options could be considered here: decreasing CPU of each machine, or rearchitecting the application to perform all operations in parallel on the same machine. The additional benefit of the second option is that the application would then become simpler to operate moving forward.
