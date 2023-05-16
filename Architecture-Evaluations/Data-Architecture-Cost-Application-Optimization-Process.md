@@ -2,7 +2,7 @@
 title: Data Architecture Cost/Application Optimization Process
 description: Process to periodically review data architecture costs and provide recommendations for cost optimization as well as perform testing to determine how data applications can be optimizerd
 published: true
-date: 2023-05-16T22:55:08.939Z
+date: 2023-05-16T22:55:27.744Z
 tags: 
 editor: markdown
 dateCreated: 2023-05-16T00:20:47.434Z
@@ -10,7 +10,7 @@ dateCreated: 2023-05-16T00:20:47.434Z
 
 # Data Architecture Cost and Application Optimization Process
 
-This wiki is meant to be a general cost optimization procedure that can be followed once new data architecture is stable.
+This wiki is meant to be a general cost/application optimization procedure that can be followed once new data architecture is stable.
 
 The procedure is general enough that it should be able to work for any cloud provider. In general, the idea is to get to a point where cloud costs can be quickly examined and broken down across various groupings to determine where the best areas are for cost optimization.
 
