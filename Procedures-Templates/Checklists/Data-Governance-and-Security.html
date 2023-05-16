@@ -2,7 +2,7 @@
 title: Data Governance and Security Checklist
 description: 
 published: true
-date: 2023-05-16T00:17:38.001Z
+date: 2023-05-16T00:39:07.098Z
 tags: 
 editor: ckeditor
 dateCreated: 2023-05-09T20:51:52.541Z
@@ -10,6 +10,95 @@ dateCreated: 2023-05-09T20:51:52.541Z
 
 <p>Sourced from: <a href="https://qbiz-wiki.com/en/Procedures-Templates/Checklists/Data-Governance-and-Security">Overview of data security and governance</a></p>
 <p>Big Query</p>
+<h1>Summary:</h1>
+<p>We recommend that you build your data governance practice around three key components:</p>
+<ul>
+  <li>A framework that enables <i>people</i> to define, agree to, and enforce data policies.</li>
+  <li>Effective <i>processes</i> for control, oversight, and stewardship over all data assets across on-premises systems, cloud storage, and data warehouse platforms.</li>
+  <li>The right <i>tools and technologies</i> for overseeing and managing data policy compliance.</li>
+</ul>
+<h2>Data access management</h2>
+<ol>
+  <li>Resource management</li>
+  <li>Security framework</li>
+  <li>Authentication and authorization</li>
+  <li>Identity<ul>
+      <li>Access management</li>
+      <li>IAM for tables and views</li>
+      <li>IAM for endpoints</li>
+      <li>Implementation methods</li>
+      <li>Short-lived credentials</li>
+      <li>Long-lived credentials</li>
+      <li>Non-anonymous BigQuery requests</li>
+      <li>Network security</li>
+      <li>Context-aware access control</li>
+      <li>Service perimeters</li>
+      <li>Data access in hybrid environments</li>
+    </ul>
+  </li>
+</ol>
+<h2>Encryption</h2>
+<ul>
+  <li>Encryption at rest</li>
+  <li>Encryption in transit</li>
+  <li>Crypto-deletion</li>
+</ul>
+<h2>Data discovery</h2>
+<ul>
+  <li>Metadata</li>
+  <li>Search</li>
+  <li>Access control</li>
+  <li>Lineage</li>
+</ul>
+<h2>Data classification and management</h2>
+<h3>1. Data loss prevention</h3>
+<ul>
+  <li>Profile your data</li>
+  <li>Inspect a single table</li>
+  <li>De-identify sensitive data</li>
+  <li>Automatically tag data</li>
+  <li>Facilitate automatic classification of data in a pipeline</li>
+</ul>
+<h3>2. Column-level security</h3>
+<h3>3. Row-level security</h3>
+<h3>4. Master data management</h3>
+<ul>
+  <li>Direct communication with authoritative system</li>
+  <li>Golden copy from a single source</li>
+  <li>Golden copy from multiple sources</li>
+</ul>
+<h3>5. Slowly changing dimensions</h3>
+<ul>
+  <li>Traditional SCD handling methods</li>
+  <li>Functional data engineering</li>
+  <li>Handling SCDs in BigQuery</li>
+</ul>
+<h3>6. Data retention and deletion</h3>
+<p>&nbsp;</p>
+<h2>Data quality management</h2>
+<p>Data quality management processes include the following:</p>
+<ul>
+  <li>Creating controls for validation.</li>
+  <li>Enabling quality monitoring and reporting.</li>
+  <li>Supporting the triage process for assessing the level of incident severity.</li>
+  <li>Enabling root cause analysis and recommendation of remedies to data issues.</li>
+  <li>Tracking data incidents.</li>
+</ul>
+<h3>Quality metadata</h3>
+<ul>
+  <li>Structure and format</li>
+  <li>Quality metadata in the cloud</li>
+  <li>DQM considerations</li>
+</ul>
+<h3>Auditing</h3>
+<ul>
+  <li><a href="https://cloud.google.com/logging/docs/audit#admin-activity">Admin Activity logs</a></li>
+  <li><a href="https://cloud.google.com/logging/docs/audit#data-access">Data Access logs</a></li>
+  <li><a href="https://cloud.google.com/logging/quotas#logs_retention_periods">log retention period</a></li>
+  <li><a href="https://github.com/GoogleCloudPlatform/professional-services/tree/master/examples/bigquery-audit-log">dashboards</a></li>
+</ul>
+<p>&nbsp;</p>
+<h1>Detailed:</h1>
 <p>Data governance is a principled approach to manage data during its lifecycle — from acquisition, to use, to disposal. Your data governance program clearly outlines policies, procedures, responsibilities, and controls surrounding data activities. This program ensures that information is collected, maintained, used, and disseminated in a way that meets your organization's data integrity and security needs. Also, it empowers your employees to discover and use the data to its fullest potential.</p>
 <p>From when the data is ingested to when it can be used for valuable insights and information, management and governance of the data should be considered with the utmost importance for any organization.</p>
 <p>We recommend that you build your data governance practice around three key components:</p>
