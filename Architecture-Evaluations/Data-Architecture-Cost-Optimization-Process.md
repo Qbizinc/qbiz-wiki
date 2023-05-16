@@ -1,8 +1,8 @@
 ---
-title: Data Architecture Cost Optimization Process
-description: Process to periodically review data architecture costs and provide recommendations for cost optimization
+title: Data Architecture Cost/Application Optimization Process
+description: Process to periodically review data architecture costs and provide recommendations for cost optimization as well as perform testing to determine how data applications can be optimizerd
 published: true
-date: 2023-05-16T19:38:16.374Z
+date: 2023-05-16T22:53:22.423Z
 tags: 
 editor: markdown
 dateCreated: 2023-05-16T00:20:47.434Z
