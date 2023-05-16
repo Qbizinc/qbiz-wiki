@@ -2,15 +2,16 @@
 title: Data Governance and Security Checklist
 description: 
 published: true
-date: 2023-05-10T01:51:24.918Z
+date: 2023-05-16T00:17:38.001Z
 tags: 
 editor: ckeditor
 dateCreated: 2023-05-09T20:51:52.541Z
 -->
 
 <p>Sourced from: <a href="https://qbiz-wiki.com/en/Procedures-Templates/Checklists/Data-Governance-and-Security">Overview of data security and governance</a></p>
-<p>For more information, see this Best Practices for Working with Google Cloud Audit Logs <a href="https://cloud.google.com/blog/products/gcp/best-practices-for-working-with-google-cloud-audit-logging">blog post</a>.</p>
-<h2>Big Query</h2>
+<p>Big Query</p>
+<p>Data governance is a principled approach to manage data during its lifecycle — from acquisition, to use, to disposal. Your data governance program clearly outlines policies, procedures, responsibilities, and controls surrounding data activities. This program ensures that information is collected, maintained, used, and disseminated in a way that meets your organization's data integrity and security needs. Also, it empowers your employees to discover and use the data to its fullest potential.</p>
+<p>From when the data is ingested to when it can be used for valuable insights and information, management and governance of the data should be considered with the utmost importance for any organization.</p>
 <p>We recommend that you build your data governance practice around three key components:</p>
 <ul>
   <li>A framework that enables <i>people</i> to define, agree to, and enforce data policies.</li>
@@ -18,63 +19,300 @@ dateCreated: 2023-05-09T20:51:52.541Z
   <li>The right <i>tools and technologies</i> for overseeing and managing data policy compliance.</li>
 </ul>
 <h2>Data access management</h2>
-<ol>
-  <li>Resource management</li>
-  <li>Security framework</li>
-  <li>Authentication and authorization</li>
-  <li>Identity<ul>
-      <li>Access management</li>
-      <li>IAM for tables and views</li>
-      <li>IAM for endpoints</li>
-      <li>Implementation methods</li>
-      <li>Short-lived credentials</li>
-      <li>Long-lived credentials</li>
-      <li>Non-anonymous BigQuery requests</li>
-      <li>Network security</li>
-      <li>Context-aware access control</li>
-      <li>Service perimeters</li>
-      <li>Data access in hybrid environments</li>
-    </ul>
-  </li>
-</ol>
-<h2>Encryption</h2>
+<p>Conventionally, companies have relied on perimeter security to protect their internal resources. Perimeter security, also known as <i>eggshell security</i> or <i>castle-and-moat security</i>, assumes that threats are only external to its walls, and that anything inside the perimeter walls is trusted. This assumption has been proven incorrect with <a href="https://www.ibm.com/security/data-breach">costly consequences for companies</a>, because when an attacker gains access to the internal network, they can move to other systems and explore valuable data assets almost unhindered.</p>
+<p>Attackers gain access to internal networks through vulnerabilities, malware installed by employees, social engineering, and other means. However, malicious external agents that create holes in the perimeter security model aren't the only threat. Trusted employees can knowingly or unknowingly modify, delete, or exfiltrate data when assets in your internal network are not correctly protected.</p>
+<p>Last but not least, perimeter security has become increasingly complex because of the evolution of the enterprise network. For example, a perimeter is difficult to enforce in the following situations:</p>
 <ul>
-  <li>Encryption at rest</li>
-  <li>Encryption in transit</li>
-  <li>Crypto-deletion</li>
+  <li>When employees must work remotely from untrusted networks, such as from client sites, from airports, or from home.</li>
+  <li>When vendors, partners, and contractors need more direct access to your data resources.</li>
+  <li>When some of the company systems now live in the cloud.</li>
 </ul>
-<h2>Data discovery</h2>
-<ul>
-  <li>Metadata</li>
-  <li>Search</li>
-  <li>Access control</li>
-  <li>Lineage</li>
-</ul>
-<h2>Data classification and management</h2>
-<h3>1. Data loss prevention</h3>
-<ul>
-  <li>Profile your data</li>
-  <li>Inspect a single table</li>
-  <li>De-identify sensitive data</li>
-  <li>Automatically tag data</li>
-  <li>Facilitate automatic classification of data in a pipeline</li>
-</ul>
-<h3>2. Column-level security</h3>
-<h3>3. Row-level security</h3>
-<h3>4. Master data management</h3>
-<ul>
-  <li>Direct communication with authoritative system</li>
-  <li>Golden copy from a single source</li>
-  <li>Golden copy from multiple sources</li>
-</ul>
-<h3>5. Slowly changing dimensions</h3>
-<ul>
-  <li>Traditional SCD handling methods</li>
-  <li>Functional data engineering</li>
-  <li>Handling SCDs in BigQuery</li>
-</ul>
-<h3>6. Data retention and deletion</h3>
 <p>&nbsp;</p>
+<h3>Resource management</h3>
+<p>Setting up your workloads in Google Cloud requires adhering to the structure that governs all the resources in Google Cloud, and the specific guidelines for each of its products.</p>
+<p>All the resources in Google Cloud are organized in a hierarchy. At the lowest level, you have the fundamental components such as BigQuery datasets, Cloud Storage buckets, and Compute Engine virtual machines. These low-level resources are grouped into logical containers called <i>projects</i>. Projects form the basis for using all Google Cloud services, managing billing, and assigning roles and permissions over the project's resources. Projects are in turn grouped into <i>folders</i> that can correspond to different departments or teams within a company. At the top of the hierarchy sits the <i>organization</i> node representing the company it belongs to and containing multiple folders. For more details, see the <a href="https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy">Resource Hierarchy documentation</a>.</p>
+<p>From a Google Cloud perspective, <a href="https://cloud.google.com/bigquery/docs/datasets-intro">BigQuery datasets</a> sit at the lowest level of the resource hierarchy. Zooming into them, from a BigQuery perspective, they are top-level containers used to organize and control access to your tables and views. They are similar in principle to databases or namespaces in traditional <a href="https://wikipedia.org/wiki/Online_transaction_processing">Online Transactional Processing (OLTP)</a> and <a href="https://wikipedia.org/wiki/Online_analytical_processing">Online Analytical Processing (OLAP)</a> environments. At creation time, you choose a <a href="https://cloud.google.com/bigquery/docs/locations">location for your dataset</a>. A query can only reference datasets in the same location. Therefore, it's important to consider the location when you first create datasets and design queries.</p>
+<p>&nbsp;</p>
+<h3>Security framework</h3>
+<p><a href="https://www.beyondcorp.com/">Google's BeyondCorp initiative</a> establishes a security framework based on <i>Zero Trust</i> security. In this framework, the principle of dynamic access controls defines that any user or device that wants to access a resource:</p>
+<ol>
+  <li>Must authenticate with their credentials.</li>
+  <li>Must be authorized to access said resource.</li>
+  <li>Must communicate using encryption.</li>
+</ol>
+<p>These requirements must be met regardless of the user or device network location, whether that's inside the company intranet, from a public WiFi, or on a plane, for instance.</p>
+<p>Subsequent sections in this article explore concepts and best practices for managing access to data assets, including the principles laid out in BeyondCorp. The article also explains how you can implement a <a href="https://cloud.google.com/bigquery/docs/data-governance#network_security">perimeter security overlay</a> as a protective measure against exfiltration.</p>
+<h3>Authentication and authorization</h3>
+<p><i>Authentication</i> refers to the process of determining and verifying the identity of a client interacting with BigQuery. <i>Authorization</i> refers to the process of determining what permissions the verified identity has to interact with BigQuery and its datasets. In short, authentication identifies who you are, and authorization determines what you can do.</p>
+<h4>Identity</h4>
+<p>On Google Cloud, <a href="https://cloud.google.com/identity">Cloud Identity</a> is the built-in identity provider. When migrating from your on-premises data warehouse, consider <a href="https://cloud.google.com/solutions/patterns-for-authenticating-corporate-users-in-a-hybrid-environment#patterns_for_federating_an_external_idp_with_gcp">federating your existing identity provider such as Microsoft Active Directory with Cloud Identity</a>. You can then continue to use your existing identity provider to handle the following tasks:</p>
+<ul>
+  <li>Provisioning and manage users and groups.</li>
+  <li>Setting up single sign-on.</li>
+  <li>Configuring multi-factor authentication.</li>
+</ul>
+<p><i>Users</i> of BigQuery might be humans, but they might also be nonhuman applications that communicate using a BigQuery <a href="https://cloud.google.com/bigquery/docs/reference/libraries#setting_up_authentication">client library</a> or the <a href="https://cloud.google.com/bigquery/docs/reference/rest">REST API</a>. These applications should identify themselves using a <a href="https://cloud.google.com/iam/docs/understanding-service-accounts">service account</a>, the special type of Google identity intended to represent a nonhuman user.</p>
+<p>Cloud Identity is the first half of a larger product called <a href="https://cloud.google.com/iam">Identity and Access Management</a> (IAM).</p>
+<p>Once a user has been authenticated, you still need to determine if the user has the necessary privileges to interact with BigQuery and its datasets.</p>
+<h4>Access management</h4>
+<p>In addition to authentication, IAM gives you centralized control for authorizing identities with specific permissions to BigQuery and its datasets. IAM manages the security policy for BigQuery across your organization and lets you grant access to BigQuery resources at fine-grained levels beyond project-level access.</p>
+<p>In IAM, <a href="https://cloud.google.com/iam/docs/overview#permissions">permissions</a> determine the operations that are allowed on a resource, but you cannot assign these permissions directly to Google identities (users, service accounts, Google groups, Google Workspace, or Cloud Identity domains). Instead, you assign <a href="https://cloud.google.com/iam/docs/overview#roles">roles</a> (which are collections of permissions) to Google identities, and use a <a href="https://cloud.google.com/iam/docs/overview#iam_policy">policy</a> (declared in a JSON or YAML file) to enforce these bindings at any of the following <a href="https://cloud.google.com/iam/docs/overview#policy_hierarchy">Google Cloud resource levels</a>:</p>
+<ul>
+  <li>Organization</li>
+  <li>Folder</li>
+  <li>Project</li>
+  <li>Resource level (BigQuery datasets)</li>
+</ul>
+<p><a href="https://cloud.google.com/iam/docs/understanding-roles#bigquery-roles">BigQuery roles</a> can be bound at any of the previously listed resource levels, for example:</p>
+<ul>
+  <li>At the project level, a user can have the role of <code>admin</code>, <code>metadataViewer</code>, <code>jobUser</code>.</li>
+  <li>At the BigQuery dataset resource level, a user (or a view) can have the role of <code>dataEditor</code>, <code>dataOwner</code>, or <code>dataViewer</code>.</li>
+</ul>
+<h5>IAM for tables and views</h5>
+<p>BigQuery lets you assign roles individually to certain types of resources within datasets, like tables and views, without providing complete access to the dataset's resources. Table-level permissions determine the users, groups, and service accounts that can access a table or view.</p>
+<p>For more information about table and view access control, see <a href="https://cloud.google.com/bigquery/docs/table-access-controls-intro">Introduction to table access controls</a>.</p>
+<p>Roles cannot be applied to the following individual resources: routines or models.</p>
+<p>Alternatively, you can use an authorized view to grant specific users access to query results, without giving them access to the underlying tables. Use <a href="https://cloud.google.com/bigquery/docs/authorized-views">authorized views</a> to restrict access at a lower resource level such as the <a href="https://cloud.google.com/bigquery/docs/share-access-views#create_the_view_in_the_new_dataset">table, column</a>, <a href="https://medium.com/google-cloud/how-to-control-access-to-bigquery-at-row-level-with-groups-1cbccb111d9e">row</a>, or <a href="https://medium.com/google-cloud/share-data-with-confidence-cell-level-access-controls-in-bigquery-and-data-studio-cf753fa173a4">cell</a>. <a href="https://cloud.google.com/bigquery/docs/data-governance#column-level_security">column-level security</a> and <a href="https://cloud.google.com/bigquery/docs/data-governance#row-level_security">row-level security</a> which are both forms of <a href="https://cloud.google.com/bigquery/docs/data-governance#data_classification_and_management">data classification</a>, are recommended over authorized views, but your needs and circumstances determine which methods are best to use.</p>
+<h5>IAM for endpoints</h5>
+<p>IAM lets you manage authentication and authorization based on identities. It also lets you create a secure perimeter around services that have public endpoints such as BigQuery. For more information about this access control method, see the section on <a href="https://cloud.google.com/bigquery/docs/data-governance#network_security">network security</a>.</p>
+<h4>Implementation methods</h4>
+<p>Your migration effort might often require you to connect an on-premises application to BigQuery. Examples of when this access is required include:</p>
+<ul>
+  <li>On-premises data pipelines that load data into BigQuery.</li>
+  <li>On-premises reporting, analytical, or other <a href="https://cloud.google.com/architecture/dw2bq/dw-bq-migration-overview#business-application">business applications</a> that query or extract data from BigQuery.</li>
+</ul>
+<p><strong>Note:</strong></p>
+<p>&nbsp;The following is also true for other Google Cloud-based services and products; however, many of the usages there have already been wired, leaving you only the work of authorizing through IAM.</p>
+<p>In order to access data from BigQuery, an application must obtain and send credentials along with API requests. Either short-lived or long-lived credentials can be used to interact with the BigQuery API from an on-premises application or another public cloud.</p>
+<p>A BigQuery client must be authenticated using a service account or a user's credentials. After a client is authenticated, an access token or key must be passed to the BigQuery API. These credentials are then checked for proper authorization to make sure the client has sufficient IAM permissions for whatever interactions it's having with BigQuery.</p>
+<h5>Short-lived credentials</h5>
+<p>Short-lived credentials expire automatically after a short duration (maximum lifetime of 1 hour for <a href="https://cloud.google.com/iam/docs/creating-short-lived-service-account-credentials#sa-credentials-oauth">OAuth 2.0</a> and <a href="https://cloud.google.com/iam/docs/creating-short-lived-service-account-credentials#sa-credentials-oidc">OpenID</a>, 12 hours for <a href="https://cloud.google.com/iam/docs/creating-short-lived-service-account-credentials#sa-credentials-jwt">JWT</a>), which is specified at the time of creation. If you want to avoid managing service account keys or if you want to issue expiring grants to Google Cloud services, use short-lived credentials.</p>
+<p>The following types of credentials can be <a href="https://cloud.google.com/iam/docs/creating-short-lived-service-account-credentials#requesting_short-lived_credentials">requested as short-lived</a>:</p>
+<ul>
+  <li>OAuth 2.0 access tokens</li>
+  <li>OpenID Connect ID tokens</li>
+  <li>Self-signed JSON Web Tokens (JWTs)</li>
+  <li>Self-signed binary objects (blobs)</li>
+</ul>
+<p>Short-lived credentials allow on-premises services to communicate with BigQuery without requiring a Google Cloud identity. Though a Google Cloud identity must obtain the short-lived credentials, the application or service that's using the token doesn't require a Google Cloud identity.</p>
+<h5>Long-lived credentials</h5>
+<p>Long-lived credentials (for example, service account private keys or OAuth 2.0 access tokens with refresh tokens) permit access to BigQuery until they are either deleted or revoked. Service account private keys persist once created and do not require refreshing. OAuth 2.0 access tokens expire but can be used as long-lived with an accompanying refresh token. This refresh token lets you request new access tokens (without requiring re-authentication) for as long as the <a href="https://developers.google.com/identity/protocols/OAuth2#expiration">refresh token stays active</a>. This process is illustrated in Google's <a href="https://developers.google.com/oauthplayground/">OAuth 2.0 Playground</a>.</p>
+<p>Considering their extended lifetime, you should manage long-lived credentials with caution on remote client machines or worker nodes. We recommend that you store them in a secure location that limits access to only authorized users. Never store credentials in a code repository: anyone with access to your code would also have access to your key and, thus, your data. In the case of leaked credentials, you can use <a href="https://cloud.google.com/bigquery/docs/data-governance#service_perimeters">service perimeters</a> to mitigate the risk of this unwanted access from outside.</p>
+<p>Recommended strategies for storing long-lived credentials include:</p>
+<ul>
+  <li>Cloud Storage with or without Key Management Service (KMS)</li>
+  <li>Secure on-premises storage</li>
+  <li>Third-party secret management solution</li>
+</ul>
+<p>A service account private key is a cryptographically signed JWT that belongs to an individual service account. The signed JWT is directly used as a bearer token, so a network request to Google's authorization server is not necessary. If leaked, the keys do not automatically expire or have access revoked. Therefore, it's a security best practice to regularly <a href="https://cloud.google.com/iam/docs/keys-create-delete#deleting">rotate keys</a>. This process requires generating a new key, ensuring that all authorized users and services have access to the new key, and deleting the old key. Key rotation ensures that a compromised key's access to BigQuery is automatically revoked, even without the leak being detected.</p>
+<h6>Non-anonymous BigQuery requests</h6>
+<p>Both private service account keys and refresh tokens support authentication using service accounts. Multiple users and applications might have access to the same service account, so these requests are anonymous, because the user or application can't be identified. However, many enterprise customers require that access to Google Cloud resources like BigQuery must be attributable to the individual user who initiated the request. In this case, you can use the <a href="https://developers.google.com/identity/protocols/OAuth2WebServer">OAuth 2.0 three-legged (3LO) flow</a> to authenticate on behalf of an end-user rather than a service account.</p>
+<p>In a two-legged flow, an application directly holds the credentials of a service account and calls the BigQuery API on behalf of that service account. However, in a three-legged flow, the resource owner gives a client access to the BigQuery resources without directly sharing their credentials; requests are made on behalf of the user, and user consent is sometimes required. After a user authenticates, an authorization code can be exchanged for an access token and refresh token.</p>
+<h3>Network security</h3>
+<p>A <a href="https://cloud.google.com/vpc/docs/overview#vpc-networks">Virtual Private Cloud network</a> is akin to a physical network, but virtualized in Google Cloud. You define <a href="https://cloud.google.com/vpc/docs/firewalls">firewall rules</a> at the network level to control traffic to and from your virtual machine instances. However, you can't define firewall rules for API-based services such as BigQuery or Cloud Storage. For these types of services, you can use <a href="https://cloud.google.com/vpc-service-controls">Google Virtual Private Cloud (VPC) Service Controls</a> to restrict traffic.</p>
+<p>A VPC defines <a href="https://cloud.google.com/bigquery/docs/data-governance#service_perimeters">service perimeters</a> around Google API–based services that have a public endpoint, such as BigQuery or Cloud Storage. Service perimeters mitigate data exfiltration risks by restricting data egress and ingress between resources inside the perimeter and resources outside the perimeter. When you correctly implement these controls, unauthorized networks can't access data and services, and data can't be copied to unauthorized Google Cloud projects. Free communication can still occur within the perimeter, but communication is restricted across the perimeter.</p>
+<p>We recommend that you use VPC Service Controls along with IAM access controls. Where IAM offers granular identity-based access control, VPC Service Controls enable broader context-based perimeter security.</p>
+<h4>Context-aware access control</h4>
+<p>API requests from the public internet are allowed or denied access to resources within a service perimeter based on that perimeter's <a href="https://cloud.google.com/vpc-service-controls/docs/use-access-levels">access levels</a>. Requests are classified according to client context, such as IP ranges and user/service account identities. For example, if a BigQuery API request comes from a valid credential but an untrusted network, the request can be denied access to the VPC Network and service perimeter, as the following diagram shows.</p>
+<figure class="image"><img src="https://cloud.google.com/static/bigquery/images/dw2bq-data-governance-context-aware.png" alt="A BigQuery API
+request from a valid credential but an untrusted network can
+be denied access to the VPC network and service perimeter."></figure>
+<h4>Service perimeters</h4>
+<p>VPC service perimeters are <a href="https://cloud.google.com/vpc-service-controls/docs/service-perimeters">configured</a> on a Google Cloud Organization-level, so security policies can be centrally managed. Multiple projects within that Organization and services (for example, BigQuery API) can then be assigned to each perimeter. Projects and data in the same service perimeter can flexibly process, transform, and copy data─as long as all of these actions remain inside the perimeter. The following diagram shows how you might use service perimeters.</p>
+<figure class="image"><img src="https://cloud.google.com/static/bigquery/images/dw2bq-data-governance-service-perimeters.png" alt="Processing, transforming, and copying
+data in the same service perimeter."></figure>
+<p>If Google Cloud resources in different service perimeters need to communicate (for example, BigQuery in one project and service perimeter and Compute Engine in another), you can create a <a href="https://cloud.google.com/vpc-service-controls/docs/share-across-perimeters">perimeter bridge</a> on the Organization level. A perimeter bridge allows communication between Google Cloud resources across multiple service perimeters. Although a Google Cloud project can belong to only one service perimeter, it can be a part of multiple perimeter bridges.</p>
+<h4>Data access in hybrid environments</h4>
+<p>For hybrid on-premises and cloud environments, you can configure <a href="https://cloud.google.com/vpc-service-controls/docs/on-premises-access">Private Google Access for on-premises networks</a> to permit private communication between the service perimeter and on-premises environments. This could allow on-premises environments to access BigQuery datasets. These requests must be sent through a private connection with Google Cloud, which can either be a route-based VPN or a Cloud Interconnect connection; requests don't traverse the public internet.</p>
+<p>This configuration extends the service perimeter from the on-premises networks to data stored in Google Cloud services, ensuring that sensitive data is kept private. You can use this private communication configuration only for APIs on <code>restricted.googleapis.com</code>. The following diagram shows an example of this configuration.</p>
+<figure class="image"><img src="https://cloud.google.com/static/bigquery/images/dw2bq-data-governance-data-access-hybrid.png" alt="Extending the service perimeter from on-premises networks
+to data stored in Google Cloud services."></figure>
+<h3>Encryption</h3>
+<p>When examining how data is stored and transited on Google Cloud and BigQuery, compared to your on-premises enterprise data warehouse, it's useful to reconsider the <a href="https://cloud.google.com/bigquery/docs/data-governance#security_framework">security framework</a>.</p>
+<p>The <a href="https://storage.googleapis.com/pub-tools-public-publication-data/pdf/44860.pdf"><i>dynamic access controls</i> principle</a> of BeyondCorp states that all access must be encrypted. So it's essential that you institute <a href="https://cloud.google.com/security/encryption-at-rest/default-encryption#what_is_encryption">encryption</a> as a data protection method to ensure that even in the unlikely case of data exposure, data is not readable at rest or in transit. This way, encryption adds a layer of defense for protecting data.</p>
+<h4>Encryption at rest</h4>
+<p>Google Cloud <a href="https://cloud.google.com/security/encryption-at-rest">encrypts data stored at rest</a> by default, with no additional action required from you. The Advanced Encryption Standard (AES) is used to encrypt data at rest as <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">recommended by the National Institute of Standards and Technology</a>.</p>
+<p>Before it's written to disk, data in a <a href="https://cloud.google.com/bigquery/docs/datasets-intro">BigQuery dataset</a> is divided into several chunks. Each chunk is encrypted with a unique data encryption key (DEK). By using different keys, the impact of an unlikely DEK compromise is contained to only that chunk of data. These keys are then themselves encrypted using unique key encryption keys (KEK). While the encrypted DEKs are stored close to their associated data, KEKs are stored centrally in <a href="https://cloud.google.com/kms">Cloud Key Management Service</a> (KMS). This hierarchical method for key management is called <a href="https://cloud.google.com/kms/docs/envelope-encryption">envelope encryption</a>. For more details, see the <a href="https://cloud.google.com/security/encryption-at-rest/default-encryption#key_management">key management section of the Encryption at Rest article</a>.</p>
+<p>The following diagram shows how encryption at rest works.</p>
+<figure class="image"><img src="https://cloud.google.com/static/bigquery/images/dw2bq-data-governance-encryption-at-rest.png" alt="Encryption at rest."></figure>
+<p>By default, all keys are managed by Google. However, you can elect to manage the keys yourself. This technique is called Customer Managed Encryption Keys (CMEK). With this technique, you use Cloud KMS to create, rotate, automatically rotate, and destroy symmetric encryption keys. For more information on using CMEK with BigQuery, see <a href="https://cloud.google.com/bigquery/docs/customer-managed-encryption">Protecting data with Cloud KMS keys</a>.</p>
+<h4>Encryption in transit</h4>
+<p>Google Cloud encrypts and authenticates all data in transit when the data moves outside of the <a href="https://cloud.google.com/security/encryption-in-transit#physical_boundaries_of_googles_network">physical boundaries controlled by Google or on behalf of Google</a>. Inside these boundaries, data in transit is generally authenticated but not necessarily encrypted.</p>
+<p>Encryption in transit defends your data, after a connection is established and authenticated, against potential attackers by:</p>
+<ul>
+  <li>Removing the need to trust the lower layers of the network, which are commonly provided by third parties.</li>
+  <li>Preventing attackers from accessing data if communications are intercepted.</li>
+</ul>
+<p>At a high level, encryption in transit works as follows: your data is encrypted before transmission; then the endpoints are authenticated; and when the data reaches its destination, it is decrypted and verified. Nevertheless, the security methods that are used depend on the type of connection being secured. This section focuses on using encryption to secure connections to and from BigQuery.</p>
+<p>BigQuery is a Google Cloud service, so when a user or application sends it a request, the request first reaches a globally distributed system called the <a href="https://cloud.google.com/security/infrastructure/design#google_front_end_service">Google Front End</a> (GFE). GFE terminates traffic for incoming HTTP(S), TCP, and TLS proxy traffic, provides DDoS attack countermeasures, and routes and load balances traffic to any service.</p>
+<p>You must take into account that traffic to or from a Google Cloud service might need to have additional security measures put in place. These measures are relevant when you are migrating your upstream and downstream processes. For instance, requests between a user or application to a custom application hosted on Google Cloud can be routed in several ways. In general, if you are using Cloud Load Balancing, the traffic goes through the GFE, so this route falls into the previous category. If you are using <a href="https://cloud.google.com/network-connectivity/docs/vpn/concepts/overview">Cloud VPN</a>, then the connection is protected by IPsec. On the other hand, if you are connecting directly to a VM using an external IP address, a network load balancer IP address, or through Cloud Dedicated Interconnect, then the connection is not encrypted by default. Therefore, we strongly recommend using a security protocol such as <a href="https://wikipedia.org/wiki/Transport_Layer_Security">TLS</a>.</p>
+<p>For more information on how Google Cloud handles encryption in transit for each connection flow, see <a href="https://cloud.google.com/security/encryption-in-transit">Encryption in Transit in Google Cloud</a>.</p>
+<h4>Crypto-deletion</h4>
+<p>In addition to the encryption provided by default by Google, your application can apply its own encryption if needed, such as when it requires data-masking specific columns in a table or crypto-deletion.</p>
+<p>Crypto-deletion, or <a href="https://wikipedia.org/wiki/Crypto-shredding">crypto-shredding</a>, is the process of rendering data unrecoverable by deleting the key used to encrypt it. Since the data can no longer be decrypted, it is effectively deleted.</p>
+<p>Because only the key is deleted as opposed to the whole encrypted data, this deletion method is fast, permanent, and commonly used in cases such as:</p>
+<ul>
+  <li>When the encrypted data is far larger than the key, for example, in encrypted disks, phones, database records.</li>
+  <li>When deleting the encrypted data is too costly, complex, or unfeasible, for example, in data that is spread out through many repositories, or in unmodifiable storage.</li>
+</ul>
+<p>BigQuery provides functions to <a href="https://cloud.google.com/bigquery/docs/reference/standard-sql/aead_encryption_functions#keysnew_keyset">create keys</a> and to <a href="https://cloud.google.com/bigquery/docs/reference/standard-sql/aead_encryption_functions#aeadencrypt">encrypt</a> and <a href="https://cloud.google.com/bigquery/docs/reference/standard-sql/aead_encryption_functions#aeaddecrypt_string">decrypt</a> data within your queries using the <a href="https://cloud.google.com/bigquery/docs/reference/standard-sql/aead-encryption-concepts">AEAD encryption concepts</a>.</p>
+<h2>Data discovery</h2>
+<p>The data volume, variety, and velocity available to organizations of all sizes is increasing. This data proliferation can present multiple challenges such as the following:</p>
+<ul>
+  <li>The data you need is hard to find because it is scattered, not organized, or duplicated across several data repositories.</li>
+  <li>Even when you find some data, it's not clear where the data came from, whether it represents what you are looking for, and whether it's reliable enough to make a business decision.</li>
+  <li>The data is hard to manage. It's unclear who the owner for a piece of data is, who has access to the data, and what the process is to gain access to the data.</li>
+</ul>
+<p><a href="https://wikipedia.org/wiki/Metadata">Metadata</a> consists of attributes that describe the data and help meet the preceding challenges. Gathering metadata is similar to building a <a href="https://wikipedia.org/wiki/Library_catalog">card catalog</a> for a library, where every book has a physical card that indicates information, such as author, publication year, edition, and topic. Like a book, a piece of data can have a set of attributes attached to it, such as its owner, origin, processing date, or quality rating.</p>
+<p>Traditionally, companies have tried to capture and organize their metadata using several methods ranging from spreadsheets, wiki pages, in-house developed systems, and third-party software. Common problems include the need for manual entry, curation and maintenance, and system compatibility and scope. A final problem is that data discovery and metadata gathering are often organic processes that rely on personal experience that's passed from person to person, which is not scalable for a growing organization. In this context, how does an analyst who is outside of this group of people find data to which they can access and how to make sense of it?</p>
+<p>On top of these internal challenges, companies are facing an increase in regulatory and compliance requirements such as the General Data Protection Regulation (GDPR), the Basel Committee for Banking Supervision 239 (BCBS239), and the Health Insurance Portability and Accountability Act (HIPAA) that require them to track, secure, and report on their data.</p>
+<p>The Google Cloud response to these customer needs is <a href="https://cloud.google.com/data-catalog">Data Catalog</a>, a fully managed and scalable metadata management service for your organization to discover, classify, and understand your data in Google Cloud.</p>
+<p>The Data Catalog architecture is based on:</p>
+<ul>
+  <li>Metadata store: Built on Cloud Spanner, the globally distributed, strongly consistent database for storing all metadata entries.</li>
+  <li>Real-time and batch syncers: For the automatic ingestion of technical metadata.</li>
+  <li>Google search index: With the same technology that powers search for Gmail and Google Drive, it is a scalable and performant system with access control lists (ACLs) built in.</li>
+</ul>
+<p>Data Catalog provides you with a unified view of all your data assets. Therefore, it gives you a foundation for building a solid data governance process.</p>
+<p>The following diagram shows a simplified architecture, with Data Catalog providing <a href="https://cloud.google.com/bigquery/docs/data-governance#metadata">metadata</a>, <a href="https://cloud.google.com/bigquery/docs/data-governance#search">search</a>, and <a href="https://cloud.google.com/bigquery/docs/data-governance#data_loss_prevention">data loss prevention</a> capabilities for BigQuery, Pub/Sub, and Cloud Storage. These capabilities are discussed in later sections.</p>
+<figure class="image"><img src="https://cloud.google.com/static/bigquery/images/dw2bq-data-governance-data-catalog.png" alt="Simplified architecture using Data Catalog to provide metadata, search, and data loss prevention."></figure>
+<h3>Metadata</h3>
+<p>Being able to find the right data to drive decisions is at the center of the data discovery process. Just as you need metadata about available books to find a book in a library, you also need metadata about your data assets to find them in a big data environment.</p>
+<p>Data Catalog can automatically ingest metadata from BigQuery, Pub/Sub, and Cloud Storage It also distinguishes between two different metadata types: technical and business.</p>
+<p>On one hand, <strong>technical metadata</strong> includes information such as table names, column names, descriptions, and dates created. This type of metadata is already present in the source system. Data Catalog automatically ingests technical metadata into its index, whenever these assets are created, without you manually having to register new data assets.</p>
+<p>On the other hand, data assets have an implicit business context attached to them, such as whether a column contains personally identifiable information (PII), who the owner of the data asset is, a delete-by or retain-by date, and a data quality score. This type of metadata is called <strong>business metadata</strong>.</p>
+<p>Business metadata is more complex than technical metadata because users in different roles are interested in different subsets of the business context. For example, a Data Analyst might be interested in the status of an ETL job—whether it ran successfully, how many rows were processed, or if there were any errors or warnings. A Product Manager might be interested in what the data classification is, whether it's public or private; where the data is in the lifecycle, such as production, test, or QA; or whether the data is quality data and complete.</p>
+<p>To handle this complexity, Data Catalog lets you group business metadata into <a href="https://cloud.google.com/data-catalog/docs/reference/rest/v1beta1/projects.locations.tagTemplates"><i>templates</i></a>. A template is a group of metadata key-value pairs called <i>attributes</i>. Having a set of templates is similar to having a database schema for your metadata.</p>
+<p><a href="https://cloud.google.com/data-catalog/docs/quickstarts/quickstart-search-tag#create_a_tag_template_and_attach_the_tag_to_your_table">Metadata <i>tags</i></a> are instances of your templates that can be applied to both tables and columns. When these tags are applied to columns, users can determine whether a certain column contains PII, whether the column has been deprecated, and what formula was used to calculate a certain quantity. In essence, business metadata gives you the necessary context to use your data in a meaningful way.</p>
+<p>The following diagram shows a sample customer table (<code>cust_tbl</code>) and several business metadata tags attached to it and to its columns.</p>
+<figure class="image"><img src="https://cloud.google.com/static/bigquery/images/dw2bq-data-governance-customer-table.png" alt="Sample customer table."></figure>
+<p>In addition to an intuitive user interface, Data Catalog also provides an API for technical users to annotate or retrieve metadata in bulk. The supported languages are Python, Java, and NodeJS. The API not only lets you scale your metadata tasks, but also programmatically integrate with Data Catalog, which opens the door to building custom enterprise applications that use Data Catalog as part of their backend.</p>
+<h3>Search</h3>
+<p>Adding metadata to your data assets is the basis for data discovery, but it's only half of the story. The other half is the ability to discover an asset through a <a href="https://cloud.google.com/data-catalog/docs/how-to/search">robust search functionality</a> that uses both technical and business metadata to return relevant results.</p>
+<p>Data Catalog indexes all the metadata from its sources and makes it available through both a user-friendly UI and an API for programmatic integration. It functions in the Google search style by using keywords that are matched against the metadata. It also provides <a href="https://wikipedia.org/wiki/Faceted_search">faceted search</a> for power users. With its intuitive filters and <a href="https://cloud.google.com/data-catalog/docs/how-to/search-reference">qualified predicates</a>, faceted search lets users narrow down the results, for example, by searching only for tables, datasets, or files; or searching only within a project, an organization, or a specific Google Cloud product.</p>
+<p>In its UI, Data Catalog also shows a list of BigQuery tables that are frequently being searched for. This functionality provides convenient quick access to the table details, the schema, and the BigQuery console.</p>
+<p><strong>Note:</strong></p>
+<p>&nbsp;Data Catalog indexes only the metadata associated with data assets, but not the data itself. This intentional behavior is intended to keep the separation of concerns between the catalog from the product holding the data. It also makes it possible to define the access policies for metadata and data separately.</p>
+<h3>Access control</h3>
+<p>By letting your users search through metadata and discover data assets, you empower them to be more productive, independent, and engaged. However, not everyone should have access to every piece of metadata. When the right people have access to the right data, you allow your employees to focus on a subset of data assets relevant to their roles, and you help prevent metadata or data exfiltration.</p>
+<p>Data Catalog is integrated with IAM, letting you control which users can find selected data assets in their searches or create business metadata for the assets.</p>
+<p>For technical metadata, to simplify access management, the automatic ingestion applies the same set of permissions to the metadata that are granted to the data being tagged. If a user has access to the data, they also have access to the extracted technical metadata and can find the data assets with a Data Catalog search. This method provides a sensible default that requires no manual intervention, as opposed to waiting for a data asset to be registered and a separate set of permissions to be granted.</p>
+<p>For business metadata, you define which users or groups of users have access to the metadata. Some of these users have access to both the metadata and the data, to only one of them, or to neither.</p>
+<ul>
+  <li>If they don't have access to the metadata, they can't find the data assets in the Data Catalog search.</li>
+  <li>If they have access to the metadata, but not to the data, they can find the data asset, but can't read the data. This feature allows users to discover useful datasets without exposing the underlying data, which increases the usability of an organization's data assets without compromising security. Users can then raise access requests to data owners, which may be approved or denied depending on the business use case, data sensitivity, and other factors.</li>
+</ul>
+<p>This section introduced how Data Catalog integrates with IAM to enforce access control over metadata. In addition, you can control who has access to the Data Catalog product itself by granting <a href="https://cloud.google.com/iam/docs/understanding-roles#data-catalog-roles">Data Catalog roles</a> to your users. For controlling access to your data assets, use a combination of <a href="https://cloud.google.com/bigquery/docs/data-governance#authentication_and_authorization">IAM</a> and <a href="https://cloud.google.com/bigquery/docs/data-governance#network_security">VPC Service Controls</a>. For more information, see the <a href="https://cloud.google.com/data-catalog/docs/concepts/iam">Data Catalog IAM</a> documentation.</p>
+<h3>Lineage</h3>
+<p>In the data warehouse context, <i>lineage</i> refers to the path that a data asset takes from its origin to its destination. The origin of a data asset can be an external source (such as market data provided by a third party) or an internal source (such as a relational database that stores customer transactions). The data asset destination could be a dashboard, a report, or a data feed exposed as an API.</p>
+<p>In all these cases, it's important to know that the data presented at the destination accurately reflects the transformations applied to the original data. It's important for data consumers to be able to trust the data they receive, for regulators to verify and understand the data being reported, and for internal stakeholders to identify gaps in business processes and interrelationships in data processing pipelines.</p>
+<p>What data needs to be captured depends on the scope of your business case. It can include metadata such as the origin data source, the data owners, the business process where the data asset is transformed, or the applications and services involved during the transformations.</p>
+<p>Manually capturing this information is error prone and not scalable in nontrivial business cases. Therefore we recommend you approach data lineage from a programmatic perspective:</p>
+<ul>
+  <li>Determine the set of metadata attributes that you need to capture in order to fulfill your business or regulatory need.</li>
+  <li>Create templates to capture this business metadata. Data Catalog supports <a href="https://cloud.google.com/data-catalog/docs/reference/rest/v1beta1/projects.locations.tagTemplates.fields#fieldtype">five data types</a> that you can combine to create rich tags: <code>double</code>, <code>string</code>, <code>boolean</code>, <code>datetime</code>, and <code>enum</code>. This last type can use a set of custom values to describe a stage in the data transformation, or similar enumerated values.</li>
+  <li>Use the Data Catalog API to record the relevant lineage metadata on each relevant step of your data pipeline.</li>
+</ul>
+<p>For an alternative to Data Catalog, you can use <a href="https://cloud.google.com/data-fusion">Cloud Data Fusion</a>, Google's managed version of <a href="https://cdap.io/">CDAP</a>, to implement your data transformation. Cloud Data Fusion encapsulates the data processing environment in a single controlled environment, allowing lineage to be recorded automatically at the dataset and field level. For more information, see the open source <a href="https://cdap.atlassian.net/wiki/spaces/DOCS/pages/480346529/Discovery+and+Lineage">CDAP documentation on lineage</a>.</p>
+<h2>Data classification and management</h2>
+<p>In an enterprise data warehouse, the data volume, velocity, and variety being ingested can create challenges for data classification and management.</p>
+<p><i>Data classification</i> is the process of categorizing data into types, forms, or categories by using their distinct characteristics. Being able to classify your data effectively is essential for you to apply appropriate governance policies to different types of data.</p>
+<p>For example, depending on the content of a business document, you can classify it with a sensitivity level such as unsecured or confidential. Each of these types can then have specific policies for their management—for instance, confidential documents are accessible only to a certain group of users and are retained for 7 years.</p>
+<p>Within data management, you have several aspects to consider:</p>
+<ul>
+  <li>Managing data change: Controlling the effects when data dimensions change. Although they change infrequently, the modification can have a ripple effect because the data in fact tables might no longer be true for the updated dimensions.</li>
+  <li>Managing reference data: Ensuring that all systems across your organization have an accurate and consistent view of your reference data.</li>
+  <li>Retention and deletion: How to prevent users from modifying or deleting data, and how to expire data automatically.</li>
+</ul>
+<p>When you migrate to BigQuery, take advantage of the automated features for data classification such as Cloud Data Loss Prevention (DLP). The following sections present features and techniques that help you address these data classification and management challenges in Google Cloud.</p>
+<h3>Data loss prevention</h3>
+<p><a href="https://cloud.google.com/dlp">Cloud Data Loss Prevention</a> is a Google Cloud service that facilitates data governance by helping you classify your data so that you can give the right access to the right people. Cloud DLP offers a data inspection, classification, and de-identification platform. It comes with more than 150 predefined detectors to identify patterns, formats, and checksums. You can also create <a href="https://cloud.google.com/dlp/docs/creating-custom-infotypes">custom detectors</a> using a dictionary or a regular expression. You can add <i>hotword rules</i> to increase the accuracy of findings and set <i>exclusion rules</i> to reduce the number of false positives.</p>
+<p>This section describes Cloud DLP features that can help you classify and obscure sensitive data.</p>
+<h4>Profile your data</h4>
+<p>Cloud DLP can automatically generate profiles about BigQuery data across an organization, folder, or project. <i>Data profiles</i> contain metrics and metadata about your tables and help you determine where <a href="https://cloud.google.com/dlp/docs/sensitivity-risk-calculation">sensitive and high-risk data</a> reside. Cloud DLP reports these metrics at the project, dataset, table, and column levels.</p>
+<p>Profiling helps you keep up with the growth of data in your organization. By default, Cloud DLP automatically profiles new tables and reprofiles tables with schema updates. If needed, you can fine-tune the selection of data to be profiled and the profiling cadence.</p>
+<p>For more information, see <a href="https://cloud.google.com/dlp/docs/data-profiles">Data profiles for BigQuery data</a>.</p>
+<figure class="image"><img src="https://cloud.google.com/static/dlp/docs/images/column-data-profiles.png" alt="Column data profiles"></figure>
+<h4>Inspect a single table</h4>
+<p><a href="https://cloud.google.com/bigquery/docs/data-governance#profile">Data profiling</a> points you to specific tables and columns that might have sensitive data. To learn more about those tables, you can inspect them. When you run an inspection job on a single table, you can get details like the following:</p>
+<ul>
+  <li>Number of findings.</li>
+  <li>Types of sensitive information found, like email addresses and credit card numbers.</li>
+  <li>Likelihood that a finding matches the type of sensitive data that you're scanning for.</li>
+  <li>Exact location of each finding.</li>
+  <li>The string that triggered each finding.</li>
+</ul>
+<h4>De-identify sensitive data</h4>
+<p>Cloud DLP provides a set of tools to <a href="https://cloud.google.com/dlp/docs/deidentify-sensitive-data">de-identify your data</a>, including masking, tokenization, pseudonymization, and date shifting.</p>
+<h4>Automatically tag data</h4>
+<p>The DLP API can <a href="https://cloud.google.com/dlp/docs/sending-results-to-dc">automatically create Data Catalog tags</a> to classify the sensitive data. You can apply this workflow on your existing BigQuery tables, Cloud Storage buckets, or on data streams.</p>
+<h4>Facilitate automatic classification of data in a pipeline</h4>
+<p>Cloud DLP scans your data and reports its findings with a <a href="https://cloud.google.com/dlp/docs/likelihood">likelihood level</a>. For example, if the likelihood level of your data is high, you can process large amounts of data automatically. To streamline PII recognition in your extract-transform-load or extract-load-transform pipeline, you can do the following:</p>
+<ol>
+  <li>Ingest data into a quarantine bucket.</li>
+  <li>Run Cloud DLP to identify PII in the data. This can be done by scanning the entire dataset or by sampling the data. The DLP API can be called from the transform steps of your pipeline or from standalone scripts such as <a href="https://cloud.google.com/functions">Cloud Functions</a>.</li>
+  <li>Move the data to the warehouse.</li>
+</ol>
+<h3>Column-level security</h3>
+<p>Building on the concept of data classification, BigQuery provides fine-grained access to sensitive columns using policy tags, a type-based classification of your data. Using BigQuery column-level security, you can create policies that check, at query time, whether a user has proper access.</p>
+<p>See <a href="https://cloud.google.com/bigquery/docs/column-level-security-intro">Introduction to BigQuery column-level security</a> for more information about how to use policy tags for column-level security.</p>
+<h3>Row-level security</h3>
+<p>Row-level security lets you filter data and enables access to specific rows in a table, based on qualifying user conditions. Row-level security extends the principle of least privilege by enabling fine-grained access control to a subset of data in a BigQuery table, by means of row-level access policies. Row-level access policies can coexist on a table with column-level security.</p>
+<p>See <a href="https://cloud.google.com/bigquery/docs/row-level-security-intro">Introduction to BigQuery row-level security</a> for more information about to use row access policies for row-level security.</p>
+<h3>Master data management</h3>
+<p><i>Master data</i>, also known as <i>reference data</i>, is data that is used throughout an organization. Common examples of master data assets include customers, products, suppliers, locations, and accounts. Master Data Management (MDM) is a set of procedures that ensure the master data is accurate and consistent across the organization.</p>
+<p>For different systems and divisions to function and interact properly, the data's accuracy and consistency are critical. Otherwise, different divisions of an organization might have different records for the same entity, which can lead to costly errors. For example, when a client updates their address on the company website, if the billing department reads from a different client repository, then future bills might not reach this client.</p>
+<p>In MDM, an <i>authoritative system</i> is the source of truth for specific master data assets. Ideally, other systems in the organization consume the master data from the authoritative system for that asset. However, this is not always possible, as the following scenarios explain.</p>
+<h4>Direct communication with authoritative system</h4>
+<p>In this scenario, systems communicate directly with the authoritative system in charge of a given master data asset. The authoritative systems create and update the master data, while other systems in the organization always consume it from the respective authoritative systems.</p>
+<figure class="image"><img src="https://cloud.google.com/static/bigquery/images/dw2bq-data-governance-authoritative-system.png" alt="A Product Information Management (PIM) system used as
+the authoritative system across the company for products."></figure>
+<p>For example, in the diagram a Product Information Management (PIM) system is the authoritative system across the company for products. When another system such as a Customer Relationship Management (CRM) system needs product master data, it retrieves the data from the PIM. The CRM system can itself be an authoritative system for a different data asset such as the company's customers.</p>
+<p>This scenario is ideal because it keeps the master data assets in their respective authoritative systems with no need for complex transformation pipelines. If the consumer system needs only a certain subset of the master data or data in a different format, then it is that system's responsibility to filter it or convert it.</p>
+<h4>Golden copy from a single source</h4>
+<p>In this scenario, the consumer system can't communicate with the authoritative system directly. The reasons behind these restrictions can vary, for example:</p>
+<ul>
+  <li>The authoritative system might not have sufficient capacity or availability to handle the volume of requests from across the organization.</li>
+  <li>Communication between the systems might be restricted by security policies or is unfeasible because of infrastructure limitations.</li>
+</ul>
+<p>To overcome these restrictions, you can use your data warehouse for making the master data available to consumer systems. When you migrate to the cloud, BigQuery provides you with a repository that is <a href="https://cloud.google.com/bigquery/sla">highly available</a>, can handle high levels of concurrency, and can be broadly accessible within your organization, following <a href="https://cloud.google.com/bigquery/docs/data-governance#authentication_and_authorization">IAM rules</a>. Therefore, BigQuery is a prime candidate for hosting your <i>golden copy</i>.</p>
+<p>We recommend that you create an <a href="https://cloud.google.com/solutions/migration/dw2bq/dw-bq-data-pipelines#elt">ELT data pipeline</a> to read master data from the authoritative system, load it into your data warehouse, and then distribute it to consumers. We prefer an ELT pipeline over an ETL pipeline because different consumers might have different needs for the same master data asset. So, you can first load the asset unchanged into your data warehouse, and then create specialized transformations for consumers. In Google Cloud, you can use <a href="https://cloud.google.com/dataflow">Dataflow</a> to create pipelines that can natively connect to BigQuery. You can then use <a href="https://cloud.google.com/composer">Cloud Composer</a> to orchestrate these pipelines.</p>
+<p>The authoritative system remains the source of truth for the data asset, while the master data copied into your data warehouse is referred to as the <i>golden copy</i>. Your data warehouse does not become an authoritative system.</p>
+<figure class="image"><img src="https://cloud.google.com/static/bigquery/images/dw2bq-data-governance-source-of-truth.png" alt="The authoritative system remains the source of truth for the data asset."></figure>
+<p>For instance, in the diagram the CRM system cannot request product data directly from the PIM system. You create an ETL pipeline that extracts the data from the PIM system, copies it into the data warehouse, performs transformations, and distributes it to other systems, one of them being the CRM system.</p>
+<p>If your systems retrieve master data in batches or for analytical purposes, BigQuery is an ideal home for your golden copy. However, if most accesses to your master data come from systems doing single-row lookups, then you might consider a different repository optimized for those conditions, such as <a href="https://cloud.google.com/bigtable">Cloud Bigtable</a>. You could also strike a balance by using both repositories. The one with the most traffic holds the golden copy. We recommend that you always extract the data from the golden copy system and sync it to the other repository. You can do this by using a data pipeline.</p>
+<h4>Golden copy from multiple sources</h4>
+<p>The previous scenarios used a single authoritative system for a given master data asset. However, in practice several systems in an organization might be used to keep different characteristics of the same asset. For example, a PIM system can be the source of truth for technical and logistic product information such as dimensions, weight, and provenance. However, a Product Catalog Management system can be the source of truth for sales-related product information such as colors, sales channels, price, and seasonality. It's also common to have different systems with overlapping attributes for the same asset, for example, from systems that were previously not part of MDM, or that were incorporated into the organization through acquisitions and mergers.</p>
+<p>In these cases, a more complex pipeline is required to merge the master data from multiple sources into a single golden copy stored in the data warehouse as shown in the following diagram. The data is then distributed to consumer systems in a similar manner as in the previous section. Your data warehouse is still not an authoritative system, but simply a repository for the master data golden copy.</p>
+<figure class="image"><img src="https://cloud.google.com/static/bigquery/images/dw2bq-data-governance-golden-copy.png" alt="A complex pipeline that merges the master data
+from multiple sources into a single golden copy stored in the data warehouse."></figure>
+<p>In Google Cloud, Dataflow is well positioned as a tool to build complex pipelines represented by a <a href="https://beam.apache.org/documentation/programming-guide/#transforms">Directed Acyclic Graph (DAG)</a>. These pipelines read from multiple sources, and write the merged results into BigQuery. Another option is to use a visual tool such as <a href="https://cloud.google.com/data-fusion">Cloud Data Fusion</a> to create the pipeline. Cloud Data Fusion also provides many plugins for data sources and sinks.</p>
+<h3>Slowly changing dimensions</h3>
+<p>The attributes in <a href="https://wikipedia.org/wiki/Dimension_(data_warehouse)#Dimension_table">dimension tables</a> in a <a href="https://wikipedia.org/wiki/Star_schema">star</a> or <a href="https://wikipedia.org/wiki/Snowflake_schema">snowflake</a> schema are expected to never change or to change infrequently. An attribute that never changes is called an <i>original</i> attribute. Some examples are date of birth and original credit score. If an attribute changes infrequently, the dimension it belongs to is called a <a href="https://wikipedia.org/wiki/Slowly_changing_dimension">slowly changing dimension (SCD)</a>. When an SCD changes, the data already in the <a href="https://wikipedia.org/wiki/Fact_table">fact table</a> must refer to the previous version of the SCD. Therefore, you need a method to keep the history of SCDs.</p>
+<p>When migrating your data warehouse, consider the opportunity to incorporate an SCD handling method or improve existing ones:</p>
+<ul>
+  <li>When evolving your schema during the <a href="https://cloud.google.com/architecture/dw2bq/dw-bq-schema-and-data-transfer-overview#evolving_your_schema_in_bigquery">schema and data transfer phase</a> to make sure SCDs are accounted for.</li>
+  <li>During the <a href="https://cloud.google.com/architecture/dw2bq/dw-bq-data-pipelines#procedures_and_patterns_for_data_pipelines">pipeline migration stage</a> to make sure that you keep SCD history and use it in a reproducible way in scenarios, such as recomputing outputs for backfills, reprocessing because of logic changes, and tracking lineage.</li>
+</ul>
+<h4>Traditional SCD handling methods</h4>
+<p>The traditional methods of handling SCD changes are referred to as SCD types 0 through 6. The most common method is <a href="https://wikipedia.org/wiki/Slowly_changing_dimension#Type_2:_add_new_row">SCD type 2</a>, where historical data is tracked by creating additional columns in the dimension table. The added columns are a surrogate key and one of the following: a version, the validity start/end dates, or a current date plus a flag to indicate which of the rows is current. For more information about how this and other techniques can be applied in BigQuery, see <a href="https://cloud.google.com/solutions/bigquery-data-warehouse#handling_change">Handling Change</a>.</p>
+<h4>Functional data engineering</h4>
+<p>Another method to handle SCDs was presented by Maxime Beauchemin, creator of <a href="https://airflow.apache.org/">Apache Airflow</a>, in his article <a href="https://medium.com/@maximebeauchemin/functional-data-engineering-a-modern-paradigm-for-batch-data-processing-2327ec32c42a">Functional Data Engineering</a>. This article proposes a paradigm where a data pipeline is composed of a collection of deterministic and idempotent tasks organized in a DAG to reflect their directional interdependencies.</p>
+<p>A task is deterministic when its output depends only on its inputs, and not on any local or global state, thus following <a href="https://wikipedia.org/wiki/Functional_programming">functional programming</a> concepts. A task is considered idempotent when it can be executed more than once with the same input parameters and still produce the same output. In other words, it doesn't cause additional side effects. (An example of this in computing is the REST PUT operation.) A task execution is called an <i>instance</i> of the task. Task instances with different inputs write data to different partitions of the same output table.</p>
+<p>Because one of the inputs for tasks is dimensions, Beauchemin advocates creating <i>dimension snapshots</i> every time an ETL run is triggered. A dimension snapshot duplicates all the dimension rows required for the ETL run along with a timestamp. The dimension tables become a collection of snapshots at different points of time. These snapshots maintain the history of changes in SCDs and allow rerunning any task instance, and obtaining consistent reproducible outputs.</p>
+<p>This method is a departure from the traditional way of handling SCDs such as SCD type 2. It avoids the complexity of managing surrogate keys and additional columns, reducing engineering time, at the cost of relatively cheap storage. The article acknowledges that the two methods can coexist.</p>
+<h4>Handling SCDs in BigQuery</h4>
+<p>BigQuery supports star and snowflake schemas, including their dimension tables. Therefore, any of the two preceding methods are applicable.</p>
+<p>BigQuery goes one step further, promoting schema denormalization with the native support of <a href="https://cloud.google.com/bigquery/docs/nested-repeated">nested and repeated fields</a>. These fields can be used in fact tables when the attribute at the time of the event is important. They can also be used in dimension tables to record historical values with a type 2 or snapshot approach only for the changing attributes instead of the whole dimension row.</p>
+<h3>Data retention and deletion</h3>
+<p>In specific situations, you might want to prevent users from modifying or deleting data in BigQuery. You can enforce this restriction by removing those users from roles that include permissions allowing these operations. These roles are <a href="https://cloud.google.com/bigquery/access-control#bigquery.dataOwner"><code>roles/bigquery.dataOwner</code></a>, <a href="https://cloud.google.com/bigquery/access-control#bigquery.dataEditor"><code>roles/bigquery.dataEditor</code></a>, and <a href="https://cloud.google.com/bigquery/access-control#bigquery.admin"><code>roles/bigquery.admin</code></a>. Another option is to create <a href="https://cloud.google.com/iam/docs/understanding-custom-roles">custom IAM roles</a> that don't include the specific edit and delete permissions.</p>
+<p><strong>Note:</strong></p>
+<p>&nbsp;A user with the&nbsp;</p>
+<p><a href="https://cloud.google.com/bigquery/docs/access-control#bigquery.user"><code><strong><u>roles/bigquery.user</u></strong></code></a></p>
+<p>&nbsp;role is by definition the owner of the datasets and tables they create themselves and therefore can modify and delete those datasets and tables.</p>
+<p>If there's a need to fulfill regulations for electronic records retention, we recommend instead that you <a href="https://cloud.google.com/bigquery/docs/exporting-data">export the data to Cloud Storage</a> and use its <a href="https://cloud.google.com/storage/docs/bucket-lock">bucket lock</a> feature, which can help you address certain record retention regulations.</p>
+<p>In other situations, you might need to delete data automatically after a given period. BigQuery can fulfill this need through a configurable expiration date. You can apply the expiration date to a <a href="https://cloud.google.com/bigquery/docs/updating-datasets#table-expiration">dataset</a>, a <a href="https://cloud.google.com/bigquery/docs/managing-tables#updating_a_tables_expiration_time">table</a>, or specific <a href="https://cloud.google.com/bigquery/docs/managing-partitioned-tables#partition-expiration">table partitions</a>. Expiring unneeded data is a measure of cost control and storage optimization. For more information, see <a href="https://cloud.google.com/bigquery/docs/best-practices-storage">BigQuery best practices</a>. For a broader overview of data deletion on Google Cloud, see <a href="https://cloud.google.com/security/deletion">this documentation page</a>.</p>
+<p>If a Google Cloud customer determines that a regulation is applicable to them, they should complete their own compliance assessment against the specific requirements with the oversight of their own legal counsel and the corresponding regulator.</p>
 <h2>Data quality management</h2>
 <p>Data quality management processes include the following:</p>
 <ul>
@@ -84,17 +322,52 @@ dateCreated: 2023-05-09T20:51:52.541Z
   <li>Enabling root cause analysis and recommendation of remedies to data issues.</li>
   <li>Tracking data incidents.</li>
 </ul>
+<p>Different data consumers might have different data quality requirements, so it's important to document data quality expectations as well as techniques and tools for supporting the data validation and monitoring process. Establishing good processes for data quality management helps provide more trustworthy data for analysis.</p>
 <h3>Quality metadata</h3>
+<p>A data warehouse provides your decision makers with access to an immense amount of curated data. However, not all the data in your data warehouse should be treated equally:</p>
 <ul>
-  <li>Structure and format</li>
-  <li>Quality metadata in the cloud</li>
-  <li>DQM considerations</li>
+  <li>In the context of decision making, high-quality data should have more influence on your decisions, lower-quality data should have less influence.</li>
+  <li>In the context of data quality monitoring, low-quality data can be used to trigger automated or manual alerts to verify the processes that are producing it, even before the data reaches the data warehouse.</li>
 </ul>
+<p>In addition, different parts of the organization might have different thresholds for data quality. For example, low-grade data might be perfectly usable for development and testing, but it might be deemed unusable for finance or compliance.</p>
+<p>This section presents metadata as a mechanism to give your decision makers and processes the necessary context to assess the data being presented to them.</p>
+<h4>Structure and format</h4>
+<p>Metadata is structured information that is attached to a piece of data to qualify it. In the context of data quality, metadata lets you collect relevant attributes such as accuracy, freshness, and completeness.</p>
+<p>The semantics and specific attributes that are captured in your data quality metadata (DQM) are dependent on the business context they are qualifying. We strongly suggest adopting a standard set of attributes across the enterprise to facilitate communication and management. The set of attributes that you choose can be derived from industry standards such as <a href="https://www.iso.org/standard/35736.html">ISO/IEC 25012:2008 data quality model</a> or recommendations by professional organizations such as the <a href="https://www.dama.org/">Data Management (DAMA)</a> community.</p>
+<p>The format in which your DQM is stored and presented to decision makers is also an important consideration. Different formats can be suitable for different decision-making tasks. For example, <a href="https://core.ac.uk/download/pdf/34649520.pdf">Moges et al.</a>, compiles and presents a list of the following formats for DQM:</p>
+<ul>
+  <li>N-level ordinal: A finite set of values such as excellent, good, and average.</li>
+  <li>Range: A numeric scale with lower and upper limits such as 0–100 to represent the quality level with more flexibility than an ordinal.</li>
+  <li>Probability: The data quality on a 0–1 scale indicating the probability that the piece of data is correct.</li>
+  <li>Graphical: Visual queues such as colors to indicate the quality level.</li>
+</ul>
+<h4>Quality metadata in the cloud</h4>
+<p>Traditionally, companies have not maintained a consistent DQM repository, depending instead on shared knowledge. This knowledge is sometimes captured in disjoint repositories such as spreadsheets, intranet pages, and ad hoc database tables. The effort to discover, search, understand, and maintain these disparate DQM sources hinders collaboration and might outweigh their decision support value.</p>
+<p>Data Catalog offers you a centralized way of managing your metadata:</p>
+<ul>
+  <li>Custom metadata tags, also known as <a href="https://cloud.google.com/bigquery/docs/data-governance#metadata">business metadata,</a> support any data quality attributes that you choose to be part of your standard definitions, and groups them into <a href="https://cloud.google.com/data-catalog/docs/reference/rest/v1beta1/projects.locations.tagTemplates">logical templates</a> that you can customize for each business context.</li>
+  <li>It supports custom <a href="https://cloud.google.com/data-catalog/docs/reference/rest/v1beta1/projects.locations.tagTemplates.fields#enumtype">enumerated types</a> for representing ordinal attributes, and <a href="https://cloud.google.com/data-catalog/docs/reference/rest/v1beta1/projects.locations.tagTemplates.fields#primitivetype">double and string types</a> to represent ranges, probabilities, and numeric values that can be used for different graphical representations. You access these metadata values through the <a href="https://cloud.google.com/data-catalog/docs/quickstarts/quickstart-search-tag">Data Catalog UI</a>, or through its <a href="https://cloud.google.com/data-catalog/docs/reference">API and client libraries</a> that enable you to build custom applications for your decision makers.</li>
+  <li>You can use the Data Catalog API in your upstream processes. When data quality for a given source dips lower than a threshold, the process tags the low-quality data as such and triggers an alert before it reaches BigQuery. The data itself can be sent to a quarantine bucket in <a href="https://cloud.google.com/storage">Cloud Storage</a> for verification and possibly remediation and reprocessing.</li>
+</ul>
+<h4>DQM considerations</h4>
+<p>You might assume that without DQM, decision makers are more likely to use low-quality data and produce poor decisions. In reality, adding DQM to the mix can overwhelm decision makers because of the amount of information that they need to absorb to <a href="https://aisel.aisnet.org/jais/vol12/iss4/1/">generate alternatives</a>. Having too much information can negatively impact both the timeliness and quality of the decisions.</p>
+<p>Therefore, it's critical that you train decision makers on the semantics and best practices of DQM. <a href="https://core.ac.uk/download/pdf/34649520.pdf">Moges et al.</a> suggests that providing DQM and training is beneficial for critical tasks where the consequences of using low-quality data are high. However, DQM might be counterproductive for tasks that need a high efficiency, or when personnel are not properly trained.</p>
 <h3>Auditing</h3>
+<p>Organizations must be able to audit their systems to ensure that they're working as designed. Monitoring, auditing, and tracking help security teams gather data, identify threats, and act on those threats before they result in business damage or loss. It's important that you perform regular audits, because these audits check the effectiveness of controls in order to quickly mitigate threats and evaluate overall security health. Auditing may also be necessary to demonstrate regulatory compliance with external auditors.</p>
+<p>A first step to ensuring healthy data access controls is to periodically audit the users and groups associated with your Google Cloud project and individual BigQuery datasets. Do these users need to be Owners or Admins, or would a more restrictive role suffice for their job duties? It's also important to audit who has the ability to change IAM policies on your projects.</p>
+<p>A second step in analyzing your logs is answering the questions, "Who did what, where, and when?" with BigQuery data and metadata.</p>
 <ul>
-  <li><a href="https://cloud.google.com/logging/docs/audit#admin-activity">Admin Activity logs</a>&nbsp;</li>
-  <li><a href="https://cloud.google.com/logging/docs/audit#data-access">Data Access logs</a>&nbsp;</li>
-  <li><a href="https://cloud.google.com/logging/quotas#logs_retention_periods">log retention period</a></li>
-  <li><a href="https://github.com/GoogleCloudPlatform/professional-services/tree/master/examples/bigquery-audit-log">dashboards</a>&nbsp;</li>
+  <li>For your data, BigQuery includes by default in Cloud Logging two immutable log streams: Admin Activity and Data Access audit logs.</li>
+  <li>For your metadata, Data Catalog also <a href="https://cloud.google.com/data-catalog/docs/guides/audit-logging">supports both audit logging streams</a>, although unlike BigQuery, Data Access logging must be manually enabled.</li>
 </ul>
-<p>&nbsp;</p>
+<p><a href="https://cloud.google.com/logging/docs/audit#admin-activity">Admin Activity logs</a> contain log entries for log calls or other administrative actions that modify the configuration or metadata of resources. For example, the creation of new service accounts or changes to IAM permissions, like granting a new user read access to BigQuery datasets, are recorded in Admin Activity logs.</p>
+<p><a href="https://cloud.google.com/logging/docs/audit#data-access">Data Access logs</a> record user-authenticated API calls that create, modify, or read user-provided data. For example, Data Access logs record if a user queried a BigQuery dataset or requested the query results. Attributing queries to a user rather than a service account facilitates data access auditing.</p>
+<p>For both types of logs, you can create <a href="https://cloud.google.com/monitoring/alerts">Cloud Monitoring alerts</a> that trigger under certain conditions that you specify. When triggered, these alerts can send <a href="https://cloud.google.com/monitoring/support/notification-options">notifications through several channels</a>, including email, SMS, third-party services, and even webhooks to a custom URL.</p>
+<p>Be aware that audit logs might include sensitive information, so you might want to restrict access to the logs. <a href="https://cloud.google.com/logging/docs/access-control">Access to audit logs</a> can be restricted by using <a href="https://cloud.google.com/iam/docs/roles-audit-logging">IAM roles</a>.</p>
+<p>We recommend that you consider <a href="https://cloud.google.com/solutions/exporting-stackdriver-logging-for-security-and-access-analytics">exporting BigQuery audit logs</a> from Cloud Logging to a BigQuery dataset for the following reasons:</p>
+<ul>
+  <li>Cloud Logging keeps audit logs only for a limited <a href="https://cloud.google.com/logging/quotas#logs_retention_periods">log retention period</a>. Exporting to another secure storage location, like BigQuery or Cloud Storage, enables you to have a longer-term retention period.</li>
+  <li>In BigQuery, you can run SQL queries on the logs, enabling complex filtering for analysis.</li>
+  <li>Additionally, you can create <a href="https://github.com/GoogleCloudPlatform/professional-services/tree/master/examples/bigquery-audit-log">dashboards</a> using visualization tools like Looker Studio.</li>
+</ul>
+<p>For more information, see this Best Practices for Working with Google Cloud Audit Logs <a href="https://cloud.google.com/blog/products/gcp/best-practices-for-working-with-google-cloud-audit-logging">blog post</a>.</p>
