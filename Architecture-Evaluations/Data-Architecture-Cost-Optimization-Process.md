@@ -2,7 +2,7 @@
 title: Data Architecture Cost Optimization Process
 description: Process to periodically review data architecture costs and provide recommendations for cost optimization
 published: true
-date: 2023-05-16T19:21:51.614Z
+date: 2023-05-16T19:22:52.873Z
 tags: 
 editor: markdown
 dateCreated: 2023-05-16T00:20:47.434Z
@@ -35,4 +35,4 @@ In addition, other processes will be involved in order to fully optimize the cos
     - What is the limiting resource (CPU, RAM, Disk, Iops, network bandwidth, etc.)?
     - For the resources that are not limiting, is there an opportunity to cut down on usage? 
       - Typically this will manifest itself in compute power (CPU/RAM); this is one of the easier resources to quickly spin up and down
-      - Unless there is a ridiculous amount of disk provisioned but not utilized, it usually makes sense to just keep the disk provisioned and grow into it. Same applies to the Iops of a VM
+      - Unless there is a ridiculous amount of disk provisioned but not utilized, it usually makes sense to just keep the disk provisioned and grow into it (assuming data is kept and not deleted after a certain period). Same applies to the Iops of a VM
