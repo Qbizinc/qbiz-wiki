@@ -2,7 +2,7 @@
 title: Data Architecture Cost/Application Optimization Process
 description: Process to periodically review data architecture costs and provide recommendations for cost optimization as well as perform testing to determine how data applications can be optimizerd
 published: true
-date: 2023-05-16T23:14:04.247Z
+date: 2023-05-16T23:15:50.224Z
 tags: 
 editor: markdown
 dateCreated: 2023-05-16T00:20:47.434Z
@@ -18,9 +18,15 @@ In addition, other processes will be involved in order to fully optimize the cos
 
 ## Performance Testing
 
-Regularly testing applications for performance is crucial for **BOTH** cost and application optimization. Typically optimizing for performance will also help with optimizing cost and vice versa; however there may be cases where one has to be sacrificed for the other (i.e. always provisioning additional compute resources in a cluster as "overhead" that services can utilize to account for unexpected increases in usage, overprovisioning SSD that may not be used for some time but allows for a database to grow unencumbered, etc.). 
+Regularly testing applications for performance is crucial for **BOTH** cost and application optimization. 
 
-The goal thus should not be solely to minimize costs and/or maximize performance, but instead find the right balance of cost and performance that keeps costs down while also allowing for the application to absorb a reasonable amount of additional traffic without a degredation in performance. Acknwoledging the nonzero time/energy cost of engineers having to provision and allocate additional resources should also be taken into account. This aligns with the system design best practice/principle known as "Planning for Failure".
+Typically optimizing for performance will also help with optimizing cost and vice versa; however there may be cases where one has to be sacrificed for the other. Some examples:
+- Always provisioning additional compute resources in a cluster as "overhead" that services can utilize to account for unexpected increases in usage
+- Overprovisioning SSD that may not be used for some time but allows for a database to grow unencumbered, etc. 
+
+The goal should not be solely to minimize costs and/or maximize performance, but instead find the right balance of cost and performance that keeps costs down while also allowing for the application to absorb a reasonable amount of additional traffic without a degredation in performance. 
+
+Acknowledging the nonzero time/energy cost of engineers having to provision and allocate additional resources should also be taken into account.
 
 A template performance testing document including example reports, tools and sources used, and metrics gathered can be found here: 
 INSERT LINK
