@@ -2,7 +2,7 @@
 title: Data Architecture Cost/Application Optimization Process
 description: Process to periodically review data architecture costs and provide recommendations for cost optimization as well as perform testing to determine how data applications can be optimizerd
 published: true
-date: 2023-05-16T23:25:45.461Z
+date: 2023-05-16T23:27:47.076Z
 tags: 
 editor: markdown
 dateCreated: 2023-05-16T00:20:47.434Z
@@ -31,8 +31,8 @@ Thus, the goal should not be solely to minimize costs and/or maximize performanc
 Acknowledging the nonzero time/energy cost of engineers having to provision and allocate additional resources should also be taken into account. The more overhead an application has, the less time engineers have to spend provisioning additional resources for it and vice versa. Determining exact overheads will be a process of trial and error, and can be further informed by a regular performance testing process.
 
 A template performance testing document including example reports, tools and sources used, and metrics gathered can be found here: 
-INSERT LINK
 
+INSERT LINK
 
 ## Cost Optimization
 
@@ -63,3 +63,9 @@ INSERT LINK
     - An application is found to perform all of its operations using multiple virtual machines in parallel and is woefully underutilizing the provisioned CPU on each machine. Multiple options could be considered here: decreasing CPU of each machine, or rearchitecting the application to perform all operations in parallel on the same machine. The additional benefit of the second option is that the application would then become simpler to operate moving forward.
 
 ## Application Optimization
+
+FILL IN
+
+A template application optimization document containing evidence of performance analysis and data on iterative improvement of application performance (for example, code performance efficiency, optimized deployment on Google Cloud resources) and examples of implementation for the customer can be found here:
+
+INSERT LINK
