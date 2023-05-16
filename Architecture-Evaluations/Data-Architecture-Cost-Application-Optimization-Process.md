@@ -2,7 +2,7 @@
 title: Data Architecture Cost/Application Optimization Process
 description: Process to periodically review data architecture costs and provide recommendations for cost optimization as well as perform testing to determine how data applications can be optimizerd
 published: true
-date: 2023-05-16T23:27:47.076Z
+date: 2023-05-16T23:31:02.867Z
 tags: 
 editor: markdown
 dateCreated: 2023-05-16T00:20:47.434Z
@@ -33,6 +33,14 @@ Acknowledging the nonzero time/energy cost of engineers having to provision and 
 A template performance testing document including example reports, tools and sources used, and metrics gathered can be found here: 
 
 INSERT LINK
+
+### Monitoring Systems and Tools
+
+In order to do effective performance testing, monitoring systems and tools in the cloud should be leveraged. This includes
+
+.
+.
+.
 
 ## Cost Optimization
 
