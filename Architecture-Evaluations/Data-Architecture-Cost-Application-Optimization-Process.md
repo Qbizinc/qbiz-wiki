@@ -2,7 +2,7 @@
 title: Data Architecture Cost/Application Optimization Process
 description: Process to periodically review data architecture costs and provide recommendations for cost optimization as well as perform testing to determine how data applications can be optimizerd
 published: true
-date: 2023-05-17T18:42:57.484Z
+date: 2023-05-17T18:56:16.921Z
 tags: 
 editor: markdown
 dateCreated: 2023-05-16T00:20:47.434Z
@@ -36,11 +36,11 @@ INSERT LINK
 
 ### Monitoring Systems and Tools
 
-In order to do effective performance testing, monitoring systems and tools in the cloud should be leveraged. This includes
+In order to do effective performance testing, monitoring systems and tools in the cloud should be leveraged. 
 
-.
-.
-.
+Most cloud providers will have monitoring/logging systems that can export performance related data such as CPU/RAM usage to systems that can then be analyzed/visualized/etc. (i.e. Cloudwatch metrics in AWS Stackdriver, logging metrics in GCP, etc.). Other solutions can be used such as exporting metrics to a time series based architecture like Prometheus.
+
+Either way, a standardized solution for tracking resource usage metrics should be followed and checked on at a regular cadence in order for the data architecture to be its most effective.
 
 ## Cost Optimization
 
