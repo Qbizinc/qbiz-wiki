@@ -2,7 +2,7 @@
 title: Data Architecture Cost/Application Optimization Process
 description: Process to periodically review data architecture costs and provide recommendations for cost optimization as well as perform testing to determine how data applications can be optimizerd
 published: true
-date: 2023-05-17T19:55:26.045Z
+date: 2023-05-17T19:59:35.288Z
 tags: 
 editor: markdown
 dateCreated: 2023-05-16T00:20:47.434Z
@@ -49,7 +49,9 @@ INSERT
 
 ## Application Optimization
 
-Application optimization is a natural next step after performance testing. This includes use cases such as improving code performance efficiency, optimizing deployment on the cloud, and more. Some examples where these may be warranted:
+Application optimization is a natural next step after performance testing. This includes use cases such as improving code performance efficiency, optimizing deployment on the cloud, and more. 
+
+Some examples where these may be warranted:
 - An application is found to perform all of its operations using multiple servers in parallel and is woefully underutilizing the provisioned CPU on each machine
   - Multiple options could be considered here (both of which would also optimize cost)
     - Decreasing CPU of each machine
@@ -61,8 +63,10 @@ Application optimization is a natural next step after performance testing. This 
     - This solution **may** also cost more, but at scale should optimize cost as well
     - Even at a smaller scale (and most likely increased cost), this would allow the application to operate much more efficiently and would very likely pay off in the long run (depending on future growth)
       - There are also plenty of lightweight caching solutions (i.e. Memcached) that can be chosen if only simple data is needed
-- The database currently runs directly on VMs but the owning team has been unable to keep up with system updates, software patches, downstream impact of feature releases, etc.
-  - 
+- The application backend database currently runs directly on VMs but the owning team has been unable to keep up with system updates, software patches, downstream impact of feature releases, etc.
+  - This is pushing the owning team to the limit by constantly having to respond to incidents and forcing them to depriorize certain initiatives
+  - In order to alleviate the owning team of managing the database themselves, the database is migrated to use a "managed" solution (i.e. AWS RDS)
+    - This will increase cloud costs, but this will decrease "management" costs of the database, allowing the team to focus on higher priority/value objectives
 
 
 A template application optimization document containing evidence of performance analysis and data on iterative improvement of application performance and examples of implementation for the customer can be found here:
@@ -92,7 +96,8 @@ Cost optimization, while not as directly related to performance testing as appli
     - What is the limiting resource (CPU, RAM, Disk, Iops, network bandwidth, etc.)?
     - For the resources that are not limiting, is there an opportunity to cut down on usage? 
       - Typically this will manifest itself in compute power (CPU/RAM); this is one of the easier resources to quickly spin up and down
-      - Unless there is a ridiculous amount of disk provisioned but not utilized, it usually makes sense to just keep the disk provisioned and grow into it (assuming data is kept and not deleted after a certain period). Same applies to the Iops of a VM
+      - Unless there is a ridiculous amount of disk provisioned but not utilized, it usually makes sense to just keep the disk provisioned and grow into it (assuming data is kept and not deleted after a certain period)
+        - Same applies to the Iops of a VM
 - Consider application rearchitecting
   - **In terms of cost optimization**, this is usually one of the last options considered, as it typically requires the most amount of upfront engineering work and isn't always justified by cost savings
   - However, depending on the use case it may make sense to consider. For example:
@@ -100,4 +105,4 @@ Cost optimization, while not as directly related to performance testing as appli
       - Looking closer, it is determined that this is being caused by one service making alot of data transfer requests, often times for data that has already been requested
       - The application gets rearchitected to make less calls for the redundant data (perhaps leveraging a cache) and reduce networking costs
     - The application currently runs on custom VMs (custom CPU/RAM specifications) but does not fully utilize the resources on them
-      - Running on "standard" VMs (predefined ratios of CPU to RAM) is cheaper; an analysis shows that the application can be moved to standard VMs with minimal performance impact, achieveing cost optimization in the process
+      - Running on "standard" VMs (predefined ratios of CPU to RAM) is cheaper; an analysis shows that the application can be moved to standard VMs with minimal performance impact, achieving cost optimization in the process
