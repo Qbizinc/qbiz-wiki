@@ -2,7 +2,7 @@
 title: Data Architecture Cost/Application Optimization Process
 description: Process to periodically review data architecture costs and provide recommendations for cost optimization as well as perform testing to determine how data applications can be optimizerd
 published: true
-date: 2023-05-17T20:00:45.432Z
+date: 2023-05-17T20:02:48.559Z
 tags: 
 editor: markdown
 dateCreated: 2023-05-16T00:20:47.434Z
@@ -67,7 +67,7 @@ Some examples where these may be warranted:
   - This is pushing the owning team to the limit by constantly having to respond to incidents and forcing them to depriorize certain initiatives
   - In order to alleviate the owning team of managing the database themselves, the database is migrated to use a "managed" solution (i.e. AWS RDS)
     - This will increase cloud costs, but this will decrease "management" costs of the database, allowing the team to focus on higher priority/value objectives
-
+    - This is yet another example of having to balance the needs of application optimization with managing costs
 
 A template application optimization document containing evidence of performance analysis and data on iterative improvement of application performance and examples of implementation for the customer can be found here:
 
@@ -103,7 +103,7 @@ In addition to everything that's been mentioned to this point, here are some hel
   - **In terms of cost optimization**, this is usually one of the last options considered, as it typically requires the most amount of upfront engineering work and isn't always justified by cost savings
   - However, depending on the use case it may make sense to consider. For example:
     - Upon examination of billing data, it becomes clear that network egress costs seem much higher than they were projected
-      - Looking closer, it is determined that this is being caused by one service making alot of data transfer requests, often times for data that has already been requested
-      - The application gets rearchitected to make less calls for the redundant data (perhaps leveraging a cache) and reduce networking costs
+      - Looking closer, it is determined that this is being caused by one service making alot of data transfer requests, often times with data that is not crucial for the next step in the process
+      - The application gets rearchitected to make less calls for the redundant data (perhaps leveraging a cache) as well as filtering out unneeded data and reduce networking costs
     - The application currently runs on custom VMs (custom CPU/RAM specifications) but does not fully utilize the resources on them
       - Running on "standard" VMs (predefined ratios of CPU to RAM) is cheaper; an analysis shows that the application can be moved to standard VMs with minimal performance impact, achieving cost optimization in the process
