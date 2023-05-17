@@ -2,7 +2,7 @@
 title: Data Architecture Cost/Application Optimization Process
 description: Process to periodically review data architecture costs and provide recommendations for cost optimization as well as perform testing to determine how data applications can be optimizerd
 published: true
-date: 2023-05-17T21:42:21.263Z
+date: 2023-05-17T21:48:45.174Z
 tags: 
 editor: markdown
 dateCreated: 2023-05-16T00:20:47.434Z
@@ -12,7 +12,10 @@ dateCreated: 2023-05-16T00:20:47.434Z
 
 This wiki is meant to be a general cost/application optimization procedure that can be followed once new data architecture is stable.
 
-The procedure is general enough that it should be able to work for any cloud provider. In general, the idea is to get to a point where cloud costs can be quickly examined and broken down across various groupings to determine where the best areas are for cost optimization. There should also be a standardized, reliable process to follow to performance test data applications and potentially take action based on the results.
+The procedure is general enough that it should be able to work for any cloud provider. Aftetr this procedure is followed there should be:
+- A standardized, reliable process to follow to performance test data applications and determine recommendations for optimizing the application (rearchitecting, replatforming, etc.)
+- A standardized, reliable process to monitor the application health, resource usage, and more
+- A standardized, reliable process to get to a point where cloud costs can be quickly examined and broken down across various groupings to determine where the best areas are for cost optimization. 
 
 In addition, other processes will be involved in order to fully optimize the cost and application performance of the client data architecture.
 
