@@ -2,7 +2,7 @@
 title: Data Architecture Cost/Application Optimization Process
 description: Process to periodically review data architecture costs and provide recommendations for cost optimization as well as perform testing to determine how data applications can be optimizerd
 published: true
-date: 2023-05-17T19:22:50.128Z
+date: 2023-05-17T19:29:36.794Z
 tags: 
 editor: markdown
 dateCreated: 2023-05-16T00:20:47.434Z
@@ -49,9 +49,10 @@ INSERT
 
 ## Application Optimization
 
-Application optimization is a natural next step after performance testing. 
+Application optimization is a natural next step after performance testing. This includes use cases such as improving code performance efficiency, optimizing deployment on the cloud, and more. Some examples where these may be warranted:
+- An application is found to perform all of its operations using multiple virtual machines in parallel and is woefully underutilizing the provisioned CPU on each machine. Multiple options could be considered here: decreasing CPU of each machine, or rearchitecting the application to perform all operations in parallel on the same machine. The additional benefit of the second option is that the application would then become simpler to operate moving forward.
 
-A template application optimization document containing evidence of performance analysis and data on iterative improvement of application performance (for example, code performance efficiency, optimized deployment on Google Cloud resources) and examples of implementation for the customer can be found here:
+A template application optimization document containing evidence of performance analysis and data on iterative improvement of application performance and examples of implementation for the customer can be found here:
 
 INSERT LINK
 
@@ -83,4 +84,3 @@ Cost optimization, while not as directly related to performance testing as appli
   - **In terms of cost optimization**, this is usually one of the last options considered, as it typically requires the most amount of upfront engineering work and isn't always justified by cost savings
   - However, depending on the use case it may make sense to consider. For example:
     - Upon examination of billing data, it becomes clear that network egress costs seem much higher than they were projected. Looking closer, it is determined that this is being caused by one service making alot of data transfer requests, often times for data that has already been requested. The application gets rearchitected to make less calls for the redundant data (perhaps leveraging a cache) and reduce networking costs
-    - An application is found to perform all of its operations using multiple virtual machines in parallel and is woefully underutilizing the provisioned CPU on each machine. Multiple options could be considered here: decreasing CPU of each machine, or rearchitecting the application to perform all operations in parallel on the same machine. The additional benefit of the second option is that the application would then become simpler to operate moving forward.
