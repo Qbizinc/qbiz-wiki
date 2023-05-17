@@ -2,7 +2,7 @@
 title: Data Architecture Cost/Application Optimization Process
 description: Process to periodically review data architecture costs and provide recommendations for cost optimization as well as perform testing to determine how data applications can be optimizerd
 published: true
-date: 2023-05-17T23:39:51.176Z
+date: 2023-05-17T23:47:44.232Z
 tags: 
 editor: markdown
 dateCreated: 2023-05-16T00:20:47.434Z
@@ -30,7 +30,7 @@ Typically optimizing for performance will also help with optimizing cost and vic
 
 Specially, if an application is provisioned such that the compute is being heavily utilized, this could be considered cost optimized but vulnerable to a spike in traffic or other unexpected events. Conversely, an application could be overprovisioned such that actual usage of compute resources is low; this architecture could certainly have good performance (depending if it's application optimized) but would NOT be cost optimized.
 
-Thus, the goal should not be solely to minimize costs and/or maximize performance, but instead find the right balance of cost and performance that keeps costs down while also allowing for the application to be able to scale to handle unexpected events like spikes in traffic without a degradation in performance (within reason). 
+Thus, the goal should not be solely to minimize costs and/or maximize performance, but instead find the right balance of cost and performance that keeps costs down while also allowing for the application to be able to scale to handle unexpected events like spikes in traffic without a degradation in performance (within reason).
 
 Acknowledging the nonzero time/energy cost of engineers having to provision and allocate additional resources should also be taken into account. The more overhead an application has, the less time engineers have to spend provisioning additional resources for it and vice versa. Determining exact overheads will be a process of trial and error, and can be further informed by a regular performance testing process.
 
@@ -78,6 +78,12 @@ Some examples where these may be warranted:
   - In order to alleviate the owning team of managing the database themselves, the database is migrated to use a "managed" solution (i.e. AWS RDS)
     - This will increase cloud costs, but this will decrease "management" costs of the database, allowing the team to focus on higher priority/value objectives
     - This is yet another example of having to balance the needs of application optimization with managing costs; the key is to be able to justify the increase in cost (in this case, alleviating the owning team so they can work on other things)
+- The application workloads are somewhat unpredictable, leading to the application having to be overprovisioned during nonpeak times
+  - Auto scaling would be an excellent option to leverage here, optimizing both performance and cost at the same time
+    - Auto scaling typically requires configuring a few parameters (which can be determined through performance testing, trial and error, etc.):
+      - Minimum number of virtual instances
+      - Desired number of virtual instances
+      - Maximum number of virtual instances
 
 A template application optimization document containing evidence of performance analysis and data on iterative improvement of application performance and examples of implementation for the customer can be found here:
 
