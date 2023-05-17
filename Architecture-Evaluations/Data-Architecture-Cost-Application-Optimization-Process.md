@@ -2,7 +2,7 @@
 title: Data Architecture Cost/Application Optimization Process
 description: Process to periodically review data architecture costs and provide recommendations for cost optimization as well as perform testing to determine how data applications can be optimizerd
 published: true
-date: 2023-05-17T19:14:25.596Z
+date: 2023-05-17T19:15:39.167Z
 tags: 
 editor: markdown
 dateCreated: 2023-05-16T00:20:47.434Z
@@ -70,15 +70,15 @@ Cost optimization, while not as directly related to performance testing as appli
     - Various BigQuery to BigQuery pipelines can be created and then visualized in Data Studio with recurring reports that can be linked with specific filters in place
       - This enables the use of custom reports to consistently check cloud costs to catch sudden/gradual increases in costs
 - Right size data architecture by utilizing application performance analysis data
-  - Refer to "Performance Testing" section above
   - This step is crucial after the low hanging fruit has already been addressed (i.e. turning off unused services, volume based discounts, etc.)
+  - Also, this step should be done only after application optimization has been done
   - In general, this section concerns itself with "right sizing" the application by trying to answer the following:
-  - How is the application performing? Are there lots of unused resources, or is resource usage quite high?
-  - If the workloads are unpredictable, is there an opportunity to leverage auto scaling?
-  - What is the limiting resource (CPU, RAM, Disk, Iops, network bandwidth, etc.)?
-  - For the resources that are not limiting, is there an opportunity to cut down on usage? 
-    - Typically this will manifest itself in compute power (CPU/RAM); this is one of the easier resources to quickly spin up and down
-    - Unless there is a ridiculous amount of disk provisioned but not utilized, it usually makes sense to just keep the disk provisioned and grow into it (assuming data is kept and not deleted after a certain period). Same applies to the Iops of a VM
+    - How is the application performing? Are there lots of unused resources, or is resource usage quite high?
+    - If the workloads are unpredictable, is there an opportunity to leverage auto scaling?
+    - What is the limiting resource (CPU, RAM, Disk, Iops, network bandwidth, etc.)?
+    - For the resources that are not limiting, is there an opportunity to cut down on usage? 
+      - Typically this will manifest itself in compute power (CPU/RAM); this is one of the easier resources to quickly spin up and down
+      - Unless there is a ridiculous amount of disk provisioned but not utilized, it usually makes sense to just keep the disk provisioned and grow into it (assuming data is kept and not deleted after a certain period). Same applies to the Iops of a VM
 - Consider application rearchitecting
   - **In terms of cost optimization**, this is usually one of the last options considered, as it typically requires the most amount of upfront engineering work and isn't always justified by cost savings
   - However, depending on the use case it may make sense to consider. For example:
