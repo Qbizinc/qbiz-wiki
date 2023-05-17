@@ -2,7 +2,7 @@
 title: Data Architecture Cost/Application Optimization Process
 description: Process to periodically review data architecture costs and provide recommendations for cost optimization as well as perform testing to determine how data applications can be optimizerd
 published: true
-date: 2023-05-17T19:45:30.075Z
+date: 2023-05-17T19:55:26.045Z
 tags: 
 editor: markdown
 dateCreated: 2023-05-16T00:20:47.434Z
@@ -61,6 +61,10 @@ Application optimization is a natural next step after performance testing. This 
     - This solution **may** also cost more, but at scale should optimize cost as well
     - Even at a smaller scale (and most likely increased cost), this would allow the application to operate much more efficiently and would very likely pay off in the long run (depending on future growth)
       - There are also plenty of lightweight caching solutions (i.e. Memcached) that can be chosen if only simple data is needed
+- The database currently runs directly on VMs but the owning team has been unable to keep up with system updates, software patches, downstream impact of feature releases, etc.
+  - 
+
+
 A template application optimization document containing evidence of performance analysis and data on iterative improvement of application performance and examples of implementation for the customer can be found here:
 
 INSERT LINK
@@ -92,4 +96,8 @@ Cost optimization, while not as directly related to performance testing as appli
 - Consider application rearchitecting
   - **In terms of cost optimization**, this is usually one of the last options considered, as it typically requires the most amount of upfront engineering work and isn't always justified by cost savings
   - However, depending on the use case it may make sense to consider. For example:
-    - Upon examination of billing data, it becomes clear that network egress costs seem much higher than they were projected. Looking closer, it is determined that this is being caused by one service making alot of data transfer requests, often times for data that has already been requested. The application gets rearchitected to make less calls for the redundant data (perhaps leveraging a cache) and reduce networking costs
+    - Upon examination of billing data, it becomes clear that network egress costs seem much higher than they were projected
+      - Looking closer, it is determined that this is being caused by one service making alot of data transfer requests, often times for data that has already been requested
+      - The application gets rearchitected to make less calls for the redundant data (perhaps leveraging a cache) and reduce networking costs
+    - The application currently runs on custom VMs (custom CPU/RAM specifications) but does not fully utilize the resources on them
+      - Running on "standard" VMs (predefined ratios of CPU to RAM) is cheaper; an analysis shows that the application can be moved to standard VMs with minimal performance impact, achieveing cost optimization in the process
