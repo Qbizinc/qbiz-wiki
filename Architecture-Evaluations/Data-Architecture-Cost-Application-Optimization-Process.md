@@ -2,7 +2,7 @@
 title: Data Architecture Cost/Application Optimization Process
 description: Process to periodically review data architecture costs and provide recommendations for cost optimization as well as perform testing to determine how data applications can be optimizerd
 published: true
-date: 2023-05-17T20:02:48.559Z
+date: 2023-05-17T21:33:52.832Z
 tags: 
 editor: markdown
 dateCreated: 2023-05-16T00:20:47.434Z
@@ -93,17 +93,20 @@ In addition to everything that's been mentioned to this point, here are some hel
   - **NOTE: this step should be done only after application optimization has been done to ensure the application will continue to operate effectively after being right sized**
   - In general, this section concerns itself with "right sizing" the application by trying to answer the following:
     - How is the application performing? Are there lots of unused resources, or is resource usage quite high?
-    - If the workloads are unpredictable, is there an opportunity to leverage auto scaling?
+    - If the workloads are unpredictable, is there an opportunity to leverage auto scaling rather than always being overprovisioned during non peak times?
     - What is the limiting resource (CPU, RAM, Disk, Iops, network bandwidth, etc.)?
     - For the resources that are not limiting, is there an opportunity to cut down on usage? 
       - Typically this will manifest itself in compute power (CPU/RAM); this is one of the easier resources to quickly spin up and down
       - Unless there is a ridiculous amount of disk provisioned but not utilized, it usually makes sense to just keep the disk provisioned and grow into it (assuming data is kept and not deleted after a certain period)
         - Same applies to the Iops of a VM
+  - Examples of rightsizing an application
+    - When the application was first launched, extra resources were provisioned in case of more extreme unexpected events; however, after the application has existed at a steady state it is determined that none of the extra resources provisioned were needed
+      - The owning team takes back the extra resources while also leaving some overhead for the application to naturally grow into
+    - The application currently runs on "custom" VMs (custom CPU/RAM specifications) but does not fully utilize the resources on them
+      - Running on "standard" VMs (predefined ratios of CPU to RAM) is cheaper; an analysis shows that the application can be moved to standard VMs with minimal performance impact, achieving cost optimization in the process
 - Consider application rearchitecting
   - **In terms of cost optimization**, this is usually one of the last options considered, as it typically requires the most amount of upfront engineering work and isn't always justified by cost savings
   - However, depending on the use case it may make sense to consider. For example:
     - Upon examination of billing data, it becomes clear that network egress costs seem much higher than they were projected
       - Looking closer, it is determined that this is being caused by one service making alot of data transfer requests, often times with data that is not crucial for the next step in the process
       - The application gets rearchitected to make less calls for the redundant data (perhaps leveraging a cache) as well as filtering out unneeded data and reduce networking costs
-    - The application currently runs on custom VMs (custom CPU/RAM specifications) but does not fully utilize the resources on them
-      - Running on "standard" VMs (predefined ratios of CPU to RAM) is cheaper; an analysis shows that the application can be moved to standard VMs with minimal performance impact, achieving cost optimization in the process
