@@ -2,7 +2,7 @@
 title: Data Architecture Cost/Application Optimization Process
 description: Process to periodically review data architecture costs and provide recommendations for cost optimization as well as perform testing to determine how data applications can be optimizerd
 published: true
-date: 2023-05-17T21:50:01.192Z
+date: 2023-05-17T21:58:47.678Z
 tags: 
 editor: markdown
 dateCreated: 2023-05-16T00:20:47.434Z
@@ -37,9 +37,9 @@ A template performance testing document including example reports, tools and sou
 
 INSERT LINK
 
-### Monitoring Systems and Tools
+## Monitoring Systems and Tools
 
-In order to do effective performance testing, monitoring systems and tools in the cloud should be leveraged. 
+Proper monitoring systems and tools in the cloud are also crucial for **BOTH** cost and application optimization to (1) understand where there are opportunities to reduce cost (i.e. underutilized resources) as well as (2) understand the potential opportunities to optimize the application (i.e. unusually high resource usage but low user traffic). Proper monitoring can be seen as complimentary to the performance analysis process, as well as the missing link in the architecture management process to be able to react to unexpected changes that require the owning team to take action (i.e. spikes in traffic).
 
 Most cloud providers will have monitoring/logging systems that can export performance related data such as CPU/RAM usage to systems that can then be analyzed/visualized/etc. (i.e. Cloudwatch metrics in AWS Stackdriver, logging metrics in GCP, etc.). Other solutions can be used such as exporting metrics to a time series based architecture like Prometheus. These metrics should then be visualized in a way that is easily accessible for the owning team and allows for quick decision making based on the metrics.
 
@@ -47,7 +47,7 @@ In addition, alerts should be set up that look at these resource usage metrics t
 
 Either way, a standardized solution for tracking resource usage metrics should be followed and checked on at a regular cadence in order for the data architecture to be its most effective.
 
-#### Technology Demonstration
+### Technology Demonstration
 
 INSERT
 
