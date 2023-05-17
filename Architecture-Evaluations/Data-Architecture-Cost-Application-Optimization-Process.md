@@ -2,7 +2,7 @@
 title: Data Architecture Cost/Application Optimization Process
 description: Process to periodically review data architecture costs and provide recommendations for cost optimization as well as perform testing to determine how data applications can be optimizerd
 published: true
-date: 2023-05-17T19:59:35.288Z
+date: 2023-05-17T20:00:45.432Z
 tags: 
 editor: markdown
 dateCreated: 2023-05-16T00:20:47.434Z
@@ -77,6 +77,7 @@ INSERT LINK
 
 Cost optimization, while not as directly related to performance testing as application optimization, is crucial for being able to manage a well architected application and still is usually intertwined with performance optimization.
 
+In addition to everything that's been mentioned to this point, here are some helpful tips for managing cloud costs:
 - Find the "Billing" section in the cloud provider UI
   - This should be part of all cloud providers and should contain helpful visualizations showing costs over time as well as the ability to filter data and group by specific dimensions
     - AWS's "Cost Explorer" tool is very useful for breaking down costs by Service, AWS account, etc. and even has some simple forecasts
