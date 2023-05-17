@@ -2,7 +2,7 @@
 title: Data Architecture Cost/Application Optimization Process
 description: Process to periodically review data architecture costs and provide recommendations for cost optimization as well as perform testing to determine how data applications can be optimizerd
 published: true
-date: 2023-05-17T19:29:36.794Z
+date: 2023-05-17T19:37:09.124Z
 tags: 
 editor: markdown
 dateCreated: 2023-05-16T00:20:47.434Z
@@ -50,7 +50,13 @@ INSERT
 ## Application Optimization
 
 Application optimization is a natural next step after performance testing. This includes use cases such as improving code performance efficiency, optimizing deployment on the cloud, and more. Some examples where these may be warranted:
-- An application is found to perform all of its operations using multiple virtual machines in parallel and is woefully underutilizing the provisioned CPU on each machine. Multiple options could be considered here: decreasing CPU of each machine, or rearchitecting the application to perform all operations in parallel on the same machine. The additional benefit of the second option is that the application would then become simpler to operate moving forward.
+- An application is found to perform all of its operations using multiple servers in parallel and is woefully underutilizing the provisioned CPU on each machine
+  - Multiple options could be considered here
+    - Decreasing CPU of each machine
+      - This is the simpler option overall but would still be more complex to operate
+    - Rearchitecting the application to perform all operations in parallel on the same machine
+      - The additional benefit of this option is that the application would then become simpler to operate moving forward
+- An application is found to query the database multiple times for the same set of data in order to perform its work; 
 
 A template application optimization document containing evidence of performance analysis and data on iterative improvement of application performance and examples of implementation for the customer can be found here:
 
