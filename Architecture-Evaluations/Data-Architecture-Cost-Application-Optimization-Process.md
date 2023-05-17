@@ -2,7 +2,7 @@
 title: Data Architecture Cost/Application Optimization Process
 description: Process to periodically review data architecture costs and provide recommendations for cost optimization as well as perform testing to determine how data applications can be optimizerd
 published: true
-date: 2023-05-17T21:33:52.832Z
+date: 2023-05-17T21:42:21.263Z
 tags: 
 editor: markdown
 dateCreated: 2023-05-16T00:20:47.434Z
@@ -26,7 +26,7 @@ Typically optimizing for performance will also help with optimizing cost and vic
 
 For example, if an application is provisioned such that the compute is being heavily utilized, this could be considered cost optimized but vulnerable to a spike in traffic or other unexpected events. Conversely, an application could be overprovisioned such that actual usage of compute resources is low; this architecture would certainly have good performance but would NOT be cost optimized.
 
-Thus, the goal should not be solely to minimize costs and/or maximize performance, but instead find the right balance of cost and performance that keeps costs down while also allowing for the application to be able to scale to handle unexpected events like spikes in traffic without a degredation in performance (within reason). 
+Thus, the goal should not be solely to minimize costs and/or maximize performance, but instead find the right balance of cost and performance that keeps costs down while also allowing for the application to be able to scale to handle unexpected events like spikes in traffic without a degradation in performance (within reason). 
 
 Acknowledging the nonzero time/energy cost of engineers having to provision and allocate additional resources should also be taken into account. The more overhead an application has, the less time engineers have to spend provisioning additional resources for it and vice versa. Determining exact overheads will be a process of trial and error, and can be further informed by a regular performance testing process.
 
@@ -38,7 +38,9 @@ INSERT LINK
 
 In order to do effective performance testing, monitoring systems and tools in the cloud should be leveraged. 
 
-Most cloud providers will have monitoring/logging systems that can export performance related data such as CPU/RAM usage to systems that can then be analyzed/visualized/etc. (i.e. Cloudwatch metrics in AWS Stackdriver, logging metrics in GCP, etc.). Other solutions can be used such as exporting metrics to a time series based architecture like Prometheus.
+Most cloud providers will have monitoring/logging systems that can export performance related data such as CPU/RAM usage to systems that can then be analyzed/visualized/etc. (i.e. Cloudwatch metrics in AWS Stackdriver, logging metrics in GCP, etc.). Other solutions can be used such as exporting metrics to a time series based architecture like Prometheus. These metrics should then be visualized in a way that is easily accessible for the owning team and allows for quick decision making based on the metrics.
+
+In addition, alerts should be set up that look at these resource usage metrics that are configured to alert the owning team if they reach a selected threshold (i.e. 70% CPU usage on any VM).
 
 Either way, a standardized solution for tracking resource usage metrics should be followed and checked on at a regular cadence in order for the data architecture to be its most effective.
 
@@ -67,7 +69,7 @@ Some examples where these may be warranted:
   - This is pushing the owning team to the limit by constantly having to respond to incidents and forcing them to depriorize certain initiatives
   - In order to alleviate the owning team of managing the database themselves, the database is migrated to use a "managed" solution (i.e. AWS RDS)
     - This will increase cloud costs, but this will decrease "management" costs of the database, allowing the team to focus on higher priority/value objectives
-    - This is yet another example of having to balance the needs of application optimization with managing costs
+    - This is yet another example of having to balance the needs of application optimization with managing costs; the key is to be able to justify the increase in cost (in this case, alleviating the owning team so they can work on other things)
 
 A template application optimization document containing evidence of performance analysis and data on iterative improvement of application performance and examples of implementation for the customer can be found here:
 
