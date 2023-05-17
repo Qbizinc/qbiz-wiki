@@ -2,7 +2,7 @@
 title: Architecture Implementation Testing and Validation Process
 description: Process for testing/validating that a data architecture was implemented successfully
 published: true
-date: 2023-05-17T17:03:52.917Z
+date: 2023-05-17T17:20:59.447Z
 tags: 
 editor: markdown
 dateCreated: 2023-05-15T23:04:43.963Z
@@ -14,13 +14,15 @@ The purpose of this document is to lay out in detail a process for testing and v
 
 The tests should all contribute to meeting each of the requirements the new architecture is expected to achieve (correct data types, correct data volumes, correct output data, etc.).
 
+### Testing and Validation Template Document
+
 This process can be built using this template document as a starting point: https://docs.google.com/document/d/13mK6aW6BINitKzSKXtIbxIcaIvwT8HNGwpgJ5kPwTfs/edit?usp=sharing
 
 Whatever the final chosen data architecture is for the client should be the output of this [template document](https://docs.google.com/document/d/1lb55oAfuF3pOVnWFM-WogGZajYh8RZKhOEI8ystyViI/edit?usp=sharing) (tailored for the client and project).
 
 The document is not meant to be a catch all solution but instead an iterative document that can be tailored for the specific use case.
 
-Some high level points to consider (with examples):
+### Some high level points to consider (with examples)
 - Determine logistics of solution implementation
   - Is the implementation a migration? Is the implementation standalone?
   - Is there a specific migration plan that will be followed?
