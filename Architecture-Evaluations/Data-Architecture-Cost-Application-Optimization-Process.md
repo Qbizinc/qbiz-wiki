@@ -2,7 +2,7 @@
 title: Data Architecture Cost/Application Optimization Process
 description: Process to periodically review data architecture costs and provide recommendations for cost optimization as well as perform testing to determine how data applications can be optimizerd
 published: true
-date: 2023-05-17T21:58:47.678Z
+date: 2023-05-17T22:07:31.621Z
 tags: 
 editor: markdown
 dateCreated: 2023-05-16T00:20:47.434Z
@@ -47,6 +47,8 @@ In addition, alerts should be set up that look at these resource usage metrics t
 
 Either way, a standardized solution for tracking resource usage metrics should be followed and checked on at a regular cadence in order for the data architecture to be its most effective.
 
+In addition, GCP has an additional offering called ["Recommenders"](https://cloud.google.com/recommender/docs/recommenders) which should be enabled that can provide performance and cost based recommendations for various GCP products.
+
 ### Technology Demonstration
 
 INSERT
@@ -55,6 +57,8 @@ INSERT
 ## Application Optimization
 
 Application optimization is a natural next step after performance testing. This includes use cases such as improving code performance efficiency, optimizing deployment on the cloud, and more. 
+
+GCP's advice on optimizing workload performance: https://cloud.google.com/architecture/framework/performance-optimization
 
 Some examples where these may be warranted:
 - An application is found to perform all of its operations using multiple servers in parallel and is woefully underutilizing the provisioned CPU on each machine
@@ -83,6 +87,7 @@ INSERT LINK
 Cost optimization, while not as directly related to performance testing as application optimization, is crucial for being able to manage a well architected application and still is usually intertwined with performance optimization.
 
 In addition to everything that's been mentioned to this point, here are some helpful tips for managing cloud costs:
+- [GCP's Tips for Managing Cloud Costs](https://cloud.google.com/blog/topics/cost-management/best-practices-for-optimizing-your-cloud-costs)
 - Find the "Billing" section in the cloud provider UI
   - This should be part of all cloud providers and should contain helpful visualizations showing costs over time as well as the ability to filter data and group by specific dimensions
     - AWS's "Cost Explorer" tool is very useful for breaking down costs by Service, AWS account, etc. and even has some simple forecasts
@@ -93,6 +98,7 @@ In addition to everything that's been mentioned to this point, here are some hel
     - This data can be queried via SQL for more in depth insights
     - Various BigQuery to BigQuery pipelines can be created and then visualized in Data Studio with recurring reports that can be linked with specific filters in place
       - This enables the use of custom reports to consistently check cloud costs to catch sudden/gradual increases in costs
+  - If in GCP, enable ["Recommenders"](https://cloud.google.com/recommender/docs/recommenders) to provide cost optimization recommendations
 - Right size data architecture by utilizing application performance analysis data
   - This step is crucial after other low hanging fruit has already been addressed (i.e. turning off unused services, volume based discounts, etc.)
   - **NOTE: this step should be done only after application optimization has been done to ensure the application will continue to operate effectively after being right sized**
