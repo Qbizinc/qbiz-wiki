@@ -2,7 +2,7 @@
 title: Data Architecture Cost/Application Optimization Process
 description: Process to periodically review data architecture costs and provide recommendations for cost optimization as well as perform testing to determine how data applications can be optimizerd
 published: true
-date: 2023-05-18T16:34:42.420Z
+date: 2023-05-18T16:35:27.505Z
 tags: 
 editor: markdown
 dateCreated: 2023-05-16T00:20:47.434Z
@@ -26,7 +26,7 @@ Typically optimizing for performance will also help with optimizing cost and vic
 - Always provisioning additional compute resources in a cluster as "overhead" that services can utilize to account for unexpected increases in usage
 - Overprovisioning SSD that may not be used for months but allows for a database to grow unencumbered, etc. 
 
-Specially, if an application is provisioned such that the compute is being heavily utilized, this could be considered cost optimized but vulnerable to a spike in traffic or other unexpected events. Conversely, an application could be overprovisioned such that actual usage of compute resources is low; this architecture could certainly have good performance (depending if it's application optimized) but would NOT be cost optimized.
+Specially, if an application is provisioned such that the compute is being heavily utilized, this could be considered cost optimized but vulnerable to a spike in traffic or other unexpected events. Conversely, an application could be overprovisioned such that actual usage of compute resources is low; this architecture could certainly have good performance (assuming the architecture application optimized) but would NOT be cost optimized.
 
 Thus, the goal should not be solely to minimize costs and/or maximize performance, but instead find the right balance of cost and performance that keeps costs down while also allowing for the application to be able to scale to handle unexpected events like spikes in traffic without a degradation in performance (within reason).
 
