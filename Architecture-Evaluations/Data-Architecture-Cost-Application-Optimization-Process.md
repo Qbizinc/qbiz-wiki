@@ -2,7 +2,7 @@
 title: Data Architecture Cost/Application Optimization Process
 description: Process to periodically review data architecture costs and provide recommendations for cost optimization as well as perform testing to determine how data applications can be optimizerd
 published: true
-date: 2023-05-18T16:39:21.243Z
+date: 2023-05-18T16:39:55.863Z
 tags: 
 editor: markdown
 dateCreated: 2023-05-16T00:20:47.434Z
@@ -103,7 +103,7 @@ In addition to everything that's been mentioned to this point, here are some hel
     - This data can be queried via SQL for more in depth insights
     - Various BigQuery to BigQuery pipelines can be created and then visualized in Data Studio with recurring reports that can be linked with specific filters in place
       - This enables the use of custom reports to consistently check cloud costs to catch sudden/gradual increases in costs
-  - If in GCP, enable ["Recommenders"](https://cloud.google.com/recommender/docs/recommenders) to provide cost optimization recommendations
+  - If in GCP, it is strongly encouraged to enable ["Recommenders"](https://cloud.google.com/recommender/docs/recommenders) to provide cost optimization recommendations
 - Right size data architecture by utilizing application performance analysis data
   - This step is crucial after other low hanging fruit has already been addressed (i.e. turning off unused services, volume based discounts, etc.)
   - **NOTE: this step should be done only after application optimization has been done to ensure the application will continue to operate effectively after being right sized**
