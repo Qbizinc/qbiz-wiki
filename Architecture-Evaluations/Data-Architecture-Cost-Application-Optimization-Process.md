@@ -2,7 +2,7 @@
 title: Data Architecture Cost/Application Optimization Process
 description: Process to periodically review data architecture costs and provide recommendations for cost optimization as well as perform testing to determine how data applications can be optimizerd
 published: true
-date: 2023-05-18T16:49:26.935Z
+date: 2023-05-18T16:58:20.495Z
 tags: 
 editor: markdown
 dateCreated: 2023-05-16T00:20:47.434Z
@@ -104,13 +104,13 @@ In addition to everything that's been mentioned to this point, here are some hel
     - Various BigQuery to BigQuery pipelines can be created and then visualized in Data Studio with recurring reports that can be linked with specific filters in place
       - This enables the use of custom reports to consistently check cloud costs to catch sudden/gradual increases in costs
   - If in GCP, it is strongly encouraged to enable ["Recommenders"](https://cloud.google.com/recommender/docs/recommenders) to provide cost optimization recommendations
-- Right size data architecture by utilizing application performance analysis data
+- "Right size" data architecture by utilizing application performance analysis data
   - This step is crucial after other low hanging fruit has already been addressed (i.e. turning off unused services, volume based discounts, etc.)
   - **NOTE: this step should be done only after application optimization has been done to ensure the application will continue to operate effectively after being right sized**
-  - In general, this section concerns itself with "right sizing" the application by trying to answer the following:
+  - In general, this section concerns itself with trying to answer the following:
     - How is the application performing? Are there lots of unused resources, or is resource usage quite high?
     - If the workloads are unpredictable, is there an opportunity to leverage auto scaling rather than always being overprovisioned during non peak times?
-    - What is the limiting resource (CPU, RAM, Disk, Iops, network bandwidth, etc.)?
+    - What is the limiting resource (CPU, RAM, Disk, Iops, network bandwidth, etc.)? Put another way, at what resource usage does the application begin to experience performance degradation?
     - For the resources that are not limiting, is there an opportunity to cut down on usage? 
       - Typically this will manifest itself in compute power (CPU/RAM); this is one of the easier resources to quickly spin up and down
       - Unless there is a ridiculous amount of disk provisioned but not utilized, it usually makes sense to just keep the disk provisioned and grow into it (assuming data is kept and not deleted after a certain period)
