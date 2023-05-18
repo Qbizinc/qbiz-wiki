@@ -2,7 +2,7 @@
 title: Data Architecture Cost/Application Optimization Process
 description: Process to periodically review data architecture costs and provide recommendations for cost optimization as well as perform testing to determine how data applications can be optimizerd
 published: true
-date: 2023-05-18T16:39:55.863Z
+date: 2023-05-18T16:41:15.290Z
 tags: 
 editor: markdown
 dateCreated: 2023-05-16T00:20:47.434Z
@@ -71,12 +71,12 @@ Some examples where these may be warranted:
     - This solution **may** also cost more, but at scale should optimize cost as well
     - Even at a smaller scale (and most likely increased cost), this would allow the application to operate much more efficiently and would very likely pay off in the long run (depending on future growth)
       - There are also plenty of lightweight caching solutions (i.e. Memcached) that can be chosen if only simple data is needed
-- The application backend database currently runs directly on VMs but the owning team has been unable to keep up with system updates, software patches, downstream impact of feature releases, etc.
+- The application backend database currently runs directly on VMs but the owning team has been unable to keep up with system updates, software patches, impact of feature releases from upstream services, etc.
   - This is pushing the owning team to the limit by constantly having to respond to incidents and forcing them to depriorize certain initiatives
   - In order to alleviate the owning team of managing the database themselves, the database is migrated to use a "managed" solution (i.e. AWS RDS)
     - This will increase cloud costs, but this will decrease "management" costs of the database, allowing the team to focus on higher priority/value objectives
     - This is yet another example of having to balance the needs of application optimization with managing costs; the key is to be able to justify the increase in cost (in this case, alleviating the owning team so they can work on other things)
-- The application workloads are somewhat unpredictable, leading to the application having to be overprovisioned during nonpeak times
+- The application workloads are unpredictable, leading to the application having to be overprovisioned during nonpeak times (which is most of the time)
   - Auto scaling would be an excellent option to leverage here, optimizing both performance and cost at the same time
     - Auto scaling typically requires configuring a few parameters (which can be determined through performance testing, trial and error, etc.):
       - Minimum number of virtual instances
