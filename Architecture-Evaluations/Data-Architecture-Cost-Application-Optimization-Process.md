@@ -2,7 +2,7 @@
 title: Data Architecture Cost/Application Optimization Process
 description: Process to periodically review data architecture costs and provide recommendations for cost optimization as well as perform testing to determine how data applications can be optimizerd
 published: true
-date: 2023-05-18T16:41:15.290Z
+date: 2023-05-18T16:49:06.957Z
 tags: 
 editor: markdown
 dateCreated: 2023-05-16T00:20:47.434Z
@@ -77,7 +77,7 @@ Some examples where these may be warranted:
     - This will increase cloud costs, but this will decrease "management" costs of the database, allowing the team to focus on higher priority/value objectives
     - This is yet another example of having to balance the needs of application optimization with managing costs; the key is to be able to justify the increase in cost (in this case, alleviating the owning team so they can work on other things)
 - The application workloads are unpredictable, leading to the application having to be overprovisioned during nonpeak times (which is most of the time)
-  - Auto scaling would be an excellent option to leverage here, optimizing both performance and cost at the same time
+  - If the application runs on VMs, auto scaling would be an excellent option to leverage here, optimizing both performance and cost at the same time
     - Auto scaling typically requires configuring a few parameters (which can be determined through performance testing, trial and error, etc.):
       - Minimum number of virtual instances
       - Desired number of virtual instances
@@ -97,7 +97,7 @@ In addition to everything that's been mentioned to this point, here are some hel
   - This should be part of all cloud providers and should contain helpful visualizations showing costs over time as well as the ability to filter data and group by specific dimensions
     - AWS's "Cost Explorer" tool is very useful for breaking down costs by Service, AWS account, etc. and even has some simple forecasts
   - Most cloud providers will provide recommendations in the Billing UI as well
-    - Most recommendations tend to be volume based discounts like Committed Usage Discounts (GCP)/Savings Plans (AWS), which may not be an option for unpredictable workloads
+    - Most recommendations tend to be volume based discounts like Committed Usage Discounts (GCP)/Savings Plans (AWS), which may not be a great option for unpredictable workloads
 - For experienced cloud users: Set up billing and/or monitoring if this hasn't been done already
   - For example: in GCP, every organization gets a billing export BigQuery dataset called a "billing sink" where all the costs for all GCP accounts linked to the organization get sent to
     - This data can be queried via SQL for more in depth insights
