@@ -2,7 +2,7 @@
 title: Data Architecture Cost/Application Optimization Process
 description: Process to periodically review data architecture costs and provide recommendations for cost optimization as well as perform testing to determine how data applications can be optimizerd
 published: true
-date: 2023-05-19T23:31:35.853Z
+date: 2023-05-19T23:39:51.570Z
 tags: 
 editor: markdown
 dateCreated: 2023-05-16T00:20:47.434Z
@@ -108,7 +108,7 @@ GCP has some tips for Managing Cloud Costs [here](https://cloud.google.com/blog/
       - This enables the use of custom reports to consistently check cloud costs to catch sudden/gradual increases in costs
   - If in GCP, it is strongly encouraged to enable ["Recommenders"](https://cloud.google.com/recommender/docs/recommenders) to provide cost optimization recommendations
   
-### Cost Optimization Options
+### Some Cost Optimization Options
 - Turn off unused services
   - It is crucial to regularly keep stock of services that may no longer be needed and should be turned off
   - Ideally a Program Manager or someone else assists with this, but consultants should also offer recommendations if possible
@@ -128,20 +128,19 @@ GCP has some tips for Managing Cloud Costs [here](https://cloud.google.com/blog/
   - AWS offers something called "EC2 Spot instances" which are VMs that can be purchases for much cheaper than regular VMs but can be interrupted unexpectedly
     - GCP has an equivalent offering called "Spot VMs"
   - Works best for short term workloads that can withstand interruptions and have lower resource demands
-- "Right size" data architecture by utilizing application performance analysis data
+- "Right size" data architecture by utilizing application performance analysis data (specifically compute)
   - This step is crucial after other low hanging fruit (listed above) has already been addressed
   - **NOTE: this step should be done only after application optimization has been done to ensure the application will continue to operate effectively after being right sized**
   - In general, this section concerns itself with trying to answer the following:
     - What is the limiting resource (CPU, RAM, Disk, Iops, network bandwidth, etc.)? Put another way, at what resource usage does the application begin to experience performance degradation?
-    - For the resources that are not limiting, are they being underutilized? Is there an opportunity to take back resources to save on costs?
+    - Are the non limiting resources being underutilized? Is there an opportunity to take back resources to save on costs?
       - Typically this will manifest itself in compute power (CPU/RAM); this is one of the easier resources to quickly spin up and down
-      - Unless there is a ridiculous amount of disk provisioned but not utilized, it usually makes sense to just keep the disk provisioned and grow into it (assuming data is kept and not deleted after a certain period)
   - Examples of rightsizing an application
     - When the application was first launched, extra resources were provisioned in case of more extreme unexpected events; however, after the application has existed at a steady state it is determined that none of the extra resources provisioned were needed
       - The owning team takes back the extra resources while also leaving some overhead for the application to naturally grow into
     - The application currently runs on "custom" VMs (custom CPU/RAM specifications) but does not fully utilize the resources on them
       - Running on "standard" VMs (predefined ratios of CPU to RAM) is cheaper
-      - An analysis shows that the application can be moved to standard VMs with minimal performance impact, achieving cost optimization in the process
+      - An analysis shows that the application can be moved to standard VMs with minimal performance impact, also achieving cost optimization in the process
 - Consider application rearchitecting
   - **In terms of cost optimization**, this is usually one of the last options considered, as it typically requires the most amount of upfront engineering work and isn't always justified by cost savings
   - However, depending on the use case it may make sense to consider. For example:
