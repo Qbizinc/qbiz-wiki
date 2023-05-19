@@ -2,7 +2,7 @@
 title: Data Architecture Cost/Application Optimization Process
 description: Process to periodically review data architecture costs and provide recommendations for cost optimization as well as perform testing to determine how data applications can be optimizerd
 published: true
-date: 2023-05-19T23:20:04.937Z
+date: 2023-05-19T23:23:25.854Z
 tags: 
 editor: markdown
 dateCreated: 2023-05-16T00:20:47.434Z
@@ -115,17 +115,19 @@ GCP has some tips for Managing Cloud Costs [here](https://cloud.google.com/blog/
 - Purchase volume discounts
   - This typically only makes sense when the client has the scale to support it
   - These discounts can come in the form of 
-    - Committing to a certain amount of compute **usage** over a 1 or 3 year period (i.e. GCP Committed Usage discounts, AWS Savings Plans)
+    - Committing to a certain amount of compute **usage** over a 1 or 3 year period (i.e. GCP Committed Usage discounts, AWS Savings Plans); VMs do not have to be up continuously for this
+      - GCP also offers Committed Usage discounts for certain disk like SSDs
     - Committing to a "reserved instance" for compute (AWS)
 - Consider implementing data policies (data lifecycle, data retention, etc.)
   - Alot of times, data is kept by a company indefinitely even after it has served its purpose
     - If the data is in object storage, lifecycle policies can be implemented to the item holding the object (i.e. S3 bucket)
   - In addition, infrequently accessed data may be in a frequent access tier (i.e. in S3)
-    - AWS S3 offers "intelligent tiering" where it automatically moves items that haven't been accessed in a 
+    - AWS S3 offers "intelligent tiering" where it automatically moves items that haven't been accessed in a user specified amount of time
+  - In some cases, implementing these policies will involve application rearchitecturing
 - Consider cheaper compute for short term workloads
   - AWS offers something called "EC2 Spot instances" which are VMs that can be purchases for much cheaper than regular VMs but can be interrupted unexpectedly
-    - GCP has an equaivalent offering called "Spot VMs"
-  - Works best for short term workloads that can withstand interruptions
+    - GCP has an equivalent offering called "Spot VMs"
+  - Works best for short term workloads that can withstand interruptions and have lower resource demands
 - "Right size" data architecture by utilizing application performance analysis data
   - This step is crucial after other low hanging fruit (listed above) has already been addressed
   - **NOTE: this step should be done only after application optimization has been done to ensure the application will continue to operate effectively after being right sized**
@@ -146,4 +148,4 @@ GCP has some tips for Managing Cloud Costs [here](https://cloud.google.com/blog/
     - Upon examination of billing data, it becomes clear that network egress costs seem much higher than they were projected
       - Looking closer, it is determined that this is being caused by one service making alot of data transfer requests, often times with data that is not crucial for the next step in the process
       - The application gets rearchitected to make less calls for the redundant data (perhaps leveraging a cache) as well as filtering out unneeded data and reduce networking costs
-    - The client keeps all 
+    - The client keeps all data in their databases indefinitely, and some of the more dense data (minutely, hourly, etc.) is beginning to have a huge footprint and cost
