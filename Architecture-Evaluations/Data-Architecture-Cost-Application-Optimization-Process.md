@@ -2,7 +2,7 @@
 title: Data Architecture Cost/Application Optimization Process
 description: Process to periodically review data architecture costs and provide recommendations for cost optimization as well as perform testing to determine how data applications can be optimizerd
 published: true
-date: 2023-05-19T23:23:25.854Z
+date: 2023-05-19T23:31:35.853Z
 tags: 
 editor: markdown
 dateCreated: 2023-05-16T00:20:47.434Z
@@ -123,7 +123,7 @@ GCP has some tips for Managing Cloud Costs [here](https://cloud.google.com/blog/
     - If the data is in object storage, lifecycle policies can be implemented to the item holding the object (i.e. S3 bucket)
   - In addition, infrequently accessed data may be in a frequent access tier (i.e. in S3)
     - AWS S3 offers "intelligent tiering" where it automatically moves items that haven't been accessed in a user specified amount of time
-  - In some cases, implementing these policies will involve application rearchitecturing
+  - In some cases, implementing these policies will involve application rearchitecturing; this will be addressed below
 - Consider cheaper compute for short term workloads
   - AWS offers something called "EC2 Spot instances" which are VMs that can be purchases for much cheaper than regular VMs but can be interrupted unexpectedly
     - GCP has an equivalent offering called "Spot VMs"
@@ -148,4 +148,7 @@ GCP has some tips for Managing Cloud Costs [here](https://cloud.google.com/blog/
     - Upon examination of billing data, it becomes clear that network egress costs seem much higher than they were projected
       - Looking closer, it is determined that this is being caused by one service making alot of data transfer requests, often times with data that is not crucial for the next step in the process
       - The application gets rearchitected to make less calls for the redundant data (perhaps leveraging a cache) as well as filtering out unneeded data and reduce networking costs
-    - The client keeps all data in their databases indefinitely, and some of the more dense data (minutely, hourly, etc.) is beginning to have a huge footprint and cost
+    - The client keeps all data in their databases indefinitely, and some of the more dense data (minutely, hourly, etc.) is beginning to have a huge footprint as well as cost
+      - After discussion with the donwstream data consumers, 1-2 data types are chosen to have data retention policies implemented 
+      - An analysis shows that in order to implement this data retention policy the application will require rearchitecting
+        - This could be some backend logic that needs to be introduced or a separate process that goes and deletes all data that is older than a selected retention period
