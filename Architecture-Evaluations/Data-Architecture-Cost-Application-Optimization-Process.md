@@ -2,7 +2,7 @@
 title: Data Architecture Cost/Application Optimization Process
 description: Process to periodically review data architecture costs and provide recommendations for cost optimization as well as perform testing to determine how data applications can be optimizerd
 published: true
-date: 2023-05-19T21:59:44.254Z
+date: 2023-05-19T22:04:22.957Z
 tags: 
 editor: markdown
 dateCreated: 2023-05-16T00:20:47.434Z
@@ -114,12 +114,16 @@ GCP has some tips for Managing Cloud Costs [here](https://cloud.google.com/blog/
   - Ideally a Program Manager or someone else assists with this, but consultants should also offer recommendations if possible
 - Purchase volume discounts
   - This typically only makes sense when the client has the scale to support it
-  - These discounts come in the form of 
+  - These discounts can come in the form of 
+    - Committing to a certain amount of compute **usage** over a 1 or 3 year period (i.e. GCP Committed Usage discounts, AWS Savings Plans)
+    - Committing to a "reserved instance" (AWS)
 - Consider implementing data policies (data lifecycle, data retention, etc.)
   - Alot of times, data is kept by a company indefinitely even after it has served its purpose
     - If the data is in object storage, lifecycle policies can be implemented to the item holding the object (i.e. S3 bucket)
   - In addition, infrequently accessed data may be in a frequent access tier (i.e. in S3)
     - AWS S3 offers "intelligent tiering" where it automatically moves items that haven't been accessed in a 
+- Consider cheaper compute for short term workloads
+  - AWS offers something called "EC2 Spot instances" which are VMs that can be purchases for much cheaper than regular VMs but 
 - "Right size" data architecture by utilizing application performance analysis data
   - This step is crucial after other low hanging fruit (listed above) has already been addressed
   - **NOTE: this step should be done only after application optimization has been done to ensure the application will continue to operate effectively after being right sized**
