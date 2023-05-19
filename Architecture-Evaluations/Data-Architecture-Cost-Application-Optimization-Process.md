@@ -2,7 +2,7 @@
 title: Data Architecture Cost/Application Optimization Process
 description: Process to periodically review data architecture costs and provide recommendations for cost optimization as well as perform testing to determine how data applications can be optimizerd
 published: true
-date: 2023-05-18T17:03:08.100Z
+date: 2023-05-19T21:59:44.254Z
 tags: 
 editor: markdown
 dateCreated: 2023-05-16T00:20:47.434Z
@@ -59,6 +59,7 @@ Application optimization is a natural next step after performance testing. This 
 
 GCP's advice on optimizing workload performance: https://cloud.google.com/architecture/framework/performance-optimization
 
+### Examples
 Some examples where these may be warranted:
 - An application is found to perform all of its operations using multiple servers in parallel and is woefully underutilizing the provisioned CPU on each machine
   - Multiple options could be considered here (both of which would also optimize cost)
@@ -83,6 +84,7 @@ Some examples where these may be warranted:
       - Desired number of virtual instances
       - Maximum number of virtual instances
 
+### Template
 A template application optimization document containing evidence of performance analysis and data on iterative improvement of application performance and examples of implementation for the customer can be found here:
 
 https://docs.google.com/document/d/1k3gKGt6l4X3RkZEyIvH7xxohveMu5qZIy6xfnx2ohdo/edit#heading=h.hp39q3gd1kg3
@@ -91,8 +93,9 @@ https://docs.google.com/document/d/1k3gKGt6l4X3RkZEyIvH7xxohveMu5qZIy6xfnx2ohdo/
 
 Cost optimization, while not as directly related to performance testing as application optimization, is crucial for being able to manage a well architected application and still is usually intertwined with performance optimization.
 
-In addition to everything that's been mentioned to this point, here are some helpful tips for managing cloud costs:
-- [GCP's Tips for Managing Cloud Costs](https://cloud.google.com/blog/topics/cost-management/best-practices-for-optimizing-your-cloud-costs)
+GCP has some tips for Managing Cloud Costs [here](https://cloud.google.com/blog/topics/cost-management/best-practices-for-optimizing-your-cloud-costs).
+
+### Tools/Reporting Set Up
 - Find the "Billing" section in the cloud provider UI
   - This should be part of all cloud providers and should contain helpful visualizations showing costs over time as well as the ability to filter data and group by specific dimensions
     - AWS's "Cost Explorer" tool is very useful for breaking down costs by Service, AWS account, etc. and even has some simple forecasts
@@ -104,8 +107,21 @@ In addition to everything that's been mentioned to this point, here are some hel
     - Various BigQuery to BigQuery pipelines can be created and then visualized in Data Studio with recurring reports that can be linked with specific filters in place
       - This enables the use of custom reports to consistently check cloud costs to catch sudden/gradual increases in costs
   - If in GCP, it is strongly encouraged to enable ["Recommenders"](https://cloud.google.com/recommender/docs/recommenders) to provide cost optimization recommendations
+  
+### Cost Optimization Options
+- Turn off unused services
+  - It is crucial to regularly keep stock of services that may no longer be needed and should be turned off
+  - Ideally a Program Manager or someone else assists with this, but consultants should also offer recommendations if possible
+- Purchase volume discounts
+  - This typically only makes sense when the client has the scale to support it
+  - These discounts come in the form of 
+- Consider implementing data policies (data lifecycle, data retention, etc.)
+  - Alot of times, data is kept by a company indefinitely even after it has served its purpose
+    - If the data is in object storage, lifecycle policies can be implemented to the item holding the object (i.e. S3 bucket)
+  - In addition, infrequently accessed data may be in a frequent access tier (i.e. in S3)
+    - AWS S3 offers "intelligent tiering" where it automatically moves items that haven't been accessed in a 
 - "Right size" data architecture by utilizing application performance analysis data
-  - This step is crucial after other low hanging fruit has already been addressed (i.e. turning off unused services, volume based discounts, etc.)
+  - This step is crucial after other low hanging fruit (listed above) has already been addressed
   - **NOTE: this step should be done only after application optimization has been done to ensure the application will continue to operate effectively after being right sized**
   - In general, this section concerns itself with trying to answer the following:
     - What is the limiting resource (CPU, RAM, Disk, Iops, network bandwidth, etc.)? Put another way, at what resource usage does the application begin to experience performance degradation?
@@ -124,3 +140,4 @@ In addition to everything that's been mentioned to this point, here are some hel
     - Upon examination of billing data, it becomes clear that network egress costs seem much higher than they were projected
       - Looking closer, it is determined that this is being caused by one service making alot of data transfer requests, often times with data that is not crucial for the next step in the process
       - The application gets rearchitected to make less calls for the redundant data (perhaps leveraging a cache) as well as filtering out unneeded data and reduce networking costs
+    - The client keeps all 
