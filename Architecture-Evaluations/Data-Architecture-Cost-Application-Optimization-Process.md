@@ -2,7 +2,7 @@
 title: Data Architecture Cost/Application Optimization Process
 description: Process to periodically review data architecture costs and provide recommendations for cost optimization as well as perform testing to determine how data applications can be optimizerd
 published: true
-date: 2023-05-19T23:15:39.052Z
+date: 2023-05-19T23:20:04.937Z
 tags: 
 editor: markdown
 dateCreated: 2023-05-16T00:20:47.434Z
@@ -124,6 +124,7 @@ GCP has some tips for Managing Cloud Costs [here](https://cloud.google.com/blog/
     - AWS S3 offers "intelligent tiering" where it automatically moves items that haven't been accessed in a 
 - Consider cheaper compute for short term workloads
   - AWS offers something called "EC2 Spot instances" which are VMs that can be purchases for much cheaper than regular VMs but can be interrupted unexpectedly
+    - GCP has an equaivalent offering called "Spot VMs"
   - Works best for short term workloads that can withstand interruptions
 - "Right size" data architecture by utilizing application performance analysis data
   - This step is crucial after other low hanging fruit (listed above) has already been addressed
