@@ -2,7 +2,7 @@
 title: How to Set Up Airflow on EC2
 description: 
 published: true
-date: 2023-06-08T23:47:13.938Z
+date: 2023-06-08T23:54:08.017Z
 tags: aws, airflow, ec2, rds
 editor: markdown
 dateCreated: 2023-06-08T23:47:13.938Z
@@ -123,3 +123,12 @@ sed -i 's#load_examples = True#load_examples = False#g' airflow.cfg
     sudo systemctl start airflow-scheduler
     sudo systemctl start airflow-webserver
     ```
+ ## References
+ 
+ ### Tutorials
+* Airflow on AWS EC2 instance with Ubuntu: https://medium.com/@abraham.pabbathi/airflow-on-aws-ec2-instance-with-ubuntu-aff8d3206171
+* Installing and Running Airflow on a small AWS EC2 Instance: https://www.youtube.com/watch?v=o88LNQDH2uI
+  * Commands for the above: https://robust-dinosaur-2ef.notion.site/Running-Airflow-on-a-small-AWS-EC2-Instance-8e2a42d2ce7946c3a3d753abc13f2e57
+
+
+ 
