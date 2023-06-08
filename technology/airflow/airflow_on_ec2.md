@@ -2,7 +2,7 @@
 title: How to Set Up Airflow on EC2
 description: 
 published: true
-date: 2023-06-08T23:54:08.017Z
+date: 2023-06-08T23:54:41.336Z
 tags: aws, airflow, ec2, rds
 editor: markdown
 dateCreated: 2023-06-08T23:47:13.938Z
@@ -16,6 +16,7 @@ NOTE: By default, Airflow uses SQLite for a metadata database, which may be suff
 
 ### Launch an EC2 instance
 * t2.medium appears to be the minimum size as Airflow typically requires 4GB memory
+* Use Ubuntu (not AWS Linux 2) as the AMI
 * Make sure to enable Auto-assign public IP on launch
 * Ensure one of your security groups allows for inbound connections on port 8080 (as well as the usual port 22 for SSH access)
 * If you're using an external RDS database, you'll need to attach a security group that permits communication between the instance and the RDS. Note that AWS can set this up automatically when creating the RDS
