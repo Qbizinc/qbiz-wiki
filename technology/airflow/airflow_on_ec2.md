@@ -2,7 +2,7 @@
 title: How to Set Up Airflow on EC2
 description: 
 published: true
-date: 2023-07-17T19:34:15.948Z
+date: 2023-07-17T19:34:35.026Z
 tags: aws, airflow, ec2, rds
 editor: markdown
 dateCreated: 2023-06-08T23:47:13.938Z
@@ -29,7 +29,7 @@ NOTE: By default, Airflow uses SQLite for a metadata database, which may be suff
     sudo apt -y --no-install-recommends install sqlite3
     sudo apt -y --no-install-recommends install python3.10-venv
     sudo apt-get -y --no-install-recommends install libpq-dev
-    sudo apt -y --no-install-recommends install awscli
+    sudo apt -y --no-install-recommends install awscli # optional
     sudo apt-get autoremove -yqq --purge
     sudo apt-get clean
     ```
