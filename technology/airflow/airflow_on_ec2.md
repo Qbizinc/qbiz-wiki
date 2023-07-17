@@ -2,7 +2,7 @@
 title: How to Set Up Airflow on EC2
 description: 
 published: true
-date: 2023-07-17T19:34:35.026Z
+date: 2023-07-17T21:15:03.934Z
 tags: aws, airflow, ec2, rds
 editor: markdown
 dateCreated: 2023-06-08T23:47:13.938Z
