@@ -1,8 +1,8 @@
 ---
-title: Weekly Blog
-description: Intended to be the GenAI internal blog. Let's post all weekly releases related to the SOTA of Generaive AI models 
+title: Generative AI at QBiz
+description: Knowledge repository for GenAI
 published: true
-date: 2023-08-01T20:11:52.579Z
+date: 2023-08-01T23:27:18.717Z
 tags: llm, generative ai
 editor: markdown
 dateCreated: 2023-07-26T21:18:23.021Z
