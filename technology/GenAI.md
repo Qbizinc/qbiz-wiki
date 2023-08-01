@@ -1,8 +1,8 @@
 ---
-title: Generative AI at QBiz
+title: AI
 description: Knowledge repository for GenAI
 published: true
-date: 2023-08-01T23:28:52.190Z
+date: 2023-08-01T23:55:07.732Z
 tags: llm, generative ai
 editor: markdown
 dateCreated: 2023-07-26T21:18:23.021Z
