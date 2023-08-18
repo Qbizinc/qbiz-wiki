@@ -2,7 +2,7 @@
 title: Generative AI at QBiz
 description: Knowledge repository for GenAI
 published: true
-date: 2023-08-18T17:52:57.100Z
+date: 2023-08-18T18:24:58.870Z
 tags: llm, generative ai
 editor: markdown
 dateCreated: 2023-08-01T23:28:56.886Z
@@ -87,6 +87,9 @@ spark.sql(f"CREATE SCHEMA IF NOT EXISTS {output_schema}")
 summaries = sample.select(sample.title, sample.text, summarize_batch_udf(sample.text).alias("summary"))
 summaries.write.saveAsTable(f"{output_schema}.{output_table}", mode="overwrite")
  ```
+Please check the documentation or revelant tutorials for updates on best practices. [**Model inference using Hugging Face Transformers for natural language processing (NLP).**](https://docs.databricks.com/en/machine-learning/train-model/huggingface/model-inference-nlp.html)
+
+
 ### Snowflake: *Deploying models using Snowpark* 
 1. Create a Snowflake stage to store the vectorized UDF. Let's call this stage ZERO_SHOT_CLASSIFICATION.
 ```sql
