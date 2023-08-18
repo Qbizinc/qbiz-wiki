@@ -2,7 +2,7 @@
 title: AI Blog
 description: Blog to keep Qbiz updated with latest GenAI news
 published: true
-date: 2023-08-18T18:20:34.296Z
+date: 2023-08-18T18:31:41.317Z
 tags: generative ai, blog
 editor: markdown
 dateCreated: 2023-08-02T00:54:16.360Z
@@ -30,4 +30,14 @@ Companies are mostly employing generative AI to boost top-line growth and produc
 💹 Over two-thirds expect their companies to increase AI investment in the next three years.
 💹 Generative AI's popularity encourages AI adoption.
 ___
-**News**
+### News
+##### Meet the New Models: LLaMA 2, Claude v2, Code Interpreter, and xAI
+[GenAI - Blog](https://gen-ai-newsletter.beehiiv.com/p/meet-new-models-llama-2-claude-v2-code-interpreter-xai-week-genai)
+
+**Highlights**
+* Code Interpreter, GPT-4 API, and Browsing Plugin Removed 🫨
+* OpenAI Courting Strangers for Their Data 📊
+* Claude v2 Hittin’ the Streets 🏎️
+* Meta’s LLAMA 2 🦙
+* The People That Make ChatGPT Tick Aren’t Happy ⏰
+
