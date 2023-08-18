@@ -2,7 +2,7 @@
 title: Generative AI at QBiz
 description: Knowledge repository for GenAI
 published: true
-date: 2023-08-18T17:52:10.829Z
+date: 2023-08-18T17:52:57.100Z
 tags: llm, generative ai
 editor: markdown
 dateCreated: 2023-08-01T23:28:56.886Z
@@ -21,7 +21,7 @@ dateCreated: 2023-08-01T23:28:56.886Z
 🤗 [HuggingFace Hub](https://huggingface.co/docs/hub/index): The Hugging Face Hub is a platform with over 120k models, 20k datasets, and 50k demo apps (Spaces), all open source and publicly available, in an online platform where people can easily collaborate and build ML together. HuggingChat is their ChatGPT alternative.
 
 
-### Getting Started
+# Getting Started
 [**What's the HuggingFace Hub?**](https://huggingface.co/docs/hub/index)
 Is a platform with over 120k models, 20k datasets, and 50k demos in which people can easily collaborate in their ML workflows. The Hub works as a central place where anyone can share, explore, discover, and experiment with **open-source** Machine Learning.
 
