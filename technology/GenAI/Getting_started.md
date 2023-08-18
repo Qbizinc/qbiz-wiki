@@ -2,7 +2,7 @@
 title: Generative AI at QBiz
 description: Knowledge repository for GenAI
 published: true
-date: 2023-08-02T20:57:49.789Z
+date: 2023-08-18T17:52:10.829Z
 tags: llm, generative ai
 editor: markdown
 dateCreated: 2023-08-01T23:28:56.886Z
@@ -87,3 +87,93 @@ spark.sql(f"CREATE SCHEMA IF NOT EXISTS {output_schema}")
 summaries = sample.select(sample.title, sample.text, summarize_batch_udf(sample.text).alias("summary"))
 summaries.write.saveAsTable(f"{output_schema}.{output_table}", mode="overwrite")
  ```
+### Snowflake: *Deploying models using Snowpark* 
+1. Create a Snowflake stage to store the vectorized UDF. Let's call this stage ZERO_SHOT_CLASSIFICATION.
+```sql
+CREATE STAGE IF NOT EXISTS {your db}.{your schema}.ZERO_SHOT_CLASSIFICATION;
+```
+2. Compress the model locally for transfering it to Snowflake
+```python
+import joblib
+joblib.dump(classifier, 'bart-large-mnli.joblib')
+```
+3. Use Snowpark put command to transfer the model to the stage
+```python
+from snowflake.snowpark import Session
+session = Session.builder.configs({your connection parameters}).create()
+session.file.put(
+   'bart-large-mnli.joblib',
+   stage_location = f'@{your db}.{your schema}.ZERO_SHOT_CLASSIFICATION',
+   overwrite=True,
+   auto_compress=False
+)
+```
+NOTE
+When we need to use the model, we must first decompress it, which can be time-consuming. To speed up this process, we can utilize the cachetools Python library. This library stores the outcomes of function calls in a cache and retrieves them when the same inputs are used again. We can create a function using this library in the following way:
+
+```python
+# Caching the model
+import cachetools
+Import sys
+@cachetools.cached(cache={})
+def read_model():
+   import_dir = sys._xoptions.get("snowflake_import_directory")
+   if import_dir:
+       # Load the model
+       return joblib.load(f'{import_dir}/bart-large-mnli.joblib'
+```
+4. Write the vectorized UDF function to use the model
+```python
+from snowflake.snowpark.functions import pandas_udf
+from snowflake.snowpark.types import StringType, PandasSeriesType
+@pandas_udf(  
+       name='{your db}.{your schema}.get_review_classification',
+       session=session,
+       is_permanent=True,
+       replace=True,
+       imports=[
+           f'@{your db}.{your schema}.ZERO_SHOT_CLASSIFICATION/bart-large-mnli.joblib'
+       ],
+       input_types=[PandasSeriesType(StringType())],
+       return_type=PandasSeriesType(StringType()),
+       stage_location='@{your db}.{your schema}.ZERO_SHOT_CLASSIFICATION',
+       packages=['cachetools==4.2.2', 'transformers==4.14.1']
+   )
+def get_review_classification(sentences: pd.Series) -> pd.Series:
+   # Classify using the available categories
+   candidate_labels = ['customer support', 'product experience', 'account issues']
+   classifier = read_model()
+
+    # Apply the model
+   predictions = []
+   for sentence in sentences:
+       result = classifier(sentence, candidate_labels)
+       if 'scores' in result and 'labels' in result:
+           category_idx = pd.Series(result['scores']).idxmax()
+           predictions.append(result['labels'][category_idx])
+       else:
+           predictions.append(None)
+   return pd.Series(predictions)
+```
+5. Call the function using SQL
+```sql
+WITH cs AS (
+   SELECT value AS customer_review
+   FROM (
+   VALUES
+       ('Nobody was able to solve my issues with the system'),
+       ('The interface gets frozen very often'),
+       ('I was charged two in the same period')
+   ) AS t(value)
+)
+SELECT
+   cs.customer_review,
+  {your database}.{your schema}.get_review_classification(
+       customer_review::VARCHAR
+   ) AS category_prediction
+FROM cs;
+```
+
+Please check the documentation or revelant tutorials for updates on best practices. This tutorial is based on the article [**Deploying pre-trained LLMs in Snowflake.**](https://medium.com/snowflake/deploying-pre-trained-llms-in-snowflake-75a0d07ef03d)
+
+
