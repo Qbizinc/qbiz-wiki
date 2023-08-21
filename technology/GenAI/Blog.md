@@ -2,7 +2,7 @@
 title: AI Blog
 description: Blog to keep Qbiz updated with latest GenAI news
 published: true
-date: 2023-08-18T18:31:41.317Z
+date: 2023-08-21T19:20:55.711Z
 tags: generative ai, blog
 editor: markdown
 dateCreated: 2023-08-02T00:54:16.360Z
@@ -35,7 +35,7 @@ ___
 [GenAI - Blog](https://gen-ai-newsletter.beehiiv.com/p/meet-new-models-llama-2-claude-v2-code-interpreter-xai-week-genai)
 
 **Highlights**
-* Code Interpreter, GPT-4 API, and Browsing Plugin Removed 🫨
+* Code Interpreter, GPT-4 API
 * OpenAI Courting Strangers for Their Data 📊
 * Claude v2 Hittin’ the Streets 🏎️
 * Meta’s LLAMA 2 🦙
