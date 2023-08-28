@@ -2,7 +2,7 @@
 title: AI Blog
 description: Blog to keep Qbiz updated with latest GenAI news
 published: true
-date: 2023-08-21T19:20:55.711Z
+date: 2023-08-28T21:28:47.105Z
 tags: generative ai, blog
 editor: markdown
 dateCreated: 2023-08-02T00:54:16.360Z
@@ -10,6 +10,12 @@ dateCreated: 2023-08-02T00:54:16.360Z
 
 # AI Releases
 ### August
+[Model Memory Calculator](https://huggingface.co/spaces/hf-accelerate/model-memory-usage)
+🤗 **Model Memory Calculator**
+HuggingFace just released a tool will help you calculate how much vRAM is needed to train and perform big model inference on a model hosted on the 🤗 Hugging Face Hub. The minimum recommended vRAM needed for a model is denoted as the size of the “largest layer”, and training of a model is roughly 4x its size (for Adam).
+
+These calculations are accurate within a few percent at most, such as bert-base-cased being 413.68 MB and the calculator estimating 413.18 MB.
+
 ### July
 [McKinsey & Company's The State of AI in 2023 - Generative AI's breakout year](https://media.licdn.com/dms/document/media/D561FAQEdZRbg1S_QBg/feedshare-document-pdf-analyzed/0/1691148422647?e=1693440000&v=beta&t=BvMLsbBENng_KF_tU7ViQ185NUfbeaMhxsMT6DJQyDo)
 
