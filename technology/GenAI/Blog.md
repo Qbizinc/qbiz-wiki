@@ -2,7 +2,7 @@
 title: AI Blog
 description: Blog to keep Qbiz updated with latest GenAI news
 published: true
-date: 2023-08-28T21:28:47.105Z
+date: 2023-08-29T18:16:06.873Z
 tags: generative ai, blog
 editor: markdown
 dateCreated: 2023-08-02T00:54:16.360Z
@@ -10,6 +10,13 @@ dateCreated: 2023-08-02T00:54:16.360Z
 
 # AI Releases
 ### August
+[Introducing SafeCoder](https://huggingface.co/blog/safecoder)
+- SafeCoder is not a model, but a complete end-to-end commercial solution
+- SafeCoder is built with security and privacy as core principles - code never leaves the VPC during training or inference
+- SafeCoder is designed for self-hosting by the customer on their own infrastructure
+- SafeCoder is designed for customers to own their own Code Large Language Model
+
+
 [Model Memory Calculator](https://huggingface.co/spaces/hf-accelerate/model-memory-usage)
 🤗 **Model Memory Calculator**
 HuggingFace just released a tool will help you calculate how much vRAM is needed to train and perform big model inference on a model hosted on the 🤗 Hugging Face Hub. The minimum recommended vRAM needed for a model is denoted as the size of the “largest layer”, and training of a model is roughly 4x its size (for Adam).
