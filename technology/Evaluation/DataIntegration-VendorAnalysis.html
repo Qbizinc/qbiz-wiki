@@ -2,7 +2,7 @@
 title: Qbiz - Data Integration Tool Evaluation
 description: Classification of Data Integration Vendors
 published: true
-date: 2023-05-22T15:09:10.461Z
+date: 2023-10-10T05:30:17.084Z
 tags: 
 editor: ckeditor
 dateCreated: 2023-01-18T19:36:36.065Z
@@ -101,7 +101,18 @@ dateCreated: 2023-01-18T19:36:36.065Z
 <p><a href="https://docs.google.com/spreadsheets/d/1Q3s8vDH6KFu_PQ1LoNLckLZj0v1rPk14slQEqLCM29o/edit#gid=0&amp;fvid=156098901">https://docs.google.com/spreadsheets/d/1Q3s8vDH6KFu_PQ1LoNLckLZj0v1rPk14slQEqLCM29o/edit#gid=0&amp;fvid=156098901</a></p>
 <p>This is an initial attempt to evaluate the MLOps tools</p>
 <p><a href="https://docs.google.com/spreadsheets/d/1pH8rSih9BAvHm6ST2dqJvDqiD1sulmn1yOLHqOG8BCc/edit#gid=0">https://docs.google.com/spreadsheets/d/1pH8rSih9BAvHm6ST2dqJvDqiD1sulmn1yOLHqOG8BCc/edit#gid=0</a></p>
-<p>&nbsp;</p>
+<h5><strong>TPC Benchmarks</strong></h5>
+<p>The <a href="https://tpc.org/">TPC</a> is a consortium of companies and institutions that have been defining database benchmarks since 1985. &nbsp;It has lost much of its cachet since its heights in the late 1990s through the early 2000s, probably due to vendor consolidation and the rise of open source solutions – which dramatically changed the economic of purchasing a database solution. &nbsp;It remains relevant insomuch as there are no other independent tools by which to measure the ever evolving data solution market.</p>
+<p>As the various benchmarks lose favor, their tools and documentation become outdated. &nbsp;For example, the TPC-DS benchmark's tools are writer in C and must be compiled from source and its documentation has many errors, such as incorrectly mentioning the query generation tool as <i>qgen2</i>, which is the application's name in a previous version – the true name in TPC-DS v3.2 is <i>dsqgen</i>. &nbsp;I had to read several Stack Overflow entries to resolve compilation issues (must use <a href="https://stackoverflow.com/questions/75377874/many-multiple-definition-of-errors-shows-up-when-compiling-tpc-ds-tools">gcc-9</a>) and runtime issues (see resolution to <a href="https://dba.stackexchange.com/questions/36938/how-to-generate-tpc-ds-query-for-sql-server-from-templates/97926#97926">ERROR: Substitution'_END'</a>)</p>
+<p>All the benchmarks have two tools: one for generating data; the other &nbsp;for generating queries. &nbsp;The query generator builds a query suite for various database vendors, such as <i>Oracle,</i> <i>db2,</i> <i>Netezza, etc..</i>. &nbsp;There is also an ANSI flavor.</p>
+<h6>TPC-DS</h6>
+<p>The Decision Support is the classic benchmark for Data Warehousing solutions. &nbsp;Recently, this benchmark was used by <a href="https://www.databricks.com/blog/2021/11/02/databricks-sets-official-data-warehousing-performance-record.html">Databricks</a> in 2021 to showcase the power of its platform and prove that their technology can be used for Data Warehouse Use Cases. &nbsp;The data used in this benchmark can be found in <a href="https://www.snowflake.com/blog/tpc-ds-now-available-snowflake-samples/">Snowflake's Public Schema</a> and has also run their own benchmark and <a href="https://www.snowflake.com/blog/industry-benchmarks-and-competing-with-integrity/">blog</a>.</p>
+<p>The benchmark is composed of 99 queries – see the <a href="https://www.snowflake.com/blog/tpc-ds-now-available-snowflake-samples/">Snowflake Blog</a> for a summary – designed to mimic DW workloads and use cases.</p>
+<p>I was able to get query suite with the following CLI: <code>./dsqgen -DIRECTORY ../query_templates -INPUT ../query_templates/templates.lst -VERBOSE Y -SCALE 10 -DIALECT ansi -OUTPUT_DIR /tmp</code></p>
+<h6>TPC-H</h6>
+<p>The Hadoop benchmark was created to compare various Hadoop vendors, such as <a href="https://www.cloudera.com/">Cloudera</a> or Hortonworks (which merged by Cloudera in 2018). &nbsp;Although not so much cited as the the TPC-DS benchmark, it is still used to prove Hadoop workloads perform fine on platforms like Databricks and Snowflake.</p>
+<h6>TPCx-AI</h6>
+<p>The TPCx-AI is an updated benchmark for Artificial intelligence. &nbsp;</p>
 <p>Feel free to collaborate and expand</p>
 <ul>
   <li>add additional technologies</li>
