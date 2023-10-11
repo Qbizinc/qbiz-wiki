@@ -2,7 +2,7 @@
 title: Benchmarks
 description: Benchmark resources
 published: true
-date: 2023-10-11T21:26:58.231Z
+date: 2023-10-11T21:29:00.092Z
 tags: 
 editor: markdown
 dateCreated: 2023-10-11T21:19:04.281Z
@@ -19,7 +19,7 @@ All the benchmarks have two tools: one for generating data; the other  for gener
 
 ### TPC-DS
 
-The Decision Support is the classic benchmark for Data Warehousing solutions.  Recently, this benchmark was used by Databricks in 2021 to showcase the power of its platform and prove that their technology can be used for Data Warehouse Use Cases.  The data used in this benchmark can be found in Snowflake's Public Schema and has also run their own benchmark and blog.
+The Decision Support is the classic benchmark for Data Warehousing solutions.  Recently, this benchmark was used by [Databricks in 2021](https://www.databricks.com/blog/2021/11/02/databricks-sets-official-data-warehousing-performance-record.html) to showcase the power of its platform and prove that their technology can be used for Data Warehouse Use Cases.  The data used in this benchmark can be found in Snowflake's Public Schema and has also run their own benchmark and blog.
 
 The benchmark is composed of 99 queries – see the Snowflake Blog for a summary – designed to mimic DW workloads and use cases.
 
