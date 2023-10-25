@@ -2,7 +2,7 @@
 title: Benchmarks
 description: Benchmark resources
 published: true
-date: 2023-10-11T21:31:27.574Z
+date: 2023-10-25T16:25:45.710Z
 tags: 
 editor: markdown
 dateCreated: 2023-10-11T21:19:04.281Z
@@ -13,7 +13,7 @@ dateCreated: 2023-10-11T21:19:04.281Z
 
 The TPC is a consortium of companies and institutions that have been defining database benchmarks since 1985.  It has lost much of its cachet since its heights in the late 1990s through the early 2000s, probably due to vendor consolidation and the rise of open source solutions – which dramatically changed the economic of purchasing a database solution.  It remains relevant insomuch as there are no other independent tools by which to measure the ever evolving data solution market.
 
-As the various benchmarks lose favor, their tools and documentation become outdated.  For example, the TPC-DS benchmark's tools are writer in C and must be compiled from source and its documentation has many errors, such as incorrectly mentioning the query generation tool as qgen2, which is the application's name in a previous version – the true name in TPC-DS v3.2 is dsqgen.  I had to read several Stack Overflow entries to resolve compilation issues (must use gcc-9) and runtime issues ([see resolution](https://dba.stackexchange.com/questions/36938/how-to-generate-tpc-ds-query-for-sql-server-from-templates/97926#97926) to *ERROR: Substitution'_END'*)
+As the various benchmarks lose favor, their tools and documentation become outdated.  For example, the TPC-DS benchmark's tools are writer in C and must be compiled from source and its documentation has many errors, such as incorrectly mentioning the query generation tool as qgen2, which is the application's name in a previous version – the true name in TPC-DS v3.2 is dsqgen.  I had to read several Stack Overflow entries to resolve compilation issues (must use gcc-9, `make "CC=gcc-9`) and runtime issues ([see resolution](https://dba.stackexchange.com/questions/36938/how-to-generate-tpc-ds-query-for-sql-server-from-templates/97926#97926) to *ERROR: Substitution'_END'*)
 
 All the benchmarks have two tools: one for generating data; the other  for generating queries.  The query generator builds a query suite for various database vendors, such as Oracle, db2, Netezza, etc...  There is also an ANSI flavor.
 
