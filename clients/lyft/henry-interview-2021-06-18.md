@@ -2,10 +2,10 @@
 title: Lyft Interview 2021-06-18 (Henry)
 description: 
 published: true
-date: 2021-07-30T00:50:45.834Z
+date: 2023-11-01T23:57:42.146Z
 tags: interview, business-requirements, lyft
 editor: markdown
-dateCreated: 2021-07-30T00:50:45.834Z
+dateCreated: 2023-01-18T19:36:00.425Z
 ---
 
 Interviewer: Andrew Lewis
