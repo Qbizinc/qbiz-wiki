@@ -2,7 +2,7 @@
 title: AWS
 description: Page to help new Qbiz consultant onboard onto Qbiz's AWS Account
 published: true
-date: 2024-01-31T23:41:46.960Z
+date: 2024-01-31T23:47:43.183Z
 tags: 
 editor: markdown
 dateCreated: 2024-01-31T20:25:14.970Z
@@ -48,7 +48,11 @@ Here are the steps to get the Datahub service up and running on that EC2 instanc
 2. Move to `~/.ssh` directory via `mv ~/Downloads/datahub.pem ~/.ssh/`
 3. Save Datahub ssh command as alias: `login_datahub='ssh -i ~/.ssh/datahub.pem ec2-user@34.210.197.39'`
 4. Run `$login_datahub` to login into EC2 alias
-  a. If you run into "bad permissions" issues:
-    b. Change permissions of datahub.pem file via `chmod 400 ~/.ssh/datahub.pem`
+   a. If you run into "bad permissions" issues: 
+      - Change permissions of datahub.pem file via `chmod 400 ~/.ssh/datahub.pem`
 5. Run `bash start_datahub.sh` to start Datahub
-  a. Might take a couple of tries
+   a. Might take a couple of tries
+6. Confirm Datahub has started by:
+   a. Running the `datahub` command and seeing the various datahub commands
+   b. Navigating to the [Datahub UI](http://34.210.197.39:9002/login?redirect_uri=%2F)
+      i. User/Pass: `datahub`
