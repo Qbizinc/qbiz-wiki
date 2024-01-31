@@ -2,7 +2,7 @@
 title: AWS
 description: Page to help new Qbiz consultant onboard onto Qbiz's AWS Account
 published: true
-date: 2024-01-31T21:19:22.443Z
+date: 2024-01-31T23:34:29.416Z
 tags: 
 editor: markdown
 dateCreated: 2024-01-31T20:25:14.970Z
@@ -38,3 +38,17 @@ Here is a quick guide on how to get up and running on AWS ASAP:
 CONGRATS! You should now have access to most AWS services.
 
 If you require additional permissions, please reach out to one of the Staff Consultants.
+
+## Datahub
+
+There is a EC2 instance called "Datahub" which has a Qbiz version of Datahub.
+
+Here are the steps to get the Datahub service up and running on that EC2 instance:
+1. Download [datahub.pem file](https://drive.google.com/file/d/1LturddKPDgEAcI_7WhJVd3II0CJu4zU1/view?usp=drive_link)
+2. Move to `~/.ssh` directory via `mv ~/Downloads/datahub.pem ~/.ssh/`
+3. Save Datahub ssh command as alias: `login_datahub='ssh -i ~/.ssh/datahub.pem ec2-user@34.210.197.39'`
+4. Run `$login_datahub` to login into EC2 alias
+  a. If you run into "bad permissions" issues:
+    b. Change permissions of datahub.pem file via `chmod 400 ~/.ssh/datahub.pem`
+5. Run `bash start_datahub.sh` to start Datahub
+  a. Might take a couple of tries
