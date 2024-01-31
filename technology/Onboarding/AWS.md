@@ -2,7 +2,7 @@
 title: AWS
 description: Page to help new Qbiz consultant onboard onto Qbiz's AWS Account
 published: true
-date: 2024-01-31T21:14:04.521Z
+date: 2024-01-31T21:19:22.443Z
 tags: 
 editor: markdown
 dateCreated: 2024-01-31T20:25:14.970Z
@@ -17,10 +17,12 @@ The AWS login for IAM users can be seen here: https://qbizinc.signin.aws.amazon.
 Here is a quick guide on how to get up and running on AWS ASAP:
 
 - Find another consultant that already has AWS access to create an IAM user for you
+
 - FOR THE CONSULTANT WITH ACCESS: 
   1. Make sure the new IAM user is added to the various AWS IAM groups already made (`developers`, `qbiz-users`, etc.)
   2. Set up a temporary password and check the box making it required for the new user to change their password after first sign in
   3. Send the new consultant their username and temporary password
+
 - FOR NEW CONSULTANTS:
   1. Log in [here](https://qbizinc.signin.aws.amazon.com/console) with your username/password
   2. Set up a new strong password and log in again (recommended to use Lastpass, 1password, etc.)
