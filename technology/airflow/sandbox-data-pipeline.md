@@ -2,7 +2,7 @@
 title: AWS Sandbox Data Pipeline
 description: Landing Page for AWS Sandbox Data Pipeline
 published: true
-date: 2024-02-22T17:53:53.470Z
+date: 2024-02-22T18:04:26.952Z
 tags: 
 editor: markdown
 dateCreated: 2024-02-22T17:53:03.781Z
@@ -48,9 +48,22 @@ The following steps must be performed regularly (i.e. at least once a week):
 
 ## Optimization Work Backlog
 
+## DAG
+- Update Pipeline to wait in the event of too many requests to the RapidAPI
+  - Sample response: {'message': 'Too many requests'}
+- Snowflake table writing problem (i.e. BQ path problem)?
+
 ### DevOps
 - Implement CI/CD with the source code above 
 - Turn existing Airflow EC2 setup completely into Terraform code to automate resource creation (i.e. in a failure scenario)
 
-### 
+### Instance Optimizations
 - Figure out why logs are still being written to the local Airflow instance (the DAG is writing the logs to S3)
+- Look into increasing the EBS volumes on the instance (would incur additional costs)
+  - https://aws.amazon.com/ebs/pricing/
+- Create a DAG to purge Airflow metadata DB (https://fig.io/manual/airflow/db/clean)
+
+### AWS optimizations
+- Lock down the AWS admin account
+  - https://aws.amazon.com/blogs/security/how-to-create-a-limited-iam-administrator-by-using-managed-policies/
+  - https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html#access_policies_boundaries-delegate
