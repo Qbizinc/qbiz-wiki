@@ -2,7 +2,7 @@
 title: AWS Sandbox Data Pipeline
 description: Landing Page for AWS Sandbox Data Pipeline
 published: true
-date: 2024-02-22T18:04:26.952Z
+date: 2024-02-22T18:06:39.188Z
 tags: 
 editor: markdown
 dateCreated: 2024-02-22T17:53:03.781Z
@@ -50,7 +50,8 @@ The following steps must be performed regularly (i.e. at least once a week):
 
 ## DAG
 - Update Pipeline to wait in the event of too many requests to the RapidAPI
-  - Sample response: {'message': 'Too many requests'}
+  - Sample response: `{'message': 'Too many requests'}`
+  - Has not been needed yet, but could still happen in the future
 - Snowflake table writing problem (i.e. BQ path problem)?
 
 ### DevOps
