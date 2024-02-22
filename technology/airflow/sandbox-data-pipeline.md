@@ -2,7 +2,7 @@
 title: AWS Sandbox Data Pipeline
 description: Landing Page for AWS Sandbox Data Pipeline
 published: true
-date: 2024-02-22T17:53:03.781Z
+date: 2024-02-22T17:53:53.470Z
 tags: 
 editor: markdown
 dateCreated: 2024-02-22T17:53:03.781Z
@@ -22,7 +22,7 @@ The source code can be found here: https://github.com/Qbizinc/sandbox-data-pipel
 - AWS: https://qbizinc.signin.aws.amazon.com/console
 - GCP: https://console.cloud.google.com/welcome?project=sandbox-data-pipeline
 - Anomalo: https://app.anomalo.com/dashboard/home/search?sort=status
-- Datahub (local instance): 
+- Datahub (Qbiz EC2 instance): http://34.210.197.39:9002/login?redirect_uri=%2F
 - Snowflake: https://app.snowflake.com/a4877751795961/qbiz_partner
 
 ## Accessing EC2 instance
