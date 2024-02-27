@@ -2,7 +2,7 @@
 title: AWS Sandbox Data Pipeline
 description: Landing Page for AWS Sandbox Data Pipeline
 published: true
-date: 2024-02-27T21:24:32.566Z
+date: 2024-02-27T21:58:04.543Z
 tags: 
 editor: markdown
 dateCreated: 2024-02-22T17:53:03.781Z
@@ -45,7 +45,7 @@ In the event that the Airflow instance loses its metadata, some Airflow connecti
   - Login: YOUR-SNOWFLAKE-USER-NAME
   - Pass: YOUR-SNOWFLAKE-PASSWORD
   - Role: `ACCOUNTADMIN`
-  - Account: `LMB13195` OR `a4877751795961-qbiz_partner`
+  - Account: `a4877751795961-qbiz_partner` (if this doesn't work, try `LMB13195`)
 - `sandbox-data-pipeline-gcp`
   - Connection Id: `sandbox-data-pipeline-gcp`
   - Connection Type: `Google Cloud`
