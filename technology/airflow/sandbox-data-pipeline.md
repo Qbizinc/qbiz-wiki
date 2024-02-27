@@ -2,7 +2,7 @@
 title: AWS Sandbox Data Pipeline
 description: Landing Page for AWS Sandbox Data Pipeline
 published: true
-date: 2024-02-22T18:07:54.241Z
+date: 2024-02-27T21:24:32.566Z
 tags: 
 editor: markdown
 dateCreated: 2024-02-22T17:53:03.781Z
@@ -32,6 +32,24 @@ Currently the code is manually edited on the EC2 instance itself; the current wa
 Instructions for setting up remote connections via:
 - Visual Studio Code: https://dev.to/cindyledev/remote-development-with-visual-studio-code-on-aws-ec2-4cla
 - Pycharm: INSERT
+
+## Setup
+
+*Note: This section will be modified as the optimization work below is implemented.*
+
+### Connection variables
+In the event that the Airflow instance loses its metadata, some Airflow connection parameters need to be set up:
+- `qbiz_snowflake_admin` (Make sure your Snowflake account has access to the `ACCOUNTADMIN` role)
+  - Connection Id: `qbiz_snowflake_admin`
+  - Connection Type: `Snowflake`
+  - Login: YOUR-SNOWFLAKE-USER-NAME
+  - Pass: YOUR-SNOWFLAKE-PASSWORD
+  - Role: `ACCOUNTADMIN`
+  - Account: `LMB13195` OR `a4877751795961-qbiz_partner`
+- `sandbox-data-pipeline-gcp`
+  - Connection Id: `sandbox-data-pipeline-gcp`
+  - Connection Type: `Google Cloud`
+  - Keyfile Path: `/home/airflow/sandbox-data-pipeline-bigquery.json` (local path on EC2 instance)
 
 ## Maintenance
 
