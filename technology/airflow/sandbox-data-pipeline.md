@@ -2,7 +2,7 @@
 title: AWS Sandbox Data Pipeline
 description: Landing Page for AWS Sandbox Data Pipeline
 published: true
-date: 2024-02-27T22:01:07.052Z
+date: 2024-02-28T17:56:34.931Z
 tags: 
 editor: markdown
 dateCreated: 2024-02-22T17:53:03.781Z
@@ -50,6 +50,10 @@ In the event that the Airflow instance loses its metadata, some Airflow connecti
   - Connection Id: `sandbox-data-pipeline-gcp`
   - Connection Type: `Google Cloud`
   - Keyfile Path: `/home/airflow/sandbox-data-pipeline-bigquery.json` (local path on EC2 instance)
+  
+Documentation:
+- [Airflow GCP Connector docs](https://airflow.apache.org/docs/apache-airflow-providers-google/stable/connections/gcp.html)
+- [Airflow Snowflake Connector docs](https://airflow.apache.org/docs/apache-airflow-providers-snowflake/stable/connections/snowflake.html)
 
 ## Maintenance
 
