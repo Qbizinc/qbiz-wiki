@@ -2,7 +2,7 @@
 title: AWS Sandbox Data Pipeline
 description: Landing Page for AWS Sandbox Data Pipeline
 published: true
-date: 2024-02-29T19:26:37.138Z
+date: 2024-02-29T19:26:59.265Z
 tags: 
 editor: markdown
 dateCreated: 2024-02-22T17:53:03.781Z
@@ -77,7 +77,6 @@ The following steps must be performed regularly (i.e. at least once a week):
 - Update DAG to assume AWS service roles and get temp credentials
 - Snowflake table writing problem (i.e. BQ path problem)?
 - Separate "fetch" tasks (querying data from RapidAPI) into their own pipeline to generate data and send to landing zone, and then have another ETL transform them (this way, the same set of data will be associated with a specific datetime DAGRun)
-- Replicate in Prefect
 
 ### DevOps
 - Implement CI/CD with the source code above 
