@@ -2,7 +2,7 @@
 title: AWS Sandbox Data Pipeline
 description: Landing Page for AWS Sandbox Data Pipeline
 published: true
-date: 2024-02-29T19:26:59.265Z
+date: 2024-03-01T20:45:06.101Z
 tags: 
 editor: markdown
 dateCreated: 2024-02-22T17:53:03.781Z
@@ -69,6 +69,8 @@ The following steps must be performed regularly (i.e. at least once a week):
   - `select 'drop table '||table_name||';' from information_schema.tables where table_schema='public' and table_name like '\_%';`
 
 ## Optimization Work Backlog
+
+Github Work Tracker: https://github.com/orgs/Qbizinc/projects/3/views/1
 
 ## DAG
 - Update Pipeline to wait in the event of too many requests to the RapidAPI
