@@ -2,7 +2,7 @@
 title: AWS Sandbox Data Pipeline
 description: Landing Page for AWS Sandbox Data Pipeline
 published: true
-date: 2024-03-01T20:45:06.101Z
+date: 2024-03-01T20:45:41.256Z
 tags: 
 editor: markdown
 dateCreated: 2024-02-22T17:53:03.781Z
@@ -18,7 +18,7 @@ The source code can be found here: https://github.com/Qbizinc/sandbox-data-pipel
 
 ## Required Resource Access
 
-- Airflow UI (ask someone for the user/password if needed): http://airflow.qbiz-wiki.com/home
+- Airflow UI (ask someone for the user/password if needed): https://airflow.qbiz-wiki.com:8080/home
 - AWS: https://qbizinc.signin.aws.amazon.com/console
 - GCP: https://console.cloud.google.com/welcome?project=sandbox-data-pipeline
 - Anomalo: https://app.anomalo.com/dashboard/home/search?sort=status
