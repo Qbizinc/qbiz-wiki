@@ -2,7 +2,7 @@
 title: Reading List
 description: 
 published: true
-date: 2024-08-19T21:07:07.081Z
+date: 2024-08-19T21:08:50.825Z
 tags: 
 editor: markdown
 dateCreated: 2023-01-18T19:40:17.803Z
@@ -23,7 +23,7 @@ https://aws.amazon.com/resources/analyst-reports/
  - https://qbiz-wiki.com/en/Offerings/Data-Governance
  
 # Books
-Some of which can be found in your local local library.
+Some of which can be found in your local local library or rent them from [Chegg](https://www.chegg.com/).
 
 ## Data Modeling
 * *Data Modeling, A Beginner's Guide*  ISBN 978-0-07-162398-8, Andy Oppel.  McGraw Hill publishing.
