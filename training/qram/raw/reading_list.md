@@ -2,7 +2,7 @@
 title: Reading List
 description: 
 published: true
-date: 2024-08-19T21:10:17.840Z
+date: 2024-08-19T21:11:41.453Z
 tags: 
 editor: markdown
 dateCreated: 2023-01-18T19:40:17.803Z
@@ -18,6 +18,7 @@ https://aws.amazon.com/resources/analyst-reports/
 - [Data Engineering vs. Data Science](https://www.snowflake.com/trending/data-science-vs-data-engineering)
 - [Three signs you need a data engineer](https://www.immuta.com/articles/3-signs-you-need-a-data-engineer/)
 - [OLTP vs.OLAP](https://www.spiceworks.com/tech/artificial-intelligence/articles/olap-vs-oltp/)
+- [NoSQL](https://en.wikipedia.org/wiki/NoSQL)
 
 # Data Governance 
  - https://qbiz-wiki.com/en/Offerings/Data-Governance
