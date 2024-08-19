@@ -2,7 +2,7 @@
 title: Reading List
 description: 
 published: true
-date: 2024-08-19T17:14:09.362Z
+date: 2024-08-19T19:21:07.647Z
 tags: 
 editor: markdown
 dateCreated: 2023-01-18T19:40:17.803Z
@@ -18,6 +18,9 @@ https://aws.amazon.com/resources/analyst-reports/
 - https://www.snowflake.com/trending/data-science-vs-data-engineering
 - https://www.immuta.com/articles/3-signs-you-need-a-data-engineer/
 
+# Data Governance 
+ - https://qbiz-wiki.com/en/Offerings/Data-Governance
+ 
 # Books
 Some of which can be found in your local local library.
 
