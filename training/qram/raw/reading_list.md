@@ -2,10 +2,10 @@
 title: Reading List
 description: 
 published: true
-date: 2021-09-24T18:38:15.976Z
+date: 2024-08-19T17:14:09.362Z
 tags: 
 editor: markdown
-dateCreated: 2021-09-23T18:49:25.383Z
+dateCreated: 2023-01-18T19:40:17.803Z
 ---
 
 # Google Shared Drive
@@ -17,3 +17,16 @@ https://aws.amazon.com/resources/analyst-reports/
 # References
 - https://www.snowflake.com/trending/data-science-vs-data-engineering
 - https://www.immuta.com/articles/3-signs-you-need-a-data-engineer/
+
+# Books
+Some of which can be found in your local local library.
+
+## Data Modeling
+* *Data Modeling, A Beginner's Guide*  ISBN 978-0-07-162398-8, Andy Oppel.  McGraw Hill publishing.
+
+## Databases
+* *The Data Warehouse Lifecycle Tookit* ISBN 978-0-470-14977-5, by Ralph Kimball et al.  Wiley publishing.
+* *Business Database Technology*, ISBN 978-1-62-734389-3, by Shouhong Wang.  Irvine, California : Universal Publishers.
+
+## ETL
+* *The Date Warehouse ETL Toolkit*, ISBN 0-7645-6757-8, by Ralph Kimball and Joe Caserta.  Wiley publishing.
