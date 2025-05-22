@@ -2,7 +2,7 @@
 title: Certifications
 description: 
 published: true
-date: 2025-05-22T21:58:54.487Z
+date: 2025-05-22T22:01:35.160Z
 tags: 
 editor: markdown
 dateCreated: 2023-01-18T19:35:36.730Z
@@ -43,7 +43,7 @@ See [Consulting Skill Matrix](https://docs.google.com/spreadsheets/d/18NhOuyC9Vx
   
 - Coursera Machine Learning https://www.coursera.org/learn/machine-learning
 
-- Looker (see looker section below)
+- Looker (see [below](#looker))
 
 
   
@@ -51,14 +51,14 @@ See [Consulting Skill Matrix](https://docs.google.com/spreadsheets/d/18NhOuyC9Vx
 
 [Certification tracker](https://docs.google.com/spreadsheets/d/18NhOuyC9Vxh_RutiaU_xXoqC2k0UWZaPgEMtOphncKI/edit?usp=sharing&gid=401388218) is maintained to track credentials completed by those at Qbiz. 
 
-The [#qbiz_training](https://qbizinc.slack.com/archives/CEFMR9PDY) slack channel contains recent discussion regarding traning materials and certifications. Doesn't hurt to search this channel before taking a certification exam.  
+The [#qbiz_training](https://qbizinc.slack.com/archives/CEFMR9PDY) slack channel contains recent discussion regarding training materials and certifications. Doesn't hurt to search this channel before taking a certification exam.  
 
 
 ## Looker
 
 Previously, Looker has it's own training materials and certification paths (even after it became part of the GCP ecosystem). Certification exams have been retired and content is covered in other GCP certifications.
 
-Looker training can be acheived through google partner portal (partner.cloudskillsboost.google). 
+Looker training can be achieved through google partner portal (partner.cloudskillsboost.google). 
 
 ### Courses (partner.cloudskillsboost.google)
 - Looker Business Intelligence Learning Path			
