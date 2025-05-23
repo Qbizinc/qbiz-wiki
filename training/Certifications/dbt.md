@@ -2,7 +2,7 @@
 title: dbt certifications
 description: 
 published: true
-date: 2025-05-23T02:00:35.143Z
+date: 2025-05-23T02:07:30.094Z
 tags: 
 editor: markdown
 dateCreated: 2025-05-23T01:49:36.130Z
@@ -44,7 +44,7 @@ Some random material / questions I remember showing up on the test...
 - Use of [doc blocks](https://docs.getdbt.com/docs/build/documentation#using-docs-blocks): Jinja syntax (specifically block naming), where to put them (in `.md` file, in any resource path directory), and how to reference the block (does it have to be in the same directory as the resource referencing it?).
 
 - `dbt_project.yml`
-	- which of the given configurations are valid to set globally for your models? (tags, target, schema, materialized, tests)
+	- which of the given configurations are valid to set globally for your models (options: tags, target, schema, materialized, tests)?
   - what each of these keys mean: `config-version`, `version`, `require-dbt-version` (question asked how to ensure a specific version got installed. There were choices included that weren't valid keys i.e. `dbt-version` - so make sure to know these exactly)
 
 - packages
