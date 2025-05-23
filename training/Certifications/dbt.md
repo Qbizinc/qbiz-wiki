@@ -2,7 +2,7 @@
 title: dbt certifications
 description: 
 published: true
-date: 2025-05-23T02:08:04.095Z
+date: 2025-05-23T02:08:51.762Z
 tags: 
 editor: markdown
 dateCreated: 2025-05-23T01:49:36.130Z
@@ -13,6 +13,7 @@ https://www.getdbt.com/dbt-certification
 
 - dbt Analytics Engineering Certification Exam
 - dbt Cloud Architect Certification Exam
+- discount codes: `5YDYM`, `WWFYJ`
 
 
 ## dbt Analytics Engineering Certification
