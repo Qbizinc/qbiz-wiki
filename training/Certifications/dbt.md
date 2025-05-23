@@ -2,7 +2,7 @@
 title: dbt certifications
 description: 
 published: true
-date: 2025-05-23T01:49:36.130Z
+date: 2025-05-23T02:00:35.143Z
 tags: 
 editor: markdown
 dateCreated: 2025-05-23T01:49:36.130Z
@@ -37,7 +37,7 @@ As of today (May 2025) dbt does not provide any practice exam - there are sample
 
 - [Quizlet](https://quizlet.com/489070274/dbt-certification-practice-exam-questions-flash-cards/?i=6lewqw&x=1jqt) - Actually found this one after taking the exam 
 
-### Natalia's post-exam notes: 
+### Natalia's post-exam notes (May 2025): 
 This was a tough one. 
 Some random material / questions I remember showing up on the test...
 
@@ -64,6 +64,8 @@ Some random material / questions I remember showing up on the test...
 
 - exposures 
 
+- materialization - best materialization by use case
+
 - dbt retry (what does/doesn't get rebuilt)
 
 - development workflows (general git branching/PR creation, environments+schema mapping, CICD - questions about using state_modeified flag in this step when a PR is created)
@@ -74,6 +76,9 @@ Some random material / questions I remember showing up on the test...
     -  `@` and `+` for parent/children selection
     
 - nuances of dbt clone vs. defer (similar result but when would one be chosen over the other? a few which/both/none questions on these)
+	- uses manifests
+  - ensures no data warehouse credits are used
+  
 
 - grants 
 	- [config inheritience](https://docs.getdbt.com/reference/resource-configs/grants#grant-config-inheritance)
@@ -88,3 +93,16 @@ Some random material / questions I remember showing up on the test...
   - selecting specific state i.e. `--select state:modified --state path/to/previous/artifacts` / `--select +state:modified+ --state path/to/previous/artifacts`
 
 - result selector (i.e. `--result:failed` - what are the possible values here)
+
+- incremental mode 
+	- ways to configure this for a model 
+  - when [is_incremental() macro](https://docs.getdbt.com/docs/build/incremental-models#understand-the-is_incremental-macro) evaluates to true
+  - what happens when an incremental model is built for the first time?
+  - using defer / clone in development to avoid expensive initial build when doing local testing
+  
+  
+- python models and their limitations 
+	- can they reference/depend on SQL models? / can you use the `ref()` macro here? and vice-versa - can SQL models depend/reference python models?
+  
+	- what materialization options are available (table? ephemeral? view?)
+  
