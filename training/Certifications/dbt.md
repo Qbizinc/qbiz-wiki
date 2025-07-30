@@ -2,7 +2,7 @@
 title: dbt certifications
 description: 
 published: true
-date: 2025-07-30T19:44:20.797Z
+date: 2025-07-30T21:42:16.514Z
 tags: 
 editor: markdown
 dateCreated: 2025-05-23T01:49:36.130Z
@@ -140,6 +140,11 @@ Most notably:
 
 - Some training materials covering how to set up CI/CD jobs are out dated since Merge Jobs and CI Jobs were introduced as job types, streamlining this process
 
+### Supplemental study materials 
+looking up things after the exam, I found some answers in the FAQ sections
+- [data mesh FAQ](https://docs.getdbt.com/best-practices/how-we-mesh/mesh-5-faqs#how-dbt-mesh-works) 
+
+- [Source freshness](https://docs.getdbt.com/docs/deploy/source-freshness) - asked about this 
 
 ### Questions 
 
@@ -149,8 +154,18 @@ Some misc questions/concepts from memory:
 - CI and merge job setup questions 
 
 - know where certain functionality or permissions are configured: account vs. project vs. environment vs. account connection settings vs. user specific settings vs. warehouse grants
+i.e. 
+	- Threads (Development: dbt development credentials in user profiles, Deployment: set at JOB level) 
+  - Git branch, target schema, and dbt version are all required for environments (where are these configured for deployment vs. dev environments)
 
 - Resolving values of environment variables, know where overrides are available 
+
+- Knowing generally where you can find things in Explorer/Catalog: 
+- overview, performance, recommendations sections of models and projects
+
+- dbt clone vs. defer and how these interact with the compare changes against checkboxes on a job
+
+- state selector (modified, new, old)
 
 #### Threads
 
@@ -215,8 +230,80 @@ This was heavily tested
 - Cross project refs – given downstream project Environment (DEV, STAGING, PROD, general), how will the references to an upstream project resolve (what environment?). Know the nuances here - i.e. STG environment does not exist in upstream project
 [review](https://docs.getdbt.com/docs/mesh/govern/project-dependencies#staging-with-downstream-dependencies)
 
-- question about targeting downstream project dependencies on upstream project's fresher sources (package depency is used in this case so it's technically possible to use `+` dependency syntax)
+- question about targeting downstream project dependencies on upstream project's fresher sources (package depency is used in this case so it's technically possible to use `+` dependency syntax) / setting up job to trigger when another finishes 
+
+- understand how access modifiers/using packages for dependencies works
 
 - other questions about model access modifiers w/ cross project dependencies, job chaining (upstream project job triggers downstream project job) 
 
+- shown a DAG, asked to click on the indicators that dbt mesh is being utilized: 
+	- dotted lines indicate an external dependency (i.e. another project)
+  - downstream project's nodes, should only depend on public models from an upstream project if cross-project refs are being utilized 
+  
 
+
+#### Resolving database paths
+Resolving how model will show up in the warehouse as `database.schema.table_name`. Knowing where these values can be inherited from.
+- `generate_database_name`, `generate_schema_name`, `generate_alias_name` macro logic can be overwritten
+
+
+database name can come from:
+- Account → connection settings (required for snowflake, optional for other providers)
+- Environment → connection settings (where the default is typically configured)
+- `database` config key at model level (or applied to entire project or subdirectory of models in `dbt_project.yml`)
+
+schema name:
+- Default is set at Environment level (deployment credentials or user’s development credentials)
+- Custom value can be concatenated to this default when specified using the `schema` config key at model level (or applied to entire project or subdirectory of models in `dbt_project.yml`) 
+- if custom value is provided, resulting schema name is: `default_custom`
+
+object name: 
+- if no `alias` is configured for a model, the object name is named after the `.sql` filename: `model_name.sql`
+- If an `alias` is defined, the object name will be the value provided instead 
+
+NOTE: there is also the `name` in the property for a model 
+```
+models:
+- name: [<model-name>]
+```
+defines what is referenced in the ref macro `ref{{'<model-name>'}}`. Best practice is usually to match this to the `.sql` filename but changing this doesn't change name the database object in the warehouse.
+
+### Jobs
+Job queuing: 
+in general if the same job is triggered while it is still running, a new run will be queued to start after the current run completes.
+
+If a job is triggered more than once while it is still running, previously queued jobs will be canceled, the one most recently triggered one is queued and will begin after the current run completes.
+
+Different behavior for CI jobs (see below)
+
+### Common job patterns cheat sheet
+common commands/selectors 
+
+#### CI jobs
+Usually jobs are configured in a seperate qa or STG environemnt. Triggered when PR is created against `main`, compare changes against PROD **Environment**. 
+
+`dbt build --select state:modified+` 
+
+default schema is ignored (custom pr schema used instead) which is deleted from warehouse on merge or PR close.
+
+if project contains incremental models, may need to add a `clone` step before build i.e. 
+`dbt clone --select state:modified+,config.materialized:incremental,state:old`
+
+CI jobs and job queuing: 
+- N PRs will result in N CI jobs running at once (unlimited). Targets will be in different schemas so there is no overlap. 
+- If a CI job is still running and there is a new commit on the SAME open PR branch, the currently running job is canceled and a new job is triggred, testing fresh code
+
+if 2+ trunk / inderect promotion is used, then in addition to the above...another CI job triggered on PRs created against `custom_qa_branch` (same dbt command/selector). Compare changes is set to the custom qa or STG **Environment**. Additional regularly scheduled `dbt compile` jobs may help stablize the environment state if many PRs are in flight
+
+#### Merge jobs 
+Run from PROD Environment, Triggered when someone merges changes into `main` branch. 
+`dbt build --select state:modified+`, compare changes against PROD **Environment**
+
+### Deploy job patterns 
+##### Fresher builds
+build models only when source data is fresher than last run
+`dbt source freshness`
+`dbt build --select source_status:fresher+`
+`dbt docs generate`
+
+Self deferral can be useful here, especially if other selectors are included. Compare changes set to "This job" (Need to run it at least once before this can be set).
