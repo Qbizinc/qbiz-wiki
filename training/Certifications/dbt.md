@@ -2,7 +2,7 @@
 title: dbt certifications
 description: 
 published: true
-date: 2025-07-30T18:05:57.097Z
+date: 2025-07-30T19:00:37.172Z
 tags: 
 editor: markdown
 dateCreated: 2025-05-23T01:49:36.130Z
@@ -15,6 +15,9 @@ https://www.getdbt.com/dbt-certification
 - dbt Cloud Architect Certification Exam
 - discount codes: `5YDYM`, `WWFYJ`
 - ask about partner program / exam vouchers
+
+> When updating notes, please specify who and give rough exam time for those who may have questions
+{.is-success}
 
 
 ## dbt Analytics Engineering Certification
@@ -110,12 +113,17 @@ Some random material / questions I remember showing up on the test...
   
 ## dbt Architect Certification
 
-Natalia's post-exam notes (July 2025):
+Natalia's post-exam notes (July 2025). 
 
 ### Note regarding exam timing
-A lot of features released just before taking the exam, refer to the exam guide and note dates of the provided training content. Limitations / best practices discussed in 2023, for example, likely have changed. Docs are generally up to date but double check these things when reviewing video content and blog posts (even if linked in the exam guide).
+> A lot of features released just before taking the exam as guide/exam may have been updated since. ALSO, note dates of the dbt-provided training content.
+{.is-warning}
 
-Most notably: 
+Limitations / best practices discussed in 2023, for example, likely have changed. Docs are generally up to date but double check these things when reviewing video content and blog posts (even if linked in the exam guide).
+
+Most notably:
+- Environment scope added to RBAC (in addition to project scope)
+
 - `defer` functionality within job settings (`Compare changes against` drop down): previously chose a specific job to compare artifacts against. Now, you chose a specific Environment or "this job" for self deferral.
 
 - Some training content doesn't treat connections as resuable / refers to connection settings at the project level. 
@@ -126,16 +134,81 @@ Most notably:
   - New Analyst license type (though, again, not tested for me)
   
   - general rebranding from "dbt Cloud" to just "dbt" can make comparisons to dbt core a little confusing
+  
+  - dbt Explorer is now dbt Catalog. Cloud IDE is now Studio IDE. 
 
 - SCIM support is available, contrary to some training materials referring to it as not supported 
 
-- Training materials cover how to set up "CI jobs" using 
-
-
-
-
-
-
-
+- Some training materials covering how to set up CI/CD jobs are out dated since Merge Jobs and CI Jobs were introduced as job types, streamlining this process
 
   
+
+
+### Questions 
+
+Some misc questions/concepts from memory:
+- source freshness checks: which causes the job to fail/stop executing if a source is stale (`dbt source freshness` or using the checkbox in the job. [ref](command fails the job)
+
+
+
+#### Threads
+
+Given: Dag below, warehouse concurrency limit of 4 simultaneous queries 
+![dag_example.png](/images/dbt-cert-screenshots/dag_example.png)
+
+- 8 threads
+- 6 threads
+- 4 threads
+- 3 threads
+- 2 threads
+
+
+<details>
+    <summary>Answer speculation</summary>
+  I think 2 queued for 8 and 6 threads, 0 for 4,3,2 threads
+</details>
+
+Know also how many threads would be idle without the warehouse concurrency limitation 
+
+#### Permission / RBAC
+Minimum permissions needed to enable advanced CI?
+I remember some options being: git admin, job admin, account admin
+<details>
+    <summary>Answer speculation</summary>
+  I think only account admin (see dbt docs: <a href="https://docs.getdbt.com/docs/cloud/manage-access/enterprise-permissions">Enterprise permissions</a>)
+</details>
+
+- Handful of permission-related questions, referncing the tables in the [Enterprise permissions](https://docs.getdbt.com/docs/cloud/manage-access/enterprise-permissions) doc would be good. From memory: 
+	- asked about what permission sets:
+  		- can run / create jobs
+    	- create git integrations
+      
+	- what specific permisions sets can/can't do
+  		- analyst 
+      - developer 
+      - all the different admins
+      
+  - what developer can/can't do by default, what analyst can/can't do by defualt 
+  
+  - how permisions interact with licenses, who can view public models in Catalog
+  
+  - Know generally only account admin can do/what falls under "Account Settings"
+
+#### Setting up git integration
+- PR templates: where do you set this up / is it a requirement of a dbt project? when is one auto-generated for you? what happens when not set up correctly?
+
+- Where would you navigate to find git deploy keys?
+  
+
+- Know the differences between native dbt-git integrations and using URL+deploy keys to set up a different git provider. Also know the limitations of managed repos. There was a matching question asking about native git integration vs. one of these other setup options. Select native, non-native, or both for each "feature"
+	- Commit code via Studio IDE
+  - Resolve merge conflicts in Studio IDE
+  - Use ssh protocol 
+  - configure automated CI jobs
+  - updating GitHub pull requests with dbt run statuses
+  
+  
+#### dbt Mesh 
+This was heavily tested 
+- Cross project refs – given downstream project Environment (DEV, STAGING, PROD, general), how will the references to an upstream project resolve (what environment?). Know the nuances here - i.e. STG environment does not exist in upstream project
+[review](https://docs.getdbt.com/docs/mesh/govern/project-dependencies#staging-with-downstream-dependencies)
