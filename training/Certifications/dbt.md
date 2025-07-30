@@ -2,7 +2,7 @@
 title: dbt certifications
 description: 
 published: true
-date: 2025-07-30T19:01:21.368Z
+date: 2025-07-30T19:44:20.797Z
 tags: 
 editor: markdown
 dateCreated: 2025-05-23T01:49:36.130Z
@@ -13,11 +13,11 @@ https://www.getdbt.com/dbt-certification
 
 - dbt Analytics Engineering Certification Exam
 - dbt Cloud Architect Certification Exam
-- discount codes: `5YDYM`, `WWFYJ`
-- ask about partner program / exam vouchers
+- discount codes: `5YDYM`, `WWFYJ`, we likely have  vouchers to cover the entire exam through the partner program (ask Mayra)
 
 > When updating notes, please specify who and give rough exam time for those who may have questions
 {.is-success}
+
 
 
 ## dbt Analytics Engineering Certification
@@ -52,7 +52,6 @@ Some random material / questions I remember showing up on the test...
 	- which of the given configurations are valid to set globally for your models (options: tags, target, schema, materialized, tests)?
   - what each of these keys mean: `config-version`, `version`, `require-dbt-version` (question asked how to ensure a specific version got installed. There were choices included that weren't valid keys i.e. `dbt-version` - so make sure to know these exactly)
 
-- packages
 	- specific question about what directory path they get installed to (by default, and how to change in dbt_project.yml file)
   
 - artifacts from runs 
@@ -141,15 +140,17 @@ Most notably:
 
 - Some training materials covering how to set up CI/CD jobs are out dated since Merge Jobs and CI Jobs were introduced as job types, streamlining this process
 
-  
-
 
 ### Questions 
 
 Some misc questions/concepts from memory:
-- source freshness checks: which causes the job to fail/stop executing if a source is stale (`dbt source freshness` or using the checkbox in the job. [ref](command fails the job)
+- source freshness checks: which causes the job to fail/stop executing if a source is stale (`dbt source freshness` or using the checkbox in the job [ref](https://docs.getdbt.com/docs/deploy/source-freshness#:~:text=Review%20the%20following%20options%20and%20outcomes%3A))
 
+- CI and merge job setup questions 
 
+- know where certain functionality or permissions are configured: account vs. project vs. environment vs. account connection settings vs. user specific settings vs. warehouse grants
+
+- Resolving values of environment variables, know where overrides are available 
 
 #### Threads
 
@@ -193,6 +194,7 @@ I remember some options being: git admin, job admin, account admin
   - how permisions interact with licenses, who can view public models in Catalog
   
   - Know generally only account admin can do/what falls under "Account Settings"
+  
 
 #### Setting up git integration
 - PR templates: where do you set this up / is it a requirement of a dbt project? when is one auto-generated for you? what happens when not set up correctly?
@@ -212,3 +214,9 @@ I remember some options being: git admin, job admin, account admin
 This was heavily tested 
 - Cross project refs – given downstream project Environment (DEV, STAGING, PROD, general), how will the references to an upstream project resolve (what environment?). Know the nuances here - i.e. STG environment does not exist in upstream project
 [review](https://docs.getdbt.com/docs/mesh/govern/project-dependencies#staging-with-downstream-dependencies)
+
+- question about targeting downstream project dependencies on upstream project's fresher sources (package depency is used in this case so it's technically possible to use `+` dependency syntax)
+
+- other questions about model access modifiers w/ cross project dependencies, job chaining (upstream project job triggers downstream project job) 
+
+
