@@ -2,7 +2,7 @@
 title: dbt certifications
 description: 
 published: true
-date: 2025-05-23T02:08:51.762Z
+date: 2025-07-30T00:34:56.827Z
 tags: 
 editor: markdown
 dateCreated: 2025-05-23T01:49:36.130Z
@@ -14,6 +14,7 @@ https://www.getdbt.com/dbt-certification
 - dbt Analytics Engineering Certification Exam
 - dbt Cloud Architect Certification Exam
 - discount codes: `5YDYM`, `WWFYJ`
+- ask about partner program / exam vouchers
 
 
 ## dbt Analytics Engineering Certification
@@ -106,4 +107,7 @@ Some random material / questions I remember showing up on the test...
 	- can they reference/depend on SQL models? / can you use the `ref()` macro here? and vice-versa - can SQL models depend/reference python models?
   
 	- what materialization options are available (table? ephemeral? view?)
+  
+## dbt Architect Certification
+
   
