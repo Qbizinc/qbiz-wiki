@@ -2,7 +2,7 @@
 title: dbt certifications
 description: 
 published: true
-date: 2025-07-30T21:44:31.492Z
+date: 2025-07-30T22:20:38.963Z
 tags: 
 editor: markdown
 dateCreated: 2025-05-23T01:49:36.130Z
@@ -146,6 +146,9 @@ looking up things after the exam, I found some answers in the FAQ sections
 
 - [Source freshness](https://docs.getdbt.com/docs/deploy/source-freshness) - asked about this 
 
+- [Cloud setup](https://learn.getdbt.com/learn/course/advanced-dbt-cloud-setup-workshop/advanced-dbt-cloud-setup-70min/introduction-to-advanced-dbt-setup?client=partners&page=1) - good review of setup, though the Privatelink stuff wasn't tested for me so can 2x those parts. I thin the high-level diagram is useful. Here is an updated version of this with some additional details: [diagram](https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&dark=auto#G1nPEpEtFqH59pqYS5ZriKhmqPnIcDklMz) 
+	- edit here: https://drive.google.com/file/d/1nPEpEtFqH59pqYS5ZriKhmqPnIcDklMz/view?usp=drive_link
+
 ### Questions 
 
 Some misc questions/concepts from memory:
@@ -160,12 +163,12 @@ i.e.
 
 - Resolving values of environment variables, know where overrides are available 
 
-- Knowing generally where you can find things in Explorer/Catalog: 
-- overview, performance, recommendations sections of models and projects
+- Knowing generally where you can find things in Explorer/Catalog: overview, performance, recommendations sections of models and projects
 
-- dbt clone vs. defer and how these interact with the compare changes against checkboxes on a job
+- dbt clone vs. defer and how these interact with the compare changes against checkboxes on a job. How these work/what they do from the development environment for a user using IDE
 
-- state selector (modified, new, old)
+- state selector possible values `state:` (modified, new, old)
+
 
 #### Threads
 
@@ -229,6 +232,8 @@ I remember some options being: git admin, job admin, account admin
 This was heavily tested 
 - Cross project refs – given downstream project Environment (DEV, STAGING, PROD, general), how will the references to an upstream project resolve (what environment?). Know the nuances here - i.e. STG environment does not exist in upstream project
 [review](https://docs.getdbt.com/docs/mesh/govern/project-dependencies#staging-with-downstream-dependencies)
+
+- cross project references can only resolve if the same warehouse TYPE is used in both projects (i.e. Snowflake for both)
 
 - question about targeting downstream project dependencies on upstream project's fresher sources (package depency is used in this case so it's technically possible to use `+` dependency syntax) / setting up job to trigger when another finishes 
 
@@ -300,6 +305,8 @@ Run from PROD Environment, Triggered when someone merges changes into `main` bra
 `dbt build --select state:modified+`, compare changes against PROD **Environment**
 
 ### Deploy job patterns 
+Time sensitive, fresher build, and full refresh jobs typically supplement a satandard job (like a daily refresh). 
+
 ##### Fresher builds
 build models only when source data is fresher than last run
 `dbt source freshness`
@@ -307,3 +314,17 @@ build models only when source data is fresher than last run
 `dbt docs generate`
 
 Self deferral can be useful here, especially if other selectors are included. Compare changes set to "This job" (Need to run it at least once before this can be set).
+
+#### Time sensitive jobs
+Build a subset of models that need to run more frequently. Usually selector syntax is used to target dependencies i.e. 
+`dbt build --select +fact_orders+`
+For these you want to **set job Timeout** incase job takes longer than frequency it is being triggered.  
+
+#### Standard job 
+A typical `dbt build` job usually something like a daily refresh - entire project is built and incremental logic is utilized. No compare changes.
+
+#### Full refresh jobs 
+Utilize `--full-refresh` command to build the entire project, rebuilding incremental models for most accurate / up to date information. Common to have this weekly to supplement daily incremental builds. 
+
+`dbt build --full-refresh` 
+
