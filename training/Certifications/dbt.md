@@ -2,7 +2,7 @@
 title: dbt certifications
 description: 
 published: true
-date: 2025-07-30T21:42:16.514Z
+date: 2025-07-30T21:44:31.492Z
 tags: 
 editor: markdown
 dateCreated: 2025-05-23T01:49:36.130Z
