@@ -2,7 +2,7 @@
 title: dbt certifications
 description: 
 published: true
-date: 2025-07-30T00:34:56.827Z
+date: 2025-07-30T18:05:57.097Z
 tags: 
 editor: markdown
 dateCreated: 2025-05-23T01:49:36.130Z
@@ -109,5 +109,33 @@ Some random material / questions I remember showing up on the test...
 	- what materialization options are available (table? ephemeral? view?)
   
 ## dbt Architect Certification
+
+Natalia's post-exam notes (July 2025):
+
+### Note regarding exam timing
+A lot of features released just before taking the exam, refer to the exam guide and note dates of the provided training content. Limitations / best practices discussed in 2023, for example, likely have changed. Docs are generally up to date but double check these things when reviewing video content and blog posts (even if linked in the exam guide).
+
+Most notably: 
+- `defer` functionality within job settings (`Compare changes against` drop down): previously chose a specific job to compare artifacts against. Now, you chose a specific Environment or "this job" for self deferral.
+
+- Some training content doesn't treat connections as resuable / refers to connection settings at the project level. 
+
+- Renaming 
+ 	- pricing tiers: i.e. Teams is now Starter. Though, I got no questions about this - exam seemed to test from the perspective of the highest tier. 
+  
+  - New Analyst license type (though, again, not tested for me)
+  
+  - general rebranding from "dbt Cloud" to just "dbt" can make comparisons to dbt core a little confusing
+
+- SCIM support is available, contrary to some training materials referring to it as not supported 
+
+- Training materials cover how to set up "CI jobs" using 
+
+
+
+
+
+
+
 
   
