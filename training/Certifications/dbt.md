@@ -2,7 +2,7 @@
 title: dbt certifications
 description: 
 published: true
-date: 2025-07-31T01:21:31.426Z
+date: 2025-07-31T22:08:18.842Z
 tags: 
 editor: markdown
 dateCreated: 2025-05-23T01:49:36.130Z
@@ -12,7 +12,7 @@ dateCreated: 2025-05-23T01:49:36.130Z
 https://www.getdbt.com/dbt-certification
 
 - dbt Analytics Engineering Certification Exam
-- dbt Cloud Architect Certification Exam
+- dbt Architect Certification Exam
 - discount codes: `5YDYM`, `WWFYJ`, we likely have  vouchers to cover the entire exam through the partner program (ask Mayra)
 
 > When updating notes, please specify who and give rough exam time for those who may have questions
@@ -125,7 +125,7 @@ Most notably:
 
 - `defer` functionality within job settings (`Compare changes against` drop down): previously chose a specific job to compare artifacts against. Now, you chose a specific Environment or "this job" for self deferral.
 
-- Some training content doesn't treat connections as resuable / refers to connection settings at the project level. 
+- Some training content doesn't treat connections as reusable / refers to connection settings at the project level. 
 
 - Renaming 
  	- pricing tiers: i.e. Teams is now Starter. Though, I got no questions about this - exam seemed to test from the perspective of the highest tier. 
@@ -146,35 +146,36 @@ looking up things after the exam, I found some answers in the FAQ sections
 
 - [Source freshness](https://docs.getdbt.com/docs/deploy/source-freshness) - asked about this 
 
-- [Cloud setup](https://learn.getdbt.com/learn/course/advanced-dbt-cloud-setup-workshop/advanced-dbt-cloud-setup-70min/introduction-to-advanced-dbt-setup?client=partners&page=1) - good review of setup, though the Privatelink stuff wasn't tested for me so can 2x those parts. I thin the high-level diagram is useful. Here is an updated version of this with some additional details: 
+- [Cloud setup](https://learn.getdbt.com/learn/course/advanced-dbt-cloud-setup-workshop/advanced-dbt-cloud-setup-70min/introduction-to-advanced-dbt-setup?client=partners&page=1) - good review of setup, though the Privatelink stuff wasn't tested for me so can 2x those parts. I think the high-level diagram is useful. Here is an updated version of this with some additional details: 
   
-![dbt_structure_and_scope.svg](/dbt_structure_and_scope.svg)
+![dbt_diagram.svg](/dbt_diagram.svg)
 edit here: https://drive.google.com/file/d/1nPEpEtFqH59pqYS5ZriKhmqPnIcDklMz/view?usp=drive_link
 
 ### Questions 
 
 Some misc questions/concepts from memory:
-- source freshness checks: which causes the job to fail/stop executing if a source is stale (`dbt source freshness` or using the checkbox in the job [ref](https://docs.getdbt.com/docs/deploy/source-freshness#:~:text=Review%20the%20following%20options%20and%20outcomes%3A))
+- source freshness checks: which causes the job to fail/stop executing if a source is stale: `dbt source freshness` or using the checkbox in the job?
+ ([ref](https://docs.getdbt.com/docs/deploy/source-freshness#:~:text=Review%20the%20following%20options%20and%20outcomes%3A))
 
-- CI and merge job setup questions 
+- CI and Merge job setup questions 
 
 - know where certain functionality or permissions are configured: account vs. project vs. environment vs. account connection settings vs. user specific settings vs. warehouse grants
 i.e. 
 	- Threads (Development: dbt development credentials in user profiles, Deployment: set at JOB level) 
-  - Git branch, target schema, and dbt version are all required for environments (where are these configured for deployment vs. dev environments)
+  - Git branch, target schema, and dbt version are all required for environments (where are these configured for deployment vs. dev environments?)
 
-- Resolving values of environment variables, know where overrides are available 
+- Resolving values of environment variables: know where overrides are available
 
 - Knowing generally where you can find things in Explorer/Catalog: overview, performance, recommendations sections of models and projects
 
-- dbt clone vs. defer and how these interact with the compare changes against checkboxes on a job. How these work/what they do from the development environment for a user using IDE
+- dbt clone vs. defer and how these interact with the compare changes against checkboxes on a job. Also, how these work/what they do from the development environment for a user using IDE
 
 - state selector possible values `state:` (modified, new, old)
 
 
 #### Threads
 
-Given: Dag below, warehouse concurrency limit of 4 simultaneous queries 
+Given: Dag below and warehouse concurrency limit of 4 simultaneous queries...how many quereies are queued given the following thread configurations?
 ![dag_example.png](/images/dbt-cert-screenshots/dag_example.png)
 
 - 8 threads
@@ -221,7 +222,6 @@ I remember some options being: git admin, job admin, account admin
 
 - Where would you navigate to find git deploy keys?
   
-
 - Know the differences between native dbt-git integrations and using URL+deploy keys to set up a different git provider. Also know the limitations of managed repos. There was a matching question asking about native git integration vs. one of these other setup options. Select native, non-native, or both for each "feature"
 	- Commit code via Studio IDE
   - Resolve merge conflicts in Studio IDE
@@ -262,7 +262,7 @@ database name can come from:
 schema name:
 - Default is set at Environment level (deployment credentials or user’s development credentials)
 - Custom value can be concatenated to this default when specified using the `schema` config key at model level (or applied to entire project or subdirectory of models in `dbt_project.yml`) 
-- if custom value is provided, resulting schema name is: `default_custom`
+- if custom value is provided, resulting schema name is: `<default>_<custom>`
 
 object name: 
 - if no `alias` is configured for a model, the object name is named after the `.sql` filename: `model_name.sql`
@@ -273,7 +273,7 @@ NOTE: there is also the `name` in the property for a model
 models:
 - name: [<model-name>]
 ```
-defines what is referenced in the ref macro `ref{{'<model-name>'}}`. Best practice is usually to match this to the `.sql` filename but changing this doesn't change name the database object in the warehouse.
+This defines what is referenced in the ref macro `ref{{'<model-name>'}}`. Best practice is usually to match this to the `.sql` filename but changing the `name` value does NOT change name the database object in the warehouse.
 
 ### Jobs
 Job queuing: 
