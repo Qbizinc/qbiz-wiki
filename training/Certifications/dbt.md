@@ -2,7 +2,7 @@
 title: dbt certifications
 description: 
 published: true
-date: 2025-07-31T01:07:47.544Z
+date: 2025-07-31T01:13:37.643Z
 tags: 
 editor: markdown
 dateCreated: 2025-05-23T01:49:36.130Z
@@ -146,8 +146,11 @@ looking up things after the exam, I found some answers in the FAQ sections
 
 - [Source freshness](https://docs.getdbt.com/docs/deploy/source-freshness) - asked about this 
 
-- [Cloud setup](https://learn.getdbt.com/learn/course/advanced-dbt-cloud-setup-workshop/advanced-dbt-cloud-setup-70min/introduction-to-advanced-dbt-setup?client=partners&page=1) - good review of setup, though the Privatelink stuff wasn't tested for me so can 2x those parts. I thin the high-level diagram is useful. Here is an updated version of this with some additional details: [diagram](https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&dark=auto#G1nPEpEtFqH59pqYS5ZriKhmqPnIcDklMz) 
-	- edit here: https://drive.google.com/file/d/1nPEpEtFqH59pqYS5ZriKhmqPnIcDklMz/view?usp=drive_link
+- [Cloud setup](https://learn.getdbt.com/learn/course/advanced-dbt-cloud-setup-workshop/advanced-dbt-cloud-setup-70min/introduction-to-advanced-dbt-setup?client=partners&page=1) - good review of setup, though the Privatelink stuff wasn't tested for me so can 2x those parts. I thin the high-level diagram is useful. Here is an updated version of this with some additional details: 
+  
+![dbt_structure_and_scope.drawio.svg](/dbt_structure_and_scope.drawio.svg)
+
+edit here: https://drive.google.com/file/d/1nPEpEtFqH59pqYS5ZriKhmqPnIcDklMz/view?usp=drive_link
 
 ### Questions 
 
