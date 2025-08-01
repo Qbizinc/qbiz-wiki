@@ -2,7 +2,7 @@
 title: Certifications
 description: 
 published: true
-date: 2025-07-30T00:27:45.570Z
+date: 2025-08-01T16:37:42.891Z
 tags: 
 editor: markdown
 dateCreated: 2023-01-18T19:35:36.730Z
@@ -34,6 +34,7 @@ See [Consulting Skill Matrix](https://docs.google.com/spreadsheets/d/18NhOuyC9Vx
   - Partner Kickstart program for free exam voucher (more information linked above)
   
 - dbt https://www.getdbt.com/dbt-certification
+	- see [dbt resources](/training/Certifications/dbt)
 	- dbt Analytics Engineering Certification
   - dbt Architect Certification
   - discount codes: `5YDYM`, `WWFYJ`
