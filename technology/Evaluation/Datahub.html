@@ -1,0 +1,28 @@
+<!--
+title: On-prem Sandbox
+description: A short document on the setup and maintenance of a local instance
+published: true
+date: 2026-02-05T22:48:07.500Z
+tags: 
+editor: ckeditor
+dateCreated: 2026-02-05T22:48:07.500Z
+-->
+
+<h2>Introduction</h2>
+<p>Datahub is a connection of Docker containers, launched with Docker-Compose, and managed by a (kludgy) CLI. &nbsp;The CLI is written in Python and can be reviewed &nbsp;to makeup for missing details in the documentation. &nbsp;Essentially, the CLI is a wrapper around the <i>docker-compose</i> and <i>docker pull</i> commands. &nbsp;</p>
+<h2>Installation</h2>
+<p>The <a href="https://docs.datahub.com/docs/quickstart">Datahub Quickstart Guide</a> is the only Installation document and anything with <i>Quickstart</i> in the name isn't going to go into much detail. &nbsp;The username and password are both <i>datahub</i> so you will want to change this pretty quickly if running exposed to the internet – such as our sandbox instance in AWS.</p>
+<h3>HTTPS</h3>
+<p>The webserver does support HTTPS, but you will need to set a variable in the configuration file to enable it and restart the container. &nbsp;However, this doesn't include a Certificate Authority. &nbsp;For Certificate Authority support, you have the following options:</p>
+<ol>
+  <li>Install a <a href="https://letsencrypt.org/">Let's Encrypt</a> client on the server and modify the Docker Compose file to mount the location were the certificates will be stored – and updated.</li>
+  <li>Install a Reverse Proxy to handle the SSL communication and forward it to the datahub port.</li>
+</ol>
+<p>I chose both, but the settled on the second option and <a href="https://caddyserver.com/">Caddy</a> as the reverse proxy. &nbsp;Caddy has a Let's Encrypt client installed by default and will handle the certificate updates; all you need to do is pass it the correct &nbsp;configuration file.</p>
+<h4>Caddy</h4>
+<p>Caddyfile (configuration)</p>
+<pre><code class="language-plaintext">datahub.qbiz-wiki.com {
+        # Another common task is to set up a reverse proxy:
+        reverse_proxy http://datahub.qbiz-wiki.com:9002
+} </code></pre>
+<p>To launch a Docker Container so that Caddyfile can be seen in the container, use the following command:<br><code>docker run -d --rm -it -p 443:443 -p80:80 -v $PWD/conf:/etc/caddy -v caddy_data:/data caddy</code></p>
