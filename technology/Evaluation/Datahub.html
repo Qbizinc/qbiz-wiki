@@ -2,14 +2,28 @@
 title: Datahub On-prem Sandbox
 description: A short document on the setup and maintenance of a local instance
 published: true
-date: 2026-02-06T18:03:28.578Z
+date: 2026-02-06T18:24:12.724Z
 tags: 
 editor: ckeditor
 dateCreated: 2026-02-05T22:48:07.500Z
 -->
 
 <h2>Introduction</h2>
-<p>Datahub is a connection of Docker containers, launched with Docker-Compose, and managed by a (kludgy) CLI. &nbsp;The CLI is written in Python and can be reviewed &nbsp;to makeup for missing details in the documentation. &nbsp;Essentially, the CLI is a wrapper around the <i>docker-compose</i> and <i>docker pull</i> commands. &nbsp;</p>
+<p>Datahub is a collection of Docker containers, launched with Docker-Compose, and managed by a (kludgy) CLI. &nbsp;The CLI is written in Python and can be reviewed &nbsp;to makeup for missing details in the documentation. &nbsp;Essentially, the CLI is a wrapper around the <i>docker-compose,</i> <i>docker pull</i> and other Docker commands. &nbsp;</p>
+<h2>Sandbox</h2>
+<p>The Sandbox environment can be found at https://datahub.qbiz-wiki.com. &nbsp;It runs on a standard <a href="https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#InstanceDetails:instanceId=i-0e308ff9e2acbb173">AWS t2.large instance</a> with Docker and Docker-Compose installed.</p>
+<h3>Shell-level access</h3>
+<p>&nbsp;To access the instance's Shell and Datahub CLI requires either:</p>
+<ol>
+  <li>possession of the <i>datahub.pem</i> file to access the instance via SSH with, <code>ssh -i datahub.pem ec2-user@datahub.qbiz-wiki.com</code>.</li>
+  <li>Giving a public key to the &nbsp;owner of the datahub.pem key so they can install it into the <code>~/.ssh/authorized_keys</code> file. &nbsp;This is the preferred method for the following reasons:<ol>
+      <li>It grants individual access that can be removed at anytime without impacting the access of other users.</li>
+      <li>No public sharing of a common key that is passed around through slack, email or other leaky communication channels.</li>
+    </ol>
+  </li>
+</ol>
+<h3>Web Interface access</h3>
+<p>Request access from an administrator – currently Soren and Andres. &nbsp;The administrator will login to the web interface and send you an invitation via e-mail.</p>
 <h2>Installation</h2>
 <p>The <a href="https://docs.datahub.com/docs/quickstart">Datahub Quickstart Guide</a> is the only Installation document and anything with <i>Quickstart</i> in the name isn't going to go into much detail. &nbsp;The username and password are both <i>datahub</i> so you will want to change this pretty quickly if running exposed to the internet – such as our sandbox instance in AWS.</p>
 <h3>HTTPS</h3>
