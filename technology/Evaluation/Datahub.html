@@ -2,7 +2,7 @@
 title: Datahub On-prem Sandbox
 description: A short document on the setup and maintenance of a local instance
 published: true
-date: 2026-02-06T18:24:12.724Z
+date: 2026-02-06T18:24:58.409Z
 tags: 
 editor: ckeditor
 dateCreated: 2026-02-05T22:48:07.500Z
@@ -26,7 +26,7 @@ dateCreated: 2026-02-05T22:48:07.500Z
 <p>Request access from an administrator – currently Soren and Andres. &nbsp;The administrator will login to the web interface and send you an invitation via e-mail.</p>
 <h2>Installation</h2>
 <p>The <a href="https://docs.datahub.com/docs/quickstart">Datahub Quickstart Guide</a> is the only Installation document and anything with <i>Quickstart</i> in the name isn't going to go into much detail. &nbsp;The username and password are both <i>datahub</i> so you will want to change this pretty quickly if running exposed to the internet – such as our sandbox instance in AWS.</p>
-<h3>HTTPS</h3>
+<h3>HTTPS setup</h3>
 <p>The webserver does support HTTPS, but you will need to set a variable in the configuration file to enable it and restart the container. &nbsp;However, this doesn't include a Certificate Authority. &nbsp;For Certificate Authority support, you have the following options:</p>
 <ol>
   <li>Install a <a href="https://letsencrypt.org/">Let's Encrypt</a> client on the server and modify the Docker Compose file to mount the location were the certificates will be stored – and updated.</li>
