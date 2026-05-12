@@ -2,7 +2,7 @@
 title: AI Assisted Coding using VS Code
 description: 
 published: true
-date: 2026-05-12T19:17:10.368Z
+date: 2026-05-12T20:07:04.365Z
 tags: 
 editor: markdown
 dateCreated: 2026-05-12T19:17:10.368Z
@@ -43,3 +43,5 @@ In the above, there are five model entries: two pointed at ollama, one on my loc
 
 ### CoPilot
 Included with my GitHub Copilot Pro subscription, is limited access to various models (recently ChatGPT was removed from the offerings).  Install the **GitHub Copilot Chat** extension; pressing `Ctrl+I/Cmd+I` will open a chat prompt directly in the editor where you will see three tabs: **CLAUDE CODE**, **CHAT** and **CODEX**.
+
+![vscode-copilot.jpg](/vscode-copilot.jpg)
