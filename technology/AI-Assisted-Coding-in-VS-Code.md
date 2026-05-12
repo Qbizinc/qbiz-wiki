@@ -2,7 +2,7 @@
 title: AI Assisted Coding using VS Code
 description: 
 published: true
-date: 2026-05-12T20:11:26.374Z
+date: 2026-05-12T20:35:39.151Z
 tags: 
 editor: markdown
 dateCreated: 2026-05-12T19:17:10.368Z
@@ -39,9 +39,12 @@ models:
     model: gemini-3.1-flash-lite-preview
     apiKey: ...(your key here)...
 ```
-In the above, there are five model entries: two pointed at ollama, one on my local machine and another on a remote machine; one for Claud Sonnet, which uses a key I created in my Claude Pro account; finally, two different Gemini models, both using the same API key, which can be found in the [Clouds](/technology/Clouds#Soren's Gemini Project), in GCP.
+In the above, there are five model entries: two pointed at ollama, one on my local machine and another on a remote machine; one for Claud Sonnet, which uses a key I created in my Claude Pro account; finally, two different Gemini models, both using the same API key, which can be found in the GCP Project, [Soren's Gemini Project](/technology/AI-Assisted-Coding-in-VS-Code).
 
 ### CoPilot
 Included with my GitHub Copilot Pro subscription, is limited access to various models (recently ChatGPT was removed from the offerings).  Install the **GitHub Copilot Chat** extension; pressing `Ctrl+I/Cmd+I` will open a chat prompt directly in the editor where you will see three tabs: **CLAUDE CODE**, **CHAT** and **CODEX**.
 
 ![vscode-copilot.jpg](/vscode-copilot.jpg)
+
+### Claude Code
+This extension only supports Anthropic models and uses the Anthropic API key generated in your account.
