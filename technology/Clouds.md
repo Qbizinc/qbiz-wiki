@@ -2,7 +2,7 @@
 title: GCP
 description: Brief description of Google Cloud Platform Administration, IT and  Projects
 published: true
-date: 2026-05-12T18:41:40.988Z
+date: 2026-05-12T18:41:58.534Z
 tags: cloud, it
 editor: markdown
 dateCreated: 2026-05-12T18:17:01.932Z
